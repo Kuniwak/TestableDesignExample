@@ -22,6 +22,7 @@
 		62A1614D1E73C1CC003D28DC /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62A1614B1E73C1CC003D28DC /* RxBlocking.framework */; };
 		62A1614E1E73C1CC003D28DC /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62A1614C1E73C1CC003D28DC /* RxTest.framework */; };
 		62A161511E73C259003D28DC /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62A161501E73C259003D28DC /* RxSwift.framework */; };
+		62A161571E73C923003D28DC /* MirrorDiffKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62A161561E73C923003D28DC /* MirrorDiffKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		62A1614B1E73C1CC003D28DC /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
 		62A1614C1E73C1CC003D28DC /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
 		62A161501E73C259003D28DC /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		62A161561E73C923003D28DC /* MirrorDiffKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MirrorDiffKit.framework; path = Carthage/Build/iOS/MirrorDiffKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62A161571E73C923003D28DC /* MirrorDiffKit.framework in Frameworks */,
 				62A1614D1E73C1CC003D28DC /* RxBlocking.framework in Frameworks */,
 				62A1614E1E73C1CC003D28DC /* RxTest.framework in Frameworks */,
 			);
@@ -147,6 +150,7 @@
 		62A161461E73BCD4003D28DC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				62A161561E73C923003D28DC /* MirrorDiffKit.framework */,
 				62A161521E73C272003D28DC /* XLPagerTabStrip.framework.dSYM */,
 				62A161501E73C259003D28DC /* RxSwift.framework */,
 				62A1614B1E73C1CC003D28DC /* RxBlocking.framework */,
@@ -310,6 +314,7 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/RxTest.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxBlocking.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/MirrorDiffKit.framework",
 			);
 			outputPaths = (
 			);
