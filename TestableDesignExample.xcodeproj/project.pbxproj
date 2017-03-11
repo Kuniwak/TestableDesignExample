@@ -17,6 +17,7 @@
 		2475ED052F280DF12FCC21BF /* TestableDesignExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E52EE895096067C3AB7E /* TestableDesignExampleUITests.swift */; };
 		2475EDD62D1578764CE3C53D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2475EE7E92AA265C15A8AB02 /* Info.plist */; };
 		2475EDED3B2768D715A948C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2475E2ED888DB0AA07F0DBDA /* Main.storyboard */; };
+		62A161481E73BCD4003D28DC /* Rswift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62A161471E73BCD4003D28DC /* Rswift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		2475ED639ECF55577329F9D9 /* TestableDesignExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestableDesignExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2475EDAB59CE5A5E99A03E61 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2475EE7E92AA265C15A8AB02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		62A161471E73BCD4003D28DC /* Rswift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Rswift.framework; path = Carthage/Build/iOS/Rswift.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62A161481E73BCD4003D28DC /* Rswift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +100,7 @@
 				2475E2F3D72A9EDDB3A5123C /* TestableDesignExample */,
 				2475E927630C40FFEC2AE23B /* TestableDesignExampleTests */,
 				2475EE09DDDD552BE88E9783 /* TestableDesignExampleUITests */,
+				62A161461E73BCD4003D28DC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -126,6 +130,14 @@
 				2475E52EE895096067C3AB7E /* TestableDesignExampleUITests.swift */,
 			);
 			path = TestableDesignExampleUITests;
+			sourceTree = "<group>";
+		};
+		62A161461E73BCD4003D28DC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				62A161471E73BCD4003D28DC /* Rswift.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,6 +186,8 @@
 				2475E3C4099342668824F94A /* Sources */,
 				2475E453DC8D6CC645172E24 /* Frameworks */,
 				2475E69BA6DA525240196C0B /* Resources */,
+				62A161491E73BD22003D28DC /* ShellScript */,
+				62A1614A1E73BDC0003D28DC /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -240,6 +254,36 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		62A161491E73BD22003D28DC /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Rswift.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		62A1614A1E73BDC0003D28DC /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$SRCROOT/libexec/rswift\" \"$SRCROOT/TestableDesignExample/Resources/\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2475E102ED38529EDE59F247 /* Sources */ = {
@@ -368,6 +412,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = TestableDesignExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kuniwak.TestableDesignExample;
@@ -405,6 +454,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = TestableDesignExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kuniwak.TestableDesignExample;
@@ -486,6 +540,7 @@
 				2475E110C1E1B482FD3CF296 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2475E590EB59A1AAAA8451B7 /* Build configuration list for PBXNativeTarget "TestableDesignExampleUITests" */ = {
 			isa = XCConfigurationList;
@@ -494,6 +549,7 @@
 				2475EDE77396559415A267D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2475E8BF3640622A9CBA90DF /* Build configuration list for PBXNativeTarget "TestableDesignExample" */ = {
 			isa = XCConfigurationList;
@@ -502,6 +558,7 @@
 				2475EC60140AA32195E40C76 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

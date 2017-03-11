@@ -1,0 +1,15 @@
+#!/bin/bash -eu -o pipefail
+
+export ROOT_PATH="$(cd "$(dirname "$0")/.."; pwd)"
+export PROJECT_FILE_PATH="$ROOT_PATH/TestableDesignExample.xcodeproj"
+export TARGET_NAME=TestableDesignExample
+export PRODUCT_BUNDLE_IDENTIFIER=com.kuniwak.TestableDesignExample
+export PRODUCT_MODULE_NAME=TestableDesignExample
+export BUILT_PRODUCTS_DIR=$(find "$HOME/Library/Developer/Xcode/DerivedData/" -name 'Debug-iphonesimulator' | grep -v '/Intermediates/' |  grep TestableDesignExample | head -1)
+export DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer
+export SOURCE_ROOT="$ROOT_PATH"
+export SDKROOT="$(xcrun --show-sdk-path)"
+
+SRCROOT="$ROOT_PATH"
+
+"$SRCROOT/libexec/rswift" "$SRCROOT/TestableDesignExample/Resources/"
