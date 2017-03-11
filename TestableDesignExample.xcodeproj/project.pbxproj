@@ -23,6 +23,7 @@
 		62A161511E73C259003D28DC /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62A161501E73C259003D28DC /* RxSwift.framework */; };
 		62A161551E73C8FE003D28DC /* XLPagerTabStrip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62A161541E73C8FE003D28DC /* XLPagerTabStrip.framework */; };
 		62A161571E73C923003D28DC /* MirrorDiffKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62A161561E73C923003D28DC /* MirrorDiffKit.framework */; };
+		62A1615A1E73C9ED003D28DC /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A161591E73C9ED003D28DC /* R.generated.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		62A161521E73C272003D28DC /* XLPagerTabStrip.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = XLPagerTabStrip.framework.dSYM; path = Carthage/Build/iOS/XLPagerTabStrip.framework.dSYM; sourceTree = "<group>"; };
 		62A161541E73C8FE003D28DC /* XLPagerTabStrip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XLPagerTabStrip.framework; path = Carthage/Build/iOS/XLPagerTabStrip.framework; sourceTree = "<group>"; };
 		62A161561E73C923003D28DC /* MirrorDiffKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MirrorDiffKit.framework; path = Carthage/Build/iOS/MirrorDiffKit.framework; sourceTree = "<group>"; };
+		62A161591E73C9ED003D28DC /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = R.generated.swift; path = Resources/R.generated.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		2475E2F3D72A9EDDB3A5123C /* TestableDesignExample */ = {
 			isa = PBXGroup;
 			children = (
+				62A161581E73C9D6003D28DC /* Resources */,
 				2475EE7E92AA265C15A8AB02 /* Info.plist */,
 				2475EDAB59CE5A5E99A03E61 /* Assets.xcassets */,
 				2475E33610A7BBD163657C40 /* LaunchScreen.storyboard */,
@@ -160,6 +163,14 @@
 				62A161471E73BCD4003D28DC /* Rswift.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		62A161581E73C9D6003D28DC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				62A161591E73C9ED003D28DC /* R.generated.swift */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -341,6 +352,7 @@
 			files = (
 				2475E3B1BAEAEE1D8FD372DC /* AppDelegate.swift in Sources */,
 				2475E87E0BE147383E77BB45 /* ViewController.swift in Sources */,
+				62A1615A1E73C9ED003D28DC /* R.generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
