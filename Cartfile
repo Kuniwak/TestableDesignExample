@@ -1,2 +1,3 @@
 github "mac-cain13/R.swift.Library" "594965c3c1d42d9a4390eec3ecf159ab8210cb78"
 github "xmartlabs/XLPagerTabStrip" ~> 7.0.0
+github "ReactiveX/RxSwift" ~> 3.0

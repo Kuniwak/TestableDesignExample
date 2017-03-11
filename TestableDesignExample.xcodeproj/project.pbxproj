@@ -19,6 +19,9 @@
 		2475EDED3B2768D715A948C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2475E2ED888DB0AA07F0DBDA /* Main.storyboard */; };
 		62A161481E73BCD4003D28DC /* Rswift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62A161471E73BCD4003D28DC /* Rswift.framework */; };
 		62A161531E73C272003D28DC /* XLPagerTabStrip.framework.dSYM in Frameworks */ = {isa = PBXBuildFile; fileRef = 62A161521E73C272003D28DC /* XLPagerTabStrip.framework.dSYM */; };
+		62A1614D1E73C1CC003D28DC /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62A1614B1E73C1CC003D28DC /* RxBlocking.framework */; };
+		62A1614E1E73C1CC003D28DC /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62A1614C1E73C1CC003D28DC /* RxTest.framework */; };
+		62A161511E73C259003D28DC /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62A161501E73C259003D28DC /* RxSwift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +57,9 @@
 		2475EE7E92AA265C15A8AB02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		62A161471E73BCD4003D28DC /* Rswift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Rswift.framework; path = Carthage/Build/iOS/Rswift.framework; sourceTree = "<group>"; };
 		62A161521E73C272003D28DC /* XLPagerTabStrip.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = XLPagerTabStrip.framework.dSYM; path = Carthage/Build/iOS/XLPagerTabStrip.framework.dSYM; sourceTree = "<group>"; };
+		62A1614B1E73C1CC003D28DC /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
+		62A1614C1E73C1CC003D28DC /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
+		62A161501E73C259003D28DC /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +68,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				62A161531E73C272003D28DC /* XLPagerTabStrip.framework.dSYM in Frameworks */,
+				62A161511E73C259003D28DC /* RxSwift.framework in Frameworks */,
 				62A161481E73BCD4003D28DC /* Rswift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -70,6 +77,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62A1614D1E73C1CC003D28DC /* RxBlocking.framework in Frameworks */,
+				62A1614E1E73C1CC003D28DC /* RxTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,6 +148,9 @@
 			isa = PBXGroup;
 			children = (
 				62A161521E73C272003D28DC /* XLPagerTabStrip.framework.dSYM */,
+				62A161501E73C259003D28DC /* RxSwift.framework */,
+				62A1614B1E73C1CC003D28DC /* RxBlocking.framework */,
+				62A1614C1E73C1CC003D28DC /* RxTest.framework */,
 				62A161471E73BCD4003D28DC /* Rswift.framework */,
 			);
 			name = Frameworks;
@@ -154,6 +166,7 @@
 				2475E4A0A6547D8CB0D6FC25 /* Sources */,
 				2475E64DAD11CBB0BA0D46A3 /* Frameworks */,
 				2475EF593B11C9178F25371E /* Resources */,
+				62A1614F1E73C1D2003D28DC /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -268,6 +281,7 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Rswift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/XLPagerTabStrip.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
 			);
 			outputPaths = (
 			);
@@ -287,6 +301,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"$SRCROOT/libexec/rswift\" \"$SRCROOT/TestableDesignExample/Resources/\"";
+		};
+		62A1614F1E73C1D2003D28DC /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/RxTest.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxBlocking.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -404,6 +433,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TestableDesignExample.app/TestableDesignExample";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = TestableDesignExampleTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kuniwak.TestableDesignExampleTests;
@@ -446,6 +479,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TestableDesignExample.app/TestableDesignExample";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = TestableDesignExampleTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kuniwak.TestableDesignExampleTests;
