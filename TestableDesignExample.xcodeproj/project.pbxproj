@@ -18,10 +18,10 @@
 		2475EDD62D1578764CE3C53D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2475EE7E92AA265C15A8AB02 /* Info.plist */; };
 		2475EDED3B2768D715A948C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2475E2ED888DB0AA07F0DBDA /* Main.storyboard */; };
 		62A161481E73BCD4003D28DC /* Rswift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62A161471E73BCD4003D28DC /* Rswift.framework */; };
-		62A161531E73C272003D28DC /* XLPagerTabStrip.framework.dSYM in Frameworks */ = {isa = PBXBuildFile; fileRef = 62A161521E73C272003D28DC /* XLPagerTabStrip.framework.dSYM */; };
 		62A1614D1E73C1CC003D28DC /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62A1614B1E73C1CC003D28DC /* RxBlocking.framework */; };
 		62A1614E1E73C1CC003D28DC /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62A1614C1E73C1CC003D28DC /* RxTest.framework */; };
 		62A161511E73C259003D28DC /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62A161501E73C259003D28DC /* RxSwift.framework */; };
+		62A161551E73C8FE003D28DC /* XLPagerTabStrip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62A161541E73C8FE003D28DC /* XLPagerTabStrip.framework */; };
 		62A161571E73C923003D28DC /* MirrorDiffKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62A161561E73C923003D28DC /* MirrorDiffKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,10 +57,11 @@
 		2475EDAB59CE5A5E99A03E61 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2475EE7E92AA265C15A8AB02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		62A161471E73BCD4003D28DC /* Rswift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Rswift.framework; path = Carthage/Build/iOS/Rswift.framework; sourceTree = "<group>"; };
-		62A161521E73C272003D28DC /* XLPagerTabStrip.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = XLPagerTabStrip.framework.dSYM; path = Carthage/Build/iOS/XLPagerTabStrip.framework.dSYM; sourceTree = "<group>"; };
 		62A1614B1E73C1CC003D28DC /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
 		62A1614C1E73C1CC003D28DC /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
 		62A161501E73C259003D28DC /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		62A161521E73C272003D28DC /* XLPagerTabStrip.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = XLPagerTabStrip.framework.dSYM; path = Carthage/Build/iOS/XLPagerTabStrip.framework.dSYM; sourceTree = "<group>"; };
+		62A161541E73C8FE003D28DC /* XLPagerTabStrip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XLPagerTabStrip.framework; path = Carthage/Build/iOS/XLPagerTabStrip.framework; sourceTree = "<group>"; };
 		62A161561E73C923003D28DC /* MirrorDiffKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MirrorDiffKit.framework; path = Carthage/Build/iOS/MirrorDiffKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,7 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				62A161531E73C272003D28DC /* XLPagerTabStrip.framework.dSYM in Frameworks */,
+				62A161551E73C8FE003D28DC /* XLPagerTabStrip.framework in Frameworks */,
 				62A161511E73C259003D28DC /* RxSwift.framework in Frameworks */,
 				62A161481E73BCD4003D28DC /* Rswift.framework in Frameworks */,
 			);
@@ -151,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				62A161561E73C923003D28DC /* MirrorDiffKit.framework */,
+				62A161541E73C8FE003D28DC /* XLPagerTabStrip.framework */,
 				62A161521E73C272003D28DC /* XLPagerTabStrip.framework.dSYM */,
 				62A161501E73C259003D28DC /* RxSwift.framework */,
 				62A1614B1E73C1CC003D28DC /* RxBlocking.framework */,
