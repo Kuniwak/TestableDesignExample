@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--User View Mvc Composer-->
+        <scene sceneID="vGe-ai-csu">
+            <objects>
+                <viewController storyboardIdentifier="UserViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="IUY-Zd-hhM" customClass="UserViewMvcComposer" customModule="TestableDesignExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="b20-Do-cac"/>
+                        <viewControllerLayoutGuide type="bottom" id="hSl-cc-7n5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sNS-cb-4UV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CyR-Ns-daY">
+                                <rect key="frame" x="67" y="213" width="240" height="240"/>
+                                <color key="backgroundColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="k49-TA-UYw"/>
+                                    <constraint firstAttribute="height" constant="240" id="lWn-1q-bZd"/>
+                                </constraints>
+                            </imageView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="IJb-CG-2Tr">
+                                <rect key="frame" x="0.0" y="0.5" width="375" height="2"/>
+                            </progressView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="CyR-Ns-daY" firstAttribute="centerY" secondItem="sNS-cb-4UV" secondAttribute="centerY" id="3qO-Xd-V9J"/>
+                            <constraint firstItem="IJb-CG-2Tr" firstAttribute="top" secondItem="sNS-cb-4UV" secondAttribute="top" id="C12-26-Qlg"/>
+                            <constraint firstItem="IJb-CG-2Tr" firstAttribute="leading" secondItem="sNS-cb-4UV" secondAttribute="leading" id="bym-2r-rOa"/>
+                            <constraint firstItem="CyR-Ns-daY" firstAttribute="centerX" secondItem="sNS-cb-4UV" secondAttribute="centerX" id="lWn-RF-DOX"/>
+                            <constraint firstAttribute="trailing" secondItem="IJb-CG-2Tr" secondAttribute="trailing" id="mw8-of-g0Y"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <connections>
+                        <outlet property="avatarImageView" destination="CyR-Ns-daY" id="MkG-ub-L19"/>
+                        <outlet property="progressView" destination="IJb-CG-2Tr" id="ver-jX-2dm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5qL-Hq-WU5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="237.59999999999999" y="79.610194902548727"/>
+        </scene>
+    </scenes>
+</document>

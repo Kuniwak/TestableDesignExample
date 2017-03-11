@@ -7,23 +7,61 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2475E04BEA86BF4B81C721C1 /* sample.png in Resources */ = {isa = PBXBuildFile; fileRef = 2475E5B4D098FE6945B3F148 /* sample.png */; };
+		2475E056E2F77CB619D48710 /* Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475EFCE02E1F83012FFB6B9 /* Async.swift */; };
+		2475E09386F9E236D7FB1E4D /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E1A4E2B89145A865C025 /* Navigator.swift */; };
+		2475E0F121C7BEB39E8AA1B1 /* GitHubApiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E6C1C527FC3159EC2443 /* GitHubApiTests.swift */; };
+		2475E17C0E6D441728D39ECA /* StargazerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E2D3B67D9970FD6B94BF /* StargazerRepository.swift */; };
 		2475E184C491ECB5D4520C4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2475EDAB59CE5A5E99A03E61 /* Assets.xcassets */; };
+		2475E1DF0A8DCE28B24B836E /* RootNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475EF5D1BAB7F11EA4C887D /* RootNavigator.swift */; };
+		2475E296D4A45CC8EF30F8E8 /* GitHubApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E9F9C6BB7D41F55161A7 /* GitHubApi.swift */; };
+		2475E35401AF1A0DDB75BCFB /* user.json in Resources */ = {isa = PBXBuildFile; fileRef = 2475E6654583784DB2FAC099 /* user.json */; };
+		2475E3552D75289CEAB3FFC5 /* ColorCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475EE88C83579435E9F67BA /* ColorCatalog.swift */; };
 		2475E3B1BAEAEE1D8FD372DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E00BE716C34F1495A4DE /* AppDelegate.swift */; };
-		2475E87E0BE147383E77BB45 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E06E3DEED46F70D0B0AF /* ViewController.swift */; };
+		2475E3BCC2478BB3A0749E63 /* RemoteImageSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475EEC502BB77FE25550A02 /* RemoteImageSourceTests.swift */; };
+		2475E427AF93298C1BA03EB1 /* StargazersControllerMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E892E746679C895D57CC /* StargazersControllerMediator.swift */; };
+		2475E4F5BAA39082F5129854 /* GitHubUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E96540D7FDFD907E38A1 /* GitHubUser.swift */; };
+		2475E6957442B2FBED994C12 /* JsonReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E91F41DBF2CD88E743E1 /* JsonReader.swift */; };
+		2475E6F3ABEECFAAAB1A3276 /* GitHubApiClientStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475EFF88B9DA4D1D39DA34F /* GitHubApiClientStub.swift */; };
+		2475E797D65B825304504F9B /* FatalErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475EB38628EF03DCAD17F84 /* FatalErrorViewController.swift */; };
+		2475E7FF946C7D0C0C5DA4F3 /* GitHubStargazerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E2744A8B3BA6C7038670 /* GitHubStargazerTests.swift */; };
+		2475E7FFDDDF1B3228C8C5F4 /* AnyError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475ED7EC7163C67838238DE /* AnyError.swift */; };
+		2475E81254A76DFDA50D9D83 /* StargazersViewMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E0C468760C2DAE1C894B /* StargazersViewMediator.swift */; };
+		2475E8169213EC2CBA0BA1B8 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E168B20E5C501400CF73 /* R.generated.swift */; };
+		2475E87E0BE147383E77BB45 /* BootstrapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E06E3DEED46F70D0B0AF /* BootstrapViewController.swift */; };
+		2475E8CF31411A9E5B989082 /* BootstrapResourceRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475EB7CC77D347383636CC3 /* BootstrapResourceRegistry.swift */; };
 		2475E9807E8143A4B3A751A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2475E33610A7BBD163657C40 /* LaunchScreen.storyboard */; };
-		2475E9CD508553656F8C7EB8 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2475ED0DAFBC67961CB850A6 /* Info.plist */; };
-		2475EB2389C2106DB225399E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2475E6904F2577E36489E9DF /* Info.plist */; };
+		2475E9C5968FE2FDD131A353 /* WebPageOpener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E9BB7111AF583D00867E /* WebPageOpener.swift */; };
+		2475EA2BD6E67ECEAE176195 /* RemoteImageSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E767B5CB5B7E0C0B0A6E /* RemoteImageSource.swift */; };
+		2475EAA68A0A8C4EEA9033E6 /* BootstrapResourceRegistryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E41296A84499F99EFF3E /* BootstrapResourceRegistryTests.swift */; };
+		2475EBC38C427D41A452E006 /* GitHubStargazer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475EA9AAFF3FDC512301D94 /* GitHubStargazer.swift */; };
 		2475EBDC07376B259484B0DF /* TestableDesignExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475EA41CB5BE4B1BDBEF9A2 /* TestableDesignExampleTests.swift */; };
+		2475EC1FA4298B6110D54435 /* BootstrapResourceRegistryStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E0EFA4FCA49925D8FB7E /* BootstrapResourceRegistryStub.swift */; };
+		2475EC3C9B33BD4F58D1884A /* StargazersModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E313956BC0F0BD128AE3 /* StargazersModelTests.swift */; };
+		2475EC476AFC0613FA9B6DE8 /* StargazerRepositoryStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E86509222DC42161FC4F /* StargazerRepositoryStub.swift */; };
 		2475ED052F280DF12FCC21BF /* TestableDesignExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E52EE895096067C3AB7E /* TestableDesignExampleUITests.swift */; };
-		2475EDD62D1578764CE3C53D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2475EE7E92AA265C15A8AB02 /* Info.plist */; };
+		2475ED5BF2B685F9B76415C5 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E26107E142D6CF5AAC43 /* NavigationController.swift */; };
+		2475EDC2FD509A53E43DEDA9 /* reposStargazers.json in Resources */ = {isa = PBXBuildFile; fileRef = 2475EFC5E1532F9230A85D82 /* reposStargazers.json */; };
 		2475EDED3B2768D715A948C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2475E2ED888DB0AA07F0DBDA /* Main.storyboard */; };
-		62A161481E73BCD4003D28DC /* Rswift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62A161471E73BCD4003D28DC /* Rswift.framework */; };
+		2475EF0E319C2B3CFC48C762 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E6CC4A27B8058F8CAE7F /* UserViewController.swift */; };
+		2475EF55555DE956BE7FBE56 /* octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2475EF639EA034BCC0C26512 /* octicons.ttf */; };
+		2475EF6D67DC1229AB744C71 /* StargazersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475EA8A1CD58D89A6FC8E3E /* StargazersModel.swift */; };
+		2475EF784651E52247E3C648 /* GitHubRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E9C17E4BBC136112F1C3 /* GitHubRepository.swift */; };
+		62266B811E7525EE00A55A01 /* UserScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62266B801E7525EE00A55A01 /* UserScreen.storyboard */; };
 		62A1614D1E73C1CC003D28DC /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62A1614B1E73C1CC003D28DC /* RxBlocking.framework */; };
 		62A1614E1E73C1CC003D28DC /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62A1614C1E73C1CC003D28DC /* RxTest.framework */; };
 		62A161511E73C259003D28DC /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62A161501E73C259003D28DC /* RxSwift.framework */; };
-		62A161551E73C8FE003D28DC /* XLPagerTabStrip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62A161541E73C8FE003D28DC /* XLPagerTabStrip.framework */; };
 		62A161571E73C923003D28DC /* MirrorDiffKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62A161561E73C923003D28DC /* MirrorDiffKit.framework */; };
 		62A1615A1E73C9ED003D28DC /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A161591E73C9ED003D28DC /* R.generated.swift */; };
+		62A161611E73E1CE003D28DC /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62A1615F1E73E1CE003D28DC /* PromiseKit.framework */; };
+		62A161621E73E1CE003D28DC /* Unbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62A161601E73E1CE003D28DC /* Unbox.framework */; };
+		62A161681E74164A003D28DC /* Rswift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62A161471E73BCD4003D28DC /* Rswift.framework */; };
+		62A1616C1E741761003D28DC /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62A1616B1E741761003D28DC /* Result.framework */; };
+		62A1616E1E743EF2003D28DC /* StargazerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62A1616D1E743EF2003D28DC /* StargazerCell.xib */; };
+		62A161701E7440FE003D28DC /* StargazerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A1616F1E7440FE003D28DC /* StargazerCell.swift */; };
+		62A161721E7447BC003D28DC /* StargazersScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62A161711E7447BC003D28DC /* StargazersScreen.storyboard */; };
+		62A161741E744812003D28DC /* StargazersMvcComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A161731E744812003D28DC /* StargazersMvcComposer.swift */; };
+		62A161781E746105003D28DC /* FatalErrorScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62A161771E746105003D28DC /* FatalErrorScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,18 +83,52 @@
 
 /* Begin PBXFileReference section */
 		2475E00BE716C34F1495A4DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2475E06E3DEED46F70D0B0AF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2475E06E3DEED46F70D0B0AF /* BootstrapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BootstrapViewController.swift; sourceTree = "<group>"; };
+		2475E0C468760C2DAE1C894B /* StargazersViewMediator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StargazersViewMediator.swift; sourceTree = "<group>"; };
+		2475E0EFA4FCA49925D8FB7E /* BootstrapResourceRegistryStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BootstrapResourceRegistryStub.swift; sourceTree = "<group>"; };
 		2475E15139800FB937012314 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2475E168B20E5C501400CF73 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		2475E1A4E2B89145A865C025 /* Navigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
+		2475E26107E142D6CF5AAC43 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		2475E2744A8B3BA6C7038670 /* GitHubStargazerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubStargazerTests.swift; sourceTree = "<group>"; };
+		2475E2D3B67D9970FD6B94BF /* StargazerRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StargazerRepository.swift; sourceTree = "<group>"; };
+		2475E313956BC0F0BD128AE3 /* StargazersModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StargazersModelTests.swift; sourceTree = "<group>"; };
+		2475E41296A84499F99EFF3E /* BootstrapResourceRegistryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BootstrapResourceRegistryTests.swift; sourceTree = "<group>"; };
 		2475E52EE895096067C3AB7E /* TestableDesignExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestableDesignExampleUITests.swift; sourceTree = "<group>"; };
+		2475E5B4D098FE6945B3F148 /* sample.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sample.png; sourceTree = "<group>"; };
+		2475E6654583784DB2FAC099 /* user.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = user.json; sourceTree = "<group>"; };
 		2475E6904F2577E36489E9DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		2475E6C1C527FC3159EC2443 /* GitHubApiTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubApiTests.swift; sourceTree = "<group>"; };
+		2475E6CC4A27B8058F8CAE7F /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		2475E767B5CB5B7E0C0B0A6E /* RemoteImageSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteImageSource.swift; sourceTree = "<group>"; };
+		2475E86509222DC42161FC4F /* StargazerRepositoryStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StargazerRepositoryStub.swift; sourceTree = "<group>"; };
+		2475E892E746679C895D57CC /* StargazersControllerMediator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StargazersControllerMediator.swift; sourceTree = "<group>"; };
+		2475E91F41DBF2CD88E743E1 /* JsonReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonReader.swift; sourceTree = "<group>"; };
+		2475E96540D7FDFD907E38A1 /* GitHubUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubUser.swift; sourceTree = "<group>"; };
+		2475E9BB7111AF583D00867E /* WebPageOpener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebPageOpener.swift; sourceTree = "<group>"; };
+		2475E9C17E4BBC136112F1C3 /* GitHubRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubRepository.swift; sourceTree = "<group>"; };
+		2475E9F9C6BB7D41F55161A7 /* GitHubApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubApi.swift; sourceTree = "<group>"; };
 		2475EA41CB5BE4B1BDBEF9A2 /* TestableDesignExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestableDesignExampleTests.swift; sourceTree = "<group>"; };
+		2475EA8A1CD58D89A6FC8E3E /* StargazersModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StargazersModel.swift; sourceTree = "<group>"; };
+		2475EA9AAFF3FDC512301D94 /* GitHubStargazer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubStargazer.swift; sourceTree = "<group>"; };
+		2475EB38628EF03DCAD17F84 /* FatalErrorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FatalErrorViewController.swift; sourceTree = "<group>"; };
+		2475EB7CC77D347383636CC3 /* BootstrapResourceRegistry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BootstrapResourceRegistry.swift; sourceTree = "<group>"; };
 		2475EC4757610B2EC6E83A3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2475EC9C2015DE0B2627E623 /* TestableDesignExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestableDesignExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2475ED0DAFBC67961CB850A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		2475ED57920DD74087264FC7 /* TestableDesignExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestableDesignExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2475ED639ECF55577329F9D9 /* TestableDesignExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestableDesignExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2475ED7EC7163C67838238DE /* AnyError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyError.swift; sourceTree = "<group>"; };
 		2475EDAB59CE5A5E99A03E61 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2475EE7E92AA265C15A8AB02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		2475EE88C83579435E9F67BA /* ColorCatalog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorCatalog.swift; sourceTree = "<group>"; };
+		2475EEC502BB77FE25550A02 /* RemoteImageSourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteImageSourceTests.swift; sourceTree = "<group>"; };
+		2475EF5D1BAB7F11EA4C887D /* RootNavigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootNavigator.swift; sourceTree = "<group>"; };
+		2475EF639EA034BCC0C26512 /* octicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file.ttf; name = octicons.ttf; path = Resources/octicons.ttf; sourceTree = "<group>"; };
+		2475EFC5E1532F9230A85D82 /* reposStargazers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = reposStargazers.json; sourceTree = "<group>"; };
+		2475EFCE02E1F83012FFB6B9 /* Async.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Async.swift; sourceTree = "<group>"; };
+		2475EFF88B9DA4D1D39DA34F /* GitHubApiClientStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubApiClientStub.swift; sourceTree = "<group>"; };
+		62266B801E7525EE00A55A01 /* UserScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserScreen.storyboard; sourceTree = "<group>"; };
 		62A161471E73BCD4003D28DC /* Rswift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Rswift.framework; path = Carthage/Build/iOS/Rswift.framework; sourceTree = "<group>"; };
 		62A1614B1E73C1CC003D28DC /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
 		62A1614C1E73C1CC003D28DC /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
@@ -65,6 +137,19 @@
 		62A161541E73C8FE003D28DC /* XLPagerTabStrip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XLPagerTabStrip.framework; path = Carthage/Build/iOS/XLPagerTabStrip.framework; sourceTree = "<group>"; };
 		62A161561E73C923003D28DC /* MirrorDiffKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MirrorDiffKit.framework; path = Carthage/Build/iOS/MirrorDiffKit.framework; sourceTree = "<group>"; };
 		62A161591E73C9ED003D28DC /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = R.generated.swift; path = Resources/R.generated.swift; sourceTree = "<group>"; };
+		62A1615B1E73E1B9003D28DC /* PromiseKit.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = PromiseKit.framework.dSYM; path = Carthage/Build/iOS/PromiseKit.framework.dSYM; sourceTree = "<group>"; };
+		62A1615C1E73E1B9003D28DC /* Unbox.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Unbox.framework.dSYM; path = Carthage/Build/iOS/Unbox.framework.dSYM; sourceTree = "<group>"; };
+		62A1615F1E73E1CE003D28DC /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromiseKit.framework; path = Carthage/Build/iOS/PromiseKit.framework; sourceTree = "<group>"; };
+		62A161601E73E1CE003D28DC /* Unbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Unbox.framework; path = Carthage/Build/iOS/Unbox.framework; sourceTree = "<group>"; };
+		62A161641E74129A003D28DC /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		62A161661E741634003D28DC /* KeychainAccess.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = KeychainAccess.framework.dSYM; path = Carthage/Build/iOS/KeychainAccess.framework.dSYM; sourceTree = "<group>"; };
+		62A161691E74165E003D28DC /* KeychainAccess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KeychainAccess.framework; path = Carthage/Build/iOS/KeychainAccess.framework; sourceTree = "<group>"; };
+		62A1616B1E741761003D28DC /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
+		62A1616D1E743EF2003D28DC /* StargazerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StargazerCell.xib; sourceTree = "<group>"; };
+		62A1616F1E7440FE003D28DC /* StargazerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StargazerCell.swift; sourceTree = "<group>"; };
+		62A161711E7447BC003D28DC /* StargazersScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = StargazersScreen.storyboard; sourceTree = "<group>"; };
+		62A161731E744812003D28DC /* StargazersMvcComposer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StargazersMvcComposer.swift; sourceTree = "<group>"; };
+		62A161771E746105003D28DC /* FatalErrorScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FatalErrorScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,9 +157,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				62A161551E73C8FE003D28DC /* XLPagerTabStrip.framework in Frameworks */,
+				62A1616C1E741761003D28DC /* Result.framework in Frameworks */,
+				62A161681E74164A003D28DC /* Rswift.framework in Frameworks */,
+				62A161611E73E1CE003D28DC /* PromiseKit.framework in Frameworks */,
+				62A161621E73E1CE003D28DC /* Unbox.framework in Frameworks */,
 				62A161511E73C259003D28DC /* RxSwift.framework in Frameworks */,
-				62A161481E73BCD4003D28DC /* Rswift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +185,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2475E03D39E9FDB714DC39B2 /* Stargazers */ = {
+			isa = PBXGroup;
+			children = (
+				2475EA8A1CD58D89A6FC8E3E /* StargazersModel.swift */,
+				2475E2D3B67D9970FD6B94BF /* StargazerRepository.swift */,
+				62A1616D1E743EF2003D28DC /* StargazerCell.xib */,
+				62A1616F1E7440FE003D28DC /* StargazerCell.swift */,
+				62A161711E7447BC003D28DC /* StargazersScreen.storyboard */,
+				62A161731E744812003D28DC /* StargazersMvcComposer.swift */,
+				2475E0C468760C2DAE1C894B /* StargazersViewMediator.swift */,
+				2475E892E746679C895D57CC /* StargazersControllerMediator.swift */,
+			);
+			path = Stargazers;
+			sourceTree = "<group>";
+		};
+		2475E08177E36931D0E01965 /* GitHub */ = {
+			isa = PBXGroup;
+			children = (
+				2475E6C1C527FC3159EC2443 /* GitHubApiTests.swift */,
+				2475EFF88B9DA4D1D39DA34F /* GitHubApiClientStub.swift */,
+				2475E2744A8B3BA6C7038670 /* GitHubStargazerTests.swift */,
+			);
+			path = GitHub;
+			sourceTree = "<group>";
+		};
+		2475E0EA7918E95C3E2063DC /* MvcArchitecture */ = {
+			isa = PBXGroup;
+			children = (
+				2475E313956BC0F0BD128AE3 /* StargazersModelTests.swift */,
+				2475E86509222DC42161FC4F /* StargazerRepositoryStub.swift */,
+			);
+			path = MvcArchitecture;
+			sourceTree = "<group>";
+		};
 		2475E2F3D72A9EDDB3A5123C /* TestableDesignExample */ = {
 			isa = PBXGroup;
 			children = (
@@ -107,9 +228,46 @@
 				2475E33610A7BBD163657C40 /* LaunchScreen.storyboard */,
 				2475E00BE716C34F1495A4DE /* AppDelegate.swift */,
 				2475E2ED888DB0AA07F0DBDA /* Main.storyboard */,
-				2475E06E3DEED46F70D0B0AF /* ViewController.swift */,
+				2475E06E3DEED46F70D0B0AF /* BootstrapViewController.swift */,
+				2475E54EC10A2464951D9E0E /* GitHub */,
+				2475E5EC0F374F1A0A942DF7 /* MvcArchitecture */,
+				2475E5C8A7D05E3006441DDA /* Navigator */,
+				2475E26107E142D6CF5AAC43 /* NavigationController.swift */,
+				2475EE88C83579435E9F67BA /* ColorCatalog.swift */,
+				2475E767B5CB5B7E0C0B0A6E /* RemoteImageSource.swift */,
 			);
 			path = TestableDesignExample;
+			sourceTree = "<group>";
+		};
+		2475E54EC10A2464951D9E0E /* GitHub */ = {
+			isa = PBXGroup;
+			children = (
+				2475E9F9C6BB7D41F55161A7 /* GitHubApi.swift */,
+				2475E9C17E4BBC136112F1C3 /* GitHubRepository.swift */,
+				2475EA9AAFF3FDC512301D94 /* GitHubStargazer.swift */,
+				2475E96540D7FDFD907E38A1 /* GitHubUser.swift */,
+			);
+			path = GitHub;
+			sourceTree = "<group>";
+		};
+		2475E5C8A7D05E3006441DDA /* Navigator */ = {
+			isa = PBXGroup;
+			children = (
+				2475E1A4E2B89145A865C025 /* Navigator.swift */,
+				2475EF5D1BAB7F11EA4C887D /* RootNavigator.swift */,
+				2475E9BB7111AF583D00867E /* WebPageOpener.swift */,
+			);
+			path = Navigator;
+			sourceTree = "<group>";
+		};
+		2475E5EC0F374F1A0A942DF7 /* MvcArchitecture */ = {
+			isa = PBXGroup;
+			children = (
+				2475E03D39E9FDB714DC39B2 /* Stargazers */,
+				2475EAB52F50FA3341C7D551 /* FatalError */,
+				2475EA25575CDC3E6312B17A /* User */,
+			);
+			path = MvcArchitecture;
 			sourceTree = "<group>";
 		};
 		2475E6024DA77F14399A3109 = {
@@ -133,13 +291,67 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		2475E78E8A799A5629169418 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				2475E5B4D098FE6945B3F148 /* sample.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 		2475E927630C40FFEC2AE23B /* TestableDesignExampleTests */ = {
 			isa = PBXGroup;
 			children = (
 				2475E6904F2577E36489E9DF /* Info.plist */,
 				2475EA41CB5BE4B1BDBEF9A2 /* TestableDesignExampleTests.swift */,
+				2475ED210F997869A67B226E /* Resources */,
+				2475E08177E36931D0E01965 /* GitHub */,
+				2475EFCE02E1F83012FFB6B9 /* Async.swift */,
+				2475ED7EC7163C67838238DE /* AnyError.swift */,
+				2475E0EA7918E95C3E2063DC /* MvcArchitecture */,
+				2475EEC502BB77FE25550A02 /* RemoteImageSourceTests.swift */,
 			);
 			path = TestableDesignExampleTests;
+			sourceTree = "<group>";
+		};
+		2475EA25575CDC3E6312B17A /* User */ = {
+			isa = PBXGroup;
+			children = (
+				2475E6CC4A27B8058F8CAE7F /* UserViewController.swift */,
+				62266B801E7525EE00A55A01 /* UserScreen.storyboard */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		2475EA63CB4B9D46A794B01A /* Json */ = {
+			isa = PBXGroup;
+			children = (
+				2475E6654583784DB2FAC099 /* user.json */,
+				2475EFC5E1532F9230A85D82 /* reposStargazers.json */,
+			);
+			path = Json;
+			sourceTree = "<group>";
+		};
+		2475EAB52F50FA3341C7D551 /* FatalError */ = {
+			isa = PBXGroup;
+			children = (
+				2475EB38628EF03DCAD17F84 /* FatalErrorViewController.swift */,
+				62A161771E746105003D28DC /* FatalErrorScreen.storyboard */,
+			);
+			path = FatalError;
+			sourceTree = "<group>";
+		};
+		2475ED210F997869A67B226E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2475E0EFA4FCA49925D8FB7E /* BootstrapResourceRegistryStub.swift */,
+				2475E41296A84499F99EFF3E /* BootstrapResourceRegistryTests.swift */,
+				2475EA63CB4B9D46A794B01A /* Json */,
+				2475E91F41DBF2CD88E743E1 /* JsonReader.swift */,
+				2475E168B20E5C501400CF73 /* R.generated.swift */,
+				2475E78E8A799A5629169418 /* Images */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		2475EE09DDDD552BE88E9783 /* TestableDesignExampleUITests */ = {
@@ -154,6 +366,14 @@
 		62A161461E73BCD4003D28DC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				62A1616B1E741761003D28DC /* Result.framework */,
+				62A161691E74165E003D28DC /* KeychainAccess.framework */,
+				62A161661E741634003D28DC /* KeychainAccess.framework.dSYM */,
+				62A161641E74129A003D28DC /* Security.framework */,
+				62A1615F1E73E1CE003D28DC /* PromiseKit.framework */,
+				62A161601E73E1CE003D28DC /* Unbox.framework */,
+				62A1615B1E73E1B9003D28DC /* PromiseKit.framework.dSYM */,
+				62A1615C1E73E1B9003D28DC /* Unbox.framework.dSYM */,
 				62A161561E73C923003D28DC /* MirrorDiffKit.framework */,
 				62A161541E73C8FE003D28DC /* XLPagerTabStrip.framework */,
 				62A161521E73C272003D28DC /* XLPagerTabStrip.framework.dSYM */,
@@ -169,6 +389,8 @@
 			isa = PBXGroup;
 			children = (
 				62A161591E73C9ED003D28DC /* R.generated.swift */,
+				2475EB7CC77D347383636CC3 /* BootstrapResourceRegistry.swift */,
+				2475EF639EA034BCC0C26512 /* octicons.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -180,6 +402,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2475E16C50E63B0E2DE88092 /* Build configuration list for PBXNativeTarget "TestableDesignExampleTests" */;
 			buildPhases = (
+				62A161631E7408A4003D28DC /* ShellScript */,
 				2475E4A0A6547D8CB0D6FC25 /* Sources */,
 				2475E64DAD11CBB0BA0D46A3 /* Frameworks */,
 				2475EF593B11C9178F25371E /* Resources */,
@@ -217,11 +440,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2475E8BF3640622A9CBA90DF /* Build configuration list for PBXNativeTarget "TestableDesignExample" */;
 			buildPhases = (
+				62A1614A1E73BDC0003D28DC /* ShellScript */,
 				2475E3C4099342668824F94A /* Sources */,
 				2475E453DC8D6CC645172E24 /* Frameworks */,
 				2475E69BA6DA525240196C0B /* Resources */,
 				62A161491E73BD22003D28DC /* ShellScript */,
-				62A1614A1E73BDC0003D28DC /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -238,6 +461,7 @@
 		2475E53F7AA653832B1EFE63 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = Kuniwak;
 			};
 			buildConfigurationList = 2475E125D452A919E93092F4 /* Build configuration list for PBXProject "TestableDesignExample" */;
@@ -264,10 +488,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2475EDD62D1578764CE3C53D /* Info.plist in Resources */,
 				2475E184C491ECB5D4520C4D /* Assets.xcassets in Resources */,
+				62A161721E7447BC003D28DC /* StargazersScreen.storyboard in Resources */,
 				2475E9807E8143A4B3A751A5 /* LaunchScreen.storyboard in Resources */,
+				62266B811E7525EE00A55A01 /* UserScreen.storyboard in Resources */,
+				62A1616E1E743EF2003D28DC /* StargazerCell.xib in Resources */,
 				2475EDED3B2768D715A948C3 /* Main.storyboard in Resources */,
+				62A161781E746105003D28DC /* FatalErrorScreen.storyboard in Resources */,
+				2475EF55555DE956BE7FBE56 /* octicons.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,7 +503,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2475E9CD508553656F8C7EB8 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,7 +510,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2475EB2389C2106DB225399E /* Info.plist in Resources */,
+				2475E35401AF1A0DDB75BCFB /* user.json in Resources */,
+				2475EDC2FD509A53E43DEDA9 /* reposStargazers.json in Resources */,
+				2475E04BEA86BF4B81C721C1 /* sample.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,7 +526,9 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Rswift.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/XLPagerTabStrip.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Unbox.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/PromiseKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
 			);
 			outputPaths = (
@@ -335,6 +566,19 @@
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks";
 		};
+		62A161631E7408A4003D28DC /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$SRCROOT/libexec/rswift\" \"$SRCROOT/TestableDesignExampleTests/Resources/\"";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -351,8 +595,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				2475E3B1BAEAEE1D8FD372DC /* AppDelegate.swift in Sources */,
-				2475E87E0BE147383E77BB45 /* ViewController.swift in Sources */,
+				2475E87E0BE147383E77BB45 /* BootstrapViewController.swift in Sources */,
 				62A1615A1E73C9ED003D28DC /* R.generated.swift in Sources */,
+				62A161741E744812003D28DC /* StargazersMvcComposer.swift in Sources */,
+				2475E8CF31411A9E5B989082 /* BootstrapResourceRegistry.swift in Sources */,
+				2475E296D4A45CC8EF30F8E8 /* GitHubApi.swift in Sources */,
+				2475EF784651E52247E3C648 /* GitHubRepository.swift in Sources */,
+				2475EBC38C427D41A452E006 /* GitHubStargazer.swift in Sources */,
+				62A161701E7440FE003D28DC /* StargazerCell.swift in Sources */,
+				2475EF6D67DC1229AB744C71 /* StargazersModel.swift in Sources */,
+				2475E17C0E6D441728D39ECA /* StargazerRepository.swift in Sources */,
+				2475E81254A76DFDA50D9D83 /* StargazersViewMediator.swift in Sources */,
+				2475E427AF93298C1BA03EB1 /* StargazersControllerMediator.swift in Sources */,
+				2475E09386F9E236D7FB1E4D /* Navigator.swift in Sources */,
+				2475E1DF0A8DCE28B24B836E /* RootNavigator.swift in Sources */,
+				2475E797D65B825304504F9B /* FatalErrorViewController.swift in Sources */,
+				2475E9C5968FE2FDD131A353 /* WebPageOpener.swift in Sources */,
+				2475E4F5BAA39082F5129854 /* GitHubUser.swift in Sources */,
+				2475ED5BF2B685F9B76415C5 /* NavigationController.swift in Sources */,
+				2475E3552D75289CEAB3FFC5 /* ColorCatalog.swift in Sources */,
+				2475EF0E319C2B3CFC48C762 /* UserViewController.swift in Sources */,
+				2475EA2BD6E67ECEAE176195 /* RemoteImageSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,6 +624,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				2475EBDC07376B259484B0DF /* TestableDesignExampleTests.swift in Sources */,
+				2475EAA68A0A8C4EEA9033E6 /* BootstrapResourceRegistryTests.swift in Sources */,
+				2475E056E2F77CB619D48710 /* Async.swift in Sources */,
+				2475E0F121C7BEB39E8AA1B1 /* GitHubApiTests.swift in Sources */,
+				2475EC1FA4298B6110D54435 /* BootstrapResourceRegistryStub.swift in Sources */,
+				2475E6F3ABEECFAAAB1A3276 /* GitHubApiClientStub.swift in Sources */,
+				2475E6957442B2FBED994C12 /* JsonReader.swift in Sources */,
+				2475E8169213EC2CBA0BA1B8 /* R.generated.swift in Sources */,
+				2475E7FF946C7D0C0C5DA4F3 /* GitHubStargazerTests.swift in Sources */,
+				2475E7FFDDDF1B3228C8C5F4 /* AnyError.swift in Sources */,
+				2475EC3C9B33BD4F58D1884A /* StargazersModelTests.swift in Sources */,
+				2475EC476AFC0613FA9B6DE8 /* StargazerRepositoryStub.swift in Sources */,
+				2475E3BCC2478BB3A0749E63 /* RemoteImageSourceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

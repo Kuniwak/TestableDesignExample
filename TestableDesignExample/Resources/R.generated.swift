@@ -13,6 +13,7 @@ struct R: Rswift.Validatable {
   fileprivate static let hostingBundle = Bundle(for: R.Class.self)
   
   static func validate() throws {
+    try font.validate()
     try intern.validate()
   }
   
@@ -23,20 +24,32 @@ struct R: Rswift.Validatable {
   
   /// This `R.file` struct is generated, and contains static references to 1 files.
   struct file {
-    /// Resource file `Info.plist`.
-    static let infoPlist = Rswift.FileResource(bundle: R.hostingBundle, name: "Info", pathExtension: "plist")
+    /// Resource file `octicons.ttf`.
+    static let octiconsTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "octicons", pathExtension: "ttf")
     
-    /// `bundle.url(forResource: "Info", withExtension: "plist")`
-    static func infoPlist(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.infoPlist
+    /// `bundle.url(forResource: "octicons", withExtension: "ttf")`
+    static func octiconsTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.octiconsTtf
       return fileResource.bundle.url(forResource: fileResource)
     }
     
     fileprivate init() {}
   }
   
-  /// This `R.font` struct is generated, and contains static references to 0 fonts.
-  struct font {
+  /// This `R.font` struct is generated, and contains static references to 1 fonts.
+  struct font: Rswift.Validatable {
+    /// Font `octicons`.
+    static let octicons = Rswift.FontResource(fontName: "octicons")
+    
+    /// `UIFont(name: "octicons", size: ...)`
+    static func octicons(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: octicons, size: size)
+    }
+    
+    static func validate() throws {
+      if R.font.octicons(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'octicons' could not be loaded, is 'octicons.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+    }
+    
     fileprivate init() {}
   }
   
@@ -45,13 +58,24 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.nib` struct is generated, and contains static references to 0 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 1 nibs.
   struct nib {
+    /// Nib `StargazerCell`.
+    static let stargazerCell = _R.nib._StargazerCell()
+    
+    /// `UINib(name: "StargazerCell", in: bundle)`
+    static func stargazerCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.stargazerCell)
+    }
+    
     fileprivate init() {}
   }
   
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 0 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 1 reuse identifiers.
   struct reuseIdentifier {
+    /// Reuse identifier `StargazerCell`.
+    static let stargazerCell: Rswift.ReuseIdentifier<StargazerCell> = Rswift.ReuseIdentifier(identifier: "StargazerCell")
+    
     fileprivate init() {}
   }
   
@@ -60,12 +84,23 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.storyboard` struct is generated, and contains static references to 2 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 5 storyboards.
   struct storyboard {
+    /// Storyboard `FatalErrorScreen`.
+    static let fatalErrorScreen = _R.storyboard.fatalErrorScreen()
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
     /// Storyboard `Main`.
     static let main = _R.storyboard.main()
+    /// Storyboard `StargazersScreen`.
+    static let stargazersScreen = _R.storyboard.stargazersScreen()
+    /// Storyboard `UserScreen`.
+    static let userScreen = _R.storyboard.userScreen()
+    
+    /// `UIStoryboard(name: "FatalErrorScreen", bundle: ...)`
+    static func fatalErrorScreen(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.fatalErrorScreen)
+    }
     
     /// `UIStoryboard(name: "LaunchScreen", bundle: ...)`
     static func launchScreen(_: Void = ()) -> UIKit.UIStoryboard {
@@ -75,6 +110,16 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "Main", bundle: ...)`
     static func main(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.main)
+    }
+    
+    /// `UIStoryboard(name: "StargazersScreen", bundle: ...)`
+    static func stargazersScreen(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.stargazersScreen)
+    }
+    
+    /// `UIStoryboard(name: "UserScreen", bundle: ...)`
+    static func userScreen(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.userScreen)
     }
     
     fileprivate init() {}
@@ -87,7 +132,7 @@ struct R: Rswift.Validatable {
   
   fileprivate struct intern: Rswift.Validatable {
     fileprivate static func validate() throws {
-      // There are no resources to validate
+      try _R.validate()
     }
     
     fileprivate init() {}
@@ -98,12 +143,53 @@ struct R: Rswift.Validatable {
   fileprivate init() {}
 }
 
-struct _R {
+struct _R: Rswift.Validatable {
+  static func validate() throws {
+    try storyboard.validate()
+  }
+  
   struct nib {
+    struct _StargazerCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
+      typealias ReusableType = StargazerCell
+      
+      let bundle = R.hostingBundle
+      let identifier = "StargazerCell"
+      let name = "StargazerCell"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> StargazerCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? StargazerCell
+      }
+      
+      fileprivate init() {}
+    }
+    
     fileprivate init() {}
   }
   
-  struct storyboard {
+  struct storyboard: Rswift.Validatable {
+    static func validate() throws {
+      try main.validate()
+      try fatalErrorScreen.validate()
+      try stargazersScreen.validate()
+      try userScreen.validate()
+    }
+    
+    struct fatalErrorScreen: Rswift.StoryboardResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let fatalErrorViewController = StoryboardViewControllerResource<FatalErrorViewController>(identifier: "FatalErrorViewController")
+      let name = "FatalErrorScreen"
+      
+      func fatalErrorViewController(_: Void = ()) -> FatalErrorViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: fatalErrorViewController)
+      }
+      
+      static func validate() throws {
+        if _R.storyboard.fatalErrorScreen().fatalErrorViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'fatalErrorViewController' could not be loaded from storyboard 'FatalErrorScreen' as 'FatalErrorViewController'.") }
+      }
+      
+      fileprivate init() {}
+    }
+    
     struct launchScreen: Rswift.StoryboardResourceWithInitialControllerType {
       typealias InitialController = UIKit.UIViewController
       
@@ -113,11 +199,52 @@ struct _R {
       fileprivate init() {}
     }
     
-    struct main: Rswift.StoryboardResourceWithInitialControllerType {
-      typealias InitialController = ViewController
+    struct main: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = TestableDesignExample.BootstrapViewController
       
+      let bootstrapViewController = StoryboardViewControllerResource<TestableDesignExample.BootstrapViewController>(identifier: "BootstrapViewController")
       let bundle = R.hostingBundle
       let name = "Main"
+      
+      func bootstrapViewController(_: Void = ()) -> TestableDesignExample.BootstrapViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: bootstrapViewController)
+      }
+      
+      static func validate() throws {
+        if _R.storyboard.main().bootstrapViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'bootstrapViewController' could not be loaded from storyboard 'Main' as 'TestableDesignExample.BootstrapViewController'.") }
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct stargazersScreen: Rswift.StoryboardResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "StargazersScreen"
+      let stargazerViewController = StoryboardViewControllerResource<StargazersMvcComposer>(identifier: "StargazerViewController")
+      
+      func stargazerViewController(_: Void = ()) -> StargazersMvcComposer? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: stargazerViewController)
+      }
+      
+      static func validate() throws {
+        if _R.storyboard.stargazersScreen().stargazerViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'stargazerViewController' could not be loaded from storyboard 'StargazersScreen' as 'StargazersMvcComposer'.") }
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct userScreen: Rswift.StoryboardResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "UserScreen"
+      let userViewController = StoryboardViewControllerResource<UserViewMvcComposer>(identifier: "UserViewController")
+      
+      func userViewController(_: Void = ()) -> UserViewMvcComposer? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: userViewController)
+      }
+      
+      static func validate() throws {
+        if _R.storyboard.userScreen().userViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'userViewController' could not be loaded from storyboard 'UserScreen' as 'UserViewMvcComposer'.") }
+      }
       
       fileprivate init() {}
     }

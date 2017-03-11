@@ -7,6 +7,7 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>FontAwesome.otf</string>
+		<string>octicons.ttf</string>
 	</array>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>

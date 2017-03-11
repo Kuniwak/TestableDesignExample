@@ -1,4 +1,6 @@
 github "mac-cain13/R.swift.Library" "594965c3c1d42d9a4390eec3ecf159ab8210cb78"
-github "xmartlabs/XLPagerTabStrip" ~> 7.0.0
 github "ReactiveX/RxSwift" ~> 3.0
 github "Kuniwak/MirrorDiffKit" ~> 0.0.3
+github "JohnSundell/Unbox" ~> 2.4.0
+github "mxcl/PromiseKit" ~> 4.1.8
+github "antitypical/Result" ~> 3.2.1

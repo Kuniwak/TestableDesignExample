@@ -9,3 +9,15 @@
 	url = https://github.com/ReactiveX/RxSwift.git
 [submodule "Carthage/Checkouts/MirrorDiffKit"]
 	url = https://github.com/Kuniwak/MirrorDiffKit.git
+[submodule "Carthage/Checkouts/Unbox"]
+	path = Carthage/Checkouts/Unbox
+	url = https://github.com/JohnSundell/Unbox.git
+[submodule "Carthage/Checkouts/PromiseKit"]
+	path = Carthage/Checkouts/PromiseKit
+	url = https://github.com/mxcl/PromiseKit.git
+[submodule "Carthage/Checkouts/KeychainAccess"]
+	path = Carthage/Checkouts/KeychainAccess
+	url = https://github.com/kishikawakatsumi/KeychainAccess.git
+[submodule "Carthage/Checkouts/Result"]
+	path = Carthage/Checkouts/Result
+	url = https://github.com/antitypical/Result.git
