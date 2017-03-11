@@ -18,6 +18,7 @@
 		2475EDD62D1578764CE3C53D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2475EE7E92AA265C15A8AB02 /* Info.plist */; };
 		2475EDED3B2768D715A948C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2475E2ED888DB0AA07F0DBDA /* Main.storyboard */; };
 		62A161481E73BCD4003D28DC /* Rswift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62A161471E73BCD4003D28DC /* Rswift.framework */; };
+		62A161531E73C272003D28DC /* XLPagerTabStrip.framework.dSYM in Frameworks */ = {isa = PBXBuildFile; fileRef = 62A161521E73C272003D28DC /* XLPagerTabStrip.framework.dSYM */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		2475EDAB59CE5A5E99A03E61 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2475EE7E92AA265C15A8AB02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		62A161471E73BCD4003D28DC /* Rswift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Rswift.framework; path = Carthage/Build/iOS/Rswift.framework; sourceTree = "<group>"; };
+		62A161521E73C272003D28DC /* XLPagerTabStrip.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = XLPagerTabStrip.framework.dSYM; path = Carthage/Build/iOS/XLPagerTabStrip.framework.dSYM; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62A161531E73C272003D28DC /* XLPagerTabStrip.framework.dSYM in Frameworks */,
 				62A161481E73BCD4003D28DC /* Rswift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -135,6 +138,7 @@
 		62A161461E73BCD4003D28DC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				62A161521E73C272003D28DC /* XLPagerTabStrip.framework.dSYM */,
 				62A161471E73BCD4003D28DC /* Rswift.framework */,
 			);
 			name = Frameworks;
@@ -263,6 +267,7 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Rswift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/XLPagerTabStrip.framework",
 			);
 			outputPaths = (
 			);

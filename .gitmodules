@@ -1,3 +1,6 @@
 [submodule "Carthage/Checkouts/R.swift.Library"]
 	path = Carthage/Checkouts/R.swift.Library
 	url = https://github.com/mac-cain13/R.swift.Library.git
+[submodule "Carthage/Checkouts/XLPagerTabStrip"]
+	path = Carthage/Checkouts/XLPagerTabStrip
+	url = https://github.com/xmartlabs/XLPagerTabStrip.git
