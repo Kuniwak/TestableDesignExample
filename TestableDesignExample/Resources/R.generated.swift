@@ -236,14 +236,14 @@ struct _R: Rswift.Validatable {
     struct userScreen: Rswift.StoryboardResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
       let name = "UserScreen"
-      let userViewController = StoryboardViewControllerResource<UserViewMvcComposer>(identifier: "UserViewController")
+      let userViewController = StoryboardViewControllerResource<UserMvcComposer>(identifier: "UserViewController")
       
-      func userViewController(_: Void = ()) -> UserViewMvcComposer? {
+      func userViewController(_: Void = ()) -> UserMvcComposer? {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: userViewController)
       }
       
       static func validate() throws {
-        if _R.storyboard.userScreen().userViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'userViewController' could not be loaded from storyboard 'UserScreen' as 'UserViewMvcComposer'.") }
+        if _R.storyboard.userScreen().userViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'userViewController' could not be loaded from storyboard 'UserScreen' as 'UserMvcComposer'.") }
       }
       
       fileprivate init() {}

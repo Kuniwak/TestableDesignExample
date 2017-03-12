@@ -56,7 +56,7 @@ extension StargazerControllerMediator: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let stargazer = self.viewMediator.visibleStargazers[indexPath.row]
-        let stargazerViewController = UserViewMvcComposer.create(
+        let stargazerViewController = UserMvcComposer.create(
             for: stargazer
         )
 

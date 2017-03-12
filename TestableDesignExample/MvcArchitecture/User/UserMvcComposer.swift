@@ -3,11 +3,11 @@ import RxSwift
 
 
 
-protocol UserViewMvcComposerContract {}
+protocol UserMvcComposerContract {}
 
 
 
-class UserViewMvcComposer: UIViewController, UserViewMvcComposerContract {
+class UserMvcComposer: UIViewController, UserMvcComposerContract {
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var progressView: UIProgressView!
 
@@ -17,7 +17,7 @@ class UserViewMvcComposer: UIViewController, UserViewMvcComposerContract {
     private let disposeBag = RxSwift.DisposeBag()
 
 
-    static func create(for user: GitHubUser) -> UserViewMvcComposer? {
+    static func create(for user: GitHubUser) -> UserMvcComposer? {
         guard let viewController = R.storyboard.userScreen.userViewController() else {
             return nil
         }

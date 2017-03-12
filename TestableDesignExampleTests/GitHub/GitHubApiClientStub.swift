@@ -23,4 +23,6 @@ struct GitHubApiClientStub: GitHubApiClientContract {
             }
     }
 
+
+    static let anyPending = GitHubApiClientStub(firstResult: Promise<Any>.pending().promise)
 }

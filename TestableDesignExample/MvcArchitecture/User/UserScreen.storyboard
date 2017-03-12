@@ -12,7 +12,7 @@
         <!--User View Mvc Composer-->
         <scene sceneID="vGe-ai-csu">
             <objects>
-                <viewController storyboardIdentifier="UserViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="IUY-Zd-hhM" customClass="UserViewMvcComposer" customModule="TestableDesignExample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UserViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="IUY-Zd-hhM" customClass="UserMvcComposer" customModule="TestableDesignExample" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="b20-Do-cac"/>
                         <viewControllerLayoutGuide type="bottom" id="hSl-cc-7n5"/>
