@@ -8,49 +8,49 @@
 
 /* Begin PBXBuildFile section */
 		2475E04BEA86BF4B81C721C1 /* sample.png in Resources */ = {isa = PBXBuildFile; fileRef = 2475E5B4D098FE6945B3F148 /* sample.png */; };
-		2475E056E2F77CB619D48710 /* Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475EFCE02E1F83012FFB6B9 /* Async.swift */; };
+		2475E04ECEFF6F9158BDD660 /* BootstrapResourceRegistryStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475EAD230AA1FE8964D341E /* BootstrapResourceRegistryStub.swift */; };
 		2475E09386F9E236D7FB1E4D /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E1A4E2B89145A865C025 /* Navigator.swift */; };
-		2475E0F121C7BEB39E8AA1B1 /* GitHubApiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E6C1C527FC3159EC2443 /* GitHubApiTests.swift */; };
+		2475E0A999969C00C800FF33 /* GitHubStargazerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E17054E55DC60FBB0869 /* GitHubStargazerTests.swift */; };
 		2475E17C0E6D441728D39ECA /* StargazerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E2D3B67D9970FD6B94BF /* StargazerRepository.swift */; };
 		2475E184C491ECB5D4520C4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2475EDAB59CE5A5E99A03E61 /* Assets.xcassets */; };
 		2475E1DF0A8DCE28B24B836E /* RootNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475EF5D1BAB7F11EA4C887D /* RootNavigator.swift */; };
+		2475E21443951FE6C9E9CC0B /* StargazersModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475EC7516DF00CF3095186A /* StargazersModelTests.swift */; };
 		2475E296D4A45CC8EF30F8E8 /* GitHubApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E9F9C6BB7D41F55161A7 /* GitHubApi.swift */; };
+		2475E2AC84566117FC687FC8 /* JsonReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E3FCF9976BD662C10237 /* JsonReader.swift */; };
 		2475E35401AF1A0DDB75BCFB /* user.json in Resources */ = {isa = PBXBuildFile; fileRef = 2475E6654583784DB2FAC099 /* user.json */; };
 		2475E3552D75289CEAB3FFC5 /* ColorCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475EE88C83579435E9F67BA /* ColorCatalog.swift */; };
-		2475E3862CCCF53C379E432D /* NavigatorStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475EA5C7C2367791C3E9D06 /* NavigatorStub.swift */; };
 		2475E3B1BAEAEE1D8FD372DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E00BE716C34F1495A4DE /* AppDelegate.swift */; };
-		2475E3BCC2478BB3A0749E63 /* RemoteImageSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475EEC502BB77FE25550A02 /* RemoteImageSourceTests.swift */; };
+		2475E40D232C0867EE3CBDD0 /* NavigatorStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475EF9C786B34F42182126A /* NavigatorStub.swift */; };
 		2475E427AF93298C1BA03EB1 /* StargazersControllerMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E892E746679C895D57CC /* StargazersControllerMediator.swift */; };
 		2475E4F5BAA39082F5129854 /* GitHubUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E96540D7FDFD907E38A1 /* GitHubUser.swift */; };
-		2475E6957442B2FBED994C12 /* JsonReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E91F41DBF2CD88E743E1 /* JsonReader.swift */; };
-		2475E6F3ABEECFAAAB1A3276 /* GitHubApiClientStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475EFF88B9DA4D1D39DA34F /* GitHubApiClientStub.swift */; };
 		2475E797D65B825304504F9B /* FatalErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475EB38628EF03DCAD17F84 /* FatalErrorViewController.swift */; };
-		2475E7FF946C7D0C0C5DA4F3 /* GitHubStargazerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E2744A8B3BA6C7038670 /* GitHubStargazerTests.swift */; };
-		2475E7FFDDDF1B3228C8C5F4 /* AnyError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475ED7EC7163C67838238DE /* AnyError.swift */; };
+		2475E7A6273DD9CBF4ABA5BA /* AnyError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E8757F392A3269C299DC /* AnyError.swift */; };
 		2475E81254A76DFDA50D9D83 /* StargazersViewMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E0C468760C2DAE1C894B /* StargazersViewMediator.swift */; };
 		2475E8169213EC2CBA0BA1B8 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E168B20E5C501400CF73 /* R.generated.swift */; };
 		2475E87E0BE147383E77BB45 /* BootstrapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E06E3DEED46F70D0B0AF /* BootstrapViewController.swift */; };
 		2475E8CF31411A9E5B989082 /* BootstrapResourceRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475EB7CC77D347383636CC3 /* BootstrapResourceRegistry.swift */; };
-		2475E8FCEBA8312E57412E7D /* TestNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475EB8B3FD073220585BEBD /* TestNavigator.swift */; };
+		2475E8D6EE86B076D4CB3361 /* RemoteImageSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E2939E6563048AA378B3 /* RemoteImageSourceTests.swift */; };
 		2475E9807E8143A4B3A751A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2475E33610A7BBD163657C40 /* LaunchScreen.storyboard */; };
 		2475E9C5968FE2FDD131A353 /* WebPageOpener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E9BB7111AF583D00867E /* WebPageOpener.swift */; };
 		2475EA2BD6E67ECEAE176195 /* RemoteImageSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E767B5CB5B7E0C0B0A6E /* RemoteImageSource.swift */; };
-		2475EAA68A0A8C4EEA9033E6 /* BootstrapResourceRegistryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E41296A84499F99EFF3E /* BootstrapResourceRegistryTests.swift */; };
-		2475EB8BDD66551F32E61F44 /* UserMvcComposerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E1E6057AAFC73F5C6E15 /* UserMvcComposerTests.swift */; };
+		2475EA50AA74C6A278625C0F /* UserMvcComposerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475ED30A257D0B8186270A1 /* UserMvcComposerTests.swift */; };
+		2475EB37E60B9FA89BC83FF4 /* GitHubApiClientStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475EAAA03A6CC33D5660297 /* GitHubApiClientStub.swift */; };
 		2475EBC38C427D41A452E006 /* GitHubStargazer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475EA9AAFF3FDC512301D94 /* GitHubStargazer.swift */; };
-		2475EBDC07376B259484B0DF /* TestableDesignExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475EA41CB5BE4B1BDBEF9A2 /* TestableDesignExampleTests.swift */; };
-		2475EC1FA4298B6110D54435 /* BootstrapResourceRegistryStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E0EFA4FCA49925D8FB7E /* BootstrapResourceRegistryStub.swift */; };
-		2475EC3C9B33BD4F58D1884A /* StargazersModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E313956BC0F0BD128AE3 /* StargazersModelTests.swift */; };
-		2475EC476AFC0613FA9B6DE8 /* StargazerRepositoryStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E86509222DC42161FC4F /* StargazerRepositoryStub.swift */; };
-		2475EC4D100DB158CA29CB09 /* StargazerMvcComposerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E0E3BBC41DAE043FD4DF /* StargazerMvcComposerTests.swift */; };
+		2475EBE734270642753E85C1 /* StargazerRepositoryStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E49AC1AFD52DCC81BE25 /* StargazerRepositoryStub.swift */; };
 		2475ED052F280DF12FCC21BF /* TestableDesignExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E52EE895096067C3AB7E /* TestableDesignExampleUITests.swift */; };
+		2475ED259745BC7398A3A517 /* BootstrapResourceRegistryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475ED166B0EE6EDD2F0233E /* BootstrapResourceRegistryTests.swift */; };
 		2475ED5BF2B685F9B76415C5 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E26107E142D6CF5AAC43 /* NavigationController.swift */; };
+		2475ED71E768A0D9244C7C8D /* StargazerMvcComposerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E53EEBB0B2F0A445AAC9 /* StargazerMvcComposerTests.swift */; };
 		2475EDC2FD509A53E43DEDA9 /* reposStargazers.json in Resources */ = {isa = PBXBuildFile; fileRef = 2475EFC5E1532F9230A85D82 /* reposStargazers.json */; };
 		2475EDED3B2768D715A948C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2475E2ED888DB0AA07F0DBDA /* Main.storyboard */; };
+		2475EE30CCE8B8CC85956685 /* Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E4CF0A05D4A5ADE28575 /* Async.swift */; };
+		2475EE86B1751D6D830B3BBD /* TestNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E01DE6FDD5A3028F1B32 /* TestNavigator.swift */; };
+		2475EEC0350AE44691DDC0BA /* GitHubApiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E0A01A4162606F18EA04 /* GitHubApiTests.swift */; };
 		2475EF0E319C2B3CFC48C762 /* UserMvcComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E6CC4A27B8058F8CAE7F /* UserMvcComposer.swift */; };
 		2475EF55555DE956BE7FBE56 /* octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2475EF639EA034BCC0C26512 /* octicons.ttf */; };
 		2475EF6D67DC1229AB744C71 /* StargazersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475EA8A1CD58D89A6FC8E3E /* StargazersModel.swift */; };
 		2475EF784651E52247E3C648 /* GitHubRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E9C17E4BBC136112F1C3 /* GitHubRepository.swift */; };
+		2475EFC9820F1920C41759D2 /* TestableDesignExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E7D9EF9A0EC0145E0708 /* TestableDesignExampleTests.swift */; };
 		62266B811E7525EE00A55A01 /* UserScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62266B801E7525EE00A55A01 /* UserScreen.storyboard */; };
 		62A1614D1E73C1CC003D28DC /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62A1614B1E73C1CC003D28DC /* RxBlocking.framework */; };
 		62A1614E1E73C1CC003D28DC /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62A1614C1E73C1CC003D28DC /* RxTest.framework */; };
@@ -87,55 +87,55 @@
 
 /* Begin PBXFileReference section */
 		2475E00BE716C34F1495A4DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2475E01DE6FDD5A3028F1B32 /* TestNavigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestNavigator.swift; sourceTree = "<group>"; };
 		2475E06E3DEED46F70D0B0AF /* BootstrapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BootstrapViewController.swift; sourceTree = "<group>"; };
+		2475E0A01A4162606F18EA04 /* GitHubApiTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubApiTests.swift; sourceTree = "<group>"; };
 		2475E0C468760C2DAE1C894B /* StargazersViewMediator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StargazersViewMediator.swift; sourceTree = "<group>"; };
-		2475E0E3BBC41DAE043FD4DF /* StargazerMvcComposerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StargazerMvcComposerTests.swift; sourceTree = "<group>"; };
-		2475E0EFA4FCA49925D8FB7E /* BootstrapResourceRegistryStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BootstrapResourceRegistryStub.swift; sourceTree = "<group>"; };
 		2475E15139800FB937012314 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2475E168B20E5C501400CF73 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		2475E17054E55DC60FBB0869 /* GitHubStargazerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubStargazerTests.swift; sourceTree = "<group>"; };
 		2475E1A4E2B89145A865C025 /* Navigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
-		2475E1E6057AAFC73F5C6E15 /* UserMvcComposerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserMvcComposerTests.swift; sourceTree = "<group>"; };
 		2475E26107E142D6CF5AAC43 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
-		2475E2744A8B3BA6C7038670 /* GitHubStargazerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubStargazerTests.swift; sourceTree = "<group>"; };
+		2475E2939E6563048AA378B3 /* RemoteImageSourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteImageSourceTests.swift; sourceTree = "<group>"; };
 		2475E2D3B67D9970FD6B94BF /* StargazerRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StargazerRepository.swift; sourceTree = "<group>"; };
-		2475E313956BC0F0BD128AE3 /* StargazersModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StargazersModelTests.swift; sourceTree = "<group>"; };
-		2475E41296A84499F99EFF3E /* BootstrapResourceRegistryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BootstrapResourceRegistryTests.swift; sourceTree = "<group>"; };
+		2475E3FCF9976BD662C10237 /* JsonReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JsonReader.swift; path = TestableDesignExampleTests/Resources/JsonReader.swift; sourceTree = SOURCE_ROOT; };
+		2475E49AC1AFD52DCC81BE25 /* StargazerRepositoryStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StargazerRepositoryStub.swift; sourceTree = "<group>"; };
+		2475E4CF0A05D4A5ADE28575 /* Async.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Async.swift; sourceTree = "<group>"; };
 		2475E52EE895096067C3AB7E /* TestableDesignExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestableDesignExampleUITests.swift; sourceTree = "<group>"; };
+		2475E53EEBB0B2F0A445AAC9 /* StargazerMvcComposerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StargazerMvcComposerTests.swift; sourceTree = "<group>"; };
 		2475E5B4D098FE6945B3F148 /* sample.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sample.png; sourceTree = "<group>"; };
 		2475E6654583784DB2FAC099 /* user.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = user.json; sourceTree = "<group>"; };
 		2475E6904F2577E36489E9DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
-		2475E6C1C527FC3159EC2443 /* GitHubApiTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubApiTests.swift; sourceTree = "<group>"; };
 		2475E6CC4A27B8058F8CAE7F /* UserMvcComposer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserMvcComposer.swift; sourceTree = "<group>"; };
 		2475E767B5CB5B7E0C0B0A6E /* RemoteImageSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteImageSource.swift; sourceTree = "<group>"; };
-		2475E86509222DC42161FC4F /* StargazerRepositoryStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StargazerRepositoryStub.swift; sourceTree = "<group>"; };
+		2475E7D9EF9A0EC0145E0708 /* TestableDesignExampleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestableDesignExampleTests.swift; sourceTree = "<group>"; };
+		2475E8757F392A3269C299DC /* AnyError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyError.swift; sourceTree = "<group>"; };
 		2475E892E746679C895D57CC /* StargazersControllerMediator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StargazersControllerMediator.swift; sourceTree = "<group>"; };
-		2475E91F41DBF2CD88E743E1 /* JsonReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonReader.swift; sourceTree = "<group>"; };
 		2475E96540D7FDFD907E38A1 /* GitHubUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubUser.swift; sourceTree = "<group>"; };
 		2475E9BB7111AF583D00867E /* WebPageOpener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebPageOpener.swift; sourceTree = "<group>"; };
 		2475E9C17E4BBC136112F1C3 /* GitHubRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubRepository.swift; sourceTree = "<group>"; };
 		2475E9F9C6BB7D41F55161A7 /* GitHubApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubApi.swift; sourceTree = "<group>"; };
-		2475EA41CB5BE4B1BDBEF9A2 /* TestableDesignExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestableDesignExampleTests.swift; sourceTree = "<group>"; };
-		2475EA5C7C2367791C3E9D06 /* NavigatorStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigatorStub.swift; sourceTree = "<group>"; };
 		2475EA8A1CD58D89A6FC8E3E /* StargazersModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StargazersModel.swift; sourceTree = "<group>"; };
 		2475EA9AAFF3FDC512301D94 /* GitHubStargazer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubStargazer.swift; sourceTree = "<group>"; };
+		2475EAAA03A6CC33D5660297 /* GitHubApiClientStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubApiClientStub.swift; sourceTree = "<group>"; };
+		2475EAD230AA1FE8964D341E /* BootstrapResourceRegistryStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BootstrapResourceRegistryStub.swift; path = TestableDesignExampleTests/Resources/BootstrapResourceRegistryStub.swift; sourceTree = SOURCE_ROOT; };
 		2475EB38628EF03DCAD17F84 /* FatalErrorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FatalErrorViewController.swift; sourceTree = "<group>"; };
 		2475EB7CC77D347383636CC3 /* BootstrapResourceRegistry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BootstrapResourceRegistry.swift; sourceTree = "<group>"; };
-		2475EB8B3FD073220585BEBD /* TestNavigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestNavigator.swift; sourceTree = "<group>"; };
 		2475EC4757610B2EC6E83A3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2475EC7516DF00CF3095186A /* StargazersModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StargazersModelTests.swift; sourceTree = "<group>"; };
 		2475EC9C2015DE0B2627E623 /* TestableDesignExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestableDesignExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2475ED0DAFBC67961CB850A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		2475ED166B0EE6EDD2F0233E /* BootstrapResourceRegistryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BootstrapResourceRegistryTests.swift; path = TestableDesignExampleTests/Resources/BootstrapResourceRegistryTests.swift; sourceTree = SOURCE_ROOT; };
+		2475ED30A257D0B8186270A1 /* UserMvcComposerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserMvcComposerTests.swift; sourceTree = "<group>"; };
 		2475ED57920DD74087264FC7 /* TestableDesignExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestableDesignExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2475ED639ECF55577329F9D9 /* TestableDesignExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestableDesignExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2475ED7EC7163C67838238DE /* AnyError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyError.swift; sourceTree = "<group>"; };
 		2475EDAB59CE5A5E99A03E61 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2475EE7E92AA265C15A8AB02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		2475EE88C83579435E9F67BA /* ColorCatalog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorCatalog.swift; sourceTree = "<group>"; };
-		2475EEC502BB77FE25550A02 /* RemoteImageSourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteImageSourceTests.swift; sourceTree = "<group>"; };
 		2475EF5D1BAB7F11EA4C887D /* RootNavigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootNavigator.swift; sourceTree = "<group>"; };
 		2475EF639EA034BCC0C26512 /* octicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file.ttf; name = octicons.ttf; path = Resources/octicons.ttf; sourceTree = "<group>"; };
+		2475EF9C786B34F42182126A /* NavigatorStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigatorStub.swift; sourceTree = "<group>"; };
 		2475EFC5E1532F9230A85D82 /* reposStargazers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = reposStargazers.json; sourceTree = "<group>"; };
-		2475EFCE02E1F83012FFB6B9 /* Async.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Async.swift; sourceTree = "<group>"; };
-		2475EFF88B9DA4D1D39DA34F /* GitHubApiClientStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubApiClientStub.swift; sourceTree = "<group>"; };
 		62266B801E7525EE00A55A01 /* UserScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserScreen.storyboard; sourceTree = "<group>"; };
 		62A161471E73BCD4003D28DC /* Rswift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Rswift.framework; path = Carthage/Build/iOS/Rswift.framework; sourceTree = "<group>"; };
 		62A1614B1E73C1CC003D28DC /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
@@ -204,29 +204,12 @@
 				62A161731E744812003D28DC /* StargazersMvcComposer.swift */,
 				2475E0C468760C2DAE1C894B /* StargazersViewMediator.swift */,
 				2475E892E746679C895D57CC /* StargazersControllerMediator.swift */,
+				2475E49AC1AFD52DCC81BE25 /* StargazerRepositoryStub.swift */,
+				2475ED30A257D0B8186270A1 /* UserMvcComposerTests.swift */,
+				2475E53EEBB0B2F0A445AAC9 /* StargazerMvcComposerTests.swift */,
+				2475EC7516DF00CF3095186A /* StargazersModelTests.swift */,
 			);
 			path = Stargazers;
-			sourceTree = "<group>";
-		};
-		2475E08177E36931D0E01965 /* GitHub */ = {
-			isa = PBXGroup;
-			children = (
-				2475E6C1C527FC3159EC2443 /* GitHubApiTests.swift */,
-				2475EFF88B9DA4D1D39DA34F /* GitHubApiClientStub.swift */,
-				2475E2744A8B3BA6C7038670 /* GitHubStargazerTests.swift */,
-			);
-			path = GitHub;
-			sourceTree = "<group>";
-		};
-		2475E0EA7918E95C3E2063DC /* MvcArchitecture */ = {
-			isa = PBXGroup;
-			children = (
-				2475E313956BC0F0BD128AE3 /* StargazersModelTests.swift */,
-				2475E86509222DC42161FC4F /* StargazerRepositoryStub.swift */,
-				2475E0E3BBC41DAE043FD4DF /* StargazerMvcComposerTests.swift */,
-				2475E1E6057AAFC73F5C6E15 /* UserMvcComposerTests.swift */,
-			);
-			path = MvcArchitecture;
 			sourceTree = "<group>";
 		};
 		2475E2F3D72A9EDDB3A5123C /* TestableDesignExample */ = {
@@ -245,6 +228,10 @@
 				2475E26107E142D6CF5AAC43 /* NavigationController.swift */,
 				2475EE88C83579435E9F67BA /* ColorCatalog.swift */,
 				2475E767B5CB5B7E0C0B0A6E /* RemoteImageSource.swift */,
+				2475E2939E6563048AA378B3 /* RemoteImageSourceTests.swift */,
+				2475E7D9EF9A0EC0145E0708 /* TestableDesignExampleTests.swift */,
+				2475E4CF0A05D4A5ADE28575 /* Async.swift */,
+				2475E8757F392A3269C299DC /* AnyError.swift */,
 			);
 			path = TestableDesignExample;
 			sourceTree = "<group>";
@@ -256,6 +243,9 @@
 				2475E9C17E4BBC136112F1C3 /* GitHubRepository.swift */,
 				2475EA9AAFF3FDC512301D94 /* GitHubStargazer.swift */,
 				2475E96540D7FDFD907E38A1 /* GitHubUser.swift */,
+				2475EAAA03A6CC33D5660297 /* GitHubApiClientStub.swift */,
+				2475E0A01A4162606F18EA04 /* GitHubApiTests.swift */,
+				2475E17054E55DC60FBB0869 /* GitHubStargazerTests.swift */,
 			);
 			path = GitHub;
 			sourceTree = "<group>";
@@ -266,6 +256,8 @@
 				2475E1A4E2B89145A865C025 /* Navigator.swift */,
 				2475EF5D1BAB7F11EA4C887D /* RootNavigator.swift */,
 				2475E9BB7111AF583D00867E /* WebPageOpener.swift */,
+				2475E01DE6FDD5A3028F1B32 /* TestNavigator.swift */,
+				2475EF9C786B34F42182126A /* NavigatorStub.swift */,
 			);
 			path = Navigator;
 			sourceTree = "<group>";
@@ -301,15 +293,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2475E71D85D99B028DA9AFD5 /* Navigator */ = {
-			isa = PBXGroup;
-			children = (
-				2475EA5C7C2367791C3E9D06 /* NavigatorStub.swift */,
-				2475EB8B3FD073220585BEBD /* TestNavigator.swift */,
-			);
-			path = Navigator;
-			sourceTree = "<group>";
-		};
 		2475E78E8A799A5629169418 /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -322,14 +305,7 @@
 			isa = PBXGroup;
 			children = (
 				2475E6904F2577E36489E9DF /* Info.plist */,
-				2475EA41CB5BE4B1BDBEF9A2 /* TestableDesignExampleTests.swift */,
 				2475ED210F997869A67B226E /* Resources */,
-				2475E08177E36931D0E01965 /* GitHub */,
-				2475EFCE02E1F83012FFB6B9 /* Async.swift */,
-				2475ED7EC7163C67838238DE /* AnyError.swift */,
-				2475E0EA7918E95C3E2063DC /* MvcArchitecture */,
-				2475EEC502BB77FE25550A02 /* RemoteImageSourceTests.swift */,
-				2475E71D85D99B028DA9AFD5 /* Navigator */,
 			);
 			path = TestableDesignExampleTests;
 			sourceTree = "<group>";
@@ -364,10 +340,7 @@
 		2475ED210F997869A67B226E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				2475E0EFA4FCA49925D8FB7E /* BootstrapResourceRegistryStub.swift */,
-				2475E41296A84499F99EFF3E /* BootstrapResourceRegistryTests.swift */,
 				2475EA63CB4B9D46A794B01A /* Json */,
-				2475E91F41DBF2CD88E743E1 /* JsonReader.swift */,
 				2475E168B20E5C501400CF73 /* R.generated.swift */,
 				2475E78E8A799A5629169418 /* Images */,
 			);
@@ -411,6 +384,9 @@
 				62A161591E73C9ED003D28DC /* R.generated.swift */,
 				2475EB7CC77D347383636CC3 /* BootstrapResourceRegistry.swift */,
 				2475EF639EA034BCC0C26512 /* octicons.ttf */,
+				2475EAD230AA1FE8964D341E /* BootstrapResourceRegistryStub.swift */,
+				2475E3FCF9976BD662C10237 /* JsonReader.swift */,
+				2475ED166B0EE6EDD2F0233E /* BootstrapResourceRegistryTests.swift */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -643,23 +619,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2475EBDC07376B259484B0DF /* TestableDesignExampleTests.swift in Sources */,
-				2475EAA68A0A8C4EEA9033E6 /* BootstrapResourceRegistryTests.swift in Sources */,
-				2475E056E2F77CB619D48710 /* Async.swift in Sources */,
-				2475E0F121C7BEB39E8AA1B1 /* GitHubApiTests.swift in Sources */,
-				2475EC1FA4298B6110D54435 /* BootstrapResourceRegistryStub.swift in Sources */,
-				2475E6F3ABEECFAAAB1A3276 /* GitHubApiClientStub.swift in Sources */,
-				2475E6957442B2FBED994C12 /* JsonReader.swift in Sources */,
 				2475E8169213EC2CBA0BA1B8 /* R.generated.swift in Sources */,
-				2475E7FF946C7D0C0C5DA4F3 /* GitHubStargazerTests.swift in Sources */,
-				2475E7FFDDDF1B3228C8C5F4 /* AnyError.swift in Sources */,
-				2475EC3C9B33BD4F58D1884A /* StargazersModelTests.swift in Sources */,
-				2475EC476AFC0613FA9B6DE8 /* StargazerRepositoryStub.swift in Sources */,
-				2475E3BCC2478BB3A0749E63 /* RemoteImageSourceTests.swift in Sources */,
-				2475EC4D100DB158CA29CB09 /* StargazerMvcComposerTests.swift in Sources */,
-				2475E3862CCCF53C379E432D /* NavigatorStub.swift in Sources */,
-				2475E8FCEBA8312E57412E7D /* TestNavigator.swift in Sources */,
-				2475EB8BDD66551F32E61F44 /* UserMvcComposerTests.swift in Sources */,
+				2475EB37E60B9FA89BC83FF4 /* GitHubApiClientStub.swift in Sources */,
+				2475EEC0350AE44691DDC0BA /* GitHubApiTests.swift in Sources */,
+				2475E0A999969C00C800FF33 /* GitHubStargazerTests.swift in Sources */,
+				2475EBE734270642753E85C1 /* StargazerRepositoryStub.swift in Sources */,
+				2475EA50AA74C6A278625C0F /* UserMvcComposerTests.swift in Sources */,
+				2475ED71E768A0D9244C7C8D /* StargazerMvcComposerTests.swift in Sources */,
+				2475E21443951FE6C9E9CC0B /* StargazersModelTests.swift in Sources */,
+				2475EE86B1751D6D830B3BBD /* TestNavigator.swift in Sources */,
+				2475E40D232C0867EE3CBDD0 /* NavigatorStub.swift in Sources */,
+				2475E8D6EE86B076D4CB3361 /* RemoteImageSourceTests.swift in Sources */,
+				2475EFC9820F1920C41759D2 /* TestableDesignExampleTests.swift in Sources */,
+				2475EE30CCE8B8CC85956685 /* Async.swift in Sources */,
+				2475E7A6273DD9CBF4ABA5BA /* AnyError.swift in Sources */,
+				2475E04ECEFF6F9158BDD660 /* BootstrapResourceRegistryStub.swift in Sources */,
+				2475E2AC84566117FC687FC8 /* JsonReader.swift in Sources */,
+				2475ED259745BC7398A3A517 /* BootstrapResourceRegistryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
