@@ -161,7 +161,7 @@ class FooViewMediator: FooViewMediatorContract {
     private let model: FooModelContract
     private let disposeBag = RxSwift.DisposeBag()
 
-	// A delegate for notifying UI events to others.
+    // A delegate for notifying UI events to others.
     weak var delegate: FooViewMediatorDelegate?
 
 
@@ -169,7 +169,7 @@ class FooViewMediator: FooViewMediatorContract {
         self.model = model
         self.views = views
 
-		// Change visual by observing model's state transitions.
+        // Change visual by observing model's state transitions.
         self.model
             .didChange
             .subscribe(onNext: { [weak var] state in
@@ -184,7 +184,7 @@ class FooViewMediator: FooViewMediatorContract {
             })
             .addDisposableTo(self.disposeBag)
 
-		// Notify to its delegate when child view was changed.
+        // Notify to its delegate when child view was changed.
         self.views.buzz.addTarget(self, action: #selector(self.buzzViewDidTap(sender:)))
     }
 
