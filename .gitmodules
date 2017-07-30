@@ -8,6 +8,7 @@
 	path = Carthage/Checkouts/RxSwift
 	url = https://github.com/ReactiveX/RxSwift.git
 [submodule "Carthage/Checkouts/MirrorDiffKit"]
+	path = Carthage/Checkouts/MirrorDiffKit
 	url = https://github.com/Kuniwak/MirrorDiffKit.git
 [submodule "Carthage/Checkouts/Unbox"]
 	path = Carthage/Checkouts/Unbox
