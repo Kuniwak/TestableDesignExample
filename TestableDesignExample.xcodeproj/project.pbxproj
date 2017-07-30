@@ -459,6 +459,11 @@
 			attributes = {
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = Kuniwak;
+				TargetAttributes = {
+					2475EE0376871EE7203E0C05 = {
+						DevelopmentTeam = QFCV82RF7A;
+					};
+				};
 			};
 			buildConfigurationList = 2475E125D452A919E93092F4 /* Build configuration list for PBXProject "TestableDesignExample" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -744,7 +749,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = QFCV82RF7A;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -790,7 +795,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = QFCV82RF7A;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
