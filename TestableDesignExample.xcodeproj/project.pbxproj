@@ -23,6 +23,7 @@
 		2475E40D232C0867EE3CBDD0 /* NavigatorStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475EF9C786B34F42182126A /* NavigatorStub.swift */; };
 		2475E427AF93298C1BA03EB1 /* StargazersControllerMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E892E746679C895D57CC /* StargazersControllerMediator.swift */; };
 		2475E4F5BAA39082F5129854 /* GitHubUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E96540D7FDFD907E38A1 /* GitHubUser.swift */; };
+		2475E578041452F8670C5A8C /* UserMvcComposerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475EDEF357B21E401A94659 /* UserMvcComposerTests.swift */; };
 		2475E797D65B825304504F9B /* FatalErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475EB38628EF03DCAD17F84 /* FatalErrorViewController.swift */; };
 		2475E7A6273DD9CBF4ABA5BA /* AnyError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E8757F392A3269C299DC /* AnyError.swift */; };
 		2475E81254A76DFDA50D9D83 /* StargazersViewMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E0C468760C2DAE1C894B /* StargazersViewMediator.swift */; };
@@ -33,7 +34,6 @@
 		2475E9807E8143A4B3A751A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2475E33610A7BBD163657C40 /* LaunchScreen.storyboard */; };
 		2475E9C5968FE2FDD131A353 /* WebPageOpener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E9BB7111AF583D00867E /* WebPageOpener.swift */; };
 		2475EA2BD6E67ECEAE176195 /* RemoteImageSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E767B5CB5B7E0C0B0A6E /* RemoteImageSource.swift */; };
-		2475EA50AA74C6A278625C0F /* UserMvcComposerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475ED30A257D0B8186270A1 /* UserMvcComposerTests.swift */; };
 		2475EB37E60B9FA89BC83FF4 /* GitHubApiClientStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475EAAA03A6CC33D5660297 /* GitHubApiClientStub.swift */; };
 		2475EBC38C427D41A452E006 /* GitHubStargazer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475EA9AAFF3FDC512301D94 /* GitHubStargazer.swift */; };
 		2475EBE734270642753E85C1 /* StargazerRepositoryStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E49AC1AFD52DCC81BE25 /* StargazerRepositoryStub.swift */; };
@@ -126,10 +126,10 @@
 		2475EC9C2015DE0B2627E623 /* TestableDesignExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestableDesignExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2475ED0DAFBC67961CB850A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		2475ED166B0EE6EDD2F0233E /* BootstrapResourceRegistryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BootstrapResourceRegistryTests.swift; path = TestableDesignExampleTests/Resources/BootstrapResourceRegistryTests.swift; sourceTree = SOURCE_ROOT; };
-		2475ED30A257D0B8186270A1 /* UserMvcComposerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserMvcComposerTests.swift; sourceTree = "<group>"; };
 		2475ED57920DD74087264FC7 /* TestableDesignExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestableDesignExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2475ED639ECF55577329F9D9 /* TestableDesignExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestableDesignExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2475EDAB59CE5A5E99A03E61 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2475EDEF357B21E401A94659 /* UserMvcComposerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserMvcComposerTests.swift; sourceTree = "<group>"; };
 		2475EE7E92AA265C15A8AB02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		2475EE88C83579435E9F67BA /* ColorCatalog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorCatalog.swift; sourceTree = "<group>"; };
 		2475EF5D1BAB7F11EA4C887D /* RootNavigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootNavigator.swift; sourceTree = "<group>"; };
@@ -205,7 +205,6 @@
 				2475E0C468760C2DAE1C894B /* StargazersViewMediator.swift */,
 				2475E892E746679C895D57CC /* StargazersControllerMediator.swift */,
 				2475E49AC1AFD52DCC81BE25 /* StargazerRepositoryStub.swift */,
-				2475ED30A257D0B8186270A1 /* UserMvcComposerTests.swift */,
 				2475E53EEBB0B2F0A445AAC9 /* StargazerMvcComposerTests.swift */,
 				2475EC7516DF00CF3095186A /* StargazersModelTests.swift */,
 			);
@@ -315,6 +314,7 @@
 			children = (
 				2475E6CC4A27B8058F8CAE7F /* UserMvcComposer.swift */,
 				62266B801E7525EE00A55A01 /* UserScreen.storyboard */,
+				2475EDEF357B21E401A94659 /* UserMvcComposerTests.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -629,7 +629,6 @@
 				2475EEC0350AE44691DDC0BA /* GitHubApiTests.swift in Sources */,
 				2475E0A999969C00C800FF33 /* GitHubStargazerTests.swift in Sources */,
 				2475EBE734270642753E85C1 /* StargazerRepositoryStub.swift in Sources */,
-				2475EA50AA74C6A278625C0F /* UserMvcComposerTests.swift in Sources */,
 				2475ED71E768A0D9244C7C8D /* StargazerMvcComposerTests.swift in Sources */,
 				2475E21443951FE6C9E9CC0B /* StargazersModelTests.swift in Sources */,
 				2475EE86B1751D6D830B3BBD /* TestNavigator.swift in Sources */,
@@ -641,6 +640,7 @@
 				2475E04ECEFF6F9158BDD660 /* BootstrapResourceRegistryStub.swift in Sources */,
 				2475E2AC84566117FC687FC8 /* JsonReader.swift in Sources */,
 				2475ED259745BC7398A3A517 /* BootstrapResourceRegistryTests.swift in Sources */,
+				2475E578041452F8670C5A8C /* UserMvcComposerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
