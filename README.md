@@ -149,22 +149,16 @@ extension FooController: FooViewMediatorDelegate {
 ```
 
 
-How to use Test Doubles
------------------------
+
+How to control global vars
+--------------------------
+In this project, we control global variables by using [test doubles](http://xunitpatterns.com/Test%20Double.html); Stub and Spy.
 
 ![](https://raw.githubusercontent.com/Kuniwak/TestableDesignExample/clean-up/Documentation/Images/TestDoubles_en.png)
 
 
-<dl>
-<dt>Stub[^1]
-<dd>Dummy object for indirect input.
-<dt>Spy[^1]
-<dd>Dummy object for indirect output.
-</dl>
-
-
 ### Sample code
-#### Bad Design
+#### Bad Design (fragile tests)
 
 ```swift
 // BAD DESIGN
@@ -200,7 +194,7 @@ XCTAssertEqual(UserDefaults.standard.integer(forKey: "foo"), 10)
 ```
 
 
-#### Good Design
+#### Good Design (robust tests)
 ```swift
 // GOOD DESIGN
 class UserDefaultsCalculator {
@@ -333,7 +327,7 @@ In this project, we use type-checking instead of other tests (unit tests and int
 
 ![](https://raw.githubusercontent.com/Kuniwak/TestableDesignExample/clean-up/Documentation/Images/TestEfficiency.png)
 
-For example, we can check registering UITableViewCell to UITableVIew before dequeueing by using type-checking:
+For example, we can check registering `UITableViewCell` to `UITableVIew` before dequeueing by using type-checking:
 
 ```swift
 class MyCell: UITableViewCell {
@@ -389,7 +383,8 @@ Taken together, we should follow the Test Pyramid:
 ![Ideal test volume is extlemly few UI tests and few integration tests and much unit tests and much type checkings.](https://raw.githubusercontent.com/Kuniwak/TestableDesignExample/clean-up/Documentation/Images/TestPyramid.png)
 
 
+
 References
 ----------
 
-[^1]: XUnit Test Patterns
+1. XUnit Test Patterns: http://xunitpatterns.com/index.html
