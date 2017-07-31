@@ -162,7 +162,7 @@ extension FooController: FooViewMediatorDelegate {
 How to Connect among UIViewControllers
 --------------------------------------
 
-In this project, use Navigator class for connecting bebtweren 2 `UIViewControllers`.
+In this project, use Navigator class for connecting betweren 2 `UIViewControllers`.
 
 
 ```swift
@@ -172,7 +172,7 @@ class FooViewController: UIViewController {
 
 
     static func create(
-        presenting sharedModel: FooBarModelContract!
+        presenting sharedModel: FooBarModelContract!,
         navigatingBy navigator: NavigatorContract
     ) {
         guard let viewController = R.storyboard.fooScreen.fooViewController() else {
