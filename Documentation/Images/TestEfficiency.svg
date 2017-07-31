@@ -614,7 +614,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.49497475"
-     inkscape:cx="259.24835"
+     inkscape:cx="268.33972"
      inkscape:cy="639.44917"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -642,7 +642,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -1064,7 +1064,7 @@
          sodipodi:role="line"
          id="tspan6550"
          x="838.57141"
-         y="713.79077">It means, unit-testing has lower effictiveness</tspan><tspan
+         y="713.79077">It means, unit-testing has lower effectiveness</tspan><tspan
          sodipodi:role="line"
          x="838.57141"
          y="752.85327"
