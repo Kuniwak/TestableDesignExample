@@ -10,7 +10,7 @@ Architecture
 
 Smalltalk flavored MVC (not Apple MVC). Smalltalk flavored MVC is a architecture that can test easily.
 
-![](https://raw.githubusercontent.com/Kuniwak/TestableDesignExample/master/Documentation/Images/ClassDiagram_en.png)
+![](https://raw.githubusercontent.com/Kuniwak/TestableDesignExample/master/Documentation/Images/ClassDiagram_En.png)
 
 ### Sample Code
 

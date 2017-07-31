@@ -8,7 +8,7 @@ iOS のためのテスト容易設計サンプル
 Smalltalk MVC を見本としています(Apple MVC とは違います).
 Smalltalk MVC は、テスト容易なアーキテクチャの一つです。
 
-![](https://raw.githubusercontent.com/Kuniwak/TestableDesignExample/master/Documentation/Images/ClassDiagram_ja.png)
+![](https://raw.githubusercontent.com/Kuniwak/TestableDesignExample/master/Documentation/Images/ClassDiagram_Ja.png)
 
 
 
