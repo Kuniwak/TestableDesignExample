@@ -347,7 +347,7 @@ class MyCell: UITableViewCell {
      このセルクラスを UITableView へ登録し、登録証を発行します。
      */
     static func register(to tableView: UITableView) -> RegistrationToken {
-        tableView.register(R.nib.stargazerCell)
+        tableView.register(R.nib.myCell)
         return RegistrationToken()
     }
 
@@ -363,7 +363,7 @@ class MyCell: UITableViewCell {
         andMustHave token: RegistrationToken
     ) -> MyCell {
         guard let cell = tableView.dequeueReusableCell(
-            withIdentifier: R.reuseIdentifier.stargazerCell.identifier,
+            withIdentifier: R.reuseIdentifier.myCell.identifier,
             for: indexPath
         ) as? StargazerCell else {
             // > dequeueReusableCell(withIdentifier:for:)
