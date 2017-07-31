@@ -10,7 +10,7 @@ Architecture
 
 Smalltalk flavored MVC (not Apple MVC). Smalltalk flavored MVC is a architecture that can test easily.
 
-![](https://raw.githubusercontent.com/Kuniwak/TestableDesignExample/clean-up/Documentation/Images/ClassDiagram_En.png)
+![](https://raw.githubusercontent.com/Kuniwak/TestableDesignExample/master/Documentation/Images/ClassDiagram_En.png)
 
 ### Sample Code
 
@@ -154,7 +154,7 @@ How to control global vars
 --------------------------
 In this project, we control global variables by using [test doubles](http://xunitpatterns.com/Test%20Double.html); Stub and Spy.
 
-![](https://raw.githubusercontent.com/Kuniwak/TestableDesignExample/clean-up/Documentation/Images/TestDoubles_en.png)
+![](https://raw.githubusercontent.com/Kuniwak/TestableDesignExample/master/Documentation/Images/TestDoubles_en.png)
 
 
 ### Sample code
@@ -325,7 +325,7 @@ We stronlgy agree the blog entry; ["Just Say No to More End-to-End Tests"](https
 
 In this project, we use type-checking instead of other tests (unit tests and integration tests and UI tests) to get feedbacks from tests rapidly. Because type-checking is higher effictiveness than other tests.
 
-![](https://raw.githubusercontent.com/Kuniwak/TestableDesignExample/clean-up/Documentation/Images/TestEfficiency.png)
+![](https://raw.githubusercontent.com/Kuniwak/TestableDesignExample/master/Documentation/Images/TestEfficiency.png)
 
 For example, we can check registering `UITableViewCell` to `UITableVIew` before dequeueing by using type-checking:
 
@@ -380,7 +380,7 @@ class MyCell: UITableViewCell {
 
 Taken together, we should follow the Test Pyramid:
 
-![Ideal test volume is extlemly few UI tests and few integration tests and much unit tests and much type checkings.](https://raw.githubusercontent.com/Kuniwak/TestableDesignExample/clean-up/Documentation/Images/TestPyramid.png)
+![Ideal test volume is extlemly few UI tests and few integration tests and much unit tests and much type checkings.](https://raw.githubusercontent.com/Kuniwak/TestableDesignExample/master/Documentation/Images/TestPyramid.png)
 
 
 
