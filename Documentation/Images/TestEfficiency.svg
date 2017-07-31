@@ -16,7 +16,7 @@
    version="1.1"
    inkscape:version="0.91 r13725"
    sodipodi:docname="TestEfficiency.svg"
-   inkscape:export-filename="/Users/yuki.kokubun/Development/TestableDesignExample/Documentation/Images/TestEfficiency.png"
+   inkscape:export-filename="/Users/yuki.kokubun/Development/TestableDesignExample/Documentation/Images/TestEfficiency_en.png"
    inkscape:export-xdpi="45"
    inkscape:export-ydpi="45">
   <defs
@@ -614,10 +614,10 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.49497475"
-     inkscape:cx="268.33972"
-     inkscape:cy="639.44917"
+     inkscape:cx="413.24618"
+     inkscape:cy="720.26137"
      inkscape:document-units="px"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="layer3"
      showgrid="true"
      inkscape:object-paths="true"
      inkscape:snap-bbox="true"
@@ -673,19 +673,6 @@
        ry="20.00001"
        inkscape:export-xdpi="45"
        inkscape:export-ydpi="45" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:31.25px;line-height:125%;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="91.547958"
-       y="481.96002"
-       id="text4384"
-       sodipodi:linespacing="125%"
-       inkscape:export-xdpi="45"
-       inkscape:export-ydpi="45"><tspan
-         sodipodi:role="line"
-         id="tspan4386"
-         x="91.547958"
-         y="481.96002">Syntax highlight</tspan></text>
     <rect
        ry="20.00001"
        rx="20.00001"
@@ -697,19 +684,6 @@
        style="fill:#c4c4c4;fill-opacity:1;stroke:none;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        inkscape:export-xdpi="45"
        inkscape:export-ydpi="45" />
-    <text
-       sodipodi:linespacing="125%"
-       id="text4390"
-       y="581.96002"
-       x="91.547958"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:31.25px;line-height:125%;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       xml:space="preserve"
-       inkscape:export-xdpi="45"
-       inkscape:export-ydpi="45"><tspan
-         y="581.96002"
-         x="91.547958"
-         id="tspan4392"
-         sodipodi:role="line">Linting</tspan></text>
     <rect
        style="fill:#c4c4c4;fill-opacity:1;stroke:none;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect4394"
@@ -721,19 +695,6 @@
        ry="20.00001"
        inkscape:export-xdpi="45"
        inkscape:export-ydpi="45" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:31.25px;line-height:125%;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="91.547958"
-       y="681.96002"
-       id="text4396"
-       sodipodi:linespacing="125%"
-       inkscape:export-xdpi="45"
-       inkscape:export-ydpi="45"><tspan
-         sodipodi:role="line"
-         id="tspan4398"
-         x="91.547958"
-         y="681.96002">Type checking</tspan></text>
     <rect
        ry="20.00001"
        rx="20.00001"
@@ -745,19 +706,6 @@
        style="fill:#c4c4c4;fill-opacity:1;stroke:none;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        inkscape:export-xdpi="45"
        inkscape:export-ydpi="45" />
-    <text
-       sodipodi:linespacing="125%"
-       id="text4402"
-       y="781.96002"
-       x="91.547958"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:31.25px;line-height:125%;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       xml:space="preserve"
-       inkscape:export-xdpi="45"
-       inkscape:export-ydpi="45"><tspan
-         y="781.96002"
-         x="91.547958"
-         id="tspan4404"
-         sodipodi:role="line">Unit testing</tspan></text>
     <rect
        style="fill:#c4c4c4;fill-opacity:1;stroke:none;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect4406"
@@ -769,19 +717,6 @@
        ry="20.00001"
        inkscape:export-xdpi="45"
        inkscape:export-ydpi="45" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:31.25px;line-height:125%;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="91.547958"
-       y="881.96002"
-       id="text4408"
-       sodipodi:linespacing="125%"
-       inkscape:export-xdpi="45"
-       inkscape:export-ydpi="45"><tspan
-         sodipodi:role="line"
-         id="tspan4410"
-         x="91.547958"
-         y="881.96002">Integration testing</tspan></text>
     <rect
        ry="20.00001"
        rx="20.00001"
@@ -793,45 +728,6 @@
        style="fill:#c4c4c4;fill-opacity:1;stroke:none;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        inkscape:export-xdpi="45"
        inkscape:export-ydpi="45" />
-    <text
-       sodipodi:linespacing="125%"
-       id="text4414"
-       y="981.96002"
-       x="91.547958"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:31.25px;line-height:125%;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       xml:space="preserve"
-       inkscape:export-xdpi="45"
-       inkscape:export-ydpi="45"><tspan
-         y="981.96002"
-         x="91.547958"
-         id="tspan4416"
-         sodipodi:role="line">UI testing</tspan></text>
-    <text
-       sodipodi:linespacing="125%"
-       id="text4418"
-       y="397.67432"
-       x="438.69083"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:31.25px;line-height:125%;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       xml:space="preserve"
-       inkscape:export-xdpi="45"
-       inkscape:export-ydpi="45"><tspan
-         y="397.67432"
-         x="438.69083"
-         id="tspan4420"
-         sodipodi:role="line">Bug X</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:31.25px;line-height:125%;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="595.83368"
-       y="397.67432"
-       id="text4422"
-       sodipodi:linespacing="125%"
-       inkscape:export-xdpi="45"
-       inkscape:export-ydpi="45"><tspan
-         sodipodi:role="line"
-         id="tspan4424"
-         x="595.83368"
-         y="397.67432">Bug Y</tspan></text>
     <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2Mend)"
        d="m 480,412.36216 0,260"
@@ -858,19 +754,6 @@
        style="fill:#c4c4c4;fill-opacity:1;stroke:none;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        inkscape:export-xdpi="45"
        inkscape:export-ydpi="45" />
-    <text
-       sodipodi:linespacing="125%"
-       id="text5972"
-       y="-298.03998"
-       x="91.547958"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:31.25px;line-height:125%;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       xml:space="preserve"
-       inkscape:export-xdpi="45"
-       inkscape:export-ydpi="45"><tspan
-         y="-298.03998"
-         x="91.547958"
-         id="tspan5974"
-         sodipodi:role="line">Syntax highlight</tspan></text>
     <rect
        style="fill:#c4c4c4;fill-opacity:1;stroke:none;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect5976"
@@ -882,19 +765,6 @@
        ry="20.00001"
        inkscape:export-xdpi="45"
        inkscape:export-ydpi="45" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:31.25px;line-height:125%;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="91.547958"
-       y="-198.03998"
-       id="text5978"
-       sodipodi:linespacing="125%"
-       inkscape:export-xdpi="45"
-       inkscape:export-ydpi="45"><tspan
-         sodipodi:role="line"
-         id="tspan5980"
-         x="91.547958"
-         y="-198.03998">Linting</tspan></text>
     <rect
        ry="20.00001"
        rx="20.00001"
@@ -906,19 +776,6 @@
        style="fill:#c4c4c4;fill-opacity:1;stroke:none;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        inkscape:export-xdpi="45"
        inkscape:export-ydpi="45" />
-    <text
-       sodipodi:linespacing="125%"
-       id="text5984"
-       y="-98.039978"
-       x="91.547958"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:31.25px;line-height:125%;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       xml:space="preserve"
-       inkscape:export-xdpi="45"
-       inkscape:export-ydpi="45"><tspan
-         y="-98.039978"
-         x="91.547958"
-         id="tspan5986"
-         sodipodi:role="line">Type checking</tspan></text>
     <rect
        style="fill:#c4c4c4;fill-opacity:1;stroke:none;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect5988"
@@ -930,19 +787,6 @@
        ry="20.00001"
        inkscape:export-xdpi="45"
        inkscape:export-ydpi="45" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:31.25px;line-height:125%;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="91.547958"
-       y="1.960022"
-       id="text5990"
-       sodipodi:linespacing="125%"
-       inkscape:export-xdpi="45"
-       inkscape:export-ydpi="45"><tspan
-         sodipodi:role="line"
-         id="tspan5992"
-         x="91.547958"
-         y="1.960022">Unit testing</tspan></text>
     <rect
        ry="20.00001"
        rx="20.00001"
@@ -954,19 +798,6 @@
        style="fill:#c4c4c4;fill-opacity:1;stroke:none;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        inkscape:export-xdpi="45"
        inkscape:export-ydpi="45" />
-    <text
-       sodipodi:linespacing="125%"
-       id="text5996"
-       y="101.96002"
-       x="91.547958"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:31.25px;line-height:125%;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       xml:space="preserve"
-       inkscape:export-xdpi="45"
-       inkscape:export-ydpi="45"><tspan
-         y="101.96002"
-         x="91.547958"
-         id="tspan5998"
-         sodipodi:role="line">Integration testing</tspan></text>
     <rect
        style="fill:#c4c4c4;fill-opacity:1;stroke:none;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect6000"
@@ -978,32 +809,6 @@
        ry="20.00001"
        inkscape:export-xdpi="45"
        inkscape:export-ydpi="45" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:31.25px;line-height:125%;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="91.547958"
-       y="201.96002"
-       id="text6002"
-       sodipodi:linespacing="125%"
-       inkscape:export-xdpi="45"
-       inkscape:export-ydpi="45"><tspan
-         sodipodi:role="line"
-         id="tspan6004"
-         x="91.547958"
-         y="201.96002">UI testing</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:31.25px;line-height:125%;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="518.6908"
-       y="-382.32568"
-       id="text6006"
-       sodipodi:linespacing="125%"
-       inkscape:export-xdpi="45"
-       inkscape:export-ydpi="45"><tspan
-         sodipodi:role="line"
-         id="tspan6008"
-         x="518.6908"
-         y="-382.32568">Bug X</tspan></text>
     <path
        inkscape:connector-curvature="0"
        id="path6014"
@@ -1018,7 +823,240 @@
        inkscape:connector-curvature="0"
        inkscape:export-xdpi="45"
        inkscape:export-ydpi="45" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path6546"
+       d="m 820,612.36216 -300,60"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:5, 5;stroke-dashoffset:0;stroke-opacity:1"
+       sodipodi:nodetypes="cc"
+       inkscape:export-xdpi="45"
+       inkscape:export-ydpi="45" />
+    <path
+       sodipodi:nodetypes="cc"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:5, 5;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 820,712.36216 -140,60"
+       id="path6612"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="45"
+       inkscape:export-ydpi="45" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Caption En"
+     style="display:inline">
     <text
+       transform="translate(0,447.63784)"
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:31.25px;line-height:125%;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="91.547958"
+       y="481.96002"
+       id="text4384"
+       sodipodi:linespacing="125%"
+       inkscape:export-xdpi="45"
+       inkscape:export-ydpi="45"><tspan
+         sodipodi:role="line"
+         id="tspan4386"
+         x="91.547958"
+         y="481.96002">Syntax highlight</tspan></text>
+    <text
+       transform="translate(0,447.63784)"
+       sodipodi:linespacing="125%"
+       id="text4390"
+       y="581.96002"
+       x="91.547958"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:31.25px;line-height:125%;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-xdpi="45"
+       inkscape:export-ydpi="45"><tspan
+         y="581.96002"
+         x="91.547958"
+         id="tspan4392"
+         sodipodi:role="line">Linting</tspan></text>
+    <text
+       transform="translate(0,447.63784)"
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:31.25px;line-height:125%;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="91.547958"
+       y="681.96002"
+       id="text4396"
+       sodipodi:linespacing="125%"
+       inkscape:export-xdpi="45"
+       inkscape:export-ydpi="45"><tspan
+         sodipodi:role="line"
+         id="tspan4398"
+         x="91.547958"
+         y="681.96002">Type checking</tspan></text>
+    <text
+       transform="translate(0,447.63784)"
+       sodipodi:linespacing="125%"
+       id="text4402"
+       y="781.96002"
+       x="91.547958"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:31.25px;line-height:125%;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-xdpi="45"
+       inkscape:export-ydpi="45"><tspan
+         y="781.96002"
+         x="91.547958"
+         id="tspan4404"
+         sodipodi:role="line">Unit testing</tspan></text>
+    <text
+       transform="translate(0,447.63784)"
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:31.25px;line-height:125%;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="91.547958"
+       y="881.96002"
+       id="text4408"
+       sodipodi:linespacing="125%"
+       inkscape:export-xdpi="45"
+       inkscape:export-ydpi="45"><tspan
+         sodipodi:role="line"
+         id="tspan4410"
+         x="91.547958"
+         y="881.96002">Integration testing</tspan></text>
+    <text
+       transform="translate(0,447.63784)"
+       sodipodi:linespacing="125%"
+       id="text4414"
+       y="981.96002"
+       x="91.547958"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:31.25px;line-height:125%;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-xdpi="45"
+       inkscape:export-ydpi="45"><tspan
+         y="981.96002"
+         x="91.547958"
+         id="tspan4416"
+         sodipodi:role="line">UI testing</tspan></text>
+    <text
+       transform="translate(0,447.63784)"
+       sodipodi:linespacing="125%"
+       id="text4418"
+       y="397.67432"
+       x="438.69083"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:31.25px;line-height:125%;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-xdpi="45"
+       inkscape:export-ydpi="45"><tspan
+         y="397.67432"
+         x="438.69083"
+         id="tspan4420"
+         sodipodi:role="line">Bug X</tspan></text>
+    <text
+       transform="translate(0,447.63784)"
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:31.25px;line-height:125%;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="595.83368"
+       y="397.67432"
+       id="text4422"
+       sodipodi:linespacing="125%"
+       inkscape:export-xdpi="45"
+       inkscape:export-ydpi="45"><tspan
+         sodipodi:role="line"
+         id="tspan4424"
+         x="595.83368"
+         y="397.67432">Bug Y</tspan></text>
+    <text
+       transform="translate(0,447.63784)"
+       sodipodi:linespacing="125%"
+       id="text5972"
+       y="-298.03998"
+       x="91.547958"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:31.25px;line-height:125%;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-xdpi="45"
+       inkscape:export-ydpi="45"><tspan
+         y="-298.03998"
+         x="91.547958"
+         id="tspan5974"
+         sodipodi:role="line">Syntax highlight</tspan></text>
+    <text
+       transform="translate(0,447.63784)"
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:31.25px;line-height:125%;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="91.547958"
+       y="-198.03998"
+       id="text5978"
+       sodipodi:linespacing="125%"
+       inkscape:export-xdpi="45"
+       inkscape:export-ydpi="45"><tspan
+         sodipodi:role="line"
+         id="tspan5980"
+         x="91.547958"
+         y="-198.03998">Linting</tspan></text>
+    <text
+       transform="translate(0,447.63784)"
+       sodipodi:linespacing="125%"
+       id="text5984"
+       y="-98.039978"
+       x="91.547958"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:31.25px;line-height:125%;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-xdpi="45"
+       inkscape:export-ydpi="45"><tspan
+         y="-98.039978"
+         x="91.547958"
+         id="tspan5986"
+         sodipodi:role="line">Type checking</tspan></text>
+    <text
+       transform="translate(0,447.63784)"
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:31.25px;line-height:125%;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="91.547958"
+       y="1.960022"
+       id="text5990"
+       sodipodi:linespacing="125%"
+       inkscape:export-xdpi="45"
+       inkscape:export-ydpi="45"><tspan
+         sodipodi:role="line"
+         id="tspan5992"
+         x="91.547958"
+         y="1.960022">Unit testing</tspan></text>
+    <text
+       transform="translate(0,447.63784)"
+       sodipodi:linespacing="125%"
+       id="text5996"
+       y="101.96002"
+       x="91.547958"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:31.25px;line-height:125%;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-xdpi="45"
+       inkscape:export-ydpi="45"><tspan
+         y="101.96002"
+         x="91.547958"
+         id="tspan5998"
+         sodipodi:role="line">Integration testing</tspan></text>
+    <text
+       transform="translate(0,447.63784)"
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:31.25px;line-height:125%;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="91.547958"
+       y="201.96002"
+       id="text6002"
+       sodipodi:linespacing="125%"
+       inkscape:export-xdpi="45"
+       inkscape:export-ydpi="45"><tspan
+         sodipodi:role="line"
+         id="tspan6004"
+         x="91.547958"
+         y="201.96002">UI testing</tspan></text>
+    <text
+       transform="translate(0,447.63784)"
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:31.25px;line-height:125%;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="518.6908"
+       y="-382.32568"
+       id="text6006"
+       sodipodi:linespacing="125%"
+       inkscape:export-xdpi="45"
+       inkscape:export-ydpi="45"><tspan
+         sodipodi:role="line"
+         id="tspan6008"
+         x="518.6908"
+         y="-382.32568">Bug X</tspan></text>
+    <text
+       transform="translate(0,447.63784)"
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:31.25px;line-height:125%;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="840"
@@ -1032,6 +1070,7 @@
          x="840"
          y="-163.35214">Phase where the bug found.</tspan></text>
     <text
+       transform="translate(0,447.63784)"
        sodipodi:linespacing="125%"
        id="text6542"
        y="616.64789"
@@ -1044,15 +1083,8 @@
          x="838.57141"
          id="tspan6544"
          sodipodi:role="line">Finding Bug X is more quickly.</tspan></text>
-    <path
-       inkscape:connector-curvature="0"
-       id="path6546"
-       d="m 820,612.36216 -300,60"
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:5, 5;stroke-dashoffset:0;stroke-opacity:1"
-       sodipodi:nodetypes="cc"
-       inkscape:export-xdpi="45"
-       inkscape:export-ydpi="45" />
     <text
+       transform="translate(0,447.63784)"
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:31.25px;line-height:125%;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="838.57141"
@@ -1069,13 +1101,249 @@
          x="838.57141"
          y="752.85327"
          id="tspan6618">than type checking.</tspan></text>
-    <path
-       sodipodi:nodetypes="cc"
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:5, 5;stroke-dashoffset:0;stroke-opacity:1"
-       d="m 820,712.36216 -140,60"
-       id="path6612"
-       inkscape:connector-curvature="0"
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="Caption Ja"
+     style="display:none">
+    <text
+       inkscape:export-ydpi="45"
        inkscape:export-xdpi="45"
-       inkscape:export-ydpi="45" />
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:31.25px;line-height:125%;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="438.69083"
+       y="845.31213"
+       id="text4808"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4810"
+         x="438.69083"
+         y="845.31213">バグ X</tspan></text>
+    <text
+       inkscape:export-ydpi="45"
+       inkscape:export-xdpi="45"
+       sodipodi:linespacing="125%"
+       id="text4812"
+       y="845.31213"
+       x="595.83368"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:31.25px;line-height:125%;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         y="845.31213"
+         x="595.83368"
+         id="tspan4814"
+         sodipodi:role="line">バグ Y</tspan></text>
+    <text
+       inkscape:export-ydpi="45"
+       inkscape:export-xdpi="45"
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:31.25px;line-height:125%;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="91.547958"
+       y="149.59785"
+       id="text4816"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4818"
+         x="91.547958"
+         y="149.59785">構文ハイライト</tspan></text>
+    <text
+       inkscape:export-ydpi="45"
+       inkscape:export-xdpi="45"
+       sodipodi:linespacing="125%"
+       id="text4820"
+       y="249.59785"
+       x="91.547958"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:31.25px;line-height:125%;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         y="249.59785"
+         x="91.547958"
+         id="tspan4822"
+         sodipodi:role="line">リント</tspan></text>
+    <text
+       inkscape:export-ydpi="45"
+       inkscape:export-xdpi="45"
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:31.25px;line-height:125%;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="91.547958"
+       y="349.59787"
+       id="text4824"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4826"
+         x="91.547958"
+         y="349.59787">型検査</tspan></text>
+    <text
+       inkscape:export-ydpi="45"
+       inkscape:export-xdpi="45"
+       sodipodi:linespacing="125%"
+       id="text4828"
+       y="449.59787"
+       x="91.547958"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:31.25px;line-height:125%;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         y="449.59787"
+         x="91.547958"
+         id="tspan4830"
+         sodipodi:role="line">単体テスト</tspan></text>
+    <text
+       inkscape:export-ydpi="45"
+       inkscape:export-xdpi="45"
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:31.25px;line-height:125%;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="91.547958"
+       y="549.59784"
+       id="text4832"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4834"
+         x="91.547958"
+         y="549.59784">結合テスト</tspan></text>
+    <text
+       inkscape:export-ydpi="45"
+       inkscape:export-xdpi="45"
+       sodipodi:linespacing="125%"
+       id="text4836"
+       y="649.59784"
+       x="91.547958"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:31.25px;line-height:125%;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         y="649.59784"
+         x="91.547958"
+         id="tspan4838"
+         sodipodi:role="line">UIテスト</tspan></text>
+    <text
+       inkscape:export-ydpi="45"
+       inkscape:export-xdpi="45"
+       sodipodi:linespacing="125%"
+       id="text4840"
+       y="65.312157"
+       x="518.6908"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:31.25px;line-height:125%;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         y="65.312157"
+         x="518.6908"
+         id="tspan4842"
+         sodipodi:role="line">バグ X</tspan></text>
+    <text
+       inkscape:export-ydpi="45"
+       inkscape:export-xdpi="45"
+       sodipodi:linespacing="125%"
+       id="text4844"
+       y="284.28571"
+       x="840"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:31.25px;line-height:125%;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         y="284.28571"
+         x="840"
+         id="tspan4846"
+         sodipodi:role="line">バグが見つかったタイミング</tspan></text>
+    <text
+       inkscape:export-ydpi="45"
+       inkscape:export-xdpi="45"
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:31.25px;line-height:125%;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="838.57141"
+       y="1064.2858"
+       id="text4848"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4850"
+         x="838.57141"
+         y="1064.2858">バグXの方がはやく見つかっている</tspan></text>
+    <text
+       inkscape:export-ydpi="45"
+       inkscape:export-xdpi="45"
+       sodipodi:linespacing="125%"
+       id="text4852"
+       y="1161.4286"
+       x="838.57141"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:31.25px;line-height:125%;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         id="tspan4856"
+         y="1161.4286"
+         x="838.57141"
+         sodipodi:role="line">つまり、単体テストよりも型検査の方が</tspan><tspan
+         y="1200.4911"
+         x="838.57141"
+         sodipodi:role="line"
+         id="tspan4921">効果が高いことを意味している</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text4895"
+       y="929.59784"
+       x="91.547958"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:31.25px;line-height:125%;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-xdpi="45"
+       inkscape:export-ydpi="45"><tspan
+         y="929.59784"
+         x="91.547958"
+         id="tspan4897"
+         sodipodi:role="line">構文ハイライト</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:31.25px;line-height:125%;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="91.547958"
+       y="1029.5978"
+       id="text4899"
+       sodipodi:linespacing="125%"
+       inkscape:export-xdpi="45"
+       inkscape:export-ydpi="45"><tspan
+         sodipodi:role="line"
+         id="tspan4901"
+         x="91.547958"
+         y="1029.5978">リント</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text4903"
+       y="1129.5979"
+       x="91.547958"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:31.25px;line-height:125%;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-xdpi="45"
+       inkscape:export-ydpi="45"><tspan
+         y="1129.5979"
+         x="91.547958"
+         id="tspan4905"
+         sodipodi:role="line">型検査</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:31.25px;line-height:125%;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="91.547958"
+       y="1229.5979"
+       id="text4907"
+       sodipodi:linespacing="125%"
+       inkscape:export-xdpi="45"
+       inkscape:export-ydpi="45"><tspan
+         sodipodi:role="line"
+         id="tspan4909"
+         x="91.547958"
+         y="1229.5979">単体テスト</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text4911"
+       y="1329.5979"
+       x="91.547958"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:31.25px;line-height:125%;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-xdpi="45"
+       inkscape:export-ydpi="45"><tspan
+         y="1329.5979"
+         x="91.547958"
+         id="tspan4913"
+         sodipodi:role="line">結合テスト</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:31.25px;line-height:125%;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="91.547958"
+       y="1429.5978"
+       id="text4915"
+       sodipodi:linespacing="125%"
+       inkscape:export-xdpi="45"
+       inkscape:export-ydpi="45"><tspan
+         sodipodi:role="line"
+         id="tspan4917"
+         x="91.547958"
+         y="1429.5978">UIテスト</tspan></text>
   </g>
 </svg>

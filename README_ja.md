@@ -1,18 +1,18 @@
-Testable design example for iOS Apps
-====================================
-
-This is a sample App to learn testable design.
+iOS のためのテスト容易設計サンプル
+==================================
 
 
+アーキテクチャ
+--------------
 
-Architecture
-------------
+Smalltalk MVC を見本としています(Apple MVC とは違います).
+Smalltalk MVC は、テスト容易なアーキテクチャの一つです。
 
-Smalltalk flavored MVC (not Apple MVC). Smalltalk flavored MVC is a architecture that can test easily.
+![](https://raw.githubusercontent.com/Kuniwak/TestableDesignExample/master/Documentation/Images/ClassDiagram_ja.png)
 
-![](https://raw.githubusercontent.com/Kuniwak/TestableDesignExample/master/Documentation/Images/ClassDiagram_en.png)
 
-### Sample Code
+
+### サンプルコード
 
 ```swift
 class FooViewController: UIViewController {
@@ -20,7 +20,7 @@ class FooViewController: UIViewController {
     private var viewMediator: FooViewMediatorContract!
     private var controller: FooControllerContract!
 
-    // We should give FooModel to be able to change initial state of the screen.
+    // この画面の初期状態を外から制御できるように FooModel を外部から渡す。
     static func create(model: FooModelContract) -> FooViewController? {
         guard let viewController = R.storyboard.fooScreen.FooViewController() else {
             return nil
@@ -34,7 +34,7 @@ class FooViewController: UIViewController {
     @IBOutlet weak var barView: BarView!
     @IBOutlet weak var bazView: BizzView!
 
-    // Connect Model and ViewMediator, Controller.
+    // ここで Model と ViewMediator、Controller を接続する。
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -56,9 +56,9 @@ class FooViewController: UIViewController {
 ```
 
 ```swift
-// FooModel is a state-machine that can transit to FooModelState.
-// Notify change events to others via an observable `didChange` when
-// API was successfully done or failed.
+// FooModel は、FooModelState を状態としたステートマシンです。
+// API 呼び出しの成功や失敗によって状態遷移が起きると、
+// `didChange` という Observable を通して外部へ通知します。
 class FooModel: FooModelContract {
     private let repository: FooRepositoryContract
     private let stateVariable = RxSwift.Variable<FooModelState>(.preparing)
@@ -81,7 +81,7 @@ class FooModel: FooModelContract {
 }
 
 
-// States that FooModel can transit to.
+// FooModel が取りうる状態の一覧。
 enum FooModelState {
     case preparing
     case success
@@ -90,13 +90,16 @@ enum FooModelState {
 ```
 
 ```swift
+// FooModel の状態変化に応じて表示を切り替えるクラス。
+// Mediator とは、仲介者を意味していて、複数の UIView を
+// 操作する責務をもっています。
 class FooViewMediator: FooViewMediatorContract {
     typealias Views = (bar: BarView, baz: BuzzView)
     private let views: Views
     private let model: FooModelContract
     private let disposeBag = RxSwift.DisposeBag()
 
-    // A delegate for notifying UI events to others.
+    // UIイベントを外部へ通知するための Delegate。
     weak var delegate: FooViewMediatorDelegate?
 
 
@@ -104,7 +107,7 @@ class FooViewMediator: FooViewMediatorContract {
         self.model = model
         self.views = views
 
-        // Change visual by observing model's state transitions.
+        // モデルの状態遷移に応じて表示を切り替えます。
         self.model
             .didChange
             .subscribe(onNext: { [weak var] state in
@@ -119,7 +122,7 @@ class FooViewMediator: FooViewMediatorContract {
             })
             .addDisposableTo(self.disposeBag)
 
-        // Notify to its delegate when child view was changed.
+        // もし、子 View に変化があったら Delegate へ通知します。
         self.views.baz.addTarget(self, action: #selector(self.bazViewDidTap(sender:)))
     }
 
@@ -131,6 +134,7 @@ class FooViewMediator: FooViewMediatorContract {
 ```
 
 ```swift
+// FooViewMediator からの UI イベントを、FooModel への入力へと変換します。
 class FooController: FooControllerContract {
     fileprivate let model: FooModelContract
 
@@ -140,7 +144,6 @@ class FooController: FooControllerContract {
 }
 
 
-// Notify user interactions to the model via the viewMediator.
 extension FooController: FooViewMediatorDelegate {
     func didSomething() {
         self.model.doSomething()
@@ -150,18 +153,18 @@ extension FooController: FooViewMediatorDelegate {
 
 
 
-How to control global vars
---------------------------
-In this project, we control global variables by using [test doubles](http://xunitpatterns.com/Test%20Double.html); Stub and Spy.
+大域変数をどのようにコントロールするか
+--------------------------------------
+このプロジェクトでは、Stub と Spy という代替物を使って、大域変数を制御します（参考: [Test Doubles （英語）](http://xunitpatterns.com/Test%20Double.html)）。
 
-![](https://raw.githubusercontent.com/Kuniwak/TestableDesignExample/master/Documentation/Images/TestDoubles_en.png)
+![](https://raw.githubusercontent.com/Kuniwak/TestableDesignExample/master/Documentation/Images/TestDoubles_ja.png)
 
 
-### Sample code
-#### Bad Design (fragile tests)
+### サンプルコード
+#### よくない設計（脆いテスト）
 
 ```swift
-// BAD DESIGN
+// よくない設計
 class UserDefaultsCalculator {
     func read10TimesValue() {
         return UserDefaults.standard.integer(forKey: "foo") * 10
@@ -175,28 +178,28 @@ class UserDefaultsCalculator {
 ```
 
 ```swift
-// In production code:
+// 製品コードの様子
 let calc = UserDefaultsCalculator()
 let value = calc.read10TimesValue()
 calc.write10TimesValue(value)
 
 
-// In the unit-test A, it is fragile :-(
+// テストコードの様子A
 let calc = UserDefaultsCalculator()
 UserDefaults.standard.set(1, forKey: "foo")
 XCTAssertEqual(calc.read10TimesValue(), 10)
 
 
-// In the unit-test B, it is also fragile :-(
+// テストコードの様子B
 let calc = UserDefaultsCalculator()
 calc.write10TimesValue(1)
 XCTAssertEqual(UserDefaults.standard.integer(forKey: "foo"), 10)
 ```
 
 
-#### Good Design (robust tests)
+#### よい設計（堅牢なテスト）
 ```swift
-// GOOD DESIGN
+// よい設計
 class UserDefaultsCalculator {
     private let readableRepository: ReadableRepositoryContract
     private let writableRepository: WritableRepositoryContract
@@ -264,7 +267,7 @@ class WritableRepository: WritableRepositoryContract {
 
 
 ```swift
-// In production code:
+// 製品コードの様子
 let calc = UserDefaultsCalculator(
     reading: ReadableRepository(UserDefaults.standard),
     writing: WirtableRepository(UserDefaults.standard)
@@ -273,8 +276,7 @@ let value = calc.read10TimesValue()
 calc.write10TimesValue(value)
 
 
-// In the unit-test A, it is robust, because
-// we don't touch actual UserDefaults :-D
+// テストコードの様子A。UserDefaults には触れていないので堅牢。
 let calc = UserDefaultsCalculator(
     reading: ReadableRepositoryStub(firstValue: 1),
     writing: WritableRepositorySpy()
@@ -282,7 +284,7 @@ let calc = UserDefaultsCalculator(
 XCTAssertEqual(calc.read10TimesValue(), 10)
 
 
-// In the unit-test B, it is also robust :-D
+// テストコードの様子B。UserDefaults には触れていないので堅牢。
 let spy = WritableRepositorySpy()
 let calc = UserDefaultsCalculator(
     reading: ReadableRepositoryStub(firstValue: 0),
@@ -293,7 +295,7 @@ XCTAssertEqual(spy.callArgs.last!, 10)
 ```
 
 ```swift
-// TestDoubles definitions
+// 代替物の定義
 
 class ReadableRepositoryStub: ReadableRepositoryContract {
     var nextValue: Int
@@ -321,18 +323,19 @@ class WritableRepositorySpy: WritableRepositoryContract {
 
 Testing strategy
 ----------------
-We stronlgy agree the blog entry; ["Just Say No to More End-to-End Tests"](https://testing.googleblog.com/2015/04/just-say-no-to-more-end-to-end-tests.html).
+このプロジェクトでは、 [「もうE2Eテストはいらない（英語）」](https://testing.googleblog.com/2015/04/just-say-no-to-more-end-to-end-tests.html)というブログエントリに強く賛同します。
 
-In this project, we use type-checking instead of other tests (unit tests and integration tests and UI tests) to get feedbacks from tests rapidly. Because type-checking is higher effictiveness than other tests.
+実際にこのプロジェクトでは、テストからのフィードバックを素早く受け取るために、型検査を他のテストより重視しています。
+なぜなら、型検査は単体テストよりも効率的だからです。
 
-![](https://raw.githubusercontent.com/Kuniwak/TestableDesignExample/master/Documentation/Images/TestEfficiency_en.png)
+![](https://raw.githubusercontent.com/Kuniwak/TestableDesignExample/master/Documentation/Images/TestEfficiency_ja.png)
 
-For example, we can check registering `UITableViewCell` to `UITableVIew` before dequeueing by using type-checking:
+例えば、`UITableViewCell` を `UITableView` に dequeue する前に register を呼んでいるという検査は型検査によって代替されています:
 
 ```swift
 class MyCell: UITableViewCell {
     /**
-     A class for registration token that will create after registering the cell to the specified UITableView.
+     UITableView へ登録されたことを証明する登録証オブジェクト。
      */
     struct RegistrationToken {
         // Hide initializer to other objects.
@@ -341,7 +344,7 @@ class MyCell: UITableViewCell {
 
 
     /**
-     Registers the cell class to the specified UITableView and returns a registration token.
+     このセルクラスを UITableView へ登録し、登録証を発行します。
      */
     static func register(to tableView: UITableView) -> RegistrationToken {
         tableView.register(R.nib.stargazerCell)
@@ -350,8 +353,9 @@ class MyCell: UITableViewCell {
 
 
     /**
-     Dequeues the cell by the specified UITableView.
-     You must have a registration token (it means you must register the cell class before dequeueing).
+     UITableView から、このセルを dequeue します。
+     このメソッド呼び出しには登録証が必須です
+     （つまり、dequeue する前に resgister しないといけないということです）。
      */
     static func dequeue(
         by tableView: UITableView,
@@ -364,27 +368,27 @@ class MyCell: UITableViewCell {
         ) as? StargazerCell else {
             // > dequeueReusableCell(withIdentifier:for:)
             // >
-            // > A UITableViewCell object with the associated reuse identifier.
-            // > This method always returns a valid cell.
+            // > UITableViewCell は reuse identifier によって関連付けされていれば、
+            // > 必ず有効なセルを返します。
             // >
             // > https://developer.apple.com/reference/uikit/uitableview/1614878-dequeuereusablecell
-            fatalError("This case must be success")
+            fatalError("必ず成功します")
         }
 
-        // Configuring the cell.
+        // セルを設定します。
 
         return cell
     }
 }
 ```
 
-Taken together, we should follow the Test Pyramid:
+要するに、私たちは次のようなピラミッドに従う必要があると言い換えられます:
 
-![Ideal test volume is extlemly few UI tests and few integration tests and much unit tests and much type checkings.](https://raw.githubusercontent.com/Kuniwak/TestableDesignExample/master/Documentation/Images/TestingPyramid_en.png)
+![理想的なテストは、ごくわずかなUIテストと、わずかな結合テストと、多くの単体テストと、極めて多くの型検査によって成り立つべきです。](https://raw.githubusercontent.com/Kuniwak/TestableDesignExample/master/Documentation/Images/TestingPyramid_ja.png)
 
 
 
-References
-----------
+参考文献
+--------
 
 1. XUnit Test Patterns: http://xunitpatterns.com/index.html

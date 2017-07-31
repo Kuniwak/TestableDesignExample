@@ -16,7 +16,7 @@
    version="1.1"
    inkscape:version="0.91 r13725"
    sodipodi:docname="TestingPyramid.svg"
-   inkscape:export-filename="/Users/yuki.kokubun/Development/TestableDesignExample/Documentation/Images/ClassDiagram_en.png"
+   inkscape:export-filename="/Users/yuki.kokubun/Development/TestableDesignExample/Documentation/Images/TestingPyramid_en.png"
    inkscape:export-xdpi="90"
    inkscape:export-ydpi="90">
   <defs
@@ -478,10 +478,10 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.7"
-     inkscape:cx="718.18078"
-     inkscape:cy="-41.739066"
+     inkscape:cx="266.03792"
+     inkscape:cy="529.68951"
      inkscape:document-units="px"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="layer3"
      showgrid="false"
      inkscape:object-paths="true"
      inkscape:snap-bbox="true"
@@ -514,7 +514,8 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(0,-52.362161)">
+     transform="translate(0,-52.362161)"
+     sodipodi:insensitive="true">
     <path
        style="fill:#f7f7f7;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 500,312.36216 -120,160 240,0 z"
@@ -545,6 +546,24 @@
        inkscape:export-xdpi="45"
        inkscape:export-ydpi="45" />
     <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="1107.1429"
+       y="215.21931"
+       id="text5386"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan5388"
+         x="1107.1429"
+         y="215.21931" /></text>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Caption En"
+     style="display:inline">
+    <text
+       transform="translate(0,-52.362161)"
        inkscape:export-ydpi="45"
        inkscape:export-xdpi="45"
        sodipodi:linespacing="125%"
@@ -558,6 +577,7 @@
          id="tspan4468"
          sodipodi:role="line">UI tests</tspan></text>
     <text
+       transform="translate(0,-52.362161)"
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:35.74028778px;line-height:125%;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="499.03589"
@@ -571,6 +591,7 @@
          x="499.03589"
          y="568.36096">Integration tests</tspan></text>
     <text
+       transform="translate(0,-52.362161)"
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:46.73934937px;line-height:125%;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="498.92609"
@@ -584,6 +605,7 @@
          x="498.92609"
          y="728.45941">Unit tests</tspan></text>
     <text
+       transform="translate(0,-52.362161)"
        inkscape:export-ydpi="45"
        inkscape:export-xdpi="45"
        sodipodi:linespacing="125%"
@@ -596,16 +618,67 @@
          x="501.76547"
          id="tspan4480"
          sodipodi:role="line">Type checking</tspan></text>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="Caption Ja"
+     style="display:none">
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="1107.1429"
-       y="215.21931"
-       id="text5386"
-       sodipodi:linespacing="125%"><tspan
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:30.18959427px;line-height:125%;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="499.3064"
+       y="430.11209"
+       id="text4565"
+       sodipodi:linespacing="125%"
+       inkscape:export-xdpi="45"
+       inkscape:export-ydpi="45"
+       transform="translate(0,-52.362161)"><tspan
          sodipodi:role="line"
-         id="tspan5388"
-         x="1107.1429"
-         y="215.21931" /></text>
+         id="tspan4567"
+         x="499.3064"
+         y="430.11209">UI テスト</tspan></text>
+    <text
+       inkscape:export-ydpi="45"
+       inkscape:export-xdpi="45"
+       sodipodi:linespacing="125%"
+       id="text4569"
+       y="568.36096"
+       x="499.03589"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:35.74028778px;line-height:125%;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       transform="translate(0,-52.362161)"><tspan
+         y="568.36096"
+         x="499.03589"
+         id="tspan4571"
+         sodipodi:role="line">結合テスト</tspan></text>
+    <text
+       inkscape:export-ydpi="45"
+       inkscape:export-xdpi="45"
+       sodipodi:linespacing="125%"
+       id="text4573"
+       y="728.45941"
+       x="498.92609"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:46.73934937px;line-height:125%;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       transform="translate(0,-52.362161)"><tspan
+         y="728.45941"
+         x="498.92609"
+         id="tspan4575"
+         sodipodi:role="line">単体テスト</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:58.58997726px;line-height:125%;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="501.76547"
+       y="891.27344"
+       id="text4577"
+       sodipodi:linespacing="125%"
+       inkscape:export-xdpi="45"
+       inkscape:export-ydpi="45"
+       transform="translate(0,-52.362161)"><tspan
+         sodipodi:role="line"
+         id="tspan4579"
+         x="501.76547"
+         y="891.27344">型検査</tspan></text>
   </g>
 </svg>
