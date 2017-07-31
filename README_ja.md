@@ -171,7 +171,7 @@ class FooViewController: UIViewController {
 
 
     static func create(
-        presenting sharedModel: FooBarModelContract!,
+        presenting sharedModel: FooBarModelContract,
         navigatingBy navigator: NavigatorContract
     ) {
         guard let viewController = R.storyboard.fooScreen.fooViewController() else {
