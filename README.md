@@ -344,7 +344,7 @@ class MyCell: UITableViewCell {
      Registers the cell class to the specified UITableView and returns a registration token.
      */
     static func register(to tableView: UITableView) -> RegistrationToken {
-        tableView.register(R.nib.stargazerCell)
+        tableView.register(R.nib.myCell)
         return RegistrationToken()
     }
 
@@ -359,9 +359,9 @@ class MyCell: UITableViewCell {
         andMustHave token: RegistrationToken
     ) -> MyCell {
         guard let cell = tableView.dequeueReusableCell(
-            withIdentifier: R.reuseIdentifier.stargazerCell.identifier,
+            withIdentifier: R.reuseIdentifier.myCell.identifier,
             for: indexPath
-        ) as? StargazerCell else {
+        ) as? MyCell else {
             // > dequeueReusableCell(withIdentifier:for:)
             // >
             // > A UITableViewCell object with the associated reuse identifier.
