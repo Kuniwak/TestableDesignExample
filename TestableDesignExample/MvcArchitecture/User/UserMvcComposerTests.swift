@@ -13,7 +13,7 @@ class UserMvcComposerTests: XCTestCase {
             )
         )
 
-        testNavigator.navigateWithFallback(to: viewController)
+        testNavigator.navigateWithFallback(to: viewController, animated: false)
     }
 
 

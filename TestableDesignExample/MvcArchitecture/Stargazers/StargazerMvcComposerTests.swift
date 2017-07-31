@@ -25,7 +25,7 @@ class StargazersMvcComposerTests: XCTestCase {
             andHolding: GitHubApiClientStub.anyPending
         )
 
-        testNavigator.navigateWithFallback(to: viewController)
+        testNavigator.navigateWithFallback(to: viewController, animated: false)
     }
 
 

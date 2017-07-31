@@ -3,8 +3,8 @@ import UIKit
 
 
 protocol LifterContract {
-    func present(viewController: UIViewController)
-    func presentWithFallback(viewController: UIViewController?)
+    func present(viewController: UIViewController, animated: Bool)
+    func presentWithFallback(viewController: UIViewController?, animated: Bool)
 }
 
 

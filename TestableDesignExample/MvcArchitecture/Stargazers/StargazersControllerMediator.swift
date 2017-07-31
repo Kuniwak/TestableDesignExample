@@ -60,7 +60,7 @@ extension StargazerControllerMediator: UITableViewDelegate {
             for: stargazer
         )
 
-        self.navigator.navigateWithFallback(to: stargazerViewController)
+        self.navigator.navigateWithFallback(to: stargazerViewController, animated: true)
 
         tableView.deselectRow(at: indexPath, animated: true)
     }

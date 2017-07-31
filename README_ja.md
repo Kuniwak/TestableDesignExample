@@ -211,14 +211,14 @@ protocol NavigatorContract {
     /**
      Push the specified UIViewController to the held UINavigationController.
      */
-    func navigate(to viewController: UIViewController)
+    func navigate(to viewController: UIViewController, animated: Bool)
 
 
     /**
      Push the specified UIViewController to the held UINavigationController.
-     This class present an alert when the specified UIViewController is nil. 
+     This class present an alert when the specified UIViewController is nil.
      */
-    func navigateWithFallback(to viewController: UIViewController?)
+    func navigateWithFallback(to viewController: UIViewController?, animated: Bool)
 }
 
 
@@ -232,16 +232,28 @@ class Navigator: NavigatorContract {
     }
 
 
-    func navigate(to viewController: UIViewController?) {
-        guard let viewController = viewController else {
-            self.presentAlert()
-            return nil
-        }
-
+    /**
+     Push the specified UIViewController to the held UINavigationController.
+     */
+    func navigate(to viewController: UIViewController, animated: Bool) {
         self.navigationController.pushViewController(
             viewController,
-            animated: true
+            animated: animated
         )
+    }
+
+
+    /**
+     Push the specified UIViewController to the held UINavigationController.
+     This class present an alert when the specified UIViewController is nil.
+     */
+    func navigateWithFallback(to viewController: UIViewController?, animated: Bool) {
+        guard let viewController = viewController else {
+            self.presentAlert()
+            return
+        }
+
+        self.navigate(to: viewController, animated: animated)
     }
 
 
