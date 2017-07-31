@@ -32,7 +32,7 @@ class FooViewController: UIViewController {
 
 
     @IBOutlet weak var barView: BarView!
-    @IBOutlet weak var buzzView: BizzView!
+    @IBOutlet weak var bazView: BizzView!
 
     // Connect Model and ViewMediator, Controller.
     override func viewDidLoad() {
@@ -47,7 +47,7 @@ class FooViewController: UIViewController {
             observing: self.model,
             handling: (
                 bar: self.barView,
-                buzz: self.buzzView
+                baz: self.bazView
             )
         )
         self.viewMediator.delegate = controller
@@ -91,7 +91,7 @@ enum FooModelState {
 
 ```swift
 class FooViewMediator: FooViewMediatorContract {
-    typealias Views = (bar: BarView, buzz: BuzzView)
+    typealias Views = (bar: BarView, baz: BuzzView)
     private let views: Views
     private let model: FooModelContract
     private let disposeBag = RxSwift.DisposeBag()
@@ -120,11 +120,11 @@ class FooViewMediator: FooViewMediatorContract {
             .addDisposableTo(self.disposeBag)
 
         // Notify to its delegate when child view was changed.
-        self.views.buzz.addTarget(self, action: #selector(self.buzzViewDidTap(sender:)))
+        self.views.baz.addTarget(self, action: #selector(self.bazViewDidTap(sender:)))
     }
 
 
-    @objc func buzzViewDidTap(sender: Any) {
+    @objc func bazViewDidTap(sender: Any) {
         self.delegate?.didSomething()
     }
 }
@@ -144,6 +144,181 @@ class FooController: FooControllerContract {
 extension FooController: FooViewMediatorDelegate {
     func didSomething() {
         self.model.doSomething()
+    }
+}
+```
+
+
+How to use Test Doubles
+-----------------------
+
+![](https://raw.githubusercontent.com/Kuniwak/TestableDesignExample/clean-up/Documentation/Images/TestDoubles_en.png)
+
+
+<dl>
+<dt>Stub[^1]
+<dd>Dummy object for indirect input.
+<dt>Spy[^1]
+<dd>Dummy object for indirect output.
+</dl>
+
+
+### Sample code
+#### Bad Design
+
+```swift
+// BAD DESIGN
+class UserDefaultsCalculator {
+    func read10TimesValue() {
+        return UserDefaults.standard.integer(forKey: "foo") * 10
+    }
+
+
+    func write10TimesValue(_ value: Int) {
+        UserDefaults.standard.set(value * 10, forKey: "foo")
+    }
+}
+```
+
+```swift
+// In production code:
+let calc = UserDefaultsCalculator()
+let value = calc.read10TimesValue()
+calc.write10TimesValue(value)
+
+
+// In the unit-test A, it is fragile :-(
+let calc = UserDefaultsCalculator()
+UserDefaults.standard.set(1, forKey: "foo")
+XCTAssertEqual(calc.read10TimesValue(), 10)
+
+
+// In the unit-test B, it is also fragile :-(
+let calc = UserDefaultsCalculator()
+calc.write10TimesValue(1)
+XCTAssertEqual(UserDefaults.standard.integer(forKey: "foo"), 10)
+```
+
+
+#### Good Design
+```swift
+// GOOD DESIGN
+class UserDefaultsCalculator {
+    private let readableRepository: ReadableRepositoryContract
+    private let writableRepository: WritableRepositoryContract
+
+
+    init(
+        reading readableRepository, ReadableRepositoryContract,
+        writing writableRepository, WritableRepositoryContract
+    ) {
+        self.readableRepository = readableRepository
+        self.writableRepository = writableRepository
+    }
+
+
+    func read10TimesValue() {
+        return self.readableRepository.read() * 10
+    }
+
+
+    func write10TimesValue(value: Int) {
+        self.writableRepository.write(value * 10)
+    }
+}
+
+
+protocol ReadableRepositoryContract {
+    func read() -> Int
+}
+
+
+class ReadableRepository: ReadableRepositoryContract {
+    private let userDefaults: UserDefaults
+
+
+    init(reading userDefaults: UserDefaults) {
+        self.userDefaults = userDefaults
+    }
+
+
+    func read() -> Int {
+        return self.userDefaults.integer(forKey: "foo")
+    }
+}
+
+
+protocol WritableRepositoryContract {
+    func write(_ value: Int)
+}
+
+
+class WritableRepository: WritableRepositoryContract {
+    private let userDefaults: UserDefaults
+
+
+    init(reading userDefaults: UserDefaults) {
+        self.userDefaults = userDefaults
+    }
+
+
+    func write(_ value: Int) {
+        self.userDefaults.set(value, forKey: "foo")
+    }
+}
+```
+
+
+```swift
+// In production code:
+let calc = UserDefaultsCalculator(
+    reading: ReadableRepository(UserDefaults.standard),
+    writing: WirtableRepository(UserDefaults.standard)
+)
+let value = calc.read10TimesValue()
+calc.write10TimesValue(value)
+
+
+// In the unit-test A, it is robust, because
+// we don't touch actual UserDefaults :-D
+let calc = UserDefaultsCalculator(
+    reading: ReadableRepositoryStub(firstValue: 1),
+    writing: WritableRepositorySpy()
+)
+XCTAssertEqual(calc.read10TimesValue(), 10)
+
+
+// In the unit-test B, it is also robust :-D
+let spy = WritableRepositorySpy()
+let calc = UserDefaultsCalculator(
+    reading: ReadableRepositoryStub(firstValue: 0),
+    writing: spy
+)
+calc.write10TimesValue(1)
+XCTAssertEqual(spy.callArgs.last!, 10)
+```
+
+```swift
+// TestDoubles definitions
+
+class ReadableRepositoryStub: ReadableRepositoryContract {
+    var nextValue: Int
+
+    init(firstValue: Int) {
+        self.nextValue = firstValue
+    }
+
+    func read() {
+        return self.nextValue
+    }
+}
+
+
+class WritableRepositorySpy: WritableRepositoryContract {
+    private(set) var callArgs = [Int]()
+
+    func write(_ value: Int) {
+        self.callArgs.append(value)
     }
 }
 ```
@@ -212,3 +387,9 @@ class MyCell: UITableViewCell {
 Taken together, we should follow the Test Pyramid:
 
 ![Ideal test volume is extlemly few UI tests and few integration tests and much unit tests and much type checkings.](https://raw.githubusercontent.com/Kuniwak/TestableDesignExample/clean-up/Documentation/Images/TestPyramid.png)
+
+
+References
+----------
+
+[^1]: XUnit Test Patterns

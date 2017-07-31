@@ -16,7 +16,7 @@
    version="1.1"
    inkscape:version="0.91 r13725"
    sodipodi:docname="ClassDiagram.svg"
-   inkscape:export-filename="/Users/yuki.kokubun/Development/TestableDesignExample/Documentation/Images/ClassDiagram_en.png"
+   inkscape:export-filename="/Users/yuki.kokubun/Development/TestableDesignExample/Documentation/Images/ClassDiagram_ja.png"
    inkscape:export-xdpi="90"
    inkscape:export-ydpi="90">
   <defs
@@ -510,10 +510,10 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.7"
-     inkscape:cx="501.72645"
+     inkscape:cx="500.29788"
      inkscape:cy="543.97522"
      inkscape:document-units="px"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="layer3"
      showgrid="false"
      inkscape:object-paths="true"
      inkscape:snap-bbox="true"
@@ -546,7 +546,8 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(0,-52.362161)">
+     transform="translate(0,-52.362161)"
+     sodipodi:insensitive="true">
     <rect
        ry="20"
        rx="20"
@@ -715,19 +716,6 @@
        inkscape:export-xdpi="97.830002"
        inkscape:export-ydpi="97.830002" />
     <text
-       sodipodi:linespacing="125%"
-       id="text6011"
-       y="376.48987"
-       x="781.4491"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.92097282px;line-height:125%;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       xml:space="preserve"
-       inkscape:export-xdpi="97.830002"
-       inkscape:export-ydpi="97.830002"><tspan
-         y="376.48987"
-         x="781.4491"
-         id="tspan6013"
-         sodipodi:role="line">Observing</tspan></text>
-    <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;line-height:125%;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="178.97327"
@@ -790,19 +778,6 @@
        sodipodi:nodetypes="ccc"
        inkscape:export-xdpi="97.830002"
        inkscape:export-ydpi="97.830002" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.92097282px;line-height:125%;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="281.4491"
-       y="376.48987"
-       id="text7277"
-       sodipodi:linespacing="125%"
-       inkscape:export-xdpi="97.830002"
-       inkscape:export-ydpi="97.830002"><tspan
-         sodipodi:role="line"
-         id="tspan7279"
-         x="281.4491"
-         y="376.48987">Notifying</tspan></text>
     <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker7715)"
        d="m 440,187.3622 0,55 -300,0 0,500"
@@ -827,45 +802,6 @@
        sodipodi:nodetypes="cc"
        inkscape:export-xdpi="97.830002"
        inkscape:export-ydpi="97.830002" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.92097282px;line-height:125%;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="284.27655"
-       y="226.59137"
-       id="text7707"
-       sodipodi:linespacing="125%"
-       inkscape:export-xdpi="97.830002"
-       inkscape:export-ydpi="97.830002"><tspan
-         sodipodi:role="line"
-         id="tspan7709"
-         x="284.27655"
-         y="226.59137">Create &amp; Own</tspan></text>
-    <text
-       sodipodi:linespacing="125%"
-       id="text7711"
-       y="226.59137"
-       x="724.27661"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.92097282px;line-height:125%;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       xml:space="preserve"
-       inkscape:export-xdpi="97.830002"
-       inkscape:export-ydpi="97.830002"><tspan
-         y="226.59137"
-         x="724.27661"
-         id="tspan7713"
-         sodipodi:role="line">Create &amp; Own</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.92097282px;line-height:125%;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="451.4491"
-       y="812.48999"
-       id="text8761"
-       sodipodi:linespacing="125%"
-       inkscape:export-xdpi="97.830002"
-       inkscape:export-ydpi="97.830002"><tspan
-         sodipodi:role="line"
-         id="tspan8763"
-         x="451.4491"
-         y="812.48999">Observing</tspan></text>
     <rect
        ry="20"
        rx="20"
@@ -963,7 +899,7 @@
          y="985.21918"
          x="816.97327"
          id="tspan8787"
-         sodipodi:role="line">BuzzView (UIView)</tspan></text>
+         sodipodi:role="line">BazView (UIView)</tspan></text>
     <rect
        ry="13.613473"
        rx="13.613473"
@@ -1012,7 +948,84 @@
          id="tspan9015"
          x="636.97327"
          y="397.21918">didChange</tspan></text>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Caption En"
+     style="display:none">
     <text
+       transform="translate(0,-52.362161)"
+       sodipodi:linespacing="125%"
+       id="text6011"
+       y="376.48987"
+       x="781.4491"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.92097282px;line-height:125%;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-xdpi="97.830002"
+       inkscape:export-ydpi="97.830002"><tspan
+         y="376.48987"
+         x="781.4491"
+         id="tspan6013"
+         sodipodi:role="line">Observing</tspan></text>
+    <text
+       transform="translate(0,-52.362161)"
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.92097282px;line-height:125%;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="281.4491"
+       y="376.48987"
+       id="text7277"
+       sodipodi:linespacing="125%"
+       inkscape:export-xdpi="97.830002"
+       inkscape:export-ydpi="97.830002"><tspan
+         sodipodi:role="line"
+         id="tspan7279"
+         x="281.4491"
+         y="376.48987">Notifying</tspan></text>
+    <text
+       transform="translate(0,-52.362161)"
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.92097282px;line-height:125%;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="284.27655"
+       y="226.59137"
+       id="text7707"
+       sodipodi:linespacing="125%"
+       inkscape:export-xdpi="97.830002"
+       inkscape:export-ydpi="97.830002"><tspan
+         sodipodi:role="line"
+         id="tspan7709"
+         x="284.27655"
+         y="226.59137">Create &amp; Own</tspan></text>
+    <text
+       transform="translate(0,-52.362161)"
+       sodipodi:linespacing="125%"
+       id="text7711"
+       y="226.59137"
+       x="724.27661"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.92097282px;line-height:125%;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-xdpi="97.830002"
+       inkscape:export-ydpi="97.830002"><tspan
+         y="226.59137"
+         x="724.27661"
+         id="tspan7713"
+         sodipodi:role="line">Create &amp; Own</tspan></text>
+    <text
+       transform="translate(0,-52.362161)"
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.92097282px;line-height:125%;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="451.4491"
+       y="812.48999"
+       id="text8761"
+       sodipodi:linespacing="125%"
+       inkscape:export-xdpi="97.830002"
+       inkscape:export-ydpi="97.830002"><tspan
+         sodipodi:role="line"
+         id="tspan8763"
+         x="451.4491"
+         y="812.48999">Observing</tspan></text>
+    <text
+       transform="translate(0,-52.362161)"
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.92097282px;line-height:125%;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="464.27655"
@@ -1025,5 +1038,89 @@
          id="tspan9653"
          x="464.27655"
          y="276.59137">Own</tspan></text>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="Caption Ja"
+     style="display:inline">
+    <text
+       inkscape:export-ydpi="97.830002"
+       inkscape:export-xdpi="97.830002"
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.92097282px;line-height:125%;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="781.4491"
+       y="324.12772"
+       id="text5731"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan5733"
+         x="781.4491"
+         y="324.12772">監視</tspan></text>
+    <text
+       inkscape:export-ydpi="97.830002"
+       inkscape:export-xdpi="97.830002"
+       sodipodi:linespacing="125%"
+       id="text5735"
+       y="324.12772"
+       x="281.4491"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.92097282px;line-height:125%;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         y="324.12772"
+         x="281.4491"
+         id="tspan5737"
+         sodipodi:role="line">通知</tspan></text>
+    <text
+       inkscape:export-ydpi="97.830002"
+       inkscape:export-xdpi="97.830002"
+       sodipodi:linespacing="125%"
+       id="text5739"
+       y="174.2292"
+       x="284.27655"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.92097282px;line-height:125%;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         y="174.2292"
+         x="284.27655"
+         id="tspan5741"
+         sodipodi:role="line">作成 &amp; 所有</tspan></text>
+    <text
+       inkscape:export-ydpi="97.830002"
+       inkscape:export-xdpi="97.830002"
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.92097282px;line-height:125%;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="724.27661"
+       y="174.2292"
+       id="text5743"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan5745"
+         x="724.27661"
+         y="174.2292">作成 &amp; 所有</tspan></text>
+    <text
+       inkscape:export-ydpi="97.830002"
+       inkscape:export-xdpi="97.830002"
+       sodipodi:linespacing="125%"
+       id="text5747"
+       y="760.12781"
+       x="451.4491"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.92097282px;line-height:125%;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         y="760.12781"
+         x="451.4491"
+         id="tspan5749"
+         sodipodi:role="line">監視</tspan></text>
+    <text
+       inkscape:export-ydpi="97.830002"
+       inkscape:export-xdpi="97.830002"
+       sodipodi:linespacing="125%"
+       id="text5751"
+       y="224.2292"
+       x="464.27655"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.92097282px;line-height:125%;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         y="224.2292"
+         x="464.27655"
+         id="tspan5753"
+         sodipodi:role="line">所有</tspan></text>
   </g>
 </svg>
