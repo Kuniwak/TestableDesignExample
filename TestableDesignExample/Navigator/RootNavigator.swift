@@ -11,16 +11,11 @@ protocol RootNavigatorContract {
 
 
 class RootNavigator: RootNavigatorContract {
-    private let registry: BootstrapResourceRegistryContract
     private let window: UIWindow
 
 
-    init(
-        willUpdate window: UIWindow,
-        byReading registry: BootstrapResourceRegistryContract
-    ) {
+    init(willUpdate window: UIWindow) {
         self.window = window
-        self.registry = registry
     }
 
 
@@ -37,7 +32,6 @@ class RootNavigator: RootNavigatorContract {
 
         guard let rootViewController = StargazersMvcComposer.create(
             byStargazersOf: repository,
-            withResourceOf: self.registry,
             andFetchingVia: api,
             andNavigateBy: navigator
         ) else {

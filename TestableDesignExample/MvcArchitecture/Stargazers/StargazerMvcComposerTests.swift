@@ -13,7 +13,6 @@ class StargazersMvcComposerTests: XCTestCase {
                 owner: GitHubUser.Name(text: "octocat"),
                 name: GitHubRepository.Name(text: "Hello-world")
             ),
-            withResourceOf: BootstrapResourceRegistryStubFactory.create(),
             andFetchingStargazersVia: StargazerRepositoryStub(
                 firstResult: Promise(value: [
                     GitHubUser(
