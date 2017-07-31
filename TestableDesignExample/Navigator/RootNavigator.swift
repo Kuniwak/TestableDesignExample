@@ -11,16 +11,11 @@ protocol RootNavigatorContract {
 
 
 class RootNavigator: RootNavigatorContract {
-    private let registry: BootstrapResourceRegistryContract
     private let window: UIWindow
 
 
-    init(
-        willUpdate window: UIWindow,
-        byReading registry: BootstrapResourceRegistryContract
-    ) {
+    init(willUpdate window: UIWindow) {
         self.window = window
-        self.registry = registry
     }
 
 
@@ -33,10 +28,11 @@ class RootNavigator: RootNavigatorContract {
             name: GitHubRepository.Name(text: "MirrorDiffKit")
         )
 
+        let api = GitHubApiClient(basedOn: GitHubApiEndpointBaseUrl.gitHubCom)
+
         guard let rootViewController = StargazersMvcComposer.create(
             byStargazersOf: repository,
-            withResourceOf: self.registry,
-            andFetchingVia:  GitHubApiClient(registry: self.registry),
+            andFetchingVia: api,
             andNavigateBy: navigator
         ) else {
             self.window.rootViewController = FatalErrorViewController.create(

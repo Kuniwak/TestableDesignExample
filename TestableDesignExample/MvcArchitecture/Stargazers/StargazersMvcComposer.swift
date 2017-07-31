@@ -7,7 +7,6 @@ class StargazersMvcComposer: UIViewController {
     @IBOutlet weak var progressView: UIProgressView!
 
 
-    private var registry: BootstrapResourceRegistryContract!
     private var api: GitHubApiClientContract!
     private var navigator: NavigatorContract!
     private var repository: GitHubRepository!
@@ -19,13 +18,11 @@ class StargazersMvcComposer: UIViewController {
 
     static func create(
         byStargazersOf repository: GitHubRepository,
-        withResourceOf registry: BootstrapResourceRegistryContract,
         andFetchingVia api: GitHubApiClientContract,
         andNavigateBy navigator: NavigatorContract
     ) -> StargazersMvcComposer? {
         return self.create(
             byStargazersOf: repository,
-            withResourceOf: registry,
             andFetchingStargazersVia: StargazerRepository(api: api),
             andNavigateBy: navigator,
             andHolding: api
@@ -35,7 +32,6 @@ class StargazersMvcComposer: UIViewController {
 
     static func create(
         byStargazersOf repository: GitHubRepository,
-        withResourceOf registry: BootstrapResourceRegistryContract,
         andFetchingStargazersVia stargazerRepository: StargazerRepositoryContract,
         andNavigateBy navigator: NavigatorContract,
         andHolding api: GitHubApiClientContract
@@ -44,7 +40,6 @@ class StargazersMvcComposer: UIViewController {
             return nil
         }
 
-        viewController.registry = registry
         viewController.api = api
         viewController.stargazerRepository = stargazerRepository
         viewController.navigator = navigator

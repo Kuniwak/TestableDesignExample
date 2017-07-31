@@ -6,11 +6,10 @@ import PromiseKit
 class GitHubApiTests: XCTestCase {
     func testFetch() {
         async(test: self, timeout: 5.0) {
-            let registry = BootstrapResourceRegistryStubFactory.create()
-            let api = GitHubApiClient(registry: registry)
+            let api = GitHubApiClient(basedOn: GitHubApiEndpointBaseUrl.gitHubCom)
 
             return api.fetch(
-                    endpoint: GitHubApiEndpoint(path: "/zen"),
+                    endpoint: GitHubApiEndpoint(path: "/v3/zen"),
                     headers: [:],
                     parameters: []
                 )

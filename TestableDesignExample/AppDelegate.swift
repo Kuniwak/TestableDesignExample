@@ -11,21 +11,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window.rootViewController = BootstrapViewController.create()
         self.window = window
 
-        switch BootstrapResourceRegistry.create() {
-        case let .success(registry):
-
-            let rootNavigator = RootNavigator(
-                willUpdate: window,
-                byReading: registry
-            )
-
-            rootNavigator.navigateToRoot()
-
-        case let .failure(error):
-            window.rootViewController = FatalErrorViewController.create(
-                debugInfo: error
-            )
-        }
+        let rootNavigator = RootNavigator(
+            willUpdate: window
+        )
 
         return true
     }
