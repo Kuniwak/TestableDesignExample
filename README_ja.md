@@ -365,7 +365,7 @@ class MyCell: UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(
             withIdentifier: R.reuseIdentifier.myCell.identifier,
             for: indexPath
-        ) as? StargazerCell else {
+        ) as? MyCell else {
             // > dequeueReusableCell(withIdentifier:for:)
             // >
             // > UITableViewCell は reuse identifier によって関連付けされていれば、
