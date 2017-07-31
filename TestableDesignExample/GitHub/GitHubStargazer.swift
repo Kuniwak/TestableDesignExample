@@ -9,7 +9,7 @@ struct GitHubStargazer {
         via api: GitHubApiClientContract
     ) -> Promise<[GitHubUser]> {
         return api.fetch(
-                endpoint: GitHubApiEndpoint(path: "/v3/repos/\(repository.owner.text)/\(repository.name.text)/stargazers"),
+                endpoint: GitHubApiEndpoint(path: "/repos/\(repository.owner.text)/\(repository.name.text)/stargazers"),
                 headers: [:],
                 parameters: []
             )

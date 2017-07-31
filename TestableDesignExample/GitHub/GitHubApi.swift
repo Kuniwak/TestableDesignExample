@@ -91,9 +91,19 @@ struct GitHubApiClient: GitHubApiClientContract {
         request.allHTTPHeaderFields = headers
 
         return Promise<Data>(resolvers: { resolve, reject in
-            let task = URLSession.shared.dataTask(with: request, completionHandler: { data, _, error in
+            let task = URLSession.shared.dataTask(with: request, completionHandler: { data, response, error in
                 guard let data = data else {
                     reject(NetworkError.emptyResponse(debugInfo: "data is nil (error=\(error.debugDescription))"))
+                    return
+                }
+
+                guard let response = response as? HTTPURLResponse else {
+                    reject(NetworkError.unrecognizableResponse(debugInfo: "protocol is not HTTP(S)"))
+                    return
+                }
+
+                guard 200..<300 ~= response.statusCode else {
+                    reject(NetworkError.unacceptableStatusCode(debugInfo: "Returned failed HTTP(S) status code: \(response.statusCode) "))
                     return
                 }
 
@@ -112,6 +122,7 @@ struct GitHubApiClient: GitHubApiClientContract {
 
     enum NetworkError: Error {
         case unrecognizableResponse(debugInfo: String)
+        case unacceptableStatusCode(debugInfo: String)
         case malformedRequest(debugInfo: String)
         case emptyResponse(debugInfo: String)
     }

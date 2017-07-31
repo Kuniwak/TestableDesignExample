@@ -9,7 +9,7 @@ class GitHubApiTests: XCTestCase {
             let api = GitHubApiClient(basedOn: GitHubApiEndpointBaseUrl.gitHubCom)
 
             return api.fetch(
-                    endpoint: GitHubApiEndpoint(path: "/v3/zen"),
+                    endpoint: GitHubApiEndpoint(path: "/zen"),
                     headers: [:],
                     parameters: []
                 )
