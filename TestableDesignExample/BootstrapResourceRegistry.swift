@@ -3,9 +3,13 @@ import Result
 
 
 
+/**
+ A class for resources that require validations at runtime.
+ This class provide bootstrap validations, so we should unwrap them
+ at only App bootstrap.
+ */
 protocol BootstrapResourceRegistryContract {
     var font: FontRegistry { get }
-    var gitHubApiUrl: URL { get }
 }
 
 
@@ -17,13 +21,6 @@ struct FontRegistry {
 
 struct BootstrapResourceRegistry: BootstrapResourceRegistryContract {
     let font: FontRegistry
-    let gitHubApiUrl: URL
-
-
-    init(font: FontRegistry, gitHubApiUrl: URL) {
-        self.font = font
-        self.gitHubApiUrl = gitHubApiUrl
-    }
 
 
     static func create() -> Result<BootstrapResourceRegistry, BootstrapError> {
@@ -38,15 +35,10 @@ struct BootstrapResourceRegistry: BootstrapResourceRegistryContract {
             return .failure(BootstrapError(resourceName: "octicons.ttf", debugInfo: "Cannot instantiate"))
         }
 
-        guard let gitHubApiUrl = URL(string: "https://api.github.com/v3/") else {
-            return .failure(BootstrapError(resourceName: "GitHub API URL", debugInfo: "Cannot instantiate"))
-        }
-
         return .success(BootstrapResourceRegistry(
             font: FontRegistry(
                 octicons: octicons
-            ),
-            gitHubApiUrl: gitHubApiUrl
+            )
         ))
     }
 

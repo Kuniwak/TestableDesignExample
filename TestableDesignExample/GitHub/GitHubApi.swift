@@ -10,24 +10,69 @@ protocol GitHubApiClientContract {
 
 
 
-struct GitHubApiEndpoint {
-    let path: String
-}
+/**
+ Fetch a Data via GitHub API.
+ You can use a stub for this class by using `GitHubApiClientStub`.
+
+ # Usage
+ ## For production code
+
+ ```
+ struct Something {
+     let foo: String
 
 
+     static func fetch(via api: GitHubApiClientContract) -> Promise<Something> {
+         return api
+             .fetch(
+                 endpoint: GitHubApiEndpoint(path: "/something"),
+                 headers: [:],
+                 parameters: []
+             )
+             .then { data -> Something in
+                 let something: Something = try unbox(data: data)
+                 return something
+             }
+     }
+ }
+ ```
 
+
+ ## For unit-testing code
+
+ ```
+ class SomethingTest: XCTestCase {
+     func testFetch() {
+         async(test: self, line: #line) {
+             let response = ["foo": "bar"]
+             let apiStub = GitHubApiClientStub(
+                 firstResult: Promise(value: response)
+             )
+
+             return Something
+                 .fetch(via: apiStub)
+                 .then { something in
+                     let expected = Something(foo: "bar")
+
+                     XCTAssertEqual(something, expected)
+                 }
+         }
+     }
+ }
+ ```
+ */
 struct GitHubApiClient: GitHubApiClientContract {
-    private let registry: BootstrapResourceRegistryContract
+    private let base: URL
 
 
-    init (registry: BootstrapResourceRegistryContract) {
-        self.registry = registry
+    init(basedOn url: URL) {
+        self.base = url
     }
 
 
     func fetch(endpoint: GitHubApiEndpoint, headers: [String: String], parameters: [(String, String)]) -> Promise<Data> {
         guard var urlComponents = URLComponents(
-            url: self.registry.gitHubApiUrl,
+            url: self.base,
             resolvingAgainstBaseURL: false
         ) else {
             return Promise(error: NetworkError.malformedRequest(debugInfo: "\(endpoint)"))
@@ -48,7 +93,7 @@ struct GitHubApiClient: GitHubApiClientContract {
         return Promise<Data>(resolvers: { resolve, reject in
             let task = URLSession.shared.dataTask(with: request, completionHandler: { data, _, error in
                 guard let data = data else {
-                    reject(NetworkError.emptyResponse(debugInfo: "\(error)"))
+                    reject(NetworkError.emptyResponse(debugInfo: "data is nil (error=\(error.debugDescription))"))
                     return
                 }
 

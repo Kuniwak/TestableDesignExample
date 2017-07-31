@@ -33,10 +33,12 @@ class RootNavigator: RootNavigatorContract {
             name: GitHubRepository.Name(text: "MirrorDiffKit")
         )
 
+        let api = GitHubApiClient(basedOn: GitHubApiEndpointBaseUrl.gitHubCom)
+
         guard let rootViewController = StargazersMvcComposer.create(
             byStargazersOf: repository,
             withResourceOf: self.registry,
-            andFetchingVia:  GitHubApiClient(registry: self.registry),
+            andFetchingVia: api,
             andNavigateBy: navigator
         ) else {
             self.window.rootViewController = FatalErrorViewController.create(
