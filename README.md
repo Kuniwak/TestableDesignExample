@@ -235,8 +235,8 @@ class Navigator: NavigatorContract {
 
     private func presentAlert() {
         let alertController = UIAlertController(
-            title: "Problem occurred when ",
-            message: "You can update to fix this problem or contact us.",
+            title: "Sorry!",
+            message: "Problem occurred when navigating a screen. You can update to fix this problem or contact us.",
             preferredStyle: .alert
         )
 

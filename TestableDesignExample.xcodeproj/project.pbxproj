@@ -47,6 +47,7 @@
 		2475EE30CCE8B8CC85956685 /* Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E4CF0A05D4A5ADE28575 /* Async.swift */; };
 		2475EE86B1751D6D830B3BBD /* TestNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E01DE6FDD5A3028F1B32 /* TestNavigator.swift */; };
 		2475EEC0350AE44691DDC0BA /* GitHubApiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E0A01A4162606F18EA04 /* GitHubApiTests.swift */; };
+		2475EEE96C335A9F12A6CDCB /* Lifter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E04E8578411420D30C66 /* Lifter.swift */; };
 		2475EF0E319C2B3CFC48C762 /* UserMvcComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E6CC4A27B8058F8CAE7F /* UserMvcComposer.swift */; };
 		2475EF55555DE956BE7FBE56 /* octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2475EF639EA034BCC0C26512 /* octicons.ttf */; };
 		2475EF6D67DC1229AB744C71 /* StargazersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475EA8A1CD58D89A6FC8E3E /* StargazersModel.swift */; };
@@ -90,6 +91,7 @@
 /* Begin PBXFileReference section */
 		2475E00BE716C34F1495A4DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2475E01DE6FDD5A3028F1B32 /* TestNavigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestNavigator.swift; sourceTree = "<group>"; };
+		2475E04E8578411420D30C66 /* Lifter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lifter.swift; sourceTree = "<group>"; };
 		2475E06E3DEED46F70D0B0AF /* BootstrapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BootstrapViewController.swift; sourceTree = "<group>"; };
 		2475E0A01A4162606F18EA04 /* GitHubApiTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubApiTests.swift; sourceTree = "<group>"; };
 		2475E0C468760C2DAE1C894B /* StargazersViewMediator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StargazersViewMediator.swift; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 				2475E9BB7111AF583D00867E /* WebPageOpener.swift */,
 				2475E01DE6FDD5A3028F1B32 /* TestNavigator.swift */,
 				2475EF9C786B34F42182126A /* NavigatorStub.swift */,
+				2475E04E8578411420D30C66 /* Lifter.swift */,
 			);
 			path = Navigator;
 			sourceTree = "<group>";
@@ -624,6 +627,7 @@
 				2475EA2BD6E67ECEAE176195 /* RemoteImageSource.swift in Sources */,
 				2475E2F948F045B2F1CCAE48 /* GitHubEndpoint.swift in Sources */,
 				2475EE26A0DFBEC4EB5BAE99 /* FontRegistry.swift in Sources */,
+				2475EEE96C335A9F12A6CDCB /* Lifter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
