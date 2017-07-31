@@ -2,8 +2,21 @@ import UIKit
 
 
 
+/**
+ A protocol for wrapper class of `UINavigationController#pushViewController(_:UIViewController, animated:Bool)`.
+ */
 protocol NavigatorContract {
-    func navigate(to viewController: UIViewController?)
+    /**
+     Push the specified UIViewController to the held UINavigationController.
+     */
+    func navigate(to viewController: UIViewController)
+
+
+    /**
+     Push the specified UIViewController to the held UINavigationController.
+     This class present an alert when the specified UIViewController is nil.
+     */
+    func navigateWithFallback(to viewController: UIViewController?)
 }
 
 
@@ -12,21 +25,33 @@ class Navigator: NavigatorContract {
     private let navigationController: UINavigationController
 
 
-    init (for parentViewController: UINavigationController) {
-        self.navigationController = parentViewController
+    init (for navigationController: UINavigationController) {
+        self.navigationController = navigationController
     }
 
 
-    func navigate(to viewController: UIViewController?) {
+    /**
+     Push the specified UIViewController to the held UINavigationController.
+     */
+    func navigate(to viewController: UIViewController) {
+        self.navigationController.pushViewController(
+            viewController,
+            animated: true
+        )
+    }
+
+
+    /**
+     Push the specified UIViewController to the held UINavigationController.
+     This class present an alert when the specified UIViewController is nil.
+     */
+    func navigateWithFallback(to viewController: UIViewController?) {
         guard let viewController = viewController else {
             self.presentAlert()
             return
         }
 
-        self.navigationController.pushViewController(
-            viewController,
-            animated: true
-        )
+        self.navigate(to: viewController)
     }
 
 

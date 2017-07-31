@@ -20,7 +20,9 @@ class RootNavigator: RootNavigatorContract {
 
 
     func navigateToRoot() {
-        let navigationController = NavigationController()
+        let navigationController = UINavigationController()
+        VisualDecorator.decorate(navigationBar: navigationController.navigationBar)
+
         let navigator = Navigator(for: navigationController)
 
         let repository = GitHubRepository(

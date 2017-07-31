@@ -14,6 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let rootNavigator = RootNavigator(
             willUpdate: window
         )
+        rootNavigator.navigateToRoot()
 
         return true
     }

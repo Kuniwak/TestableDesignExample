@@ -38,7 +38,7 @@
 		2475EBC38C427D41A452E006 /* GitHubStargazer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475EA9AAFF3FDC512301D94 /* GitHubStargazer.swift */; };
 		2475EBE734270642753E85C1 /* StargazerRepositoryStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E49AC1AFD52DCC81BE25 /* StargazerRepositoryStub.swift */; };
 		2475ED052F280DF12FCC21BF /* TestableDesignExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E52EE895096067C3AB7E /* TestableDesignExampleUITests.swift */; };
-		2475ED5BF2B685F9B76415C5 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E26107E142D6CF5AAC43 /* NavigationController.swift */; };
+		2475ED5BF2B685F9B76415C5 /* VisualDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E26107E142D6CF5AAC43 /* VisualDecorator.swift */; };
 		2475ED6B21CB5EEF515D37D8 /* GitHubApiEndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E6DFB3857B78D5216317 /* GitHubApiEndpointTests.swift */; };
 		2475ED71E768A0D9244C7C8D /* StargazerMvcComposerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E53EEBB0B2F0A445AAC9 /* StargazerMvcComposerTests.swift */; };
 		2475EDC2FD509A53E43DEDA9 /* reposStargazers.json in Resources */ = {isa = PBXBuildFile; fileRef = 2475EFC5E1532F9230A85D82 /* reposStargazers.json */; };
@@ -97,7 +97,7 @@
 		2475E168B20E5C501400CF73 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		2475E17054E55DC60FBB0869 /* GitHubStargazerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubStargazerTests.swift; sourceTree = "<group>"; };
 		2475E1A4E2B89145A865C025 /* Navigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
-		2475E26107E142D6CF5AAC43 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		2475E26107E142D6CF5AAC43 /* VisualDecorator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisualDecorator.swift; sourceTree = "<group>"; };
 		2475E2939E6563048AA378B3 /* RemoteImageSourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteImageSourceTests.swift; sourceTree = "<group>"; };
 		2475E2D3B67D9970FD6B94BF /* StargazerRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StargazerRepository.swift; sourceTree = "<group>"; };
 		2475E3FCF9976BD662C10237 /* JsonReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JsonReader.swift; path = TestableDesignExampleTests/Resources/JsonReader.swift; sourceTree = SOURCE_ROOT; };
@@ -228,7 +228,7 @@
 				2475E54EC10A2464951D9E0E /* GitHub */,
 				2475E5EC0F374F1A0A942DF7 /* MvcArchitecture */,
 				2475E5C8A7D05E3006441DDA /* Navigator */,
-				2475E26107E142D6CF5AAC43 /* NavigationController.swift */,
+				2475E26107E142D6CF5AAC43 /* VisualDecorator.swift */,
 				2475EE88C83579435E9F67BA /* ColorCatalog.swift */,
 				2475E767B5CB5B7E0C0B0A6E /* RemoteImageSource.swift */,
 				2475E2939E6563048AA378B3 /* RemoteImageSourceTests.swift */,
@@ -618,7 +618,7 @@
 				2475E797D65B825304504F9B /* FatalErrorViewController.swift in Sources */,
 				2475E9C5968FE2FDD131A353 /* WebPageOpener.swift in Sources */,
 				2475E4F5BAA39082F5129854 /* GitHubUser.swift in Sources */,
-				2475ED5BF2B685F9B76415C5 /* NavigationController.swift in Sources */,
+				2475ED5BF2B685F9B76415C5 /* VisualDecorator.swift in Sources */,
 				2475E3552D75289CEAB3FFC5 /* ColorCatalog.swift in Sources */,
 				2475EF0E319C2B3CFC48C762 /* UserMvcComposer.swift in Sources */,
 				2475EA2BD6E67ECEAE176195 /* RemoteImageSource.swift in Sources */,

@@ -14,6 +14,13 @@ Smalltalk MVC は、テスト容易なアーキテクチャの一つです。
 
 ### サンプルコード
 
+このプロジェクトでは、1つの `UIViewController` に対し、1つの Storyboard ファイル（Xib ファイルでも構いません）が対応するようにしてあります。また、すべての `UIViewController` が `create(...)` という静的なファクトリ関数をもっています。
+この `create` 関数の中では、[`UIStoryboard#instantiateInitialViewController()`](https://developer.apple.com/documentation/uikit/uistoryboard/1616213-instantiateinitialviewcontroller) によってインスタンスが作成され、引数に与えられた必須オブジェクトが即座に代入されます。一般に、このパラメータには Model が含まれます。
+
+また、`UIViewController#viewDidLoad()` のタイミングで、ViewMediator と Controller が作成され、与えられた Model と接続されます。
+
+具体的なコードは以下の通りです:
+
 ```swift
 class FooViewController: UIViewController {
     private var model: FooModelContract!
@@ -150,6 +157,118 @@ extension FooController: FooViewMediatorDelegate {
     }
 }
 ```
+
+
+UIViewController 間の接続方法
+-----------------------------
+
+このプロジェクトでは、2つの `UIViewController` 間の接続に `Navigator` というクラスが利用されています:
+
+```swift
+class FooViewController: UIViewController {
+    private let navigator: NavigatorContract!
+    private let sharedModel: FooBarModelContract!
+
+
+    static func create(
+        presenting sharedModel: FooBarModelContract!
+        navigatingBy navigator: NavigatorContract
+    ) {
+        guard let viewController = R.storyboard.fooScreen.fooViewController() else {
+            return nil
+        }
+
+        viewController.navigator = navigator
+        viewController.sharedModel = sharedModel
+
+        return viewController
+    }
+
+
+    @IBAction func buttonDidTap(sender: Any) {
+        let nextViewController = BarViewController.create(
+            presenting: sharedModel
+        )
+        self.navigator.navigate(to: nextViewController)
+    }
+}
+```
+
+画面遷移に `UIStoryboardSegue` を使うこともできますが、Navigator を使うと2つの利点があります:
+
+- 遷移時の共通処理（解析用のログ送信など）をシンプルに実装しやすい
+- 必要なオブジェクトの宣言を一箇所に集中させられる
+
+
+
+### `Navigator` クラスの実装
+
+```swift
+/**
+ A protocol for wrapper class of `UINavigationController#pushViewController(_:UIViewController, animated:Bool)`.
+ */
+protocol NavigatorContract {
+    /**
+     Push the specified UIViewController to the held UINavigationController.
+     */
+    func navigate(to viewController: UIViewController)
+
+
+    /**
+     Push the specified UIViewController to the held UINavigationController.
+     This class present an alert when the specified UIViewController is nil. 
+     */
+    func navigateWithFallback(to viewController: UIViewController?)
+}
+
+
+
+class Navigator: NavigatorContract {
+    private let navigationController: UINavigationController
+
+
+    init (for navigationController: UINavigationController) {
+        self.navigationController = navigationController
+    }
+
+
+    func navigate(to viewController: UIViewController?) {
+        guard let viewController = viewController else {
+            self.presentAlert()
+            return nil
+        }
+
+        self.navigationController.pushViewController(
+            viewController,
+            animated: true
+        )
+    }
+
+
+    private func presentAlert() {
+        let alertController = UIAlertController(
+            title: "Problem occurred when ",
+            message: "You can update to fix this problem or contact us.",
+            preferredStyle: .alert
+        )
+
+        let goBackAction = UIAlertAction(
+            title: "Back",
+            style: .cancel,
+            handler: nil
+        )
+
+        alertController.addAction(goBackAction)
+
+        self.navigationController.present(
+            alertController,
+            animated: true,
+            completion: nil
+        )
+    }
+}
+```
+
 
 
 
@@ -321,8 +440,8 @@ class WritableRepositorySpy: WritableRepositoryContract {
 
 
 
-Testing strategy
-----------------
+テスト戦略
+----------
 このプロジェクトでは、 [「もうE2Eテストはいらない（英語）」](https://testing.googleblog.com/2015/04/just-say-no-to-more-end-to-end-tests.html)というブログエントリに強く賛同します。
 
 実際にこのプロジェクトでは、テストからのフィードバックを素早く受け取るために、型検査を他のテストより重視しています。

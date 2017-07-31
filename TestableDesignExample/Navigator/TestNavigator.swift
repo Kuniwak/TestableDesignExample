@@ -13,7 +13,10 @@ class TestNavigator: NavigatorContract {
     }
 
 
-    func navigate(to viewController: UIViewController?) {
+    func navigate(to viewController: UIViewController) {}
+
+
+    func navigateWithFallback(to viewController: UIViewController?) {
         guard let viewController = viewController else {
             XCTFail("Unexpected nil ViewController", line: self.line)
             return

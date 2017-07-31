@@ -12,7 +12,17 @@ Smalltalk flavored MVC (not Apple MVC). Smalltalk flavored MVC is a architecture
 
 ![](https://raw.githubusercontent.com/Kuniwak/TestableDesignExample/master/Documentation/Images/ClassDiagram_En.png)
 
+
+
 ### Sample Code
+
+In our approach, we create a Storyboard file (or a Xib file) per `UIViewController`.
+And all `UIViewControllers` have a static method `create(...)` as a factory method.
+In the `create(...)` function, we can call [`instantiateInitialViewController()`](https://developer.apple.com/documentation/uikit/uistoryboard/1616213-instantiateinitialviewcontroller) to create a new instance, then we should assign immediately necessary objects for the parameters.
+
+And we should create ViewMediators and Controllers and connect them to the given Model when `UIViewController#viewDidLoad()` is called.
+
+Concrete implementation is below:
 
 ```swift
 class FooViewController: UIViewController {
@@ -149,9 +159,108 @@ extension FooController: FooViewMediatorDelegate {
 ```
 
 
+How to Connect among UIViewControllers
+--------------------------------------
 
-How to control global vars
---------------------------
+In this project, use Navigator class for connecting bebtweren 2 `UIViewControllers`.
+
+
+```swift
+class FooViewController: UIViewController {
+    private let navigator: NavigatorContract!
+    private let sharedModel: FooBarModelContract!
+
+
+    static func create(
+        presenting sharedModel: FooBarModelContract!
+        navigatingBy navigator: NavigatorContract
+    ) {
+        guard let viewController = R.storyboard.fooScreen.fooViewController() else {
+            return nil
+        }
+
+        viewController.navigator = navigator
+        viewController.sharedModel = sharedModel
+
+        return viewController
+    }
+
+
+    @IBAction func buttonDidTap(sender: Any) {
+        let nextViewController = BarViewController.create(
+            presenting: sharedModel
+        )
+        self.navigator.navigate(to: nextViewController)
+    }
+}
+```
+
+And also you can use `UIStoryboardSegue`, but using the `Navigator` class have two advantages:
+
+- We can implement easily and simply common behavior (eg. sending logs for analysis)
+- We can assert necessary objects at once
+
+
+
+### `Navigator` Implementation
+
+```swift
+protocol NavigatorContract {
+    func navigate(to viewController: UIViewController?)
+}
+
+
+
+class Navigator: NavigatorContract {
+    private let navigationController: UINavigationController
+
+
+    init (for parentViewController: UINavigationController) {
+        self.navigationController = parentViewController
+    }
+
+
+    func navigate(to viewController: UIViewController?) {
+        guard let viewController = viewController else {
+            self.presentAlert()
+            return
+        }
+
+        self.navigationController.pushViewController(
+            viewController,
+            animated: true
+        )
+    }
+
+
+    private func presentAlert() {
+        let alertController = UIAlertController(
+            title: "Problem occurred when ",
+            message: "You can update to fix this problem or contact us.",
+            preferredStyle: .alert
+        )
+
+        let goBackAction = UIAlertAction(
+            title: "Back",
+            style: .cancel,
+            handler: nil
+        )
+
+        alertController.addAction(goBackAction)
+
+        self.navigationController.present(
+            alertController,
+            animated: true,
+            completion: nil
+        )
+    }
+}
+```
+
+
+
+How to Control Global Variables
+-------------------------------
 In this project, we control global variables by using [test doubles](http://xunitpatterns.com/Test%20Double.html); Stub and Spy.
 
 ![](https://raw.githubusercontent.com/Kuniwak/TestableDesignExample/master/Documentation/Images/TestDoubles_en.png)
