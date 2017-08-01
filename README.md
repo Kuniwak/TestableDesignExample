@@ -5,14 +5,26 @@ Testable design example for iOS Apps
 
 This is a sample App to learn testable design.
 
+![](https://raw.githubusercontent.com/Kuniwak/TestableDesignExample/master/Documentation/Images/Screenshots.png)
+
+You can learn the following things by reading this implementation:
+
+- How to make loose coupling for testing
+- How to decouple global variables
+- How to use type-checking as a test
+
 
 
 Architecture
 ------------
 
-Smalltalk flavored MVC (not Apple MVC). Smalltalk flavored MVC is a architecture that can test easily.
+This App adopt Smalltalk flavored MVC (it is not Apple MVC). Smalltalk flavored MVC is a architecture that can test easily.
+You may know major architectures such as MVVM, MVP, Flux and VIPER, but also Smalltalk MVC can make loose coupling.
 
 ![](https://raw.githubusercontent.com/Kuniwak/TestableDesignExample/master/Documentation/Images/ClassDiagram_En.png)
+
+While there are a lot of architectures, but they share a common important things that we should do.
+So, learning this implementation is still worth the candle if you choose other architectures.
 
 
 

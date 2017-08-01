@@ -3,14 +3,29 @@ iOS のためのテスト容易設計サンプル
 
 [![Build Status](https://www.bitrise.io/app/97b1fa446d801c01/status.svg?token=_uFGlK9iYeSQdtXnnPufYw&branch=master)](https://www.bitrise.io/app/97b1fa446d801c01)
 
+テスト容易な設計で実装された、特定の GitHub のリポジトリに Star したユーザーを閲覧するアプリです。
+
+![](https://raw.githubusercontent.com/Kuniwak/TestableDesignExample/master/Documentation/Images/Screenshots.png)
+
+このアプリの実装を読むことで、以下のプラクティスが得られるでしょう:
+
+- テストを容易にするための疎結合実装例（MVC アーキテクチャを採用しています）
+- 大域変数を差し替え可能にする実装例
+- 型検査を重視するテスト戦略
+
+
 
 アーキテクチャ
 --------------
 
-Smalltalk MVC を見本としています(Apple MVC とは違います).
-Smalltalk MVC は、テスト容易なアーキテクチャの一つです。
+このアプリでは、Smalltalk MVC を見本としています(Apple MVC とは違います).
+この Smalltalk MVC は、テスト容易なアーキテクチャの一つです。
+他にも MVVM や MVP や Flux、VIPER などのアーキテクチャが有名ですが、これらに劣らず疎結合でテストしやすい実装が可能です。
 
 ![](https://raw.githubusercontent.com/Kuniwak/TestableDesignExample/master/Documentation/Images/ClassDiagram_Ja.png)
+
+どのアーキテクチャを選ぶにしても、それぞれのアーキテクチャ上で気をつけなければならないことは共通しています。
+したがって、最終的にあなたがどのアーキテクチャを選ぼうとも、ここで得た知見は無駄にならないでしょう。
 
 
 
