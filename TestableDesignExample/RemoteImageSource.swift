@@ -26,7 +26,7 @@ class RemoteImageSource {
     func fetch(from url: URL) {
         let task = URLSession.shared.dataTask(with: url, completionHandler: { data, response, error in
             guard error == nil else {
-                self.transitState(to: .failure(reason: .networkError(debugInfo: "\(error)")))
+                self.transitState(to: .failure(reason: .networkError(debugInfo: "\(error.debugDescription)")))
                 return
             }
 
