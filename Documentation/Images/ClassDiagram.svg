@@ -16,7 +16,7 @@
    version="1.1"
    inkscape:version="0.91 r13725"
    sodipodi:docname="ClassDiagram.svg"
-   inkscape:export-filename="/Users/yuki.kokubun/Development/TestableDesignExample/Documentation/Images/ClassDiagram_ja.png"
+   inkscape:export-filename="/Users/yuki.kokubun/Development/TestableDesignExample/Documentation/Images/ClassDiagram_en.png"
    inkscape:export-xdpi="90"
    inkscape:export-ydpi="90">
   <defs
@@ -513,17 +513,17 @@
      inkscape:cx="500.29788"
      inkscape:cy="543.97522"
      inkscape:document-units="px"
-     inkscape:current-layer="layer3"
+     inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:object-paths="true"
      inkscape:snap-bbox="true"
      inkscape:snap-intersection-paths="true"
      inkscape:object-nodes="true"
      inkscape:snap-smooth-nodes="true"
-     inkscape:window-width="1916"
+     inkscape:window-width="1920"
      inkscape:window-height="1155"
-     inkscape:window-x="4"
-     inkscape:window-y="1"
+     inkscape:window-x="1080"
+     inkscape:window-y="1081"
      inkscape:window-maximized="1"
      units="px">
     <inkscape:grid
@@ -546,8 +546,7 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(0,-52.362161)"
-     sodipodi:insensitive="true">
+     transform="translate(0,-52.362161)">
     <rect
        ry="20"
        rx="20"
@@ -606,7 +605,7 @@
        style="fill:#e0e0e0;fill-opacity:1;stroke:none;stroke-width:1.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect5983"
        width="280"
-       height="324.28571"
+       height="304.28568"
        x="360"
        y="308.07648"
        rx="20"
@@ -657,7 +656,7 @@
        rx="20"
        y="423.79077"
        x="380"
-       height="188.57146"
+       height="168.57138"
        width="240"
        id="rect5995"
        style="fill:#f2f2f2;fill-opacity:1;stroke:none;stroke-width:1.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -667,7 +666,7 @@
        style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect5997"
        width="200"
-       height="100"
+       height="79.999977"
        x="400"
        y="492.36218"
        rx="19.999992"
@@ -696,14 +695,10 @@
        sodipodi:linespacing="125%"
        inkscape:export-xdpi="97.830002"
        inkscape:export-ydpi="97.830002"><tspan
-         sodipodi:role="line"
-         id="tspan6005"
-         x="498.97327"
-         y="537.21918">ApiClient &amp;</tspan><tspan
          id="tspan6007"
          sodipodi:role="line"
          x="498.97327"
-         y="562.21918">Const.ApiPath.Foo</tspan></text>
+         y="537.21918">ApiClient + URL</tspan></text>
     <rect
        style="fill:#e0e0e0;fill-opacity:1;stroke:none;stroke-width:1.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect6009"
@@ -953,7 +948,7 @@
      inkscape:groupmode="layer"
      id="layer2"
      inkscape:label="Caption En"
-     style="display:none">
+     style="display:inline">
     <text
        transform="translate(0,-52.362161)"
        sodipodi:linespacing="125%"
@@ -1043,7 +1038,7 @@
      inkscape:groupmode="layer"
      id="layer3"
      inkscape:label="Caption Ja"
-     style="display:inline">
+     style="display:none">
     <text
        inkscape:export-ydpi="97.830002"
        inkscape:export-xdpi="97.830002"
