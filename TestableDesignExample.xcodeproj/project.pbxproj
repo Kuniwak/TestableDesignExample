@@ -14,9 +14,9 @@
 		2475E184C491ECB5D4520C4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2475EDAB59CE5A5E99A03E61 /* Assets.xcassets */; };
 		2475E1DF0A8DCE28B24B836E /* RootNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475EF5D1BAB7F11EA4C887D /* RootNavigator.swift */; };
 		2475E21443951FE6C9E9CC0B /* StargazersModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475EC7516DF00CF3095186A /* StargazersModelTests.swift */; };
-		2475E296D4A45CC8EF30F8E8 /* GitHubApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E9F9C6BB7D41F55161A7 /* GitHubApi.swift */; };
+		2475E296D4A45CC8EF30F8E8 /* GitHubApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E9F9C6BB7D41F55161A7 /* GitHubApiClient.swift */; };
 		2475E2AC84566117FC687FC8 /* JsonReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E3FCF9976BD662C10237 /* JsonReader.swift */; };
-		2475E2F948F045B2F1CCAE48 /* GitHubEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475EC3A6667F8553C23CB2C /* GitHubEndpoint.swift */; };
+		2475E2F948F045B2F1CCAE48 /* GitHubApiEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475EC3A6667F8553C23CB2C /* GitHubApiEndpoint.swift */; };
 		2475E35401AF1A0DDB75BCFB /* user.json in Resources */ = {isa = PBXBuildFile; fileRef = 2475E6654583784DB2FAC099 /* user.json */; };
 		2475E3552D75289CEAB3FFC5 /* ColorCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475EE88C83579435E9F67BA /* ColorCatalog.swift */; };
 		2475E3B1BAEAEE1D8FD372DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E00BE716C34F1495A4DE /* AppDelegate.swift */; };
@@ -46,7 +46,7 @@
 		2475EE26A0DFBEC4EB5BAE99 /* FontRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E633D1D5C9D0166E0EF1 /* FontRegistry.swift */; };
 		2475EE30CCE8B8CC85956685 /* Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E4CF0A05D4A5ADE28575 /* Async.swift */; };
 		2475EE86B1751D6D830B3BBD /* TestNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E01DE6FDD5A3028F1B32 /* TestNavigator.swift */; };
-		2475EEC0350AE44691DDC0BA /* GitHubApiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E0A01A4162606F18EA04 /* GitHubApiTests.swift */; };
+		2475EEC0350AE44691DDC0BA /* GitHubApiClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E0A01A4162606F18EA04 /* GitHubApiClientTests.swift */; };
 		2475EEE96C335A9F12A6CDCB /* Lifter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E04E8578411420D30C66 /* Lifter.swift */; };
 		2475EF0E319C2B3CFC48C762 /* UserMvcComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E6CC4A27B8058F8CAE7F /* UserMvcComposer.swift */; };
 		2475EF55555DE956BE7FBE56 /* octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2475EF639EA034BCC0C26512 /* octicons.ttf */; };
@@ -93,7 +93,7 @@
 		2475E01DE6FDD5A3028F1B32 /* TestNavigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestNavigator.swift; sourceTree = "<group>"; };
 		2475E04E8578411420D30C66 /* Lifter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lifter.swift; sourceTree = "<group>"; };
 		2475E06E3DEED46F70D0B0AF /* BootstrapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BootstrapViewController.swift; sourceTree = "<group>"; };
-		2475E0A01A4162606F18EA04 /* GitHubApiTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubApiTests.swift; sourceTree = "<group>"; };
+		2475E0A01A4162606F18EA04 /* GitHubApiClientTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubApiClientTests.swift; sourceTree = "<group>"; };
 		2475E0C468760C2DAE1C894B /* StargazersViewMediator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StargazersViewMediator.swift; sourceTree = "<group>"; };
 		2475E15139800FB937012314 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2475E168B20E5C501400CF73 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
@@ -122,12 +122,12 @@
 		2475E99206AD0AA53E23C74F /* FontRegistryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontRegistryTests.swift; sourceTree = "<group>"; };
 		2475E9BB7111AF583D00867E /* WebPageOpener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebPageOpener.swift; sourceTree = "<group>"; };
 		2475E9C17E4BBC136112F1C3 /* GitHubRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubRepository.swift; sourceTree = "<group>"; };
-		2475E9F9C6BB7D41F55161A7 /* GitHubApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubApi.swift; sourceTree = "<group>"; };
+		2475E9F9C6BB7D41F55161A7 /* GitHubApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubApiClient.swift; sourceTree = "<group>"; };
 		2475EA8A1CD58D89A6FC8E3E /* StargazersModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StargazersModel.swift; sourceTree = "<group>"; };
 		2475EA9AAFF3FDC512301D94 /* GitHubStargazer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubStargazer.swift; sourceTree = "<group>"; };
 		2475EAAA03A6CC33D5660297 /* GitHubApiClientStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubApiClientStub.swift; sourceTree = "<group>"; };
 		2475EB38628EF03DCAD17F84 /* FatalErrorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FatalErrorViewController.swift; sourceTree = "<group>"; };
-		2475EC3A6667F8553C23CB2C /* GitHubEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubEndpoint.swift; sourceTree = "<group>"; };
+		2475EC3A6667F8553C23CB2C /* GitHubApiEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubApiEndpoint.swift; sourceTree = "<group>"; };
 		2475EC4757610B2EC6E83A3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2475EC7516DF00CF3095186A /* StargazersModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StargazersModelTests.swift; sourceTree = "<group>"; };
 		2475EC9C2015DE0B2627E623 /* TestableDesignExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestableDesignExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -244,14 +244,14 @@
 		2475E54EC10A2464951D9E0E /* GitHub */ = {
 			isa = PBXGroup;
 			children = (
-				2475E9F9C6BB7D41F55161A7 /* GitHubApi.swift */,
+				2475E9F9C6BB7D41F55161A7 /* GitHubApiClient.swift */,
 				2475E9C17E4BBC136112F1C3 /* GitHubRepository.swift */,
 				2475EA9AAFF3FDC512301D94 /* GitHubStargazer.swift */,
 				2475E96540D7FDFD907E38A1 /* GitHubUser.swift */,
 				2475EAAA03A6CC33D5660297 /* GitHubApiClientStub.swift */,
-				2475E0A01A4162606F18EA04 /* GitHubApiTests.swift */,
+				2475E0A01A4162606F18EA04 /* GitHubApiClientTests.swift */,
 				2475E17054E55DC60FBB0869 /* GitHubStargazerTests.swift */,
-				2475EC3A6667F8553C23CB2C /* GitHubEndpoint.swift */,
+				2475EC3A6667F8553C23CB2C /* GitHubApiEndpoint.swift */,
 				2475E6DFB3857B78D5216317 /* GitHubApiEndpointTests.swift */,
 			);
 			path = GitHub;
@@ -608,7 +608,7 @@
 				2475E87E0BE147383E77BB45 /* BootstrapViewController.swift in Sources */,
 				62A1615A1E73C9ED003D28DC /* R.generated.swift in Sources */,
 				62A161741E744812003D28DC /* StargazersMvcComposer.swift in Sources */,
-				2475E296D4A45CC8EF30F8E8 /* GitHubApi.swift in Sources */,
+				2475E296D4A45CC8EF30F8E8 /* GitHubApiClient.swift in Sources */,
 				2475EF784651E52247E3C648 /* GitHubRepository.swift in Sources */,
 				2475EBC38C427D41A452E006 /* GitHubStargazer.swift in Sources */,
 				62A161701E7440FE003D28DC /* StargazerCell.swift in Sources */,
@@ -625,7 +625,7 @@
 				2475E3552D75289CEAB3FFC5 /* ColorCatalog.swift in Sources */,
 				2475EF0E319C2B3CFC48C762 /* UserMvcComposer.swift in Sources */,
 				2475EA2BD6E67ECEAE176195 /* RemoteImageSource.swift in Sources */,
-				2475E2F948F045B2F1CCAE48 /* GitHubEndpoint.swift in Sources */,
+				2475E2F948F045B2F1CCAE48 /* GitHubApiEndpoint.swift in Sources */,
 				2475EE26A0DFBEC4EB5BAE99 /* FontRegistry.swift in Sources */,
 				2475EEE96C335A9F12A6CDCB /* Lifter.swift in Sources */,
 			);
@@ -637,7 +637,7 @@
 			files = (
 				2475E8169213EC2CBA0BA1B8 /* R.generated.swift in Sources */,
 				2475EB37E60B9FA89BC83FF4 /* GitHubApiClientStub.swift in Sources */,
-				2475EEC0350AE44691DDC0BA /* GitHubApiTests.swift in Sources */,
+				2475EEC0350AE44691DDC0BA /* GitHubApiClientTests.swift in Sources */,
 				2475E0A999969C00C800FF33 /* GitHubStargazerTests.swift in Sources */,
 				2475EBE734270642753E85C1 /* StargazerRepositoryStub.swift in Sources */,
 				2475ED71E768A0D9244C7C8D /* StargazerMvcComposerTests.swift in Sources */,

@@ -4,6 +4,7 @@ import PromiseKit
 
 
 class GitHubApiTests: XCTestCase {
+    /* SKIP: Because it frequently reaches GitHub API Limit.
     func testFetch() {
         async(test: self, timeout: 5.0) {
             let api = GitHubApiClient(basedOn: GitHubApiEndpointBaseUrl.gitHubCom)
@@ -18,11 +19,12 @@ class GitHubApiTests: XCTestCase {
                 }
         }
     }
+    */
 
 
     static var allTests : [(String, (GitHubApiTests) -> () throws -> Void)] {
         return [
-             ("testFetch", self.testFetch),
+             // ("testFetch", self.testFetch),
         ]
     }
 }
