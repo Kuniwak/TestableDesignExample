@@ -1,6 +1,8 @@
 Testable design example for iOS Apps
 ====================================
 
+[![Build Status](https://www.bitrise.io/app/97b1fa446d801c01/status.svg?token=_uFGlK9iYeSQdtXnnPufYw&branch=master)](https://www.bitrise.io/app/97b1fa446d801c01)
+
 This is a sample App to learn testable design.
 
 
