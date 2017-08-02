@@ -74,7 +74,7 @@ class PagingCursor: PagingCursorContract {
             return
         }
 
-        self.previousPage += 1
+        self.previousPage -= 1
     }
 
 
