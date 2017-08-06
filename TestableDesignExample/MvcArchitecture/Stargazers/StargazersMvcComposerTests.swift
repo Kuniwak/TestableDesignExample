@@ -13,16 +13,9 @@ class StargazersMvcComposerTests: XCTestCase {
                 owner: GitHubUser.Name(text: "octocat"),
                 name: GitHubRepository.Name(text: "Hello-world")
             ),
-            andFetchingStargazersVia: StargazerRepositoryStub(
-                firstResult: Promise(value: [
-                    GitHubUser(
-                        name: GitHubUser.Name(text: "octocat"),
-                        avatar: URL(string: "https://avatars3.githubusercontent.com/u/583231?v=3&s=400")!
-                    ),
-                ])
-            ),
-            andNavigateBy: testNavigator,
-            andHolding: GitHubApiClientStub.anyPending
+            presenting: StargazersModelStub(withInitialState: .firstFetching),
+            navigatingBy: testNavigator,
+            holding: Bag.create()
         )
 
         testNavigator.navigateWithFallback(to: viewController, animated: false)
