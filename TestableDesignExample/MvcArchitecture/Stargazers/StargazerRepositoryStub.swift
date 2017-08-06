@@ -3,7 +3,8 @@ import PromiseKit
 
 
 
-class StargazerRepositoryStub: StargazerRepositoryContract {
+class StargazerRepositoryStub: PageRepositoryContract {
+    typealias Element = GitHubUser
     var nextResult: Promise<[GitHubUser]>
 
 
@@ -12,7 +13,7 @@ class StargazerRepositoryStub: StargazerRepositoryContract {
     }
 
 
-    func get(stargazersOf: GitHubRepository) -> Promise<[GitHubUser]> {
+    func fetch(pageOf pageNumber: Int) -> Promise<[GitHubUser]> {
         return self.nextResult
     }
 }

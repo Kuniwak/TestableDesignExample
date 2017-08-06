@@ -44,12 +44,21 @@ import RxSwift
 protocol PagingModelContract {
     associatedtype Element: Hashable
 
+    var currentState: PagingModelState<Element> { get }
     var didChange: RxSwift.Observable<PagingModelState<Element>> { get }
 
     func fetchNext()
     func fetchPrevious()
     func clear()
     func recover()
+}
+
+
+
+extension PagingModelContract {
+    func asAny() -> AnyPagingModel<Element> {
+        return AnyPagingModel(wrapping: self)
+    }
 }
 
 
@@ -186,5 +195,59 @@ class PagingModel<T: Hashable>: PagingModelContract {
                     )
                 }
         }
+    }
+}
+
+
+
+class AnyPagingModel<T: Hashable>: PagingModelContract {
+    typealias Element = T
+    private let _currentState: () -> PagingModelState<Element>
+    private let _didChange: () -> RxSwift.Observable<PagingModelState<Element>>
+    private let _fetchNext: () -> Void
+    private let _fetchPrevious: () -> Void
+    private let _clear: () -> Void
+    private let _recover: () -> Void
+
+
+    init<WrappedModel: PagingModelContract>(
+        wrapping wrappedModel: WrappedModel
+    ) where WrappedModel.Element == Element {
+        self._currentState = { wrappedModel.currentState }
+        self._didChange = { wrappedModel.didChange }
+        self._fetchNext = { wrappedModel.fetchNext() }
+        self._fetchPrevious = { wrappedModel.fetchPrevious() }
+        self._clear = { wrappedModel.clear() }
+        self._recover = { wrappedModel.recover() }
+    }
+
+
+    var currentState: PagingModelState<Element> {
+        return self._currentState()
+    }
+
+
+    var didChange: RxSwift.Observable<PagingModelState<Element>> {
+        return self._didChange()
+    }
+
+
+    func fetchNext() {
+        self._fetchNext()
+    }
+
+
+    func fetchPrevious() {
+        self._fetchPrevious()
+    }
+
+
+    func clear() {
+        self._clear()
+    }
+
+
+    func recover() {
+        self._recover()
     }
 }

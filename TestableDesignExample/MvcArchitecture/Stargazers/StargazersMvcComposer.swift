@@ -70,5 +70,7 @@ class StargazersMvcComposer: UIViewController {
             andFindingVisibleRowBy: self.viewMediator,
             andNavigatingBy: self.navigator
         )
+
+        self.model.fetchNext()
     }
 }

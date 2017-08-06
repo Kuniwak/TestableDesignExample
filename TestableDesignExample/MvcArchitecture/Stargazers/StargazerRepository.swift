@@ -2,24 +2,29 @@ import PromiseKit
 
 
 
-protocol StargazerRepositoryContract {
-    func get(stargazersOf repository: GitHubRepository) -> Promise<[GitHubUser]>
-}
-
-
-
-struct StargazerRepository: StargazerRepositoryContract {
+struct StargazerRepository: PageRepositoryContract {
+    typealias Element = GitHubUser
     private let api: GitHubApiClientContract
+    private let gitHubRepository: GitHubRepository
+    private let numberOfStargazersPerPage: Int
 
 
-    init(api: GitHubApiClientContract) {
+    init(
+        for gitHubRepository: GitHubRepository,
+        perPage numberOfStargazersPerPage: Int,
+        fetchingVia api: GitHubApiClientContract
+    ) {
         self.api = api
+        self.numberOfStargazersPerPage = numberOfStargazersPerPage
+        self.gitHubRepository = gitHubRepository
     }
 
 
-    func get(stargazersOf repository: GitHubRepository) -> Promise<[GitHubUser]> {
-        return GitHubStargazer.fetch(
-            stargazersOf: repository,
+    func fetch(pageOf pageNumber: Int) -> Promise<[Element]> {
+        return GitHubStargazer.Page.fetch(
+            stargazersOf: self.gitHubRepository,
+            pageOf: pageNumber,
+            perPage: self.numberOfStargazersPerPage,
             via: self.api
         )
     }

@@ -7,104 +7,109 @@ protocol StargazerModelContract {
     var didChange: RxSwift.Observable<StargazerModelState> { get }
     var currentState: StargazerModelState { get }
 
-    func fetch()
+    func fetchNext()
+    func fetchPrevious()
+    func clear()
+    func recover()
 }
 
 
 
 enum StargazerModelState {
-    case firstFetching
     case fetched(stargazers: [GitHubUser], error: StargazerModelError?)
     case fetching(previousStargazers: [GitHubUser])
+
+
+    static func from(pagingModelState: PagingModelState<GitHubUser>) -> StargazerModelState {
+        switch pagingModelState {
+        case let .fetching(beforeElements: stargazers):
+            return .fetching(previousStargazers: stargazers)
+
+        case let .fetched(elements: stargazers, error: error):
+            return .fetched(
+                stargazers: stargazers,
+                error: StargazerModelError.from(pagingModelError: error)
+            )
+        }
+    }
 }
 
 
 
 enum StargazerModelError: Error {
     case apiError(debugInfo: String)
+
+
+    static func from(pagingModelError: PagingModelState<GitHubUser>.ModelError?) -> StargazerModelError? {
+        guard let pagingModelError = pagingModelError else {
+            return nil
+        }
+
+        return .apiError(debugInfo: "\(pagingModelError)")
+    }
 }
 
 
 
 class StargazerModel: StargazerModelContract {
-    private let stateVariable: RxSwift.Variable<StargazerModelState>
-    private let repository: GitHubRepository
-    private let stargazersRepository: StargazerRepositoryContract
+    private let pagingModel: AnyPagingModel<GitHubUser>
 
 
     var didChange: Observable<StargazerModelState> {
-        return self.stateVariable.asObservable()
+        return self.pagingModel
+            .didChange
+            .map { StargazerModelState.from(pagingModelState: $0) }
     }
 
 
     var currentState: StargazerModelState {
-        return self.stateVariable.value
+        return StargazerModelState.from(
+            pagingModelState: self.pagingModel.currentState
+        )
     }
 
 
-    init(for repository: GitHubRepository, fetchingVia stargazersRepository: StargazerRepositoryContract) {
-        self.repository = repository
-        self.stargazersRepository = stargazersRepository
-
-        self.stateVariable = RxSwift.Variable(.firstFetching)
-        self.fetchWitStateTransition()
+    init<PagingModel: PagingModelContract>(
+        pagingBy pagingModel: PagingModel
+    ) where PagingModel.Element == GitHubUser {
+        self.pagingModel = pagingModel.asAny()
     }
 
 
-    func fetch() {
-        switch self.currentState {
-        case .firstFetching, .fetching:
-            // Do nothing. Because already fetch was started.
-            return
-        case let .fetched(stargazers: stargazers, error: _):
-            self.transitState(to: .fetching(previousStargazers: stargazers))
-
-            self.fetchWitStateTransition()
-        }
+    func fetchNext() {
+        self.pagingModel.fetchNext()
     }
 
 
-    private func fetchWitStateTransition() {
-        self.stargazersRepository.get(stargazersOf: self.repository)
-            .then { [weak self] users -> Void in
-                guard let this = self else { return }
-
-                this.transitState(to: .fetched(
-                    stargazers: users,
-                    error: nil
-                ))
-            }
-            .catch { [weak self] error in
-                guard let this = self else { return }
-
-                switch this.currentState {
-                case .firstFetching:
-                    // Hold empty repositories and set the error.
-                    this.transitState(to: .fetched(
-                        stargazers: [],
-                        error: .apiError(debugInfo: "\(error)")
-                    ))
-
-                case let .fetching(previousStargazers: stargazers):
-                    // Hold previous repositories and set the error.
-                    this.transitState(to: .fetched(
-                        stargazers: stargazers,
-                        error: .apiError(debugInfo: "\(error)")
-                    ))
-
-                case let .fetched(stargazers: stargazers, error: _):
-                    // Hold previous repositories and replace the old error by the new one.
-                    this.transitState(to: .fetched(
-                        stargazers: stargazers,
-                        error: .apiError(debugInfo: "\(error)")
-                    ))
-                }
-            }
+    func fetchPrevious() {
+        self.pagingModel.fetchPrevious()
     }
 
 
+    func clear() {
+        self.pagingModel.clear()
+    }
 
-    private func transitState(to nextState: StargazerModelState) {
-        self.stateVariable.value = nextState
+
+    func recover() {
+        self.pagingModel.recover()
+    }
+
+
+    static func create<PageRepository: PageRepositoryContract> (
+        requestingElementCountPerPage elementCount: Int,
+        fetchingPageVia pageRepository: PageRepository
+    ) -> StargazerModel where PageRepository.Element == GitHubUser {
+        return StargazerModel(
+            pagingBy: PagingModel(
+                fetchingPageVia: pageRepository,
+                detectingPageEndBy: PageElementCountStrategy(
+                    requestingElementCountPerPage: elementCount
+                ),
+                choosingPageNumberBy: PagingCursor(
+                    whereMovingOn: PagingCursor.standardDomain
+                )
+            )
+        )
     }
 }

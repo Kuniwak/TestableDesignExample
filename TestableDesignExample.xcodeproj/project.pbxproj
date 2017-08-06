@@ -36,11 +36,13 @@
 		2475E7A6273DD9CBF4ABA5BA /* AnyError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E8757F392A3269C299DC /* AnyError.swift */; };
 		2475E81254A76DFDA50D9D83 /* StargazersViewMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E0C468760C2DAE1C894B /* StargazersViewMediator.swift */; };
 		2475E8169213EC2CBA0BA1B8 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E168B20E5C501400CF73 /* R.generated.swift */; };
+		2475E86685E6B00877AE26FA /* PerformanceParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E3A470C2B5148E96E222 /* PerformanceParameter.swift */; };
 		2475E87E0BE147383E77BB45 /* BootstrapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E06E3DEED46F70D0B0AF /* BootstrapViewController.swift */; };
 		2475E8B006035467EAB8CA51 /* PageEndDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E026EF95F2C30727924A /* PageEndDirection.swift */; };
 		2475E8D08D795709933F77E2 /* FontRegistryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E99206AD0AA53E23C74F /* FontRegistryTests.swift */; };
 		2475E8D6EE86B076D4CB3361 /* RemoteImageSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E2939E6563048AA378B3 /* RemoteImageSourceTests.swift */; };
 		2475E906ADAD63C68E83A804 /* Bag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E9FD342D791575BDC09E /* Bag.swift */; };
+		2475E9438E42A41809D5609E /* PageElementCountStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E686AF0E489B78CE12D8 /* PageElementCountStrategy.swift */; };
 		2475E9807E8143A4B3A751A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2475E33610A7BBD163657C40 /* LaunchScreen.storyboard */; };
 		2475E9C5968FE2FDD131A353 /* WebPageOpener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E9BB7111AF583D00867E /* WebPageOpener.swift */; };
 		2475EA2BD6E67ECEAE176195 /* RemoteImageSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E767B5CB5B7E0C0B0A6E /* RemoteImageSource.swift */; };
@@ -118,6 +120,7 @@
 		2475E2939E6563048AA378B3 /* RemoteImageSourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteImageSourceTests.swift; sourceTree = "<group>"; };
 		2475E29FA1DBCF20C012D776 /* PageRepositorySpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageRepositorySpy.swift; sourceTree = "<group>"; };
 		2475E2D3B67D9970FD6B94BF /* StargazerRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StargazerRepository.swift; sourceTree = "<group>"; };
+		2475E3A470C2B5148E96E222 /* PerformanceParameter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerformanceParameter.swift; sourceTree = "<group>"; };
 		2475E3FCF9976BD662C10237 /* JsonReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JsonReader.swift; path = TestableDesignExampleTests/Resources/JsonReader.swift; sourceTree = SOURCE_ROOT; };
 		2475E3FDADF2B0C6C13CE5E1 /* PageEndDetectionStrategyStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageEndDetectionStrategyStub.swift; sourceTree = "<group>"; };
 		2475E49AC1AFD52DCC81BE25 /* StargazerRepositoryStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StargazerRepositoryStub.swift; sourceTree = "<group>"; };
@@ -130,6 +133,7 @@
 		2475E6244DDBD595E9FCA79A /* StargazersModelStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StargazersModelStub.swift; sourceTree = "<group>"; };
 		2475E633D1D5C9D0166E0EF1 /* FontRegistry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontRegistry.swift; sourceTree = "<group>"; };
 		2475E6654583784DB2FAC099 /* user.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = user.json; sourceTree = "<group>"; };
+		2475E686AF0E489B78CE12D8 /* PageElementCountStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageElementCountStrategy.swift; sourceTree = "<group>"; };
 		2475E6904F2577E36489E9DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		2475E6CC4A27B8058F8CAE7F /* UserMvcComposer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserMvcComposer.swift; sourceTree = "<group>"; };
 		2475E6DFB3857B78D5216317 /* GitHubApiEndpointTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubApiEndpointTests.swift; sourceTree = "<group>"; };
@@ -260,6 +264,7 @@
 				2475EBC20C528C65C22AC76E /* PageRepositoryStub.swift */,
 				2475E29FA1DBCF20C012D776 /* PageRepositorySpy.swift */,
 				2475E3FDADF2B0C6C13CE5E1 /* PageEndDetectionStrategyStub.swift */,
+				2475E686AF0E489B78CE12D8 /* PageElementCountStrategy.swift */,
 			);
 			path = Paging;
 			sourceTree = "<group>";
@@ -326,6 +331,7 @@
 				2475E087ABE573EBFD40B60E /* Paging */,
 				2475E9FD342D791575BDC09E /* Bag.swift */,
 				2475E959F2DC065D45D7855A /* BagStub.swift */,
+				2475E3A470C2B5148E96E222 /* PerformanceParameter.swift */,
 			);
 			path = MvcArchitecture;
 			sourceTree = "<group>";
@@ -685,6 +691,8 @@
 				2475E52AFF57CA80947B35B8 /* PageEndDetectionStrategy.swift in Sources */,
 				2475E5EEB2DAE071F555A468 /* PagingModel.swift in Sources */,
 				2475E906ADAD63C68E83A804 /* Bag.swift in Sources */,
+				2475E9438E42A41809D5609E /* PageElementCountStrategy.swift in Sources */,
+				2475E86685E6B00877AE26FA /* PerformanceParameter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

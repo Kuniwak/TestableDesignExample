@@ -33,9 +33,13 @@ class RootNavigator: RootNavigatorContract {
         let api = GitHubApiClient(basedOn: GitHubApiEndpointBaseUrl.gitHubCom)
         let bag = Bag(api: api)
 
-        let stargazerModel = StargazerModel(
-            for: gitHubRepository,
-            fetchingVia: StargazerRepository(api: api)
+        let stargazerModel = StargazerModel.create(
+            requestingElementCountPerPage: PerformanceParameter.numberOfStargazersPerPage,
+            fetchingPageVia: StargazerRepository(
+                for: gitHubRepository,
+                perPage: PerformanceParameter.numberOfStargazersPerPage,
+                fetchingVia: api
+            )
         )
 
         guard let rootViewController = StargazersMvcComposer.create(
