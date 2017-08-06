@@ -14,6 +14,6 @@ class PageElementCountStrategy<T: Hashable>: PageEndDetectionStrategyContract {
         storedCollection: [Element],
         fetchedCollection: [Element]
     ) -> Bool {
-        return fetchedCollection.count == self.count
+        return fetchedCollection.count < self.count
     }
 }

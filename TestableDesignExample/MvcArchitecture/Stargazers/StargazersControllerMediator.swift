@@ -1,10 +1,10 @@
 import UIKit
 
 
+
 protocol StargazersControllerMediatorContract {
     func refresh(sender: UIRefreshControl)
 }
-
 
 
 
@@ -13,13 +13,15 @@ class StargazerControllerMediator: NSObject, StargazersControllerMediatorContrac
     fileprivate let model: StargazerModelContract
     fileprivate let viewMediator: StargazerViewMediatorContract
     fileprivate let refreshControl: UIRefreshControl
+    fileprivate let scrollViewDelegate: UIScrollViewDelegate
 
 
     init(
         willNotifyTo model: StargazerModelContract,
         from control: (
             tableView: UITableView,
-            refreshControl: UIRefreshControl
+            refreshControl: UIRefreshControl,
+            scrollViewDelegate: UIScrollViewDelegate
         ),
         andFindingVisibleRowBy viewMediator: StargazerViewMediatorContract,
         andNavigatingBy navigator: NavigatorContract
@@ -28,6 +30,7 @@ class StargazerControllerMediator: NSObject, StargazersControllerMediatorContrac
         self.viewMediator = viewMediator
         self.navigator = navigator
         self.refreshControl = control.refreshControl
+        self.scrollViewDelegate = control.scrollViewDelegate
 
         super.init()
 
@@ -49,10 +52,14 @@ class StargazerControllerMediator: NSObject, StargazersControllerMediatorContrac
 
 
 extension StargazerControllerMediator: UITableViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        self.scrollViewDelegate.scrollViewDidScroll?(scrollView)
+    }
+
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 70
     }
-
 
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

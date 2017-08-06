@@ -65,7 +65,10 @@ class StargazersMvcComposer: UIViewController {
             willNotifyTo: self.model,
             from: (
                 tableView: self.tableView,
-                refreshControl: refreshControl
+                refreshControl: refreshControl,
+                scrollViewDelegate: StargazersInfiniteScrollController(
+                    willRequestNextPageVia: self.model
+                )
             ),
             andFindingVisibleRowBy: self.viewMediator,
             andNavigatingBy: self.navigator
