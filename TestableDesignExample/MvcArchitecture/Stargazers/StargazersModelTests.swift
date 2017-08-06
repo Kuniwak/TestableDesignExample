@@ -13,7 +13,7 @@ class StarredRepositoriesModelTests: XCTestCase {
     }
 
 
-    private let repository = GitHubRepository(
+    private let gitHubRepository = GitHubRepository(
         owner: GitHubUser.Name(text: "octocat"),
         name: GitHubRepository.Name(text: "Hello-world")
     )
@@ -23,13 +23,12 @@ class StarredRepositoriesModelTests: XCTestCase {
         let testCases: [UInt: TestCase] = [
             #line: TestCase(
                 scenario: {
-                    let stargazerRepository = self.createPendingRepository()
-                    return StargazerModel(
-                        for: self.repository,
-                        fetchingVia: stargazerRepository
+                    return StargazerModel.create(
+                        requestingElementCountPerPage: 3,
+                        fetchingPageVia: self.createPendingRepository()
                     )
                 },
-                expected: .firstFetching
+                expected: .fetched(stargazers: [], error: nil)
             ),
 
 
@@ -37,25 +36,50 @@ class StarredRepositoriesModelTests: XCTestCase {
                 scenario: {
                     let repository = StargazerRepositoryStub(
                         firstResult: Promise(value: [
-                            GitHubUser(name: GitHubUser.Name(text: "stargazer-1"), avatar: URL(string: "http://example.com/avatar-1.png")!),
-                            GitHubUser(name: GitHubUser.Name(text: "stargazer-2"), avatar: URL(string: "http://example.com/avatar-2.png")!),
-                            GitHubUser(name: GitHubUser.Name(text: "stargazer-3"), avatar: URL(string: "http://example.com/avatar-3.png")!),
+                            GitHubUser(
+                                id: GitHubUser.Id(text: "1"),
+                                name: GitHubUser.Name(text: "stargazer-1"),
+                                avatar: URL(string: "http://example.com/avatar-1.png")!
+                            ),
+                            GitHubUser(
+                                id: GitHubUser.Id(text: "2"),
+                                name: GitHubUser.Name(text: "stargazer-2"),
+                                avatar: URL(string: "http://example.com/avatar-2.png")!
+                            ),
+                            GitHubUser(
+                                id: GitHubUser.Id(text: "3"),
+                                name: GitHubUser.Name(text: "stargazer-3"),
+                                avatar: URL(string: "http://example.com/avatar-3.png")!
+                            ),
                         ])
                     )
 
-                    let model = StargazerModel(
-                        for: self.repository,
-                        fetchingVia: repository
+                    let model = StargazerModel.create(
+                        requestingElementCountPerPage: 3,
+                        fetchingPageVia: repository
                     )
+                    model.fetchNext()
                     self.waitUntilFetched(model)
 
                     return model
                 },
                 expected: .fetched(
                     stargazers: [
-                        GitHubUser(name: GitHubUser.Name(text: "stargazer-1"), avatar: URL(string: "http://example.com/avatar-1.png")!),
-                        GitHubUser(name: GitHubUser.Name(text: "stargazer-2"), avatar: URL(string: "http://example.com/avatar-2.png")!),
-                        GitHubUser(name: GitHubUser.Name(text: "stargazer-3"), avatar: URL(string: "http://example.com/avatar-3.png")!),
+                        GitHubUser(
+                            id: GitHubUser.Id(text: "1"),
+                            name: GitHubUser.Name(text: "stargazer-1"),
+                            avatar: URL(string: "http://example.com/avatar-1.png")!
+                        ),
+                        GitHubUser(
+                            id: GitHubUser.Id(text: "2"),
+                            name: GitHubUser.Name(text: "stargazer-2"),
+                            avatar: URL(string: "http://example.com/avatar-2.png")!
+                        ),
+                        GitHubUser(
+                            id: GitHubUser.Id(text: "3"),
+                            name: GitHubUser.Name(text: "stargazer-3"),
+                            avatar: URL(string: "http://example.com/avatar-3.png")!
+                        ),
                     ],
                     error: nil
                 )
@@ -68,10 +92,11 @@ class StarredRepositoriesModelTests: XCTestCase {
                         firstResult: Promise(error: AnyError(debugInfo: "API call was failed"))
                     )
 
-                    let model = StargazerModel(
-                        for: self.repository,
-                        fetchingVia: repository
+                    let model = StargazerModel.create(
+                        requestingElementCountPerPage: 3,
+                        fetchingPageVia: repository
                     )
+                    model.fetchNext()
                     self.waitUntilFetched(model)
 
                     return model
@@ -89,15 +114,16 @@ class StarredRepositoriesModelTests: XCTestCase {
                         firstResult: Promise(error: AnyError(debugInfo: "API call was failed"))
                     )
 
-                    let model = StargazerModel(
-                        for: self.repository,
-                        fetchingVia: repository
+                    let model = StargazerModel.create(
+                        requestingElementCountPerPage: 1,
+                        fetchingPageVia: repository
                     )
+                    model.fetchNext()
                     self.waitUntilFetched(model)
 
                     repository.nextResult = Promise(value: [GitHubUser]())
 
-                    model.fetch()
+                    model.fetchNext()
                     self.waitUntilFetched(model)
 
                     return model
@@ -114,26 +140,29 @@ class StarredRepositoriesModelTests: XCTestCase {
                     let repository = StargazerRepositoryStub(
                         firstResult: Promise(value: [
                             GitHubUser(
+                                id: GitHubUser.Id(text: "1234"),
                                 name: GitHubUser.Name(text: "user-new"),
                                 avatar: URL(string: "http://example.com/user-new.png")!
                             ),
                         ])
                     )
 
-                    let model = StargazerModel(
-                        for: self.repository,
-                        fetchingVia: repository
+                    let model = StargazerModel.create(
+                        requestingElementCountPerPage: 1,
+                        fetchingPageVia: repository
                     )
+                    model.fetchNext()
                     self.waitUntilFetched(model)
 
                     repository.nextResult = Promise(value: [
                         GitHubUser(
+                            id: GitHubUser.Id(text: "1234"),
                             name: GitHubUser.Name(text: "user-new"),
                             avatar: URL(string: "http://example.com/user-new.png")!
                         )
                     ])
 
-                    model.fetch()
+                    model.fetchNext()
                     self.waitUntilFetching(model)
                     self.waitUntilFetched(model)
 
@@ -142,6 +171,7 @@ class StarredRepositoriesModelTests: XCTestCase {
                 expected: .fetched(
                     stargazers: [
                         GitHubUser(
+                            id: GitHubUser.Id(text: "1234"),
                             name: GitHubUser.Name(text: "user-new"),
                             avatar: URL(string: "http://example.com/user-new.png")!
                         ),
@@ -206,7 +236,7 @@ class StarredRepositoriesModelTests: XCTestCase {
     }
 
 
-    private func createPendingRepository() -> StargazerRepositoryContract {
+    private func createPendingRepository() -> StargazerRepositoryStub {
         return StargazerRepositoryStub(
             firstResult: Promise<[GitHubUser]>.pending().promise
         )

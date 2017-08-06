@@ -135,9 +135,6 @@ class StargazerViewMediator: StargazerViewMediatorContract {
                     guard let this = self else { return }
 
                     switch state {
-                    case .firstFetching:
-                        this.mediator?.presentLoadingState()
-
                     case let .fetching(previousStargazers: stargazers):
                         this.stargazers = stargazers
                         this.mediator?.presentLoadingState()

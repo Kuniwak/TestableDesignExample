@@ -25,17 +25,28 @@ class RootNavigator: RootNavigatorContract {
 
         let navigator = Navigator(for: navigationController)
 
-        let repository = GitHubRepository(
+        let gitHubRepository = GitHubRepository(
             owner: GitHubUser.Name(text: "Kuniwak"),
             name: GitHubRepository.Name(text: "MirrorDiffKit")
         )
 
         let api = GitHubApiClient(basedOn: GitHubApiEndpointBaseUrl.gitHubCom)
+        let bag = Bag(api: api)
+
+        let stargazerModel = StargazerModel.create(
+            requestingElementCountPerPage: PerformanceParameter.numberOfStargazersPerPage,
+            fetchingPageVia: StargazerRepository(
+                for: gitHubRepository,
+                perPage: PerformanceParameter.numberOfStargazersPerPage,
+                fetchingVia: api
+            )
+        )
 
         guard let rootViewController = StargazersMvcComposer.create(
-            byStargazersOf: repository,
-            andFetchingVia: api,
-            andNavigateBy: navigator
+            byStargazersOf: gitHubRepository,
+            presenting: stargazerModel,
+            navigatingBy: navigator,
+            holding: bag
         ) else {
             self.window.rootViewController = FatalErrorViewController.create(
                 debugInfo: "StarredRepositoriesViewController.create returned nil"

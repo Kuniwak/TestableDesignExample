@@ -7,52 +7,39 @@ class StargazersMvcComposer: UIViewController {
     @IBOutlet weak var progressView: UIProgressView!
 
 
-    private var api: GitHubApiClientContract!
+    private var gitHubRepository: GitHubRepository!
     private var navigator: NavigatorContract!
-    private var repository: GitHubRepository!
-    private var stargazerRepository: StargazerRepositoryContract!
-
-    private var viewMediator: StargazerViewMediatorContract!
-    private var controllerMediator: StargazersControllerMediatorContract!
+    private var model: StargazerModelContract!
+    private var bag: Bag!
 
 
     static func create(
-        byStargazersOf repository: GitHubRepository,
-        andFetchingVia api: GitHubApiClientContract,
-        andNavigateBy navigator: NavigatorContract
-    ) -> StargazersMvcComposer? {
-        return self.create(
-            byStargazersOf: repository,
-            andFetchingStargazersVia: StargazerRepository(api: api),
-            andNavigateBy: navigator,
-            andHolding: api
-        )
-    }
-
-
-    static func create(
-        byStargazersOf repository: GitHubRepository,
-        andFetchingStargazersVia stargazerRepository: StargazerRepositoryContract,
-        andNavigateBy navigator: NavigatorContract,
-        andHolding api: GitHubApiClientContract
+        byStargazersOf gitHubRepository: GitHubRepository,
+        presenting model: StargazerModelContract,
+        navigatingBy navigator: NavigatorContract,
+        holding bag: Bag
     ) -> StargazersMvcComposer? {
         guard let viewController = R.storyboard.stargazersScreen.stargazerViewController() else {
             return nil
         }
 
-        viewController.api = api
-        viewController.stargazerRepository = stargazerRepository
+        viewController.gitHubRepository = gitHubRepository
+        viewController.model = model
         viewController.navigator = navigator
-        viewController.repository = repository
+        viewController.bag = bag
 
         return viewController
     }
 
 
+    private var viewMediator: StargazerViewMediatorContract!
+    private var controllerMediator: StargazersControllerMediatorContract!
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = self.repository.text
+        self.title = self.gitHubRepository.text
 
         self.navigationItem.backBarButtonItem = UIBarButtonItem(
             title: "Back",
@@ -64,13 +51,8 @@ class StargazersMvcComposer: UIViewController {
         let refreshControl = UIRefreshControl()
         self.tableView.refreshControl = refreshControl
 
-        let model = StargazerModel(
-            for: self.repository,
-            fetchingVia: self.stargazerRepository
-        )
-
         self.viewMediator = StargazerViewMediator(
-            observing: model,
+            observing: self.model,
             andHandling: (
                 viewController: self,
                 tableView: self.tableView,
@@ -80,13 +62,18 @@ class StargazersMvcComposer: UIViewController {
         )
 
         self.controllerMediator = StargazerControllerMediator(
-            willNotifyTo: model,
+            willNotifyTo: self.model,
             from: (
                 tableView: self.tableView,
-                refreshControl: refreshControl
+                refreshControl: refreshControl,
+                scrollViewDelegate: StargazersInfiniteScrollController(
+                    willRequestNextPageVia: self.model
+                )
             ),
             andFindingVisibleRowBy: self.viewMediator,
             andNavigatingBy: self.navigator
         )
+
+        self.model.fetchNext()
     }
 }
