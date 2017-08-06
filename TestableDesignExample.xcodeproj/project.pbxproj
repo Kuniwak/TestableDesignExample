@@ -30,6 +30,7 @@
 		2475E437BCE2D828E2DE8608 /* PagedElementCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475EE00EDD7E12FE4F3158F /* PagedElementCollection.swift */; };
 		2475E4644B84BA23207DBA28 /* PagingModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E9701455B0421AAF96DF /* PagingModelTests.swift */; };
 		2475E4F5BAA39082F5129854 /* GitHubUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E96540D7FDFD907E38A1 /* GitHubUser.swift */; };
+		2475E50D500D2D57253936F6 /* UserModelStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E2F51CEB39BCDE5D9437 /* UserModelStub.swift */; };
 		2475E52AFF57CA80947B35B8 /* PageEndDetectionStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475EA6CE7CCD06FE9AAE392 /* PageEndDetectionStrategy.swift */; };
 		2475E578041452F8670C5A8C /* UserMvcComposerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475EDEF357B21E401A94659 /* UserMvcComposerTests.swift */; };
 		2475E5EEB2DAE071F555A468 /* PagingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475EE1B5C297CBB2DB792F7 /* PagingModel.swift */; };
@@ -125,6 +126,7 @@
 		2475E2939E6563048AA378B3 /* RemoteImageSourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteImageSourceTests.swift; sourceTree = "<group>"; };
 		2475E29FA1DBCF20C012D776 /* PageRepositorySpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageRepositorySpy.swift; sourceTree = "<group>"; };
 		2475E2D3B67D9970FD6B94BF /* StargazerRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StargazerRepository.swift; sourceTree = "<group>"; };
+		2475E2F51CEB39BCDE5D9437 /* UserModelStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModelStub.swift; sourceTree = "<group>"; };
 		2475E3A470C2B5148E96E222 /* PerformanceParameter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerformanceParameter.swift; sourceTree = "<group>"; };
 		2475E3FCF9976BD662C10237 /* JsonReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JsonReader.swift; path = TestableDesignExampleTests/Resources/JsonReader.swift; sourceTree = SOURCE_ROOT; };
 		2475E3FDADF2B0C6C13CE5E1 /* PageEndDetectionStrategyStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageEndDetectionStrategyStub.swift; sourceTree = "<group>"; };
@@ -392,6 +394,7 @@
 				2475EDEF357B21E401A94659 /* UserMvcComposerTests.swift */,
 				2475ECEADCC16CF800154CD5 /* UserModel.swift */,
 				2475E4D128866C453FAF4F53 /* UserViewMediator.swift */,
+				2475E2F51CEB39BCDE5D9437 /* UserModelStub.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -741,6 +744,7 @@
 				2475E1F7383D96C8179860E9 /* PageEndDetectionStrategyStub.swift in Sources */,
 				2475E058B58AC157C0A147B7 /* StargazersModelStub.swift in Sources */,
 				2475E019AC6D2F294D677F34 /* BagStub.swift in Sources */,
+				2475E50D500D2D57253936F6 /* UserModelStub.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

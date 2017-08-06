@@ -14,10 +14,17 @@ class GitHubStarredRepositoryTests: XCTestCase {
                 name: GitHubRepository.Name(text: "Hello-world")
             )
 
-            return GitHubStargazer.fetch(stargazersOf: repository, via: apiStub)
+            return GitHubStargazer.Page
+                .fetch(
+                    stargazersOf: repository,
+                    pageOf: 1,
+                    perPage: 1,
+                    via: apiStub
+                )
                 .then { repositories -> Void in
                     let expected = [
                         GitHubUser(
+                            id: GitHubUser.Id(text: "1"),
                             name: GitHubUser.Name(text: "octocat"),
                             avatar: URL(string: "https://github.com/images/error/octocat_happy.gif")!
                         ),

@@ -13,7 +13,12 @@ class StargazersMvcComposerTests: XCTestCase {
                 owner: GitHubUser.Name(text: "octocat"),
                 name: GitHubRepository.Name(text: "Hello-world")
             ),
-            presenting: StargazersModelStub(withInitialState: .firstFetching),
+            presenting: StargazersModelStub(
+                withInitialState: .fetched(
+                    stargazers: [],
+                    error: nil
+                )
+            ),
             navigatingBy: testNavigator,
             holding: Bag.create()
         )

@@ -24,9 +24,12 @@ class StargazersModelStub: StargazerModelContract {
 
 
     init(withInitialState initialState: StargazerModelState) {
-        self.stateVariable = RxSwift.Variable<StargazerModelState>(.firstFetching)
+        self.stateVariable = RxSwift.Variable<StargazerModelState>(initialState)
     }
 
 
-    func fetch() {}
+    func fetchNext() {}
+    func fetchPrevious() {}
+    func clear() {}
+    func recover() {}
 }
