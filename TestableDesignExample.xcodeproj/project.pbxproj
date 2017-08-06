@@ -63,7 +63,6 @@
 		2475EDC2FD509A53E43DEDA9 /* reposStargazers.json in Resources */ = {isa = PBXBuildFile; fileRef = 2475EFC5E1532F9230A85D82 /* reposStargazers.json */; };
 		2475EDED3B2768D715A948C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2475E2ED888DB0AA07F0DBDA /* Main.storyboard */; };
 		2475EE26A0DFBEC4EB5BAE99 /* FontRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E633D1D5C9D0166E0EF1 /* FontRegistry.swift */; };
-		2475EE30CCE8B8CC85956685 /* Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E4CF0A05D4A5ADE28575 /* Async.swift */; };
 		2475EE86B1751D6D830B3BBD /* TestNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E01DE6FDD5A3028F1B32 /* TestNavigator.swift */; };
 		2475EEB00A8811E9698BD7E7 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475ECEADCC16CF800154CD5 /* UserModel.swift */; };
 		2475EEB29A601F4F56E18789 /* PageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475EF074C2A57218C33A52B /* PageRepository.swift */; };
@@ -71,10 +70,10 @@
 		2475EEE96C335A9F12A6CDCB /* Lifter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E04E8578411420D30C66 /* Lifter.swift */; };
 		2475EF0E319C2B3CFC48C762 /* UserMvcComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E6CC4A27B8058F8CAE7F /* UserMvcComposer.swift */; };
 		2475EF55555DE956BE7FBE56 /* octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2475EF639EA034BCC0C26512 /* octicons.ttf */; };
+		2475EF62D7DC1E8FC2476A52 /* AsyncTestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E30AD0FB5158B660EB33 /* AsyncTestHelper.swift */; };
 		2475EF6D67DC1229AB744C71 /* StargazersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475EA8A1CD58D89A6FC8E3E /* StargazersModel.swift */; };
 		2475EF784651E52247E3C648 /* GitHubRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E9C17E4BBC136112F1C3 /* GitHubRepository.swift */; };
 		2475EF8187459829B292AFA9 /* R.generatedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E5AD62D5E53E91973FEB /* R.generatedTests.swift */; };
-		2475EFC9820F1920C41759D2 /* TestableDesignExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E7D9EF9A0EC0145E0708 /* TestableDesignExampleTests.swift */; };
 		62266B811E7525EE00A55A01 /* UserScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62266B801E7525EE00A55A01 /* UserScreen.storyboard */; };
 		62A1614D1E73C1CC003D28DC /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62A1614B1E73C1CC003D28DC /* RxBlocking.framework */; };
 		62A1614E1E73C1CC003D28DC /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62A1614C1E73C1CC003D28DC /* RxTest.framework */; };
@@ -127,11 +126,11 @@
 		2475E29FA1DBCF20C012D776 /* PageRepositorySpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageRepositorySpy.swift; sourceTree = "<group>"; };
 		2475E2D3B67D9970FD6B94BF /* StargazerRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StargazerRepository.swift; sourceTree = "<group>"; };
 		2475E2F51CEB39BCDE5D9437 /* UserModelStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModelStub.swift; sourceTree = "<group>"; };
+		2475E30AD0FB5158B660EB33 /* AsyncTestHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncTestHelper.swift; sourceTree = "<group>"; };
 		2475E3A470C2B5148E96E222 /* PerformanceParameter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerformanceParameter.swift; sourceTree = "<group>"; };
 		2475E3FCF9976BD662C10237 /* JsonReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JsonReader.swift; path = TestableDesignExampleTests/Resources/JsonReader.swift; sourceTree = SOURCE_ROOT; };
 		2475E3FDADF2B0C6C13CE5E1 /* PageEndDetectionStrategyStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageEndDetectionStrategyStub.swift; sourceTree = "<group>"; };
 		2475E49AC1AFD52DCC81BE25 /* StargazerRepositoryStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StargazerRepositoryStub.swift; sourceTree = "<group>"; };
-		2475E4CF0A05D4A5ADE28575 /* Async.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Async.swift; sourceTree = "<group>"; };
 		2475E4D128866C453FAF4F53 /* UserViewMediator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewMediator.swift; sourceTree = "<group>"; };
 		2475E52EE895096067C3AB7E /* TestableDesignExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestableDesignExampleUITests.swift; sourceTree = "<group>"; };
 		2475E53EEBB0B2F0A445AAC9 /* StargazersMvcComposerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StargazersMvcComposerTests.swift; sourceTree = "<group>"; };
@@ -147,7 +146,6 @@
 		2475E6DC10E68D586EF9C728 /* TitleHolder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleHolder.swift; sourceTree = "<group>"; };
 		2475E6DFB3857B78D5216317 /* GitHubApiEndpointTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubApiEndpointTests.swift; sourceTree = "<group>"; };
 		2475E767B5CB5B7E0C0B0A6E /* RemoteImageSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteImageSource.swift; sourceTree = "<group>"; };
-		2475E7D9EF9A0EC0145E0708 /* TestableDesignExampleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestableDesignExampleTests.swift; sourceTree = "<group>"; };
 		2475E7ECB9C6033E2222F3D9 /* PagingCursorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagingCursorTests.swift; sourceTree = "<group>"; };
 		2475E8757F392A3269C299DC /* AnyError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyError.swift; sourceTree = "<group>"; };
 		2475E892E746679C895D57CC /* StargazersControllerMediator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StargazersControllerMediator.swift; sourceTree = "<group>"; };
@@ -297,8 +295,6 @@
 				2475EE88C83579435E9F67BA /* ColorCatalog.swift */,
 				2475E767B5CB5B7E0C0B0A6E /* RemoteImageSource.swift */,
 				2475E2939E6563048AA378B3 /* RemoteImageSourceTests.swift */,
-				2475E7D9EF9A0EC0145E0708 /* TestableDesignExampleTests.swift */,
-				2475E4CF0A05D4A5ADE28575 /* Async.swift */,
 				2475E8757F392A3269C299DC /* AnyError.swift */,
 				2475E6DC10E68D586EF9C728 /* TitleHolder.swift */,
 			);
@@ -382,6 +378,7 @@
 			children = (
 				2475E6904F2577E36489E9DF /* Info.plist */,
 				2475ED210F997869A67B226E /* Resources */,
+				2475E30AD0FB5158B660EB33 /* AsyncTestHelper.swift */,
 			);
 			path = TestableDesignExampleTests;
 			sourceTree = "<group>";
@@ -729,8 +726,6 @@
 				2475EE86B1751D6D830B3BBD /* TestNavigator.swift in Sources */,
 				2475E40D232C0867EE3CBDD0 /* NavigatorStub.swift in Sources */,
 				2475E8D6EE86B076D4CB3361 /* RemoteImageSourceTests.swift in Sources */,
-				2475EFC9820F1920C41759D2 /* TestableDesignExampleTests.swift in Sources */,
-				2475EE30CCE8B8CC85956685 /* Async.swift in Sources */,
 				2475E7A6273DD9CBF4ABA5BA /* AnyError.swift in Sources */,
 				2475E2AC84566117FC687FC8 /* JsonReader.swift in Sources */,
 				2475E578041452F8670C5A8C /* UserMvcComposerTests.swift in Sources */,
@@ -745,6 +740,7 @@
 				2475E058B58AC157C0A147B7 /* StargazersModelStub.swift in Sources */,
 				2475E019AC6D2F294D677F34 /* BagStub.swift in Sources */,
 				2475E50D500D2D57253936F6 /* UserModelStub.swift in Sources */,
+				2475EF62D7DC1E8FC2476A52 /* AsyncTestHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
