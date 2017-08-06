@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--User View Mvc Composer-->
+        <!--User Mvc Composer-->
         <scene sceneID="vGe-ai-csu">
             <objects>
                 <viewController storyboardIdentifier="UserViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="IUY-Zd-hhM" customClass="UserMvcComposer" customModule="TestableDesignExample" customModuleProvider="target" sceneMemberID="viewController">
@@ -21,25 +21,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CyR-Ns-daY">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aw1-3Y-fPD">
                                 <rect key="frame" x="67" y="213" width="240" height="240"/>
-                                <color key="backgroundColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="fth-5Z-LYq">
+                                        <rect key="frame" x="102" y="102" width="37" height="37"/>
+                                    </activityIndicatorView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CyR-Ns-daY">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="240"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="k49-TA-UYw"/>
-                                    <constraint firstAttribute="height" constant="240" id="lWn-1q-bZd"/>
+                                    <constraint firstAttribute="bottom" secondItem="CyR-Ns-daY" secondAttribute="bottom" id="61K-fB-QqT"/>
+                                    <constraint firstItem="fth-5Z-LYq" firstAttribute="centerY" secondItem="aw1-3Y-fPD" secondAttribute="centerY" id="8kG-NU-MRj"/>
+                                    <constraint firstItem="CyR-Ns-daY" firstAttribute="leading" secondItem="aw1-3Y-fPD" secondAttribute="leading" id="EFl-GN-Qj7"/>
+                                    <constraint firstAttribute="width" constant="240" id="LaH-xx-FqH"/>
+                                    <constraint firstItem="fth-5Z-LYq" firstAttribute="centerX" secondItem="aw1-3Y-fPD" secondAttribute="centerX" id="Oyi-Ta-WtS"/>
+                                    <constraint firstItem="CyR-Ns-daY" firstAttribute="top" secondItem="aw1-3Y-fPD" secondAttribute="top" id="PcM-QW-jda"/>
+                                    <constraint firstAttribute="height" constant="240" id="Sb2-Gf-SXD"/>
+                                    <constraint firstAttribute="trailing" secondItem="CyR-Ns-daY" secondAttribute="trailing" id="Umz-vC-PMn"/>
                                 </constraints>
-                            </imageView>
+                            </view>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="IJb-CG-2Tr">
                                 <rect key="frame" x="0.0" y="0.5" width="375" height="2"/>
                             </progressView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="CyR-Ns-daY" firstAttribute="centerY" secondItem="sNS-cb-4UV" secondAttribute="centerY" id="3qO-Xd-V9J"/>
                             <constraint firstItem="IJb-CG-2Tr" firstAttribute="top" secondItem="sNS-cb-4UV" secondAttribute="top" id="C12-26-Qlg"/>
+                            <constraint firstItem="aw1-3Y-fPD" firstAttribute="centerX" secondItem="sNS-cb-4UV" secondAttribute="centerX" id="a6w-Cv-nrc"/>
                             <constraint firstItem="IJb-CG-2Tr" firstAttribute="leading" secondItem="sNS-cb-4UV" secondAttribute="leading" id="bym-2r-rOa"/>
-                            <constraint firstItem="CyR-Ns-daY" firstAttribute="centerX" secondItem="sNS-cb-4UV" secondAttribute="centerX" id="lWn-RF-DOX"/>
                             <constraint firstAttribute="trailing" secondItem="IJb-CG-2Tr" secondAttribute="trailing" id="mw8-of-g0Y"/>
+                            <constraint firstItem="aw1-3Y-fPD" firstAttribute="centerY" secondItem="sNS-cb-4UV" secondAttribute="centerY" id="nrM-Vy-t9n"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
