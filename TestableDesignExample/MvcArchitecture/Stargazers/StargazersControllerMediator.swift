@@ -23,8 +23,8 @@ class StargazerControllerMediator: NSObject, StargazersControllerMediatorContrac
             refreshControl: UIRefreshControl,
             scrollViewDelegate: UIScrollViewDelegate
         ),
-        andFindingVisibleRowBy viewMediator: StargazerViewMediatorContract,
-        andNavigatingBy navigator: NavigatorContract
+        findingVisibleRowBy viewMediator: StargazerViewMediatorContract,
+        navigatingBy navigator: NavigatorContract
     ) {
         self.model = model
         self.viewMediator = viewMediator

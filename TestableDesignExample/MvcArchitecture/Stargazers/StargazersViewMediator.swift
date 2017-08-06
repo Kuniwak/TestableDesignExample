@@ -17,10 +17,13 @@ protocol StargazerViewMediatorContract: class {
 class StargazerViewMediator: StargazerViewMediatorContract {
     private let dataSource: DataSource
     private let model: StargazerModelContract
-    private weak var viewController: UIViewController?
-    private let tableView: UITableView
-    private weak var progressView: UIProgressView?
-    private let refreshControl: UIRefreshControl
+    private let lifter: LifterContract
+    private let views: Views
+    typealias Views = (
+        tableView: UITableView,
+        progressView: UIProgressView,
+        refreshControl: UIRefreshControl
+    )
 
 
     var visibleStargazers: [GitHubUser] {
@@ -31,61 +34,57 @@ class StargazerViewMediator: StargazerViewMediatorContract {
 
     init(
         observing model: StargazerModelContract,
-        andHandling handle: (
-            viewController: UIViewController,
-            tableView: UITableView,
-            progressView: UIProgressView,
-            refreshControl: UIRefreshControl
-        )
+        handling views: Views,
+        presentingModelBy lifter: LifterContract
     ) {
         self.model = model
-        self.viewController = handle.viewController
-        self.tableView = handle.tableView
-        self.progressView = handle.progressView
-        self.refreshControl = handle.refreshControl
+        self.views = views
+        self.lifter = lifter
 
-        let token = StargazerCell.register(to: handle.tableView)
+        let token = StargazerCell.register(to: views.tableView)
         self.dataSource = DataSource(
             observing: model,
             andMustHave: token
         )
 
         self.dataSource.mediator = self
-        self.tableView.dataSource = self.dataSource
+        self.views.tableView.dataSource = self.dataSource
     }
 
 
     private func decorate() {
-        self.refreshControl.backgroundColor = ColorCatalog.Weak.font
-        self.refreshControl.isOpaque = true
+        self.views.refreshControl.backgroundColor = ColorCatalog.Weak.font
+        self.views.refreshControl.isOpaque = true
     }
 
 
 
     func reload() {
-        self.tableView.reloadData()
+        self.views.tableView.reloadData()
     }
 
 
 
     func presentCompleteState() {
-        if self.refreshControl.isRefreshing {
-            self.refreshControl.endRefreshing()
+        guard self.views.refreshControl.isRefreshing else {
+            self.views.progressView.setProgress(1.0, animated: true)
+            self.views.progressView.isHidden = true
+            return
         }
-        else {
-            self.progressView?.setProgress(1.0, animated: true)
-            self.progressView?.isHidden = true
-        }
+
+        self.views.refreshControl.endRefreshing()
     }
 
 
 
     func presentLoadingState() {
-        if !self.refreshControl.isRefreshing {
-            // NOTE: Fake progress X-D
-            self.progressView?.isHidden = false
-            self.progressView?.setProgress(0.8, animated: true)
+        guard self.views.refreshControl.isRefreshing else {
+            return
         }
+
+        // NOTE: Fake progress X-D
+        self.views.progressView.isHidden = false
+        self.views.progressView.setProgress(0.8, animated: true)
     }
 
 
@@ -107,7 +106,10 @@ class StargazerViewMediator: StargazerViewMediatorContract {
         alertController.addAction(goingBackAction)
         alertController.preferredAction = goingBackAction
 
-        self.viewController?.present(alertController, animated: true)
+        self.lifter.present(
+            viewController: alertController,
+            animated: true
+        )
     }
 
 

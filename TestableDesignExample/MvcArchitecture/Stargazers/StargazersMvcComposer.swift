@@ -53,12 +53,12 @@ class StargazersMvcComposer: UIViewController {
 
         self.viewMediator = StargazerViewMediator(
             observing: self.model,
-            andHandling: (
-                viewController: self,
+            handling: (
                 tableView: self.tableView,
                 progressView: self.progressView,
                 refreshControl: refreshControl
-            )
+            ),
+            presentingModelBy: Lifter(wherePresentOn: self)
         )
 
         self.controllerMediator = StargazerControllerMediator(
@@ -70,8 +70,8 @@ class StargazersMvcComposer: UIViewController {
                     willRequestNextPageVia: self.model
                 )
             ),
-            andFindingVisibleRowBy: self.viewMediator,
-            andNavigatingBy: self.navigator
+            findingVisibleRowBy: self.viewMediator,
+            navigatingBy: self.navigator
         )
 
         self.model.fetchNext()
