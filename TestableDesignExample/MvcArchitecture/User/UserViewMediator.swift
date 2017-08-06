@@ -17,14 +17,17 @@ class UserViewMediator: UserViewMediatorContract {
         avatarImageView: UIImageView,
         titleHolder: TitleHolder
     )
+    private let lifter: LifterContract
 
 
     init(
         observing model: UserModelContract,
-        handling views: Views
+        handling views: Views,
+        presentingModalBy lifter: LifterContract
     ) {
         self.model = model
         self.views = views
+        self.lifter = lifter
         self.imageSource = RemoteImageSource(willUpdate: views.avatarImageView)
 
         self.model.didChange
@@ -34,7 +37,7 @@ class UserViewMediator: UserViewMediatorContract {
                 switch state {
                 case .fetching:
                     this.views.titleHolder.setTitle(text: "Loading...")
-                    this.imageSource.set(image: UIImage())
+                    this.imageSource.set(image: nil)
 
                 case let .fetched(result: .success(user)):
                     this.views.titleHolder.setTitle(text: user.name.text)
@@ -43,8 +46,10 @@ class UserViewMediator: UserViewMediatorContract {
                 case let .fetched(result: .failure(error)):
                     dump(error)
 
+                    this.present(error: error)
+
                     this.views.titleHolder.setTitle(text: "Error")
-                    this.imageSource.set(image: UIImage())
+                    this.imageSource.set(image: nil)
                 }
             })
             .addDisposableTo(self.disposeBag)
@@ -73,5 +78,27 @@ class UserViewMediator: UserViewMediatorContract {
                 }
             })
             .addDisposableTo(self.disposeBag)
+    }
+
+
+    private func present(error: UserModelState.ModelError) {
+        let alertController = UIAlertController(
+            title: "Error",
+            message: "\(error)",
+            preferredStyle: .alert
+        )
+
+        let goingBackAction = UIAlertAction(
+            title: "Back",
+            style: .cancel
+        )
+
+        alertController.addAction(goingBackAction)
+        alertController.preferredAction = goingBackAction
+
+        self.lifter.present(
+            viewController: alertController,
+            animated: true
+        )
     }
 }

@@ -40,7 +40,8 @@ class UserMvcComposer: UIViewController, UserMvcComposerContract {
                 avatarImageView: self.avatarImageView,
                 progressView: self.progressView,
                 titleHolder: ViewControllerTitleHolder(changeTitleOf: self)
-            )
+            ),
+            presentingModalBy: Lifter(wherePresentOn: self)
         )
     }
 }

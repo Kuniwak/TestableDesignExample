@@ -52,7 +52,7 @@ class RemoteImageSource {
     }
 
 
-    func set(image: UIImage) {
+    func set(image: UIImage?) {
         self.imageView.image = image
         self.stateVariable.value = .success(image: image)
     }
@@ -60,7 +60,7 @@ class RemoteImageSource {
 
     enum State {
         case pending
-        case success(image: UIImage)
+        case success(image: UIImage?)
         case failure(reason: LoadingError)
     }
 
