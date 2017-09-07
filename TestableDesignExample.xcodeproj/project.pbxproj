@@ -56,11 +56,13 @@
 		2475E9438E42A41809D5609E /* PageElementCountStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E686AF0E489B78CE12D8 /* PageElementCountStrategy.swift */; };
 		2475E9807E8143A4B3A751A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2475E33610A7BBD163657C40 /* LaunchScreen.storyboard */; };
 		2475E9C5968FE2FDD131A353 /* UrlOpener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E9BB7111AF583D00867E /* UrlOpener.swift */; };
+		2475EA03D2E0AC5C95CA2961 /* GlobalModalPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475EB76686921C7DDEC4FB2 /* GlobalModalPresenter.swift */; };
 		2475EA0A2BB5CDAAA1DFB2B5 /* NavigatorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475EA1E27954B386919C01B /* NavigatorSpy.swift */; };
 		2475EA2BD6E67ECEAE176195 /* RemoteImageSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E767B5CB5B7E0C0B0A6E /* RemoteImageSource.swift */; };
 		2475EA44D9638AEDA24CE1DC /* PageRepositorySpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E29FA1DBCF20C012D776 /* PageRepositorySpy.swift */; };
 		2475EA58B3D5A745C10EEECB /* UrlOpenerStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475EB1D83DE4FF87B26603C /* UrlOpenerStub.swift */; };
 		2475EB37E60B9FA89BC83FF4 /* GitHubApiClientStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475EAAA03A6CC33D5660297 /* GitHubApiClientStub.swift */; };
+		2475EBB7010332026F93D968 /* TransparentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E239A933D1C6B11B77A3 /* TransparentViewController.swift */; };
 		2475EBBD47C22B8513391662 /* StargazersScreenRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E62C84D772E7C978BBEE /* StargazersScreenRootView.swift */; };
 		2475EBBEE0CB66156780EAC1 /* PageRepositoryStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475EBC20C528C65C22AC76E /* PageRepositoryStub.swift */; };
 		2475EBC38C427D41A452E006 /* GitHubStargazer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475EA9AAFF3FDC512301D94 /* GitHubStargazer.swift */; };
@@ -135,6 +137,7 @@
 		2475E168B20E5C501400CF73 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		2475E17054E55DC60FBB0869 /* GitHubStargazerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubStargazerTests.swift; sourceTree = "<group>"; };
 		2475E1A4E2B89145A865C025 /* Navigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
+		2475E239A933D1C6B11B77A3 /* TransparentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransparentViewController.swift; sourceTree = "<group>"; };
 		2475E257C1D4C9407F7E2783 /* RootNavigatorStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootNavigatorStub.swift; sourceTree = "<group>"; };
 		2475E26107E142D6CF5AAC43 /* VisualDecorator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisualDecorator.swift; sourceTree = "<group>"; };
 		2475E2939E6563048AA378B3 /* RemoteImageSourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteImageSourceTests.swift; sourceTree = "<group>"; };
@@ -186,6 +189,7 @@
 		2475EAAA03A6CC33D5660297 /* GitHubApiClientStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubApiClientStub.swift; sourceTree = "<group>"; };
 		2475EB1D83DE4FF87B26603C /* UrlOpenerStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UrlOpenerStub.swift; sourceTree = "<group>"; };
 		2475EB38628EF03DCAD17F84 /* FatalErrorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FatalErrorViewController.swift; sourceTree = "<group>"; };
+		2475EB76686921C7DDEC4FB2 /* GlobalModalPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalModalPresenter.swift; sourceTree = "<group>"; };
 		2475EBC20C528C65C22AC76E /* PageRepositoryStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageRepositoryStub.swift; sourceTree = "<group>"; };
 		2475EC038B0F4DFB5B9D39D6 /* ModalDissolver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalDissolver.swift; sourceTree = "<group>"; };
 		2475EC3A6667F8553C23CB2C /* GitHubApiEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubApiEndpoint.swift; sourceTree = "<group>"; };
@@ -361,6 +365,8 @@
 				2475E5FB44FA2965665FC6BE /* RootNavigatorSpy.swift */,
 				2475EB1D83DE4FF87B26603C /* UrlOpenerStub.swift */,
 				2475E5D99B9F60DA1B351438 /* UrlOpenerSpy.swift */,
+				2475EB76686921C7DDEC4FB2 /* GlobalModalPresenter.swift */,
+				2475E239A933D1C6B11B77A3 /* TransparentViewController.swift */,
 				2475EC038B0F4DFB5B9D39D6 /* ModalDissolver.swift */,
 				2475EF84CC9B5F09D2C30317 /* ModalDissolverStub.swift */,
 				2475E61C2790095308271957 /* ModalDissolverSpy.swift */,
@@ -759,6 +765,8 @@
 				2475E4661715371D7250B39F /* UserScreenRootView.swift in Sources */,
 				2475E76DB6877549D4EF0A3E /* FilledLayout.swift in Sources */,
 				2475EBBD47C22B8513391662 /* StargazersScreenRootView.swift in Sources */,
+				2475EA03D2E0AC5C95CA2961 /* GlobalModalPresenter.swift in Sources */,
+				2475EBB7010332026F93D968 /* TransparentViewController.swift in Sources */,
 				2475E58C5612022DA17FECB4 /* ModalDissolver.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
