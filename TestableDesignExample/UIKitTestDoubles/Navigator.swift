@@ -9,7 +9,8 @@ protocol NavigatorContract {
     /**
      Push the specified UIViewController to the held UINavigationController.
      */
-    func navigate(to viewController: UIViewController, animated: Bool)
+    @discardableResult
+    func navigate(to viewController: UIViewController, animated: Bool) -> ReverseNavigatorContract
 }
 
 
@@ -26,10 +27,16 @@ class Navigator: NavigatorContract {
     /**
      Push the specified UIViewController to the held UINavigationController.
      */
-    func navigate(to viewController: UIViewController, animated: Bool) {
+    @discardableResult
+    func navigate(to viewController: UIViewController, animated: Bool) -> ReverseNavigatorContract {
         self.navigationController.pushViewController(
             viewController,
             animated: animated
+        )
+
+        return ReverseNavigator(
+            willPopTo: viewController,
+            on: self.navigationController
         )
     }
 }
