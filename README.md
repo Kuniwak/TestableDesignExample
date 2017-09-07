@@ -40,27 +40,25 @@ Concrete implementation is below:
 
 ```swift
 class FooViewController: UIViewController {
-    private var model: FooModelContract!
-    private var viewMediator: FooViewMediatorContract!
-    private var controller: FooControllerContract!
+    private var model: FooModelContract
+    private var viewMediator: FooViewMediatorContract?
+    private var controller: FooControllerContract?
 
-    // We should give FooModel to be able to change initial state of the screen.
-    static func create(model: FooModelContract) -> FooViewController? {
-        guard let viewController = R.storyboard.fooScreen.FooViewController() else {
-            return nil
-        }
-
-        viewController.model = model
-        return viewController
+    init(model: FooModelContract) -> FooViewController? {
+        self.model = model
+        super.init(nibName: nil, bundle: nil)
     }
 
-
-    @IBOutlet weak var barView: BarView!
-    @IBOutlet weak var bazView: BizzView!
+    required init?(coder aDecoder: NSCoder) {
+        // NOTE: We should not instantiate the ViewController by using UINibs to
+        // eliminate fields that have force unwrapping types.
+        return nil
+    }
 
     // Connect Model and ViewMediator, Controller.
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func loadView() {
+        let rootView = FooRootView()
+        self.view = rootView
 
         let controller = FooController(
             willNotifyTo: self.model,
@@ -70,8 +68,8 @@ class FooViewController: UIViewController {
         self.viewMediator = FooViewMediator(
             observing: self.model,
             handling: (
-                bar: self.barView,
-                baz: self.bazView
+                bar: rootView.barView,
+                baz: rootView.bazView
             )
         )
         self.viewMediator.delegate = controller
