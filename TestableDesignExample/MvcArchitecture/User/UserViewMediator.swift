@@ -17,13 +17,13 @@ class UserViewMediator: UserViewMediatorContract {
         avatarImageView: UIImageView,
         titleHolder: TitleHolder
     )
-    private let lifter: LifterContract
+    private let lifter: ModalPresenterContract
 
 
     init(
         observing model: UserModelContract,
         handling views: Views,
-        presentingModalBy lifter: LifterContract
+        presentingModalBy lifter: ModalPresenterContract
     ) {
         self.model = model
         self.views = views

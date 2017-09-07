@@ -2,14 +2,14 @@ import UIKit
 
 
 
-protocol WebPageOpenerContract {
-    func open(urlOnSafari url: URL)
+protocol UrlOpenerContract {
+    func open(url: URL)
 }
 
 
 
-struct WebPageOpener: WebPageOpenerContract {
-    func open(urlOnSafari url: URL) {
+struct UrlOpener: UrlOpenerContract {
+    func open(url: URL) {
         if #available (iOS 10.0, *) {
             // NOTE: For iOS 10.0+.
             // https://developer.apple.com/reference/uikit/uiapplication/1648685-open

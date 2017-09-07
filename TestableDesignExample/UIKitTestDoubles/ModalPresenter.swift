@@ -2,14 +2,14 @@ import UIKit
 
 
 
-protocol LifterContract {
+protocol ModalPresenterContract {
     func present(viewController: UIViewController, animated: Bool)
     func presentWithFallback(viewController: UIViewController?, animated: Bool)
 }
 
 
 
-class Lifter: LifterContract {
+class ModalPresenter: ModalPresenterContract {
     private let groundViewController: UIViewController
 
 
