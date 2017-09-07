@@ -13,15 +13,7 @@ class TestNavigator: NavigatorContract {
     }
 
 
-    func navigate(to viewController: UIViewController, animated: Bool) {}
-
-
-    func navigateWithFallback(to viewController: UIViewController?, animated: Bool) {
-        guard let viewController = viewController else {
-            XCTFail("Unexpected nil ViewController", line: self.line)
-            return
-        }
-
+    func navigate(to viewController: UIViewController, animated: Bool) {
         let window = UIApplication.shared.keyWindow!
         window.rootViewController = UINavigationController(
             rootViewController: viewController

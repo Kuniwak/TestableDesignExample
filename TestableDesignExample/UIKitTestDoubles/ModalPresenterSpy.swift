@@ -4,20 +4,12 @@ import UIKit
 
 
 class ModalPresenterSpy: ModalPresenterContract {
-    fileprivate(set) var callArgs = (
-        ofPresent: [(viewController: UIViewController, animated: Bool)](),
-        ofPresentWithFallback: [(viewController: UIViewController?, animated: Bool)]()
-    )
+    typealias CallArgs = (viewController: UIViewController, animated: Bool)
+    fileprivate(set) var callArgs: [CallArgs] = []
 
 
     func present(viewController: UIViewController, animated: Bool) {
         let callArgs = (viewController: viewController, animated: animated)
-        self.callArgs.ofPresent.append(callArgs)
-    }
-
-
-    func presentWithFallback(viewController: UIViewController?, animated: Bool) {
-        let callArgs = (viewController: viewController, animated: animated)
-        self.callArgs.ofPresentWithFallback.append(callArgs)
+        self.callArgs.append(callArgs)
     }
 }
