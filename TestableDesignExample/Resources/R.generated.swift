@@ -58,14 +58,28 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.nib` struct is generated, and contains static references to 1 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 3 nibs.
   struct nib {
     /// Nib `StargazerCell`.
     static let stargazerCell = _R.nib._StargazerCell()
+    /// Nib `StargazersScreenRootView`.
+    static let stargazersScreenRootView = _R.nib._StargazersScreenRootView()
+    /// Nib `UserScreenRootView`.
+    static let userScreenRootView = _R.nib._UserScreenRootView()
     
     /// `UINib(name: "StargazerCell", in: bundle)`
     static func stargazerCell(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.stargazerCell)
+    }
+    
+    /// `UINib(name: "StargazersScreenRootView", in: bundle)`
+    static func stargazersScreenRootView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.stargazersScreenRootView)
+    }
+    
+    /// `UINib(name: "UserScreenRootView", in: bundle)`
+    static func userScreenRootView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.userScreenRootView)
     }
     
     fileprivate init() {}
@@ -84,7 +98,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.storyboard` struct is generated, and contains static references to 5 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 3 storyboards.
   struct storyboard {
     /// Storyboard `FatalErrorScreen`.
     static let fatalErrorScreen = _R.storyboard.fatalErrorScreen()
@@ -92,10 +106,6 @@ struct R: Rswift.Validatable {
     static let launchScreen = _R.storyboard.launchScreen()
     /// Storyboard `Main`.
     static let main = _R.storyboard.main()
-    /// Storyboard `StargazersScreen`.
-    static let stargazersScreen = _R.storyboard.stargazersScreen()
-    /// Storyboard `UserScreen`.
-    static let userScreen = _R.storyboard.userScreen()
     
     /// `UIStoryboard(name: "FatalErrorScreen", bundle: ...)`
     static func fatalErrorScreen(_: Void = ()) -> UIKit.UIStoryboard {
@@ -110,16 +120,6 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "Main", bundle: ...)`
     static func main(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.main)
-    }
-    
-    /// `UIStoryboard(name: "StargazersScreen", bundle: ...)`
-    static func stargazersScreen(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.stargazersScreen)
-    }
-    
-    /// `UIStoryboard(name: "UserScreen", bundle: ...)`
-    static func userScreen(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.userScreen)
     }
     
     fileprivate init() {}
@@ -163,6 +163,28 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
     
+    struct _StargazersScreenRootView: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "StargazersScreenRootView"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct _UserScreenRootView: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "UserScreenRootView"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+      
+      fileprivate init() {}
+    }
+    
     fileprivate init() {}
   }
   
@@ -170,8 +192,6 @@ struct _R: Rswift.Validatable {
     static func validate() throws {
       try main.validate()
       try fatalErrorScreen.validate()
-      try stargazersScreen.validate()
-      try userScreen.validate()
     }
     
     struct fatalErrorScreen: Rswift.StoryboardResourceType, Rswift.Validatable {
@@ -212,38 +232,6 @@ struct _R: Rswift.Validatable {
       
       static func validate() throws {
         if _R.storyboard.main().bootstrapViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'bootstrapViewController' could not be loaded from storyboard 'Main' as 'TestableDesignExample.BootstrapViewController'.") }
-      }
-      
-      fileprivate init() {}
-    }
-    
-    struct stargazersScreen: Rswift.StoryboardResourceType, Rswift.Validatable {
-      let bundle = R.hostingBundle
-      let name = "StargazersScreen"
-      let stargazerViewController = StoryboardViewControllerResource<StargazersMvcComposer>(identifier: "StargazerViewController")
-      
-      func stargazerViewController(_: Void = ()) -> StargazersMvcComposer? {
-        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: stargazerViewController)
-      }
-      
-      static func validate() throws {
-        if _R.storyboard.stargazersScreen().stargazerViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'stargazerViewController' could not be loaded from storyboard 'StargazersScreen' as 'StargazersMvcComposer'.") }
-      }
-      
-      fileprivate init() {}
-    }
-    
-    struct userScreen: Rswift.StoryboardResourceType, Rswift.Validatable {
-      let bundle = R.hostingBundle
-      let name = "UserScreen"
-      let userViewController = StoryboardViewControllerResource<UserMvcComposer>(identifier: "UserViewController")
-      
-      func userViewController(_: Void = ()) -> UserMvcComposer? {
-        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: userViewController)
-      }
-      
-      static func validate() throws {
-        if _R.storyboard.userScreen().userViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'userViewController' could not be loaded from storyboard 'UserScreen' as 'UserMvcComposer'.") }
       }
       
       fileprivate init() {}

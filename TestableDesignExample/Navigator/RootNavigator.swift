@@ -42,19 +42,17 @@ class RootNavigator: RootNavigatorContract {
             )
         )
 
-        guard let rootViewController = StargazersMvcComposer.create(
-            byStargazersOf: gitHubRepository,
-            presenting: stargazerModel,
+        let composer = StargazersMvcComposer(
+            for: gitHubRepository,
+            representing: stargazerModel,
             navigatingBy: navigator,
             holding: bag
-        ) else {
-            self.window.rootViewController = FatalErrorViewController.create(
-                debugInfo: "StarredRepositoriesViewController.create returned nil"
-            )
-            return
-        }
+        )
 
-        navigationController.setViewControllers([rootViewController], animated: true)
+        navigationController.setViewControllers(
+            [composer],
+            animated: true
+        )
 
         self.window.rootViewController = navigationController
     }

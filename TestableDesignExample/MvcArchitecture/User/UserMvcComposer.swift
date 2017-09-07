@@ -8,37 +8,35 @@ protocol UserMvcComposerContract {}
 
 
 class UserMvcComposer: UIViewController, UserMvcComposerContract {
-    @IBOutlet weak var avatarImageView: UIImageView!
-    @IBOutlet weak var progressView: UIProgressView!
+    private let model: UserModelContract
 
-
-    private var model: UserModelContract!
+    private var viewMediator: UserViewMediatorContract?
     private let disposeBag = RxSwift.DisposeBag()
 
 
-    static func create(byModel model: UserModelContract) -> UserMvcComposer? {
-        guard let viewController = R.storyboard.userScreen.userViewController() else {
-            return nil
-        }
+    init(representing model: UserModelContract) {
+        self.model = model
 
-        viewController.model = model
-
-        return viewController
+        super.init(nibName: nil, bundle: nil)
     }
 
 
-    private var viewMediator: UserViewMediatorContract!
+    required init?(coder aDecoder: NSCoder) {
+        // NOTE: We should not instantiate the ViewController by using UINibs to
+        // eliminate fields that have force unwrapping types.
+        return nil
+    }
 
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
+    override func loadView() {
+        let rootView = UserScreenRootView()
+        self.view = rootView
 
         self.viewMediator = UserViewMediator(
             observing: self.model,
             handling: (
-                avatarImageView: self.avatarImageView,
-                progressView: self.progressView,
+                avatarImageView: rootView.imageView,
+                progressView: rootView.progressView,
                 titleHolder: ViewControllerTitleHolder(changeTitleOf: self)
             ),
             presentingModalBy: Lifter(wherePresentOn: self)

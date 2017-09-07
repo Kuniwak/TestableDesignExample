@@ -3,37 +3,68 @@ import UIKit
 
 
 class StargazersMvcComposer: UIViewController {
-    @IBOutlet var tableView: UITableView!
-    @IBOutlet weak var progressView: UIProgressView!
+    private var gitHubRepository: GitHubRepository
+    private var navigator: NavigatorContract
+    private var model: StargazerModelContract
+    private var bag: Bag
+
+    private var viewMediator: StargazerViewMediatorContract?
+    private var controllerMediator: StargazersControllerMediatorContract?
 
 
-    private var gitHubRepository: GitHubRepository!
-    private var navigator: NavigatorContract!
-    private var model: StargazerModelContract!
-    private var bag: Bag!
-
-
-    static func create(
-        byStargazersOf gitHubRepository: GitHubRepository,
-        presenting model: StargazerModelContract,
+    init(
+        for gitHubRepository: GitHubRepository,
+        representing model: StargazerModelContract,
         navigatingBy navigator: NavigatorContract,
         holding bag: Bag
-    ) -> StargazersMvcComposer? {
-        guard let viewController = R.storyboard.stargazersScreen.stargazerViewController() else {
-            return nil
-        }
+    ) {
+        self.gitHubRepository = gitHubRepository
+        self.model = model
+        self.navigator = navigator
+        self.bag = bag
 
-        viewController.gitHubRepository = gitHubRepository
-        viewController.model = model
-        viewController.navigator = navigator
-        viewController.bag = bag
-
-        return viewController
+        super.init(nibName: nil, bundle: nil)
     }
 
 
-    private var viewMediator: StargazerViewMediatorContract!
-    private var controllerMediator: StargazersControllerMediatorContract!
+    required init?(coder aDecoder: NSCoder) {
+        // NOTE: We should not instantiate the ViewController by using UINibs to
+        // eliminate fields that have force unwrapping types.
+        return nil
+    }
+
+
+    override func loadView() {
+        let rootView = StargazersScreenRootView()
+        self.view = rootView
+
+        let refreshControl = UIRefreshControl()
+        rootView.tableView.refreshControl = refreshControl
+
+        let viewMediator = StargazerViewMediator(
+            observing: self.model,
+            handling: (
+                tableView: rootView.tableView,
+                progressView: rootView.progressView,
+                refreshControl: refreshControl
+            ),
+            presentingModelBy: Lifter(wherePresentOn: self)
+        )
+        self.viewMediator = viewMediator
+
+        self.controllerMediator = StargazerControllerMediator(
+            willNotifyTo: self.model,
+            from: (
+                tableView: rootView.tableView,
+                refreshControl: refreshControl,
+                scrollViewDelegate: StargazersInfiniteScrollController(
+                    willRequestNextPageVia: self.model
+                )
+            ),
+            findingVisibleRowBy: viewMediator,
+            navigatingBy: self.navigator
+        )
+    }
 
 
     override func viewDidLoad() {
@@ -46,32 +77,6 @@ class StargazersMvcComposer: UIViewController {
             style: .done,
             target: nil,
             action: nil
-        )
-
-        let refreshControl = UIRefreshControl()
-        self.tableView.refreshControl = refreshControl
-
-        self.viewMediator = StargazerViewMediator(
-            observing: self.model,
-            handling: (
-                tableView: self.tableView,
-                progressView: self.progressView,
-                refreshControl: refreshControl
-            ),
-            presentingModelBy: Lifter(wherePresentOn: self)
-        )
-
-        self.controllerMediator = StargazerControllerMediator(
-            willNotifyTo: self.model,
-            from: (
-                tableView: self.tableView,
-                refreshControl: refreshControl,
-                scrollViewDelegate: StargazersInfiniteScrollController(
-                    willRequestNextPageVia: self.model
-                )
-            ),
-            findingVisibleRowBy: self.viewMediator,
-            navigatingBy: self.navigator
         )
 
         self.model.fetchNext()
