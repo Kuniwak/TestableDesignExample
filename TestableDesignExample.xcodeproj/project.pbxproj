@@ -58,6 +58,7 @@
 		2475E9574A422AE546409DFA /* ReverseNavigatorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475EAAA66CB3DAD638AA305 /* ReverseNavigatorSpy.swift */; };
 		2475E9807E8143A4B3A751A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2475E33610A7BBD163657C40 /* LaunchScreen.storyboard */; };
 		2475E9C5968FE2FDD131A353 /* UrlOpener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E9BB7111AF583D00867E /* UrlOpener.swift */; };
+		2475E9E49763BD4260AD2B30 /* RootViewControllerHolderSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475EA2A64644BB49F373AF2 /* RootViewControllerHolderSpy.swift */; };
 		2475EA03D2E0AC5C95CA2961 /* GlobalModalPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475EB76686921C7DDEC4FB2 /* GlobalModalPresenter.swift */; };
 		2475EA0A2BB5CDAAA1DFB2B5 /* NavigatorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475EA1E27954B386919C01B /* NavigatorSpy.swift */; };
 		2475EA2BD6E67ECEAE176195 /* RemoteImageSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E767B5CB5B7E0C0B0A6E /* RemoteImageSource.swift */; };
@@ -70,6 +71,8 @@
 		2475EBC38C427D41A452E006 /* GitHubStargazer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475EA9AAFF3FDC512301D94 /* GitHubStargazer.swift */; };
 		2475EBE734270642753E85C1 /* StargazerRepositoryStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E49AC1AFD52DCC81BE25 /* StargazerRepositoryStub.swift */; };
 		2475EC3DE8C8F6480DDCD136 /* PagingCursor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E557348E1E9BB7330B3A /* PagingCursor.swift */; };
+		2475ECB6415E19BAADCCD7A6 /* RootViewControllerHolderStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475EC69DBF799CBC5577694 /* RootViewControllerHolderStub.swift */; };
+		2475ECF1AD4C571D44629792 /* RootViewControllerHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475EE3B480C7B64EE488ED0 /* RootViewControllerHolder.swift */; };
 		2475ED052F280DF12FCC21BF /* TestableDesignExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E52EE895096067C3AB7E /* TestableDesignExampleUITests.swift */; };
 		2475ED242C02F97EC979B063 /* UserViewMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E4D128866C453FAF4F53 /* UserViewMediator.swift */; };
 		2475ED5BF2B685F9B76415C5 /* VisualDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E26107E142D6CF5AAC43 /* VisualDecorator.swift */; };
@@ -187,6 +190,7 @@
 		2475E9FD342D791575BDC09E /* Bag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bag.swift; sourceTree = "<group>"; };
 		2475EA1E27954B386919C01B /* NavigatorSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigatorSpy.swift; sourceTree = "<group>"; };
 		2475EA23F072080B484A2B68 /* FilledLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilledLayout.swift; sourceTree = "<group>"; };
+		2475EA2A64644BB49F373AF2 /* RootViewControllerHolderSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewControllerHolderSpy.swift; sourceTree = "<group>"; };
 		2475EA6CE7CCD06FE9AAE392 /* PageEndDetectionStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageEndDetectionStrategy.swift; sourceTree = "<group>"; };
 		2475EA8A1CD58D89A6FC8E3E /* StargazersModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StargazersModel.swift; sourceTree = "<group>"; };
 		2475EA9AAFF3FDC512301D94 /* GitHubStargazer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubStargazer.swift; sourceTree = "<group>"; };
@@ -199,6 +203,7 @@
 		2475EC038B0F4DFB5B9D39D6 /* ModalDissolver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalDissolver.swift; sourceTree = "<group>"; };
 		2475EC3A6667F8553C23CB2C /* GitHubApiEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubApiEndpoint.swift; sourceTree = "<group>"; };
 		2475EC4757610B2EC6E83A3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2475EC69DBF799CBC5577694 /* RootViewControllerHolderStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewControllerHolderStub.swift; sourceTree = "<group>"; };
 		2475EC7516DF00CF3095186A /* StargazersModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StargazersModelTests.swift; sourceTree = "<group>"; };
 		2475EC9C2015DE0B2627E623 /* TestableDesignExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestableDesignExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2475ECEADCC16CF800154CD5 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
@@ -209,6 +214,7 @@
 		2475EDEF357B21E401A94659 /* UserMvcComposerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserMvcComposerTests.swift; sourceTree = "<group>"; };
 		2475EE00EDD7E12FE4F3158F /* PagedElementCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagedElementCollection.swift; sourceTree = "<group>"; };
 		2475EE1B5C297CBB2DB792F7 /* PagingModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagingModel.swift; sourceTree = "<group>"; };
+		2475EE3B480C7B64EE488ED0 /* RootViewControllerHolder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewControllerHolder.swift; sourceTree = "<group>"; };
 		2475EE7E92AA265C15A8AB02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		2475EE88C83579435E9F67BA /* ColorCatalog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorCatalog.swift; sourceTree = "<group>"; };
 		2475EF074C2A57218C33A52B /* PageRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageRepository.swift; sourceTree = "<group>"; };
@@ -379,6 +385,9 @@
 				2475E057BF183CFFA06D8FA3 /* ReverseNavigator.swift */,
 				2475EF96132C6C3CF90DC90E /* ReverseNavigatorStub.swift */,
 				2475EAAA66CB3DAD638AA305 /* ReverseNavigatorSpy.swift */,
+				2475EE3B480C7B64EE488ED0 /* RootViewControllerHolder.swift */,
+				2475EC69DBF799CBC5577694 /* RootViewControllerHolderStub.swift */,
+				2475EA2A64644BB49F373AF2 /* RootViewControllerHolderSpy.swift */,
 			);
 			path = UIKitTestDoubles;
 			sourceTree = "<group>";
@@ -778,6 +787,7 @@
 				2475EBB7010332026F93D968 /* TransparentViewController.swift in Sources */,
 				2475E58C5612022DA17FECB4 /* ModalDissolver.swift in Sources */,
 				2475EFAF8A41DC6E3EA5136E /* ReverseNavigator.swift in Sources */,
+				2475ECF1AD4C571D44629792 /* RootViewControllerHolder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -821,6 +831,8 @@
 				2475E4ECDE3E285184B3D239 /* ModalDissolverSpy.swift in Sources */,
 				2475E845E3CFF6655F05943B /* ReverseNavigatorStub.swift in Sources */,
 				2475E9574A422AE546409DFA /* ReverseNavigatorSpy.swift in Sources */,
+				2475ECB6415E19BAADCCD7A6 /* RootViewControllerHolderStub.swift in Sources */,
+				2475E9E49763BD4260AD2B30 /* RootViewControllerHolderSpy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
