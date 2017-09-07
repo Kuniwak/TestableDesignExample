@@ -9,7 +9,7 @@ protocol RootViewControllerHolderContract {
 
 
 
-class ViewControllerViewHolder: RootViewControllerHolderContract {
+class RootViewControllerHolder: RootViewControllerHolderContract {
     private let window: UIWindow
 
 

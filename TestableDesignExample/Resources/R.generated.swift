@@ -98,14 +98,12 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.storyboard` struct is generated, and contains static references to 3 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 2 storyboards.
   struct storyboard {
     /// Storyboard `FatalErrorScreen`.
     static let fatalErrorScreen = _R.storyboard.fatalErrorScreen()
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
-    /// Storyboard `Main`.
-    static let main = _R.storyboard.main()
     
     /// `UIStoryboard(name: "FatalErrorScreen", bundle: ...)`
     static func fatalErrorScreen(_: Void = ()) -> UIKit.UIStoryboard {
@@ -115,11 +113,6 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "LaunchScreen", bundle: ...)`
     static func launchScreen(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.launchScreen)
-    }
-    
-    /// `UIStoryboard(name: "Main", bundle: ...)`
-    static func main(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.main)
     }
     
     fileprivate init() {}
@@ -190,7 +183,6 @@ struct _R: Rswift.Validatable {
   
   struct storyboard: Rswift.Validatable {
     static func validate() throws {
-      try main.validate()
       try fatalErrorScreen.validate()
     }
     
@@ -215,24 +207,6 @@ struct _R: Rswift.Validatable {
       
       let bundle = R.hostingBundle
       let name = "LaunchScreen"
-      
-      fileprivate init() {}
-    }
-    
-    struct main: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = TestableDesignExample.BootstrapViewController
-      
-      let bootstrapViewController = StoryboardViewControllerResource<TestableDesignExample.BootstrapViewController>(identifier: "BootstrapViewController")
-      let bundle = R.hostingBundle
-      let name = "Main"
-      
-      func bootstrapViewController(_: Void = ()) -> TestableDesignExample.BootstrapViewController? {
-        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: bootstrapViewController)
-      }
-      
-      static func validate() throws {
-        if _R.storyboard.main().bootstrapViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'bootstrapViewController' could not be loaded from storyboard 'Main' as 'TestableDesignExample.BootstrapViewController'.") }
-      }
       
       fileprivate init() {}
     }
