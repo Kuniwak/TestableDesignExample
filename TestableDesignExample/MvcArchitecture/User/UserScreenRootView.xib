@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UserScreenRootView" customModule="TestableDesignExample" customModuleProvider="target">
+            <connections>
+                <outlet property="imageView" destination="g4L-KM-MwF" id="Ues-iz-HDL"/>
+                <outlet property="progressView" destination="Lf8-J7-Bd8" id="iFc-hE-3ub"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="Jvu-4h-I2a">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fWO-zd-Wvc">
+                    <rect key="frame" x="67" y="213" width="240" height="240"/>
+                    <subviews>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="xFa-gV-uzz">
+                            <rect key="frame" x="102" y="102" width="37" height="37"/>
+                        </activityIndicatorView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="g4L-KM-MwF">
+                            <rect key="frame" x="0.0" y="0.0" width="240" height="240"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="xFa-gV-uzz" firstAttribute="centerY" secondItem="fWO-zd-Wvc" secondAttribute="centerY" id="8AC-zK-Ahc"/>
+                        <constraint firstAttribute="bottom" secondItem="g4L-KM-MwF" secondAttribute="bottom" id="9ds-BG-YNf"/>
+                        <constraint firstItem="g4L-KM-MwF" firstAttribute="leading" secondItem="fWO-zd-Wvc" secondAttribute="leading" id="ErR-VY-4si"/>
+                        <constraint firstAttribute="height" constant="240" id="HYt-kp-c6Q"/>
+                        <constraint firstItem="xFa-gV-uzz" firstAttribute="centerX" secondItem="fWO-zd-Wvc" secondAttribute="centerX" id="OjA-ol-vMS"/>
+                        <constraint firstAttribute="width" constant="240" id="VOF-MA-n9t"/>
+                        <constraint firstAttribute="trailing" secondItem="g4L-KM-MwF" secondAttribute="trailing" id="ZSE-tM-GOF"/>
+                        <constraint firstItem="g4L-KM-MwF" firstAttribute="top" secondItem="fWO-zd-Wvc" secondAttribute="top" id="arm-oC-Zlf"/>
+                    </constraints>
+                </view>
+                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Lf8-J7-Bd8">
+                    <rect key="frame" x="0.0" y="0.5" width="375" height="2"/>
+                </progressView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Lf8-J7-Bd8" firstAttribute="top" secondItem="Jvu-4h-I2a" secondAttribute="top" id="3gY-iG-Jc1"/>
+                <constraint firstItem="fWO-zd-Wvc" firstAttribute="centerY" secondItem="Jvu-4h-I2a" secondAttribute="centerY" id="VoQ-DF-cHv"/>
+                <constraint firstItem="fWO-zd-Wvc" firstAttribute="centerX" secondItem="Jvu-4h-I2a" secondAttribute="centerX" id="dQ4-H6-bt7"/>
+                <constraint firstItem="Lf8-J7-Bd8" firstAttribute="leading" secondItem="Jvu-4h-I2a" secondAttribute="leading" id="k0g-ko-ThB"/>
+                <constraint firstAttribute="trailing" secondItem="Lf8-J7-Bd8" secondAttribute="trailing" id="taJ-E4-7NR"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

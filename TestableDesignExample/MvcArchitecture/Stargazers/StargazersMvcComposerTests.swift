@@ -8,12 +8,12 @@ class StargazersMvcComposerTests: XCTestCase {
     func testCreate() {
         let testNavigator = TestNavigator(line: #line)
 
-        let viewController = StargazersMvcComposer.create(
-            byStargazersOf: GitHubRepository(
+        let viewController = StargazersMvcComposer(
+            for: GitHubRepository(
                 owner: GitHubUser.Name(text: "octocat"),
                 name: GitHubRepository.Name(text: "Hello-world")
             ),
-            presenting: StargazersModelStub(
+            representing: StargazersModelStub(
                 withInitialState: .fetched(
                     stargazers: [],
                     error: nil
@@ -23,7 +23,7 @@ class StargazersMvcComposerTests: XCTestCase {
             holding: Bag.create()
         )
 
-        testNavigator.navigateWithFallback(to: viewController, animated: false)
+        testNavigator.navigate(to: viewController, animated: false)
     }
 
 
