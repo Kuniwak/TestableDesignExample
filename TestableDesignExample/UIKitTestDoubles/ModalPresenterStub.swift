@@ -4,5 +4,8 @@ import UIKit
 
 
 class ModalPresenterStub: ModalPresenterContract {
-    func present(viewController: UIViewController, animated: Bool) {}
+    @discardableResult
+    func present(viewController: UIViewController, animated: Bool) -> ModalDissolverContract {
+        return ModalDissolverStub()
+    }
 }

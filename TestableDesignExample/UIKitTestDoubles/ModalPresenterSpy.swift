@@ -8,8 +8,11 @@ class ModalPresenterSpy: ModalPresenterContract {
     fileprivate(set) var callArgs: [CallArgs] = []
 
 
-    func present(viewController: UIViewController, animated: Bool) {
+    @discardableResult
+    func present(viewController: UIViewController, animated: Bool) -> ModalDissolverContract {
         let callArgs = (viewController: viewController, animated: animated)
         self.callArgs.append(callArgs)
+
+        return ModalDissolverStub()
     }
 }

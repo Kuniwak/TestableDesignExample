@@ -3,7 +3,8 @@ import UIKit
 
 
 protocol ModalPresenterContract {
-    func present(viewController: UIViewController, animated: Bool)
+    @discardableResult
+    func present(viewController: UIViewController, animated: Bool) -> ModalDissolverContract
 }
 
 
@@ -17,7 +18,9 @@ class ModalPresenter: ModalPresenterContract {
     }
 
 
-    func present(viewController: UIViewController, animated: Bool) {
+    @discardableResult
+    func present(viewController: UIViewController, animated: Bool) -> ModalDissolverContract {
         self.groundViewController.present(viewController, animated: animated)
+        return ModalDissolver(willDismiss: viewController)
     }
 }

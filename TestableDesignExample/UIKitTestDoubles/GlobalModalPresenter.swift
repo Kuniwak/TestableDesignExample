@@ -2,13 +2,8 @@ import UIKit
 
 
 
-protocol GlobalModalPresenterContract {
-    func present(viewController: UIViewController, animated: Bool) -> ModalDissolverContract
-}
-
-
-
-class GlobalModalPresenter: GlobalModalPresenterContract {
+class GlobalModalPresenter: ModalPresenterContract {
+    @discardableResult
     func present(viewController: UIViewController, animated: Bool) -> ModalDissolverContract {
         let window = UIWindow()
         let rootViewController = TransparentViewController()
