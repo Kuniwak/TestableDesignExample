@@ -323,7 +323,7 @@
 				2475E00BE716C34F1495A4DE /* AppDelegate.swift */,
 				2475E54EC10A2464951D9E0E /* GitHub */,
 				2475E5EC0F374F1A0A942DF7 /* MvcArchitecture */,
-				2475E5C8A7D05E3006441DDA /* UIKitTestDoubles */,
+				2475E5C8A7D05E3006441DDA /* UIKitTestable */,
 				2475E26107E142D6CF5AAC43 /* VisualDecorator.swift */,
 				2475EE88C83579435E9F67BA /* ColorCatalog.swift */,
 				2475E767B5CB5B7E0C0B0A6E /* RemoteImageSource.swift */,
@@ -351,7 +351,7 @@
 			path = GitHub;
 			sourceTree = "<group>";
 		};
-		2475E5C8A7D05E3006441DDA /* UIKitTestDoubles */ = {
+		2475E5C8A7D05E3006441DDA /* UIKitTestable */ = {
 			isa = PBXGroup;
 			children = (
 				2475E1A4E2B89145A865C025 /* Navigator.swift */,
@@ -376,7 +376,7 @@
 				2475EC69DBF799CBC5577694 /* RootViewControllerHolderStub.swift */,
 				2475EA2A64644BB49F373AF2 /* RootViewControllerHolderSpy.swift */,
 			);
-			path = UIKitTestDoubles;
+			path = UIKitTestable;
 			sourceTree = "<group>";
 		};
 		2475E5EC0F374F1A0A942DF7 /* MvcArchitecture */ = {
