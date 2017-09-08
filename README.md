@@ -30,11 +30,10 @@ So, learning this implementation is still worth the candle if you choose other a
 
 ### Sample Code
 
-In our approach, we create a Storyboard file (or a Xib file) per `UIViewController`.
-And all `UIViewControllers` have a static method `create(...)` as a factory method.
-In the `create(...)` function, we can call [`instantiateInitialViewController()`](https://developer.apple.com/documentation/uikit/uistoryboard/1616213-instantiateinitialviewcontroller) to create a new instance, then we should assign immediately necessary objects for the parameters.
+In our approach, we create a Xib file per `UIViewController`.
+And all `UIViewControllers` have a initializer that require models.
 
-And we should create ViewMediators and Controllers and connect them to the given Model when `UIViewController#viewDidLoad()` is called.
+And we should create ViewMediators and Controllers and connect them to the given Model when `UIViewController#loadView()` is called.
 
 Concrete implementation is below:
 
@@ -179,28 +178,27 @@ In this project, use Navigator class for connecting betweren 2 `UIViewController
 
 ```swift
 class FooViewController: UIViewController {
-    private let navigator: NavigatorContract!
-    private let sharedModel: FooBarModelContract!
+    private let navigator: NavigatorContract
+    private let sharedModel: FooBarModelContract
 
-
-    static func create(
-        presenting sharedModel: FooBarModelContract,
+    init(
+        representing sharedModel: FooBarModelContract,
         navigatingBy navigator: NavigatorContract
-    ) {
-        guard let viewController = R.storyboard.fooScreen.fooViewController() else {
-            return nil
-        }
-
-        viewController.navigator = navigator
-        viewController.sharedModel = sharedModel
-
-        return viewController
+    ) -> FooViewController? {
+        self.sharedModel = sharedModel
+        self.navigator = navigator
+        super.init(nibName: nil, bundle: nil)
     }
 
+    required init?(coder aDecoder: NSCoder) {
+        // NOTE: We should not instantiate the ViewController by using UINibs to
+        // eliminate fields that have force unwrapping types.
+        return nil
+    }
 
     @IBAction func buttonDidTap(sender: Any) {
-        let nextViewController = BarViewController.create(
-            presenting: sharedModel
+        let nextViewController = BarViewController(
+            representing: sharedModel
         )
         self.navigator.navigate(to: nextViewController)
     }
@@ -225,13 +223,6 @@ protocol NavigatorContract {
      Push the specified UIViewController to the held UINavigationController.
      */
     func navigate(to viewController: UIViewController, animated: Bool)
-
-
-    /**
-     Push the specified UIViewController to the held UINavigationController.
-     This class present an alert when the specified UIViewController is nil.
-     */
-    func navigateWithFallback(to viewController: UIViewController?, animated: Bool)
 }
 
 
@@ -252,43 +243,6 @@ class Navigator: NavigatorContract {
         self.navigationController.pushViewController(
             viewController,
             animated: animated
-        )
-    }
-
-
-    /**
-     Push the specified UIViewController to the held UINavigationController.
-     This class present an alert when the specified UIViewController is nil.
-     */
-    func navigateWithFallback(to viewController: UIViewController?, animated: Bool) {
-        guard let viewController = viewController else {
-            self.presentAlert()
-            return
-        }
-
-        self.navigate(to: viewController, animated: animated)
-    }
-
-
-    private func presentAlert() {
-        let alertController = UIAlertController(
-            title: "Sorry!",
-            message: "Problem occurred when navigating a screen. You can update to fix this problem or contact us.",
-            preferredStyle: .alert
-        )
-
-        let goBackAction = UIAlertAction(
-            title: "Back",
-            style: .cancel,
-            handler: nil
-        )
-
-        alertController.addAction(goBackAction)
-
-        self.navigationController.present(
-            alertController,
-            animated: true,
-            completion: nil
         )
     }
 }
