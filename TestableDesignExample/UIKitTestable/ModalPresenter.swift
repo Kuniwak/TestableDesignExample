@@ -10,16 +10,14 @@ protocol ModalPresenterContract {
      Presents a view controller modally.
      This method behave like `UIViewController#present(UIViewController, animated: Bool)`
      */
-    @discardableResult
-    func present(viewController: UIViewController, animated: Bool) -> ModalDissolverContract
+    func present(viewController: UIViewController, animated: Bool)
 
 
     /**
      Presents a view controller modally.
      This method behave like `UIViewController#present(UIViewController, animated: Bool, completion: (() -> Void)?)`
      */
-    @discardableResult
-    func present(viewController: UIViewController, animated: Bool, completion: (() -> Void)?) -> ModalDissolverContract
+    func present(viewController: UIViewController, animated: Bool, completion: (() -> Void)?)
 }
 
 
@@ -40,16 +38,12 @@ class ModalPresenter: ModalPresenterContract {
     }
 
 
-    @discardableResult
-    func present(viewController: UIViewController, animated: Bool) -> ModalDissolverContract {
+    func present(viewController: UIViewController, animated: Bool) {
         self.groundViewController.present(viewController, animated: animated)
-        return ModalDissolver(willDismiss: viewController)
     }
 
 
-    @discardableResult
-    func present(viewController: UIViewController, animated: Bool, completion: (() -> Void)?) -> ModalDissolverContract {
+    func present(viewController: UIViewController, animated: Bool, completion: (() -> Void)?) {
         self.groundViewController.present(viewController, animated: animated, completion: completion)
-        return ModalDissolver(willDismiss: viewController)
     }
 }

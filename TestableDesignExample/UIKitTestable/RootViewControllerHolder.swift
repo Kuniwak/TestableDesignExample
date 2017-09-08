@@ -8,10 +8,8 @@ import UIKit
 protocol RootViewControllerHolderContract {
     /**
      Replace the root UIViewController of UIWindow to the specified one.
-     - returns: The replaced UIViewController if exists.
      */
-    @discardableResult
-    func alter(to rootViewController: UIViewController) -> UIViewController?
+    func alter(to rootViewController: UIViewController)
 }
 
 
@@ -33,12 +31,7 @@ class RootViewControllerHolder: RootViewControllerHolderContract {
     }
 
 
-    @discardableResult
-    func alter(to rootViewController: UIViewController) -> UIViewController? {
-        let previousRootViewController = self.window.rootViewController
-
+    func alter(to rootViewController: UIViewController) {
         self.window.rootViewController = rootViewController
-
-        return previousRootViewController
     }
 }

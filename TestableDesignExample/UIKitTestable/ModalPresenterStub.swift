@@ -8,8 +8,8 @@ import UIKit
  This class is useful for ignoring calls of `UIViewController#present` for testing.
  */
 class ModalPresenterStub: ModalPresenterContract {
-    @discardableResult
-    func present(viewController: UIViewController, animated: Bool) -> ModalDissolverContract {
-        return ModalDissolverStub()
+    func present(viewController: UIViewController, animated: Bool) {}
+    func present(viewController: UIViewController, animated: Bool, completion: (() -> Void)?) {
+        completion?()
     }
 }

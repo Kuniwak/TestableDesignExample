@@ -17,24 +17,24 @@ class NavigatorSpy: NavigatorContract {
      */
     fileprivate(set) var callArgs: [CallArgs] = []
 
-    var reverseNavigator: ReverseNavigatorContract
+
+    var stub: NavigatorContract
 
 
     init() {
-        self.reverseNavigator = ReverseNavigatorStub()
+        self.stub = NavigatorStub()
     }
 
 
-    init(inheriting reverseNavigator: ReverseNavigatorContract) {
-        self.reverseNavigator = reverseNavigator
+    init(inheriting stub: NavigatorContract) {
+        self.stub = stub
     }
 
 
-    @discardableResult
-    func navigate(to viewController: UIViewController, animated: Bool) -> ReverseNavigatorContract {
+    func navigate(to viewController: UIViewController, animated: Bool) {
+        self.stub.navigate(to: viewController, animated: animated)
+
         let callArgs = (viewController: viewController, animated: animated)
         self.callArgs.append(callArgs)
-
-        return self.reverseNavigator
     }
 }

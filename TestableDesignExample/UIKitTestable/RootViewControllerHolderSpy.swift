@@ -30,12 +30,8 @@ class RootViewControllerHolderSpy: RootViewControllerHolderContract {
     }
 
 
-    @discardableResult
-    func alter(to rootViewController: UIViewController) -> UIViewController? {
-        let result = self.stub.alter(to: rootViewController)
-
+    func alter(to rootViewController: UIViewController) {
+        self.stub.alter(to: rootViewController)
         self.callArgs.append(rootViewController)
-
-        return result
     }
 }

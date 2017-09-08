@@ -10,8 +10,7 @@ protocol NavigatorContract {
      Pushes a view controller onto the receiver’s stack and updates the display.
      This method behave like `UINavigationController#pushViewController(UIViewController, animated: Bool)`
      */
-    @discardableResult
-    func navigate(to viewController: UIViewController, animated: Bool) -> ReverseNavigatorContract
+    func navigate(to viewController: UIViewController, animated: Bool)
 }
 
 
@@ -33,16 +32,10 @@ class Navigator: NavigatorContract {
     }
 
 
-    @discardableResult
-    func navigate(to viewController: UIViewController, animated: Bool) -> ReverseNavigatorContract {
+    func navigate(to viewController: UIViewController, animated: Bool) {
         self.navigationController.pushViewController(
             viewController,
             animated: animated
-        )
-
-        return ReverseNavigator(
-            willPopTo: viewController,
-            on: self.navigationController
         )
     }
 }

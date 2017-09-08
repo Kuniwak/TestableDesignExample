@@ -6,29 +6,18 @@ import XCTest
 
 class TestNavigator: NavigatorContract {
     private let line: UInt
-    var reverseNavigator: ReverseNavigatorContract
-
-
-    init(willReturn reverseNavigator: ReverseNavigatorContract, line: UInt) {
-        self.reverseNavigator = reverseNavigator
-        self.line = line
-    }
 
 
     init(line: UInt) {
-        self.reverseNavigator = ReverseNavigatorStub()
         self.line = line
     }
 
 
-    @discardableResult
-    func navigate(to viewController: UIViewController, animated: Bool) -> ReverseNavigatorContract {
+    func navigate(to viewController: UIViewController, animated: Bool) {
         let window = UIApplication.shared.keyWindow ?? UIWindow()
         window.rootViewController = UINavigationController(
             rootViewController: viewController
         )
         window.makeKeyAndVisible()
-
-        return self.reverseNavigator
     }
 }
