@@ -3,8 +3,18 @@ import UIKit
 
 
 
+/**
+ A spy class for ReverseNavigators.
+ This class is useful for capturing calls of `UINavigationController#popToViewController` for testing.
+ */
 class ReverseNavigatorSpy: ReverseNavigatorContract {
     typealias CallArgs = Bool
+
+
+    /**
+     Call arguments list for the method `#back(animated: Bool)`.
+     You can use the property to test how the method is called.
+     */
     fileprivate(set) var callArgs: [CallArgs] = []
 
 

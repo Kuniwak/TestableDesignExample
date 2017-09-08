@@ -2,12 +2,23 @@ import UIKit
 
 
 
+/**
+ A type for wrapper classes that encapsulate an implementation of `UIApplication#open`.
+ */
 protocol UrlOpenerContract {
+    /**
+     Attempts to open the resource at the specified URL.
+     This method behave like `UIApplication#open`.
+     */
     func open(url: URL)
 }
 
 
 
+/**
+ A wrapper class to encapsulate a implementation of `UIApplication#open`.
+ You can replace the class to the stub or spy for testing.
+ */
 struct UrlOpener: UrlOpenerContract {
     func open(url: URL) {
         if #available (iOS 10.0, *) {

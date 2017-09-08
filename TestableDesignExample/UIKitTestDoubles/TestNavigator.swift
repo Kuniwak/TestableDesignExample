@@ -23,10 +23,11 @@ class TestNavigator: NavigatorContract {
 
     @discardableResult
     func navigate(to viewController: UIViewController, animated: Bool) -> ReverseNavigatorContract {
-        let window = UIApplication.shared.keyWindow!
+        let window = UIApplication.shared.keyWindow ?? UIWindow()
         window.rootViewController = UINavigationController(
             rootViewController: viewController
         )
+        window.makeKeyAndVisible()
 
         return self.reverseNavigator
     }

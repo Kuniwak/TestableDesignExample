@@ -3,8 +3,18 @@ import UIKit
 
 
 
+/**
+ A spy class for RootViewControllerHolders.
+ This class is useful for capturing assigning `UIWindow.rootViewController` for testing.
+ */
 class RootViewControllerHolderSpy: RootViewControllerHolderContract {
     typealias CallArgs = UIViewController
+
+
+    /**
+     Call arguments list for the method `#back(to rootViewController: UIViewController)`.
+     You can use the property to test how the method is called.
+     */
     fileprivate(set) var callArgs: [CallArgs] = []
 
     var stub: RootViewControllerHolderContract
@@ -20,6 +30,7 @@ class RootViewControllerHolderSpy: RootViewControllerHolderContract {
     }
 
 
+    @discardableResult
     func alter(to rootViewController: UIViewController) -> UIViewController? {
         let result = self.stub.alter(to: rootViewController)
 

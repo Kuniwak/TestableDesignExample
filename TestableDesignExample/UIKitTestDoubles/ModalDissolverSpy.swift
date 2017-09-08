@@ -3,11 +3,32 @@ import UIKit
 
 
 
+/**
+ A spy class for ModalDissolver.
+ This class is useful for capturing calls of `UIViewController#dismiss` for testing.
+ */
 class ModalDissolverSpy: ModalDissolverContract {
     typealias CallArgs = (animated: Bool, completion: (() -> Void)?)
+
+
+    /**
+     Call arguments list for the method `dismiss`.
+     You can use the property to test how the method is called.
+     */
     fileprivate(set) var callArgs: [CallArgs] = []
 
-    fileprivate let stub = ModalDissolverStub()
+
+    fileprivate let stub: ModalDissolverContract
+
+
+    init() {
+        self.stub = ModalDissolverStub()
+    }
+
+
+    init(inheriting stub: ModalDissolverContract) {
+        self.stub = stub
+    }
 
 
     func dismiss(animated: Bool) {
