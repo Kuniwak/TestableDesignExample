@@ -48,7 +48,7 @@ class StargazersMvcComposer: UIViewController {
                 progressView: rootView.progressView,
                 refreshControl: refreshControl
             ),
-            presentingModelBy: Lifter(wherePresentOn: self)
+            presentingModelBy: ModalPresenter(wherePresentOn: self)
         )
         self.viewMediator = viewMediator
 

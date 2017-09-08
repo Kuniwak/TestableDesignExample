@@ -11,11 +11,11 @@ protocol RootNavigatorContract {
 
 
 class RootNavigator: RootNavigatorContract {
-    private let window: UIWindow
+    private let rootViewControllerHolder: RootViewControllerHolderContract
 
 
-    init(willUpdate window: UIWindow) {
-        self.window = window
+    init(using rootViewControllerHolder: RootViewControllerHolderContract) {
+        self.rootViewControllerHolder = rootViewControllerHolder
     }
 
 
@@ -54,6 +54,6 @@ class RootNavigator: RootNavigatorContract {
             animated: true
         )
 
-        self.window.rootViewController = navigationController
+        self.rootViewControllerHolder.alter(to: navigationController)
     }
 }

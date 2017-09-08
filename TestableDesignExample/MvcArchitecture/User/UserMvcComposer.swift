@@ -39,7 +39,7 @@ class UserMvcComposer: UIViewController, UserMvcComposerContract {
                 progressView: rootView.progressView,
                 titleHolder: ViewControllerTitleHolder(changeTitleOf: self)
             ),
-            presentingModalBy: Lifter(wherePresentOn: self)
+            presentingModalBy: ModalPresenter(wherePresentOn: self)
         )
     }
 }

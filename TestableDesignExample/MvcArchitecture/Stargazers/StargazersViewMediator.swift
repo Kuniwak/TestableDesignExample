@@ -17,7 +17,7 @@ protocol StargazerViewMediatorContract: class {
 class StargazerViewMediator: StargazerViewMediatorContract {
     private let dataSource: DataSource
     private let model: StargazerModelContract
-    private let lifter: LifterContract
+    private let lifter: ModalPresenterContract
     private let views: Views
     typealias Views = (
         tableView: UITableView,
@@ -35,7 +35,7 @@ class StargazerViewMediator: StargazerViewMediatorContract {
     init(
         observing model: StargazerModelContract,
         handling views: Views,
-        presentingModelBy lifter: LifterContract
+        presentingModelBy lifter: ModalPresenterContract
     ) {
         self.model = model
         self.views = views

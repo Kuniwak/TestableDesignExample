@@ -3,16 +3,20 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    var window: UIWindow?
+    fileprivate var rootViewControllerHolder: RootViewControllerHolder?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        let window = UIWindow(frame: UIScreen.main.bounds)
-        window.rootViewController = BootstrapViewController.create()
-        self.window = window
+        let window = application.keyWindow ?? UIWindow()
+        window.makeKeyAndVisible()
+
+        let rootViewControllerHolder = RootViewControllerHolder(
+            whoHaveViewController: window
+        )
+        self.rootViewControllerHolder = rootViewControllerHolder
 
         let rootNavigator = RootNavigator(
-            willUpdate: window
+            using: rootViewControllerHolder
         )
         rootNavigator.navigateToRoot()
 

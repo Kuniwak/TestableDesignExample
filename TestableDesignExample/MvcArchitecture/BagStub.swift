@@ -5,9 +5,7 @@ import PromiseKit
 
 extension Bag {
     static func create(
-        api: GitHubApiClientContract = GitHubApiClientStub(
-            firstResult: Promise<Any>.pending().promise
-        )
+        api: GitHubApiClientContract = GitHubApiClientStub.anyPending
     ) -> Bag {
         return Bag(api: api)
     }
