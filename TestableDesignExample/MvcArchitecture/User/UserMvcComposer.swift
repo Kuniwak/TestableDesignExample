@@ -22,8 +22,6 @@ class UserMvcComposer: UIViewController, UserMvcComposerContract {
 
 
     required init?(coder aDecoder: NSCoder) {
-        // NOTE: We should not instantiate the ViewController by using UINibs to
-        // eliminate fields that have force unwrapping types.
         return nil
     }
 
