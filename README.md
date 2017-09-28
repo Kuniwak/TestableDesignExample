@@ -43,14 +43,13 @@ class FooViewController: UIViewController {
     private var viewMediator: FooViewMediatorContract?
     private var controller: FooControllerContract?
 
-    init(model: FooModelContract) -> FooViewController? {
+    init(model: FooModelContract) {
         self.model = model
         super.init(nibName: nil, bundle: nil)
     }
 
     required init?(coder aDecoder: NSCoder) {
-        // NOTE: We should not instantiate the ViewController by using UINibs to
-        // eliminate fields that have force unwrapping types.
+        // NOTE: In this project, we do not want to restore the VC.
         return nil
     }
 
@@ -60,7 +59,8 @@ class FooViewController: UIViewController {
         self.view = rootView
 
         let controller = FooController(
-            willNotifyTo: self.model,
+            observing: rootView.barView,
+            willNotifyTo: self.model
         )
         self.controller = controller
 
@@ -82,22 +82,47 @@ class FooViewController: UIViewController {
 // API was successfully done or failed.
 class FooModel: FooModelContract {
     private let repository: FooRepositoryContract
-    private let stateVariable = RxSwift.Variable<FooModelState>(.preparing)
+    private let stateVariable: RxSwift.Variable<FooModelState>
 
+    /// An Observable that will notify events when the internal state is changed.
     var didChange: RxSwift.Observable<FooModelState> {
         return self.stateVariable.asObservable()
     }
 
-    init(fetchingVia repository: FooRepositoryContract) {
+    /// The current state of the model.
+    var currentState: FooModelState {
+        get { return self.stateVariable.value }
+        set { self.stateVariable.value = newValue }
+    }
+
+    init(
+        startingWith initialState: FooModelState,
+        fetchingVia repository: FooRepositoryContract
+    ) {
+        self.stateVariable = RxSwift.Variable<FooModelState>(initialState)
         self.repository = repository
     }
 
     func doSomething() {
-        // Notify a state change event to others.
-        self.repository
-            .doSomething()
-            .then { self.stateVariable.value = .success }
-            .catch { self.stateVariable.value = .failure }
+        switch self.currentState {
+        case .preparing:
+            // NOTE: Prevent duplicated calls.
+            return
+
+        case .success, .failure:
+            self.currentState = .preparing
+
+            self.repository
+                .doSomething()
+                .then { entity in 
+                    self.currentState = .success(entity)
+                }
+                .catch { error in
+                    self.currentState = .failure(
+                        because: .unspecified(debugInfo: "\(error)")
+                    )
+                }
+        }
     }
 }
 
@@ -105,8 +130,12 @@ class FooModel: FooModelContract {
 // States that FooModel can transit to.
 enum FooModelState {
     case preparing
-    case success
-    case failure
+    case success(Entity)
+    case failure(because: Reason)
+
+    enum Reason {
+        case unspecified(debugInfo: String)
+    }
 }
 ```
 
@@ -117,54 +146,50 @@ class FooViewMediator: FooViewMediatorContract {
     private let model: FooModelContract
     private let disposeBag = RxSwift.DisposeBag()
 
-    // A delegate for notifying UI events to others.
-    weak var delegate: FooViewMediatorDelegate?
-
-
     init(observing model: FooModelContract, handling views: Views) {
         self.model = model
         self.views = views
 
-        // Change visual by observing model's state transitions.
+        // NOTE: Change visual by observing model's state transitions.
         self.model
             .didChange
-            .subscribe(onNext: { [weak var] state in
-                switch {
+            .subscribe(onNext: { [weak self] state in
+                guard let this = self else { return }
+                switch state {
                 case .preparing:
-                    self?.views.bar.text = "preparing"
-                case .success:
-                    self?.views.bar.text = "success"
-                case .failure:
-                    self?.views.bar.text = "failure"
+                    this.views.bar.text = "preparing"
+                case let .success(entity):
+                    this.views.bar.text = "success \(entity)"
+                case let .failure(because: reason):
+                    this.views.bar.text = "failure \(reason)"
                 }
             })
-            .addDisposableTo(self.disposeBag)
-
-        // Notify to its delegate when child view was changed.
-        self.views.baz.addTarget(self, action: #selector(self.bazViewDidTap(sender:)))
-    }
-
-
-    @objc func bazViewDidTap(sender: Any) {
-        self.delegate?.didSomething()
+            .disposed(by: self.disposeBag)
     }
 }
 ```
 
 ```swift
 class FooController: FooControllerContract {
-    fileprivate let model: FooModelContract
+    private let model: FooModelContract
+    private let view: BarView
+    private let disposeBag = RxSwift.DisposeBag()
 
-    init(willNotifyTo model: FooModelContract) {
+    init(
+        observing view: BarView,
+        willNotifyTo model: FooModelContract
+    ) {
         self.model = model
-    }
-}
 
+        // NOTE: Observe UI events from BarView and notify to the FooModel.
+        view.rx.tap
+            .asDriver
+            .drive(onNext: { [weak self] _ in 
+                guard let this = self else { return }
 
-// Notify user interactions to the model via the viewMediator.
-extension FooController: FooViewMediatorDelegate {
-    func didSomething() {
-        self.model.doSomething()
+                this.model.doSomething()
+            })
+            .disposed(by: self.disposeBag)
     }
 }
 ```
@@ -184,7 +209,7 @@ class FooViewController: UIViewController {
     init(
         representing sharedModel: FooBarModelContract,
         navigatingBy navigator: NavigatorContract
-    ) -> FooViewController? {
+    ) {
         self.sharedModel = sharedModel
         self.navigator = navigator
         super.init(nibName: nil, bundle: nil)
@@ -236,9 +261,6 @@ class Navigator: NavigatorContract {
     }
 
 
-    /**
-     Push the specified UIViewController to the held UINavigationController.
-     */
     func navigate(to viewController: UIViewController, animated: Bool) {
         self.navigationController.pushViewController(
             viewController,
@@ -303,8 +325,8 @@ class UserDefaultsCalculator {
 
 
     init(
-        reading readableRepository, ReadableRepositoryContract,
-        writing writableRepository, WritableRepositoryContract
+        reading readableRepository: ReadableRepositoryContract,
+        writing writableRepository: WritableRepositoryContract
     ) {
         self.readableRepository = readableRepository
         self.writableRepository = writableRepository

@@ -31,47 +31,45 @@ iOS のためのテスト容易設計サンプル
 
 ### サンプルコード
 
-このプロジェクトでは、1つの `UIViewController` に対し、1つの Storyboard ファイル（Xib ファイルでも構いません）が対応するようにしてあります。また、すべての `UIViewController` が `create(...)` という静的なファクトリ関数をもっています。
-この `create` 関数の中では、[`UIStoryboard#instantiateInitialViewController()`](https://developer.apple.com/documentation/uikit/uistoryboard/1616213-instantiateinitialviewcontroller) によってインスタンスが作成され、引数に与えられた必須オブジェクトが即座に代入されます。一般に、このパラメータには Model が含まれます。
+このプロジェクトでは、1つの `UIViewController` に対し、1つの Xib ファイルが対応するようにしてあります。
+また、すべての `UIViewController` の子クラスの初期化関数は Model を引数にとります。
 
-また、`UIViewController#viewDidLoad()` のタイミングで、ViewMediator と Controller が作成され、与えられた Model と接続されます。
+また、`UIViewController#loadView()` のタイミングで、ViewMediator と Controller が作成され、与えられた Model と接続されます。
 
 具体的なコードは以下の通りです:
 
 ```swift
 class FooViewController: UIViewController {
-    private var model: FooModelContract!
-    private var viewMediator: FooViewMediatorContract!
-    private var controller: FooControllerContract!
+    private var model: FooModelContract
+    private var viewMediator: FooViewMediatorContract?
+    private var controller: FooControllerContract?
 
-    // この画面の初期状態を外から制御できるように FooModel を外部から渡す。
-    static func create(model: FooModelContract) -> FooViewController? {
-        guard let viewController = R.storyboard.fooScreen.FooViewController() else {
-            return nil
-        }
-
-        viewController.model = model
-        return viewController
+    init(model: FooModelContract) {
+        self.model = model
+        super.init(nibName: nil, bundle: nil)
     }
 
+    required init?(coder aDecoder: NSCoder) {
+        // NOTE: このプロジェクトでは特に ViewController の復元は使わない。
+        return nil
+    }
 
-    @IBOutlet weak var barView: BarView!
-    @IBOutlet weak var bazView: BizzView!
-
-    // ここで Model と ViewMediator、Controller を接続する。
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    // Model と ViewMediator, Controller を結合する。
+    override func loadView() {
+        let rootView = FooRootView()
+        self.view = rootView
 
         let controller = FooController(
-            willNotifyTo: self.model,
+            observing: rootView.barView,
+            willNotifyTo: self.model
         )
         self.controller = controller
 
         self.viewMediator = FooViewMediator(
             observing: self.model,
             handling: (
-                bar: self.barView,
-                baz: self.bazView
+                bar: rootView.barView,
+                baz: rootView.bazView
             )
         )
         self.viewMediator.delegate = controller
@@ -85,22 +83,47 @@ class FooViewController: UIViewController {
 // `didChange` という Observable を通して外部へ通知します。
 class FooModel: FooModelContract {
     private let repository: FooRepositoryContract
-    private let stateVariable = RxSwift.Variable<FooModelState>(.preparing)
+    private let stateVariable: RxSwift.Variable<FooModelState>
 
+    /// FooModel の内部状態に変化があったら通知される Observable。
     var didChange: RxSwift.Observable<FooModelState> {
         return self.stateVariable.asObservable()
     }
 
-    init(fetchingVia repository: FooRepositoryContract) {
+    /// FooModel の現在の状態。
+    var currentState: FooModelState {
+        get { return self.stateVariable.value }
+        set { self.stateVariable.value = newValue }
+    }
+
+    init(
+        startingWith initialState: FooModelState,
+        fetchingVia repository: FooRepositoryContract
+    ) {
+        self.stateVariable = RxSwift.Variable<FooModelState>(initialState)
         self.repository = repository
     }
 
     func doSomething() {
-        // Notify a state change event to others.
-        self.repository
-            .doSomething()
-            .then { self.stateVariable.value = .success }
-            .catch { self.stateVariable.value = .failure }
+        switch self.currentState {
+        case .preparing:
+            // NOTE: 重複実行を防止する。
+            return
+
+        case .success, .failure:
+            self.currentState = .preparing
+
+            self.repository
+                .doSomething()
+                .then { entity in 
+                    self.currentState = .success(entity)
+                }
+                .catch { error in
+                    self.currentState = .failure(
+                        because: .unspecified(debugInfo: "\(error)")
+                    )
+                }
+        }
     }
 }
 
@@ -108,8 +131,12 @@ class FooModel: FooModelContract {
 // FooModel が取りうる状態の一覧。
 enum FooModelState {
     case preparing
-    case success
-    case failure
+    case success(Entity)
+    case failure(because: Reason)
+
+    enum Reason {
+        case unspecified(debugInfo: String)
+    }
 }
 ```
 
@@ -123,54 +150,51 @@ class FooViewMediator: FooViewMediatorContract {
     private let model: FooModelContract
     private let disposeBag = RxSwift.DisposeBag()
 
-    // UIイベントを外部へ通知するための Delegate。
-    weak var delegate: FooViewMediatorDelegate?
-
-
     init(observing model: FooModelContract, handling views: Views) {
         self.model = model
         self.views = views
 
-        // モデルの状態遷移に応じて表示を切り替えます。
+        // NOTE: モデルの状態遷移に応じて表示を切り替えます。
         self.model
             .didChange
-            .subscribe(onNext: { [weak var] state in
-                switch {
+            .subscribe(onNext: { [weak self] state in
+                guard let this = self else { return }
+                switch state {
                 case .preparing:
-                    self?.views.bar.text = "preparing"
-                case .success:
-                    self?.views.bar.text = "success"
-                case .failure:
-                    self?.views.bar.text = "failure"
+                    this.views.bar.text = "preparing"
+                case let .success(entity):
+                    this.views.bar.text = "success \(entity)"
+                case let .failure(because: reason):
+                    this.views.bar.text = "failure \(reason)"
                 }
             })
-            .addDisposableTo(self.disposeBag)
-
-        // もし、子 View に変化があったら Delegate へ通知します。
-        self.views.baz.addTarget(self, action: #selector(self.bazViewDidTap(sender:)))
-    }
-
-
-    @objc func bazViewDidTap(sender: Any) {
-        self.delegate?.didSomething()
+            .disposed(by: self.disposeBag)
     }
 }
 ```
 
 ```swift
-// FooViewMediator からの UI イベントを、FooModel への入力へと変換します。
+// BarView からの UI イベントを、FooModel への入力へと変換します。
 class FooController: FooControllerContract {
-    fileprivate let model: FooModelContract
+    private let model: FooModelContract
+    private let view: BarView
+    private let disposeBag = RxSwift.DisposeBag()
 
-    init(willNotifyTo model: FooModelContract) {
+    init(
+        observing view: BarView,
+        willNotifyTo model: FooModelContract
+    ) {
         self.model = model
-    }
-}
 
+        // NOTE: BarView の UI イベントを監視し、FooModel へと通知します。
+        view.rx.tap
+            .asDriver
+            .drive(onNext: { [weak self] _ in 
+                guard let this = self else { return }
 
-extension FooController: FooViewMediatorDelegate {
-    func didSomething() {
-        self.model.doSomething()
+                this.model.doSomething()
+            })
+            .disposed(by: self.disposeBag)
     }
 }
 ```
@@ -183,28 +207,25 @@ UIViewController 間の接続方法
 
 ```swift
 class FooViewController: UIViewController {
-    private let navigator: NavigatorContract!
-    private let sharedModel: FooBarModelContract!
+    private let navigator: NavigatorContract
+    private let sharedModel: FooBarModelContract
 
-
-    static func create(
-        presenting sharedModel: FooBarModelContract,
+    init(
+        representing sharedModel: FooBarModelContract,
         navigatingBy navigator: NavigatorContract
     ) {
-        guard let viewController = R.storyboard.fooScreen.fooViewController() else {
-            return nil
-        }
-
-        viewController.navigator = navigator
-        viewController.sharedModel = sharedModel
-
-        return viewController
+        self.sharedModel = sharedModel
+        self.navigator = navigator
+        super.init(nibName: nil, bundle: nil)
     }
 
+    required init?(coder aDecoder: NSCoder) {
+        return nil
+    }
 
     @IBAction func buttonDidTap(sender: Any) {
-        let nextViewController = BarViewController.create(
-            presenting: sharedModel
+        let nextViewController = BarViewController(
+            representing: sharedModel
         )
         self.navigator.navigate(to: nextViewController)
     }
@@ -222,20 +243,13 @@ class FooViewController: UIViewController {
 
 ```swift
 /**
- A protocol for wrapper class of `UINavigationController#pushViewController(_:UIViewController, animated:Bool)`.
+ `UINavigationController#pushViewController(_:UIViewController, animated:Bool)` のラッパークラス。
  */
 protocol NavigatorContract {
     /**
-     Push the specified UIViewController to the held UINavigationController.
+     UIViewController を保持している UINavigationController へ push する。
      */
     func navigate(to viewController: UIViewController, animated: Bool)
-
-
-    /**
-     Push the specified UIViewController to the held UINavigationController.
-     This class present an alert when the specified UIViewController is nil.
-     */
-    func navigateWithFallback(to viewController: UIViewController?, animated: Bool)
 }
 
 
@@ -249,50 +263,10 @@ class Navigator: NavigatorContract {
     }
 
 
-    /**
-     Push the specified UIViewController to the held UINavigationController.
-     */
     func navigate(to viewController: UIViewController, animated: Bool) {
         self.navigationController.pushViewController(
             viewController,
             animated: animated
-        )
-    }
-
-
-    /**
-     Push the specified UIViewController to the held UINavigationController.
-     This class present an alert when the specified UIViewController is nil.
-     */
-    func navigateWithFallback(to viewController: UIViewController?, animated: Bool) {
-        guard let viewController = viewController else {
-            self.presentAlert()
-            return
-        }
-
-        self.navigate(to: viewController, animated: animated)
-    }
-
-
-    private func presentAlert() {
-        let alertController = UIAlertController(
-            title: "Sorry!",
-            message: "Problem occurred when navigating a screen. You can update to fix this problem or contact us.",
-            preferredStyle: .alert
-        )
-
-        let goBackAction = UIAlertAction(
-            title: "Back",
-            style: .cancel,
-            handler: nil
-        )
-
-        alertController.addAction(goBackAction)
-
-        self.navigationController.present(
-            alertController,
-            animated: true,
-            completion: nil
         )
     }
 }
@@ -354,8 +328,8 @@ class UserDefaultsCalculator {
 
 
     init(
-        reading readableRepository, ReadableRepositoryContract,
-        writing writableRepository, WritableRepositoryContract
+        reading readableRepository: ReadableRepositoryContract,
+        writing writableRepository: WritableRepositoryContract
     ) {
         self.readableRepository = readableRepository
         self.writableRepository = writableRepository
