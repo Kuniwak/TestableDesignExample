@@ -2,9 +2,9 @@ import PromiseKit
 
 
 
-struct StargazerRepository: PageRepositoryContract {
+struct StargazerRepository: PageRepositoryProtocol {
     typealias Element = GitHubUser
-    private let api: GitHubApiClientContract
+    private let api: GitHubApiClientProtocol
     private let gitHubRepository: GitHubRepository
     private let numberOfStargazersPerPage: Int
 
@@ -12,7 +12,7 @@ struct StargazerRepository: PageRepositoryContract {
     init(
         for gitHubRepository: GitHubRepository,
         perPage numberOfStargazersPerPage: Int,
-        fetchingVia api: GitHubApiClientContract
+        fetchingVia api: GitHubApiClientProtocol
     ) {
         self.api = api
         self.numberOfStargazersPerPage = numberOfStargazersPerPage

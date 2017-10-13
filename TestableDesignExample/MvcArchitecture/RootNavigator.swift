@@ -4,17 +4,17 @@ import PromiseKit
 
 
 
-protocol RootNavigatorContract {
+protocol RootNavigatorProtocol {
     func navigateToRoot()
 }
 
 
 
-class RootNavigator: RootNavigatorContract {
-    private let rootViewControllerHolder: RootViewControllerHolderContract
+class RootNavigator: RootNavigatorProtocol {
+    private let rootViewControllerHolder: RootViewControllerHolderProtocol
 
 
-    init(using rootViewControllerHolder: RootViewControllerHolderContract) {
+    init(using rootViewControllerHolder: RootViewControllerHolderProtocol) {
         self.rootViewControllerHolder = rootViewControllerHolder
     }
 

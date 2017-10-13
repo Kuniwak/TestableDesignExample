@@ -3,18 +3,18 @@ import RxSwift
 
 
 
-protocol UserMvcComposerContract {}
+protocol UserMvcComposerProtocol {}
 
 
 
-class UserMvcComposer: UIViewController, UserMvcComposerContract {
-    private let model: UserModelContract
+class UserMvcComposer: UIViewController, UserMvcComposerProtocol {
+    private let model: UserModelProtocol
 
-    private var viewMediator: UserViewMediatorContract?
+    private var viewMediator: UserViewMediatorProtocol?
     private let disposeBag = RxSwift.DisposeBag()
 
 
-    init(representing model: UserModelContract) {
+    init(representing model: UserModelProtocol) {
         self.model = model
 
         super.init(nibName: nil, bundle: nil)

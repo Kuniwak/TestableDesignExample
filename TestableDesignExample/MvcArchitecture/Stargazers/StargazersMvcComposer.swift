@@ -4,18 +4,18 @@ import UIKit
 
 class StargazersMvcComposer: UIViewController {
     private var gitHubRepository: GitHubRepository
-    private var navigator: NavigatorContract
-    private var model: StargazerModelContract
+    private var navigator: NavigatorProtocol
+    private var model: StargazerModelProtocol
     private var bag: Bag
 
-    private var viewMediator: StargazerViewMediatorContract?
-    private var controllerMediator: StargazersControllerMediatorContract?
+    private var viewMediator: StargazerViewMediatorProtocol?
+    private var controllerMediator: StargazersControllerMediatorProtocol?
 
 
     init(
         for gitHubRepository: GitHubRepository,
-        representing model: StargazerModelContract,
-        navigatingBy navigator: NavigatorContract,
+        representing model: StargazerModelProtocol,
+        navigatingBy navigator: NavigatorProtocol,
         holding bag: Bag
     ) {
         self.gitHubRepository = gitHubRepository

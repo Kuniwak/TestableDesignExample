@@ -7,7 +7,7 @@ import UIKit
  A spy class for Navigator.
  This class is useful for capturing calls of `UINavigationController#pushViewController` for testing.
  */
-class NavigatorSpy: NavigatorContract {
+class NavigatorSpy: NavigatorProtocol {
     typealias CallArgs = (viewController: UIViewController, animated: Bool)
 
 
@@ -18,7 +18,7 @@ class NavigatorSpy: NavigatorContract {
     fileprivate(set) var callArgs: [CallArgs] = []
 
 
-    var stub: NavigatorContract
+    var stub: NavigatorProtocol
 
 
     init() {
@@ -26,7 +26,7 @@ class NavigatorSpy: NavigatorContract {
     }
 
 
-    init(inheriting stub: NavigatorContract) {
+    init(inheriting stub: NavigatorProtocol) {
         self.stub = stub
     }
 

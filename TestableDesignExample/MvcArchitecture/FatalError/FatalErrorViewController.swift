@@ -3,10 +3,10 @@ import UIKit
 
 
 class FatalErrorViewController: UIViewController {
-    private var webPageOpener: UrlOpenerContract!
+    private var webPageOpener: UrlOpenerProtocol!
 
 
-    static func create(contactUsVia webPageOpener: UrlOpenerContract) -> FatalErrorViewController {
+    static func create(contactUsVia webPageOpener: UrlOpenerProtocol) -> FatalErrorViewController {
         guard let viewController = R.storyboard.fatalErrorScreen.fatalErrorViewController() else {
             fatalError("FatalError screen is broken. We can do nothing anymore...")
         }

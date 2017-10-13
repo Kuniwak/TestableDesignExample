@@ -4,7 +4,7 @@ import XCTest
 
 
 
-class TestNavigator: NavigatorContract {
+class TestNavigator: NavigatorProtocol {
     private let line: UInt
 
 

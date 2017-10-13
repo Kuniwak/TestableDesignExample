@@ -2,15 +2,15 @@ import UIKit
 
 
 
-protocol StargazersInfiniteScrollControllerContract {}
+protocol StargazersInfiniteScrollControllerProtocol {}
 
 
 
-class StargazersInfiniteScrollController: NSObject, StargazersInfiniteScrollControllerContract, UIScrollViewDelegate {
-    private let model: StargazerModelContract
+class StargazersInfiniteScrollController: NSObject, StargazersInfiniteScrollControllerProtocol, UIScrollViewDelegate {
+    private let model: StargazerModelProtocol
 
 
-    init(willRequestNextPageVia model: StargazerModelContract) {
+    init(willRequestNextPageVia model: StargazerModelProtocol) {
         self.model = model
     }
 

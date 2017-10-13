@@ -7,7 +7,7 @@ import UIKit
  A spy class for ModalPresenters.
  This class is useful for capturing calls of `UIViewController#present` for testing.
  */
-class ModalPresenterSpy: ModalPresenterContract {
+class ModalPresenterSpy: ModalPresenterProtocol {
     typealias CallArgs = (viewController: UIViewController, animated: Bool, completion: (() -> Void)?)
 
 
@@ -17,10 +17,10 @@ class ModalPresenterSpy: ModalPresenterContract {
      */
     fileprivate(set) var callArgs: [CallArgs] = []
 
-    var stub: ModalPresenterContract
+    var stub: ModalPresenterProtocol
 
 
-    init(inheriting stub: ModalPresenterContract) {
+    init(inheriting stub: ModalPresenterProtocol) {
         self.stub = stub
     }
 

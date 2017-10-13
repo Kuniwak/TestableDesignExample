@@ -164,7 +164,7 @@ class PagingModelTests: XCTestCase {
     }
 
 
-    private static func createPagingModel<PageRepository: PageRepositoryContract>(
+    private static func createPagingModel<PageRepository: PageRepositoryProtocol>(
         fetchingPageVia pageRepository: PageRepository,
         whereCursorMovingOn range: Range<Int> = 1..<Int.max
     ) -> PagingModel<Element> where PageRepository.Element == Element {

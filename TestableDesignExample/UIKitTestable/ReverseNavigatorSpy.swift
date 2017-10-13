@@ -7,7 +7,7 @@ import UIKit
  A spy class for ReverseNavigators.
  This class is useful for capturing calls of `UINavigationController#popToViewController` for testing.
  */
-class ReverseNavigatorSpy: ReverseNavigatorContract {
+class ReverseNavigatorSpy: ReverseNavigatorProtocol {
     typealias CallArgs = Bool
 
 
@@ -18,7 +18,7 @@ class ReverseNavigatorSpy: ReverseNavigatorContract {
     fileprivate(set) var callArgs: [CallArgs] = []
 
 
-    var stub: ReverseNavigatorContract
+    var stub: ReverseNavigatorProtocol
 
 
     init() {
@@ -26,7 +26,7 @@ class ReverseNavigatorSpy: ReverseNavigatorContract {
     }
 
 
-    init(inheriting stub: ReverseNavigatorContract) {
+    init(inheriting stub: ReverseNavigatorProtocol) {
         self.stub = stub
     }
 

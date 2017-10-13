@@ -4,7 +4,7 @@ import Unbox
 
 
 
-protocol GitHubApiClientContract {
+protocol GitHubApiClientProtocol {
     func fetch(endpoint: GitHubApiEndpoint, headers: [String: String], parameters: [(String, String)]) -> Promise<Data>
 }
 
@@ -22,7 +22,7 @@ protocol GitHubApiClientContract {
      let foo: String
 
 
-     static func fetch(via api: GitHubApiClientContract) -> Promise<Something> {
+     static func fetch(via api: GitHubApiClientProtocol) -> Promise<Something> {
          return api
              .fetch(
                  endpoint: GitHubApiEndpoint(path: "/something"),
@@ -61,7 +61,7 @@ protocol GitHubApiClientContract {
  }
  ```
  */
-struct GitHubApiClient: GitHubApiClientContract {
+struct GitHubApiClient: GitHubApiClientProtocol {
     private let base: URL
 
 

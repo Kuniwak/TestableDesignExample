@@ -3,7 +3,7 @@ import PromiseKit
 
 
 
-class PageRepositoryStub<T: Hashable>: PageRepositoryContract {
+class PageRepositoryStub<T: Hashable>: PageRepositoryProtocol {
     typealias Element = T
 
 

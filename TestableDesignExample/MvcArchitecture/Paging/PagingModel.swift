@@ -41,7 +41,7 @@ import RxSwift
                                                      +--------------------------------------------------+
  ```
  */
-protocol PagingModelContract {
+protocol PagingModelProtocol {
     associatedtype Element: Hashable
 
     var currentState: PagingModelState<Element> { get }
@@ -55,7 +55,7 @@ protocol PagingModelContract {
 
 
 
-extension PagingModelContract {
+extension PagingModelProtocol {
     func asAny() -> AnyPagingModel<Element> {
         return AnyPagingModel(wrapping: self)
     }
@@ -75,7 +75,7 @@ enum PagingModelState<Element> {
 
 
 
-class PagingModel<T: Hashable>: PagingModelContract {
+class PagingModel<T: Hashable>: PagingModelProtocol {
     typealias Element = T
 
 
@@ -87,7 +87,7 @@ class PagingModel<T: Hashable>: PagingModelContract {
     private let stateVariable: RxSwift.Variable<PagingModelState<Element>>
     private let pageRepository: AnyPageRepository<Element>
     private let pageEndStrategy: AnyPageEndDetectionStrategy<Element>
-    private let cursor: PagingCursorContract
+    private let cursor: PagingCursorProtocol
 
 
     fileprivate(set) var currentState: PagingModelState<Element> {
@@ -101,12 +101,12 @@ class PagingModel<T: Hashable>: PagingModelContract {
 
 
     init<
-        PageRepository: PageRepositoryContract,
-        PageEndStrategy: PageEndDetectionStrategyContract
+        PageRepository: PageRepositoryProtocol,
+        PageEndStrategy: PageEndDetectionStrategyProtocol
     >(
         fetchingPageVia pageRepository: PageRepository,
         detectingPageEndBy pageEndStrategy: PageEndStrategy,
-        choosingPageNumberBy cursor: PagingCursorContract
+        choosingPageNumberBy cursor: PagingCursorProtocol
     ) where
         PageRepository.Element == Element,
         PageEndStrategy.Element == Element
@@ -200,7 +200,7 @@ class PagingModel<T: Hashable>: PagingModelContract {
 
 
 
-class AnyPagingModel<T: Hashable>: PagingModelContract {
+class AnyPagingModel<T: Hashable>: PagingModelProtocol {
     typealias Element = T
     private let _currentState: () -> PagingModelState<Element>
     private let _didChange: () -> RxSwift.Observable<PagingModelState<Element>>
@@ -210,7 +210,7 @@ class AnyPagingModel<T: Hashable>: PagingModelContract {
     private let _recover: () -> Void
 
 
-    init<WrappedModel: PagingModelContract>(
+    init<WrappedModel: PagingModelProtocol>(
         wrapping wrappedModel: WrappedModel
     ) where WrappedModel.Element == Element {
         self._currentState = { wrappedModel.currentState }

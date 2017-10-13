@@ -1,4 +1,4 @@
-protocol PagingCursorContract {
+protocol PagingCursorProtocol {
     var nextPage: Int { get }
     var previousPage: Int { get }
 
@@ -9,7 +9,7 @@ protocol PagingCursorContract {
 
 
 
-extension PagingCursorContract {
+extension PagingCursorProtocol {
     func getPageNumber(of direction: PageEndDirection) -> Int {
         switch direction {
         case .previous:
@@ -32,7 +32,7 @@ extension PagingCursorContract {
 
 
 
-class PagingCursor: PagingCursorContract {
+class PagingCursor: PagingCursorProtocol {
     private(set) var nextPage: Int
     private(set) var previousPage: Int
 

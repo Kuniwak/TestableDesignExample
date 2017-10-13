@@ -2,7 +2,7 @@ import PromiseKit
 
 
 
-protocol PageRepositoryContract {
+protocol PageRepositoryProtocol {
     associatedtype Element: Hashable
 
     func fetch(pageOf pageNumber: Int) -> Promise<[Element]>
@@ -10,7 +10,7 @@ protocol PageRepositoryContract {
 
 
 
-extension PageRepositoryContract {
+extension PageRepositoryProtocol {
     func asAny() -> AnyPageRepository<Element> {
         return AnyPageRepository<Element>(wrapping: self)
     }
@@ -18,14 +18,14 @@ extension PageRepositoryContract {
 
 
 
-class AnyPageRepository<T: Hashable>: PageRepositoryContract {
+class AnyPageRepository<T: Hashable>: PageRepositoryProtocol {
     typealias Element = T
 
 
     private let _fetch: (Int) -> Promise<[Element]>
 
 
-    init<WrappedRepository: PageRepositoryContract>(
+    init<WrappedRepository: PageRepositoryProtocol>(
         wrapping wrappedRepository: WrappedRepository
     ) where WrappedRepository.Element == Element {
         self._fetch = { pageNumber in

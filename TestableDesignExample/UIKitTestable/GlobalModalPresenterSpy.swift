@@ -7,7 +7,7 @@ import UIKit
  A spy class for GlobalModalPresenter.
  This class is useful for capturing calls of `GlobalModalPresenter#present` for testing.
  */
-class GlobalModalPresenterSpy: GlobalModalPresenterContract {
+class GlobalModalPresenterSpy: GlobalModalPresenterProtocol {
     typealias CallArgs = (viewController: UIViewController, animated: Bool, completion: (() -> Void)?)
 
 
@@ -18,15 +18,15 @@ class GlobalModalPresenterSpy: GlobalModalPresenterContract {
     private(set) var callArgs: [CallArgs] = []
 
 
-    var stub: GlobalModalPresenterContract
+    var stub: GlobalModalPresenterProtocol
 
 
-    var dissolver: ModalDissolverContract {
+    var dissolver: ModalDissolverProtocol {
         return self.stub.dissolver
     }
 
 
-    init(inherit stub: GlobalModalPresenterContract) {
+    init(inherit stub: GlobalModalPresenterProtocol) {
         self.stub = stub
     }
 

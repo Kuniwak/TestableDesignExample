@@ -5,7 +5,7 @@ import UIKit
 /**
  A type for wrapper classes of `UINavigationController#(_:UIViewController, animated:Bool)`.
  */
-protocol ReverseNavigatorContract {
+protocol ReverseNavigatorProtocol {
     /**
      Pushes a view controller onto the receiver’s stack and updates the display.
      This method behave like `UINavigationController#popToViewController(UIVIewController, animated: Bool)`
@@ -30,7 +30,7 @@ enum ReverseNavigatorError: Error {
  A wrapper class to encapsulate a implementation of `UINavigationController#popToViewController(UIViewController, animated: Bool)`.
  You can replace the class to the stub or spy for testing.
  */
-class ReverseNavigator: ReverseNavigatorContract {
+class ReverseNavigator: ReverseNavigatorProtocol {
     private let navigationController: UINavigationController
     private let viewController: UIViewController
 

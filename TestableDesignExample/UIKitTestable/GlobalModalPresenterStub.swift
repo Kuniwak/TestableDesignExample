@@ -7,11 +7,11 @@ import UIKit
  A stub class for GlobalModalPresenter.
  This class is useful for ignoring calls of `GlobalModalPresenter#present` for testing.
  */
-class GlobalModalPresenterStub: GlobalModalPresenterContract {
-    var dissolver: ModalDissolverContract
+class GlobalModalPresenterStub: GlobalModalPresenterProtocol {
+    var dissolver: ModalDissolverProtocol
 
 
-    init(exposing dissolver: ModalDissolverContract) {
+    init(exposing dissolver: ModalDissolverProtocol) {
         self.dissolver = dissolver
     }
 

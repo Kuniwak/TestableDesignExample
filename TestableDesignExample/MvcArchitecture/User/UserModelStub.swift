@@ -3,7 +3,7 @@ import RxSwift
 
 
 
-class UserModelStub: UserModelContract {
+class UserModelStub: UserModelProtocol {
     private let stateVariable: RxSwift.Variable<UserModelState>
 
 
