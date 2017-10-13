@@ -8,8 +8,14 @@ class StargazersMvcComposer: UIViewController {
     private var model: StargazerModelProtocol
     private var bag: Bag
 
-    private var viewMediator: StargazerViewMediatorProtocol?
-    private var controllerMediator: StargazersControllerMediatorProtocol?
+    private var tableViewDataSource: StargazersTableViewDataSourceProtocol?
+    private var navigationViewMediator: StargazersNavigationViewMediatorProtocol?
+    private var errorViewMediator: StargazersErrorViewMediatorProtocol?
+    private var progressViewMediator: StargazersProgressViewMediatorProtocol?
+    private var refreshControlViewMediator: StargazersRefreshViewMediatorProtocol?
+    private var refreshController: StargazersRefreshControllerProtocol?
+    private var scrollController: StargazersInfiniteScrollControllerProtocol?
+    private var tableViewMediator: StargazersTableViewMediatorProtocol?
 
 
     init(
@@ -36,31 +42,44 @@ class StargazersMvcComposer: UIViewController {
         let rootView = StargazersScreenRootView()
         self.view = rootView
 
+        let dataSource = StargazersTableViewDataSource(
+            observing: self.model,
+            handling: rootView.tableView
+        )
+        self.tableViewDataSource = dataSource
+        rootView.tableView.dataSource = dataSource
+
+        self.tableViewMediator = StargazersTableViewMediator(
+            handling: rootView.tableView
+        )
+
+        self.scrollController = StargazersInfiniteScrollController(
+            watching: rootView.tableView,
+            notifying: self.model
+        )
+
+        self.navigationViewMediator = StargazersNavigationViewMediator(
+            watching: rootView.tableView,
+            findingVisibleRowBy: dataSource,
+            navigatingBy: self.navigator
+        )
+
+        self.errorViewMediator = StargazersErrorViewMediator(
+            observing: self.model,
+            presentingAlertBy: ModalPresenter(wherePresentOn: self)
+        )
+
         let refreshControl = UIRefreshControl()
         rootView.tableView.refreshControl = refreshControl
 
-        let viewMediator = StargazerViewMediator(
+        self.refreshControlViewMediator = StargazersRefreshViewMediator(
             observing: self.model,
-            handling: (
-                tableView: rootView.tableView,
-                progressView: rootView.progressView,
-                refreshControl: refreshControl
-            ),
-            presentingModelBy: ModalPresenter(wherePresentOn: self)
+            handling: refreshControl
         )
-        self.viewMediator = viewMediator
 
-        self.controllerMediator = StargazerControllerMediator(
-            willNotifyTo: self.model,
-            from: (
-                tableView: rootView.tableView,
-                refreshControl: refreshControl,
-                scrollViewDelegate: StargazersInfiniteScrollController(
-                    willRequestNextPageVia: self.model
-                )
-            ),
-            findingVisibleRowBy: viewMediator,
-            navigatingBy: self.navigator
+        self.refreshController = StargazersRefreshController(
+            watching: refreshControl,
+            notifying: self.model
         )
     }
 
