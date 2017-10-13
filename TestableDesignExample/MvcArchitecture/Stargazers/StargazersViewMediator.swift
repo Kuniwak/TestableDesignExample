@@ -153,7 +153,7 @@ class StargazerViewMediator: StargazerViewMediatorContract {
 
                     this.mediator?.reload()
                 })
-                .addDisposableTo(self.disposeBag)
+                .disposed(by: self.disposeBag)
         }
 
 

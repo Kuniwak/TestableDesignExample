@@ -86,26 +86,28 @@ class StarredRepositoriesModelTests: XCTestCase {
             ),
 
 
-            #line: TestCase(
-                scenario: {
-                    let repository = StargazerRepositoryStub(
-                        firstResult: Promise(error: AnyError(debugInfo: "API call was failed"))
-                    )
+            #line: {
+                return TestCase(
+                    scenario: {
+                        let repository = StargazerRepositoryStub(
+                            firstResult: Promise(error: AnyError(debugInfo: "API call was failed"))
+                        )
 
-                    let model = StargazerModel.create(
-                        requestingElementCountPerPage: 3,
-                        fetchingPageVia: repository
-                    )
-                    model.fetchNext()
-                    self.waitUntilFetched(model)
+                        let model = StargazerModel.create(
+                            requestingElementCountPerPage: 3,
+                            fetchingPageVia: repository
+                        )
+                        model.fetchNext()
+                        self.waitUntilFetched(model)
 
-                    return model
-                },
-                expected: .fetched(
-                    stargazers: [],
-                    error: .apiError(debugInfo: "\(AnyError(debugInfo: "API call was failed"))")
+                        return model
+                    },
+                    expected: .fetched(
+                        stargazers: [],
+                        error: .apiError(debugInfo: "any error")
+                    )
                 )
-            ),
+            }(),
 
 
             #line: TestCase(
@@ -186,7 +188,7 @@ class StarredRepositoriesModelTests: XCTestCase {
             let model = testCase.scenario()
 
             XCTAssert(
-                Diffable.from(any: model.currentState) =~ Diffable.from(any: testCase.expected),
+                model.currentState == testCase.expected,
                 diff(between: testCase.expected, and: model.currentState),
                 line: line
             )

@@ -11,7 +11,7 @@ enum VisualDecorator {
 
         navigationBar.tintColor = ColorCatalog.Accent.font
         navigationBar.titleTextAttributes = [
-            NSForegroundColorAttributeName: ColorCatalog.Accent.font,
+            NSAttributedStringKey.foregroundColor: ColorCatalog.Accent.font,
         ]
     }
 }

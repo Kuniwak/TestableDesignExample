@@ -52,7 +52,7 @@ class UserViewMediator: UserViewMediatorContract {
                     this.imageSource.set(image: nil)
                 }
             })
-            .addDisposableTo(self.disposeBag)
+            .disposed(by: self.disposeBag)
 
         self.views.progressView.isHidden = false
 
@@ -77,7 +77,7 @@ class UserViewMediator: UserViewMediatorContract {
                     views.progressView.isHidden = true
                 }
             })
-            .addDisposableTo(self.disposeBag)
+            .disposed(by: self.disposeBag)
     }
 
 

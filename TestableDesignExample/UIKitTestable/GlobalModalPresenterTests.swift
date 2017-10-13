@@ -16,7 +16,7 @@ class GlobalModalPresenterTests: XCTestCase {
         modalPresenter.present(
             viewController: spyViewController,
             animated: false,
-            completion: { _ in
+            completion: {
                 XCTAssertEqual(
                     spyViewController.callArgs,
                     [
@@ -43,10 +43,10 @@ class GlobalModalPresenterTests: XCTestCase {
         modalPresenter.present(
             viewController: spyViewController,
             animated: false,
-            completion: { _ in
+            completion: {
                 modalPresenter.dissolver.dismiss(
                     animated: false,
-                    completion: { _ in
+                    completion: {
                         XCTAssertEqual(
                             spyViewController.callArgs,
                             [

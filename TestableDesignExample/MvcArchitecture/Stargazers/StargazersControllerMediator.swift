@@ -43,7 +43,7 @@ class StargazerControllerMediator: NSObject, StargazersControllerMediatorContrac
     }
 
 
-    func refresh(sender: UIRefreshControl) {
+    @objc func refresh(sender: UIRefreshControl) {
         self.model.clear()
         self.model.fetchNext()
     }
