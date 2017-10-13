@@ -63,7 +63,7 @@ class GlobalModalPresenter: GlobalModalPresenterContract {
         func dismiss(animated: Bool, completion: (() -> Void)?) {
             self.rootViewController.dismiss(
                 animated: animated,
-                completion: { _ in
+                completion: {
                     self.window.isHidden = true
                     completion?()
                 })
