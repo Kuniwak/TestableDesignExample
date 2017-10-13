@@ -1,4 +1,6 @@
 import UIKit
+import RxSwift
+import RxCocoa
 
 
 
@@ -6,26 +8,37 @@ protocol StargazersInfiniteScrollControllerProtocol {}
 
 
 
-class StargazersInfiniteScrollController: NSObject, StargazersInfiniteScrollControllerProtocol, UIScrollViewDelegate {
+class StargazersInfiniteScrollController: StargazersInfiniteScrollControllerProtocol {
+    private let scrollView: UIScrollView
     private let model: StargazerModelProtocol
+    private let disposeBag = RxSwift.DisposeBag()
 
 
-    init(willRequestNextPageVia model: StargazerModelProtocol) {
+    init(
+        watching scrollView: UIScrollView,
+        notifying model: StargazerModelProtocol
+    ) {
+        self.scrollView = scrollView
         self.model = model
-    }
 
+        self.scrollView.rx
+            .didScroll
+            .asDriver()
+            .drive(onNext: { [weak self] _ in
+                guard let this = self else { return }
 
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let offsetY = scrollView.contentOffset.y
-        let contentHeight = scrollView.contentSize.height
-        let visibleHeight = scrollView.bounds.height
+                let offsetY = this.scrollView.contentOffset.y
+                let contentHeight = this.scrollView.contentSize.height
+                let visibleHeight = this.scrollView.bounds.height
 
-        let isReachingThreshold = offsetY >= contentHeight
-            - visibleHeight
-            - PerformanceParameter.stargazersInfiniteScrollThreshold
+                let isReachingThreshold = offsetY >= contentHeight
+                    - visibleHeight
+                    - PerformanceParameter.stargazersInfiniteScrollThreshold
 
-        if isReachingThreshold {
-            self.model.fetchNext()
-        }
+                if isReachingThreshold {
+                    this.model.fetchNext()
+                }
+            })
+            .disposed(by: self.disposeBag)
     }
 }
