@@ -35,6 +35,20 @@ enum StargazerModelState {
 }
 
 
+extension StargazerModelState: Equatable {
+    static func ==(lhs: StargazerModelState, rhs: StargazerModelState) -> Bool {
+        switch (lhs, rhs) {
+        case let (.fetched(stargazers: ls, error: le), .fetched(stargazers: rs, error: re)):
+            return ls == rs && le == re
+        case let (.fetching(previousStargazers: ls), .fetching(previousStargazers: rs)):
+            return ls == rs
+        default:
+            return false
+        }
+    }
+}
+
+
 
 enum StargazerModelError: Error {
     case apiError(debugInfo: String)
@@ -46,6 +60,16 @@ enum StargazerModelError: Error {
         }
 
         return .apiError(debugInfo: "\(pagingModelError)")
+    }
+}
+
+
+extension StargazerModelError: Equatable {
+    static func ==(lhs: StargazerModelError, rhs: StargazerModelError) -> Bool {
+        switch (lhs, rhs) {
+        case (.apiError, .apiError):
+            return true
+        }
     }
 }
 
