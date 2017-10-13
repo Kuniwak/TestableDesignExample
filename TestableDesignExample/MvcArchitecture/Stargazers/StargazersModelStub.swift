@@ -3,7 +3,7 @@ import RxSwift
 
 
 
-class StargazersModelStub: StargazerModelContract {
+class StargazersModelStub: StargazerModelProtocol {
     private let stateVariable: RxSwift.Variable<StargazerModelState>
 
 

@@ -1,4 +1,4 @@
-protocol PageEndDetectionStrategyContract {
+protocol PageEndDetectionStrategyProtocol {
     associatedtype Element
 
     func isPageEnd(
@@ -11,7 +11,7 @@ protocol PageEndDetectionStrategyContract {
 
 
 
-extension PageEndDetectionStrategyContract {
+extension PageEndDetectionStrategyProtocol {
     func asAny() -> AnyPageEndDetectionStrategy<Element> {
         return AnyPageEndDetectionStrategy<Element>(wrapping: self)
     }
@@ -19,14 +19,14 @@ extension PageEndDetectionStrategyContract {
 
 
 
-class AnyPageEndDetectionStrategy<T>: PageEndDetectionStrategyContract {
+class AnyPageEndDetectionStrategy<T>: PageEndDetectionStrategyProtocol {
     typealias Element = T
 
 
     private let _isPageEnd: (Int, PageEndDirection, [Element], [Element]) -> Bool
 
 
-    init<WrappedStrategy: PageEndDetectionStrategyContract>(
+    init<WrappedStrategy: PageEndDetectionStrategyProtocol>(
         wrapping wrappedStrategy: WrappedStrategy
     ) where WrappedStrategy.Element == Element {
         self._isPageEnd = { (pageNumber, direction, storedCollection, fetchedCollection) in

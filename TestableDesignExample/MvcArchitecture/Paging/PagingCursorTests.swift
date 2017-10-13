@@ -12,7 +12,7 @@ class PagingCursorTests: XCTestCase {
             case fetchNext(isPageEnd: Bool)
             case fetchPrevious(isPageEnd: Bool)
 
-            func perform(on cursor: PagingCursorContract) {
+            func perform(on cursor: PagingCursorProtocol) {
                 switch self {
                 case let .fetchNext(isPageEnd: isPageEnd):
                     cursor.fetchingNextPageDidSucceed(isPageEnd: isPageEnd)

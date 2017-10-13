@@ -4,7 +4,7 @@ import PromiseKit
 
 
 
-struct GitHubApiClientStub: GitHubApiClientContract {
+struct GitHubApiClientStub: GitHubApiClientProtocol {
     var nextResult: Promise<Any>
 
 

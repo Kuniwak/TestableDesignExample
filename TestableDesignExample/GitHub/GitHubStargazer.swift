@@ -9,7 +9,7 @@ enum GitHubStargazer {
             stargazersOf repository: GitHubRepository,
             pageOf pageNumber: Int,
             perPage numberOfElementsPerPage: Int,
-            via api: GitHubApiClientContract
+            via api: GitHubApiClientProtocol
         ) -> Promise<[GitHubUser]> {
             return api.fetch(
                     endpoint: GitHubApiEndpoint(path: "/repos/\(repository.owner.text)/\(repository.name.text)/stargazers"),

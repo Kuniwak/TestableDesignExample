@@ -5,7 +5,7 @@ import UIKit
 /**
  A type for wrapper class of `UIWindow.rootViewController`.
  */
-protocol RootViewControllerHolderContract {
+protocol RootViewControllerHolderProtocol {
     /**
      Replace the root UIViewController of UIWindow to the specified one.
      */
@@ -18,7 +18,7 @@ protocol RootViewControllerHolderContract {
  A wrapper class to encapsulate a implementation of assigning `UIWindow.rootViewController`.
  You can replace the class to the stub or spy for testing.
  */
-class RootViewControllerHolder: RootViewControllerHolderContract {
+class RootViewControllerHolder: RootViewControllerHolderProtocol {
     private let window: UIWindow
 
 

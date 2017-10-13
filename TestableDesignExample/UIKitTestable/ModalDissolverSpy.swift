@@ -7,7 +7,7 @@ import UIKit
  A spy class for ModalDissolver.
  This class is useful for capturing calls of `UIViewController#dismiss` for testing.
  */
-class ModalDissolverSpy: ModalDissolverContract {
+class ModalDissolverSpy: ModalDissolverProtocol {
     typealias CallArgs = (animated: Bool, completion: (() -> Void)?)
 
 
@@ -18,7 +18,7 @@ class ModalDissolverSpy: ModalDissolverContract {
     fileprivate(set) var callArgs: [CallArgs] = []
 
 
-    fileprivate let stub: ModalDissolverContract
+    fileprivate let stub: ModalDissolverProtocol
 
 
     init() {
@@ -26,7 +26,7 @@ class ModalDissolverSpy: ModalDissolverContract {
     }
 
 
-    init(inheriting stub: ModalDissolverContract) {
+    init(inheriting stub: ModalDissolverProtocol) {
         self.stub = stub
     }
 

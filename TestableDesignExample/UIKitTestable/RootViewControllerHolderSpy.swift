@@ -7,7 +7,7 @@ import UIKit
  A spy class for RootViewControllerHolders.
  This class is useful for capturing assigning `UIWindow.rootViewController` for testing.
  */
-class RootViewControllerHolderSpy: RootViewControllerHolderContract {
+class RootViewControllerHolderSpy: RootViewControllerHolderProtocol {
     typealias CallArgs = UIViewController
 
 
@@ -17,10 +17,10 @@ class RootViewControllerHolderSpy: RootViewControllerHolderContract {
      */
     fileprivate(set) var callArgs: [CallArgs] = []
 
-    var stub: RootViewControllerHolderContract
+    var stub: RootViewControllerHolderProtocol
 
 
-    init(inheriting stub: RootViewControllerHolderContract) {
+    init(inheriting stub: RootViewControllerHolderProtocol) {
         self.stub = stub
     }
 

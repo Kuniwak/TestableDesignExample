@@ -2,29 +2,29 @@ import UIKit
 
 
 
-protocol StargazersControllerMediatorContract {
+protocol StargazersControllerMediatorProtocol {
     func refresh(sender: UIRefreshControl)
 }
 
 
 
-class StargazerControllerMediator: NSObject, StargazersControllerMediatorContract {
-    fileprivate let navigator: NavigatorContract
-    fileprivate let model: StargazerModelContract
-    fileprivate let viewMediator: StargazerViewMediatorContract
+class StargazerControllerMediator: NSObject, StargazersControllerMediatorProtocol {
+    fileprivate let navigator: NavigatorProtocol
+    fileprivate let model: StargazerModelProtocol
+    fileprivate let viewMediator: StargazerViewMediatorProtocol
     fileprivate let refreshControl: UIRefreshControl
     fileprivate let scrollViewDelegate: UIScrollViewDelegate
 
 
     init(
-        willNotifyTo model: StargazerModelContract,
+        willNotifyTo model: StargazerModelProtocol,
         from control: (
             tableView: UITableView,
             refreshControl: UIRefreshControl,
             scrollViewDelegate: UIScrollViewDelegate
         ),
-        findingVisibleRowBy viewMediator: StargazerViewMediatorContract,
-        navigatingBy navigator: NavigatorContract
+        findingVisibleRowBy viewMediator: StargazerViewMediatorProtocol,
+        navigatingBy navigator: NavigatorProtocol
     ) {
         self.model = model
         self.viewMediator = viewMediator

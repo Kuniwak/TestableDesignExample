@@ -3,13 +3,13 @@ import RxSwift
 
 
 
-protocol UserViewMediatorContract {}
+protocol UserViewMediatorProtocol {}
 
 
 
-class UserViewMediator: UserViewMediatorContract {
+class UserViewMediator: UserViewMediatorProtocol {
     private let disposeBag = RxSwift.DisposeBag()
-    private let model: UserModelContract
+    private let model: UserModelProtocol
     private let imageSource: RemoteImageSource
     private let views: Views
     typealias Views = (
@@ -17,13 +17,13 @@ class UserViewMediator: UserViewMediatorContract {
         avatarImageView: UIImageView,
         titleHolder: TitleHolder
     )
-    private let lifter: ModalPresenterContract
+    private let lifter: ModalPresenterProtocol
 
 
     init(
-        observing model: UserModelContract,
+        observing model: UserModelProtocol,
         handling views: Views,
-        presentingModalBy lifter: ModalPresenterContract
+        presentingModalBy lifter: ModalPresenterProtocol
     ) {
         self.model = model
         self.views = views

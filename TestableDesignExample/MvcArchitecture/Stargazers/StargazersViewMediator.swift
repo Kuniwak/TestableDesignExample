@@ -3,7 +3,7 @@ import RxSwift
 
 
 
-protocol StargazerViewMediatorContract: class {
+protocol StargazerViewMediatorProtocol: class {
     var visibleStargazers: [GitHubUser] { get }
 
     func reload()
@@ -14,10 +14,10 @@ protocol StargazerViewMediatorContract: class {
 
 
 
-class StargazerViewMediator: StargazerViewMediatorContract {
+class StargazerViewMediator: StargazerViewMediatorProtocol {
     private let dataSource: DataSource
-    private let model: StargazerModelContract
-    private let lifter: ModalPresenterContract
+    private let model: StargazerModelProtocol
+    private let lifter: ModalPresenterProtocol
     private let views: Views
     typealias Views = (
         tableView: UITableView,
@@ -33,9 +33,9 @@ class StargazerViewMediator: StargazerViewMediatorContract {
 
 
     init(
-        observing model: StargazerModelContract,
+        observing model: StargazerModelProtocol,
         handling views: Views,
-        presentingModelBy lifter: ModalPresenterContract
+        presentingModelBy lifter: ModalPresenterProtocol
     ) {
         self.model = model
         self.views = views
@@ -117,14 +117,14 @@ class StargazerViewMediator: StargazerViewMediatorContract {
 
     class DataSource: NSObject, UITableViewDataSource {
         private let token: StargazerCell.RegistrationToken
-        private let model: StargazerModelContract
+        private let model: StargazerModelProtocol
         private let disposeBag = RxSwift.DisposeBag()
         private(set) var stargazers = [GitHubUser]()
-        weak var mediator: StargazerViewMediatorContract?
+        weak var mediator: StargazerViewMediatorProtocol?
 
 
         init(
-            observing model: StargazerModelContract,
+            observing model: StargazerModelProtocol,
             andMustHave token: StargazerCell.RegistrationToken
         ) {
             self.token = token

@@ -3,7 +3,7 @@ import RxSwift
 
 
 
-protocol StargazerModelContract {
+protocol StargazerModelProtocol {
     var didChange: RxSwift.Observable<StargazerModelState> { get }
     var currentState: StargazerModelState { get }
 
@@ -75,7 +75,7 @@ extension StargazerModelError: Equatable {
 
 
 
-class StargazerModel: StargazerModelContract {
+class StargazerModel: StargazerModelProtocol {
     private let pagingModel: AnyPagingModel<GitHubUser>
 
 
@@ -93,7 +93,7 @@ class StargazerModel: StargazerModelContract {
     }
 
 
-    init<PagingModel: PagingModelContract>(
+    init<PagingModel: PagingModelProtocol>(
         pagingBy pagingModel: PagingModel
     ) where PagingModel.Element == GitHubUser {
         self.pagingModel = pagingModel.asAny()
@@ -120,7 +120,7 @@ class StargazerModel: StargazerModelContract {
     }
 
 
-    static func create<PageRepository: PageRepositoryContract> (
+    static func create<PageRepository: PageRepositoryProtocol> (
         requestingElementCountPerPage elementCount: Int,
         fetchingPageVia pageRepository: PageRepository
     ) -> StargazerModel where PageRepository.Element == GitHubUser {

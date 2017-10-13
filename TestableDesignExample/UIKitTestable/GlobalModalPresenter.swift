@@ -2,8 +2,8 @@ import UIKit
 
 
 
-protocol GlobalModalPresenterContract: ModalPresenterContract {
-    var dissolver: ModalDissolverContract { get }
+protocol GlobalModalPresenterProtocol: ModalPresenterProtocol {
+    var dissolver: ModalDissolverProtocol { get }
 }
 
 
@@ -12,8 +12,8 @@ protocol GlobalModalPresenterContract: ModalPresenterContract {
  A class for specialized ModalPresenters that can present a UIViewController unconditionally.
  You can present a UIViewController if you does not know what UIViewController is visible.
  */
-class GlobalModalPresenter: GlobalModalPresenterContract {
-    private(set) var dissolver: ModalDissolverContract = NullModalDissolver()
+class GlobalModalPresenter: GlobalModalPresenterProtocol {
+    private(set) var dissolver: ModalDissolverProtocol = NullModalDissolver()
     private let window = UIWindow()
 
 
@@ -44,7 +44,7 @@ class GlobalModalPresenter: GlobalModalPresenterContract {
 
 
 
-    class GlobalModalDissolver: ModalDissolverContract {
+    class GlobalModalDissolver: ModalDissolverProtocol {
         private let window: UIWindow
         private let rootViewController: UIViewController
 
@@ -72,7 +72,7 @@ class GlobalModalPresenter: GlobalModalPresenterContract {
 
 
 
-    class NullModalDissolver: ModalDissolverContract {
+    class NullModalDissolver: ModalDissolverProtocol {
         func dismiss(animated: Bool) {}
         func dismiss(animated: Bool, completion: (() -> Void)?) {
             completion?()

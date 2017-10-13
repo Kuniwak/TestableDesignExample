@@ -2,7 +2,7 @@
 
 
 
-class PageEndDetectionStrategyStub<T>: PageEndDetectionStrategyContract {
+class PageEndDetectionStrategyStub<T>: PageEndDetectionStrategyProtocol {
     typealias Element = T
 
 

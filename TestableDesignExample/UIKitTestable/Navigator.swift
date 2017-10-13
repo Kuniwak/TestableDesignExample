@@ -5,7 +5,7 @@ import UIKit
 /**
  A type for wrapper classes of `UINavigationController#pushViewController(_:UIViewController, animated:Bool)`.
  */
-protocol NavigatorContract {
+protocol NavigatorProtocol {
     /**
      Pushes a view controller onto the receiver’s stack and updates the display.
      This method behave like `UINavigationController#pushViewController(UIViewController, animated: Bool)`
@@ -19,7 +19,7 @@ protocol NavigatorContract {
  A wrapper class to encapsulate a implementation of `UINavigationController#pushViewController(UIViewController, animated: Bool)`.
  You can replace the class to the stub or spy for testing.
  */
-class Navigator: NavigatorContract {
+class Navigator: NavigatorProtocol {
     private let navigationController: UINavigationController
 
 

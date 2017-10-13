@@ -3,7 +3,7 @@ import Result
 
 
 
-protocol UserModelContract: class {
+protocol UserModelProtocol: class {
     var didChange: RxSwift.Observable<UserModelState> { get }
     var currentState: UserModelState { get }
 }
@@ -22,7 +22,7 @@ enum UserModelState {
 
 
 
-class UserModel: UserModelContract {
+class UserModel: UserModelProtocol {
     private let stateVariable: RxSwift.Variable<UserModelState>
 
 

@@ -5,7 +5,7 @@ import UIKit
 /**
  A type for encapsulating classes of `UIViewController#present(_: UIViewController, animated: Bool)`.
  */
-protocol ModalPresenterContract {
+protocol ModalPresenterProtocol {
     /**
      Presents a view controller modally.
      This method behave like `UIViewController#present(UIViewController, animated: Bool)`
@@ -25,7 +25,7 @@ protocol ModalPresenterContract {
 /**
  A wrapper class to encapsulate a implementation of `UIViewController#present(_: UIViewController, animated: Bool)`.
  */
-class ModalPresenter: ModalPresenterContract {
+class ModalPresenter: ModalPresenterProtocol {
     private let groundViewController: UIViewController
 
 

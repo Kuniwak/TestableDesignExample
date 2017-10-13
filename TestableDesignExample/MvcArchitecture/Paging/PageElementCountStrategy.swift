@@ -1,4 +1,4 @@
-class PageElementCountStrategy<T: Hashable>: PageEndDetectionStrategyContract {
+class PageElementCountStrategy<T: Hashable>: PageEndDetectionStrategyProtocol {
     typealias Element = T
     private let count: Int
 
