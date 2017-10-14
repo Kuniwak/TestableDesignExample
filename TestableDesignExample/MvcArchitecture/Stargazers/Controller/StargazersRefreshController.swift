@@ -12,6 +12,7 @@ class StargazersRefreshController: StargazersRefreshControllerProtocol {
     private let refreshController: UIRefreshControl
     private let model: StargazersModelProtocol
     private let disposeBag = RxSwift.DisposeBag()
+    internal var didHandle = {}
 
 
     init(
@@ -29,6 +30,8 @@ class StargazersRefreshController: StargazersRefreshControllerProtocol {
 
                 this.model.clear()
                 this.model.fetchNext()
+
+                this.didHandle()
             })
             .disposed(by: self.disposeBag)
     }

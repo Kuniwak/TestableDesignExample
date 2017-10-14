@@ -6,7 +6,7 @@ class StargazersInfiniteScrollControllerTests: XCTestCase {
     func testTrigger() {
         let scrollView = self.createScrollView()
 
-        awaitUntilVisible(on: self, testing: scrollView) { fulfill in
+        waitUntilVisible(on: self, testing: scrollView) { fulfill in
             let spy = StargazersModelSpy()
 
             let controller = StargazersInfiniteScrollController(
@@ -22,9 +22,9 @@ class StargazersInfiniteScrollControllerTests: XCTestCase {
                 fulfill()
             }
 
-            scrollView.setContentOffset(
-                CGPoint(x: 0, y: 200),
-                animated: false
+            EventSimulator.simulateScroll(
+                on: scrollView,
+                to: CGPoint(x: 0, y: 200)
             )
         }
     }
@@ -33,7 +33,7 @@ class StargazersInfiniteScrollControllerTests: XCTestCase {
     func testNotTrigger() {
         let scrollView = self.createScrollView()
 
-        awaitUntilVisible(on: self, testing: scrollView) { fulfill in
+        waitUntilVisible(on: self, testing: scrollView) { fulfill in
             let spy = StargazersModelSpy()
 
             let controller = StargazersInfiniteScrollController(
@@ -49,9 +49,9 @@ class StargazersInfiniteScrollControllerTests: XCTestCase {
                 fulfill()
             }
 
-            scrollView.setContentOffset(
-                CGPoint(x: 0, y: 1),
-                animated: false
+            EventSimulator.simulateScroll(
+                on: scrollView,
+                to: CGPoint(x: 0, y: 1)
             )
         }
     }
