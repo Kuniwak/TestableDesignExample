@@ -4,11 +4,14 @@ import UIKit
 
 extension UIScrollView {
     static func create(
-        sizeOf size: (scrollView: CGSize, contentView: CGSize),
+        sizeOf size: (scrollView: CGSize, contentView: CGSize) = UIScrollView.defaultSize,
         scrolledAt contentOffset: CGPoint = .zero
     ) -> (scrollView: UIScrollView, contentView: UIView) {
         let scrollView = UIScrollView()
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+
         let contentView = UIView()
+        contentView.translatesAutoresizingMaskIntoConstraints = false
 
         [
             scrollView.heightAnchor.constraint(equalToConstant: size.scrollView.height),
@@ -26,4 +29,10 @@ extension UIScrollView {
             contentView: contentView
         )
     }
+
+
+    private static var defaultSize: (scrollView: CGSize, contentView: CGSize) = (
+        scrollView: CGSize(width: 100, height: 100),
+        contentView:  CGSize(width: 100, height: 200)
+    )
 }

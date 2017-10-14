@@ -13,6 +13,7 @@ class StargazersNavigationViewMediator: StargazersNavigationViewMediatorProtocol
     private let tableView: UITableView
     private let dataSource: StargazersTableViewDataSourceProtocol
     private let disposeBag = RxSwift.DisposeBag()
+    internal var didHandle = {}
 
 
     init(
@@ -31,6 +32,8 @@ class StargazersNavigationViewMediator: StargazersNavigationViewMediatorProtocol
                 guard let this = self else { return }
 
                 this.navigate(by: indexPath)
+
+                this.didHandle()
             })
             .disposed(by: self.disposeBag)
     }

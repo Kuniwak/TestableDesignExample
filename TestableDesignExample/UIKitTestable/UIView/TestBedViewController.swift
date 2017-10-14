@@ -3,7 +3,7 @@ import XCTest
 
 
 
-func awaitUntilVisible(
+func waitUntilVisible(
     on test: XCTestCase,
     at line: UInt = #line,
     testing view: UIView,
@@ -15,7 +15,7 @@ func awaitUntilVisible(
         return window
     }()
 
-    let expectation = test.expectation(description: "Awaiting viewDidLoad call")
+    let expectation = test.expectation(description: "Awaiting callback that was given to viewDidLoad")
 
     keyWindow.rootViewController = TestBedViewController(
         testing: view,
@@ -28,13 +28,13 @@ func awaitUntilVisible(
 }
 
 
-func awaitUntilVisible(
+func waitUntilVisible(
     on test: XCTestCase,
     at line: UInt = #line,
     testing view: UIView,
     _ viewDidLoad: @escaping () -> Void
 ) {
-    awaitUntilVisible(on: test, at: line, testing: view) { fulfill in
+    waitUntilVisible(on: test, at: line, testing: view) { fulfill in
         fulfill()
     }
 }

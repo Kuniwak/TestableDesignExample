@@ -7,8 +7,8 @@ import PromiseKit
 
 class PagingModelTests: XCTestCase {
     func testInitialState() {
-        let pagingModel = PagingModelTests.createPagingModel(
-            fetchingPageVia: PagingModelTests.createPageRepositoryStub()
+        let pagingModel = self.createPagingModel(
+            fetchingPageVia: self.createPageRepositoryStub()
         )
 
         let actual = pagingModel.currentState
@@ -22,13 +22,13 @@ class PagingModelTests: XCTestCase {
 
 
     func testStateAfterFetchNext() {
-        let pagingModel = PagingModelTests.createPagingModel(
-            fetchingPageVia: PagingModelTests.createPageRepositoryStub(),
+        let pagingModel = self.createPagingModel(
+            fetchingPageVia: self.createPageRepositoryStub(),
             whereCursorMovingOn: 1..<Int.max
         )
 
         pagingModel.fetchNext()
-        PagingModelTests.waitUntilFetched(pagingModel)
+        self.waitUntilFetched(pagingModel)
 
         let actual = pagingModel.currentState
         let expected = PagingModelState.fetched(elements: [
@@ -43,13 +43,13 @@ class PagingModelTests: XCTestCase {
 
 
     func testStateAfterFetchPrevious() {
-        let pagingModel = PagingModelTests.createPagingModel(
-            fetchingPageVia: PagingModelTests.createPageRepositoryStub(),
+        let pagingModel = self.createPagingModel(
+            fetchingPageVia: self.createPageRepositoryStub(),
             whereCursorMovingOn: 1..<Int.max
         )
 
         pagingModel.fetchPrevious()
-        PagingModelTests.waitUntilFetched(pagingModel)
+        self.waitUntilFetched(pagingModel)
 
         let actual = pagingModel.currentState
         let expected = PagingModelState.fetched(elements: [
@@ -64,16 +64,16 @@ class PagingModelTests: XCTestCase {
 
 
     func testStateAfterFetchNextTwice() {
-        let pagingModel = PagingModelTests.createPagingModel(
-            fetchingPageVia: PagingModelTests.createPageRepositoryStub(),
+        let pagingModel = self.createPagingModel(
+            fetchingPageVia: self.createPageRepositoryStub(),
             whereCursorMovingOn: 1..<Int.max
         )
 
         pagingModel.fetchNext()
-        PagingModelTests.waitUntilFetched(pagingModel)
+        self.waitUntilFetched(pagingModel)
 
         pagingModel.fetchNext()
-        PagingModelTests.waitUntilFetched(pagingModel)
+        self.waitUntilFetched(pagingModel)
 
         let actual = pagingModel.currentState
         let expected = PagingModelState.fetched(elements: [
@@ -89,16 +89,16 @@ class PagingModelTests: XCTestCase {
 
 
     func testStateAfterFetchNextTwiceButReachedAtPageEnd() {
-        let pagingModel = PagingModelTests.createPagingModel(
-            fetchingPageVia: PagingModelTests.createPageRepositoryStub(),
+        let pagingModel = self.createPagingModel(
+            fetchingPageVia: self.createPageRepositoryStub(),
             whereCursorMovingOn: 1..<1
         )
 
         pagingModel.fetchNext()
-        PagingModelTests.waitUntilFetched(pagingModel)
+        self.waitUntilFetched(pagingModel)
 
         pagingModel.fetchNext()
-        PagingModelTests.waitUntilFetched(pagingModel)
+        self.waitUntilFetched(pagingModel)
 
         let actual = pagingModel.currentState
         let expected = PagingModelState.fetched(elements: [
@@ -113,19 +113,19 @@ class PagingModelTests: XCTestCase {
 
 
     func testStateAfterFetchNext3TimesButReachedAtPageEnd() {
-        let pagingModel = PagingModelTests.createPagingModel(
-            fetchingPageVia: PagingModelTests.createPageRepositoryStub(),
+        let pagingModel = self.createPagingModel(
+            fetchingPageVia: self.createPageRepositoryStub(),
             whereCursorMovingOn: 1..<2
         )
 
         pagingModel.fetchNext()
-        PagingModelTests.waitUntilFetched(pagingModel)
+        self.waitUntilFetched(pagingModel)
 
         pagingModel.fetchNext()
-        PagingModelTests.waitUntilFetched(pagingModel)
+        self.waitUntilFetched(pagingModel)
 
         pagingModel.fetchNext()
-        PagingModelTests.waitUntilFetched(pagingModel)
+        self.waitUntilFetched(pagingModel)
 
         let actual = pagingModel.currentState
         let expected = PagingModelState.fetched(elements: [
@@ -141,16 +141,16 @@ class PagingModelTests: XCTestCase {
 
 
     func testStateAfterFetchPreviousTwice() {
-        let pagingModel = PagingModelTests.createPagingModel(
-            fetchingPageVia: PagingModelTests.createPageRepositoryStub(),
+        let pagingModel = self.createPagingModel(
+            fetchingPageVia: self.createPageRepositoryStub(),
             whereCursorMovingOn: 1..<Int.max
         )
 
         pagingModel.fetchPrevious()
-        PagingModelTests.waitUntilFetched(pagingModel)
+        self.waitUntilFetched(pagingModel)
 
         pagingModel.fetchPrevious()
-        PagingModelTests.waitUntilFetched(pagingModel)
+        self.waitUntilFetched(pagingModel)
 
         let actual = pagingModel.currentState
         let expected = PagingModelState.fetched(elements: [
@@ -164,7 +164,7 @@ class PagingModelTests: XCTestCase {
     }
 
 
-    private static func createPagingModel<PageRepository: PageRepositoryProtocol>(
+    private func createPagingModel<PageRepository: PageRepositoryProtocol>(
         fetchingPageVia pageRepository: PageRepository,
         whereCursorMovingOn range: Range<Int> = 1..<Int.max
     ) -> PagingModel<Element> where PageRepository.Element == Element {
@@ -180,7 +180,7 @@ class PagingModelTests: XCTestCase {
     }
 
 
-    private static func createPageRepositoryStub() -> PageRepositoryStub<Element> {
+    private func createPageRepositoryStub() -> PageRepositoryStub<Element> {
         return PageRepositoryStub(
             willReturn: { pageNumber in
                 return Promise(value: [
@@ -191,7 +191,7 @@ class PagingModelTests: XCTestCase {
     }
 
 
-    private static func waitUntilFetched(_ pagingModel: PagingModel<Element>) {
+    private func waitUntilFetched(_ pagingModel: PagingModel<Element>) {
         _ = try! pagingModel
             .didChange
             .filter { state in
