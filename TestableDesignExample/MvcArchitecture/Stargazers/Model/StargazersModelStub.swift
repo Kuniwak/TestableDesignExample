@@ -3,16 +3,16 @@ import RxSwift
 
 
 
-class StargazersModelStub: StargazerModelProtocol {
-    private let stateVariable: RxSwift.Variable<StargazerModelState>
+class StargazersModelStub: StargazersModelProtocol {
+    private let stateVariable: RxSwift.Variable<StargazersModelState>
 
 
-    var didChange: Observable<StargazerModelState> {
+    var didChange: Observable<StargazersModelState> {
         return self.stateVariable.asObservable()
     }
 
 
-    var currentState: StargazerModelState {
+    var currentState: StargazersModelState {
         get {
             return self.stateVariable.value
         }
@@ -23,8 +23,8 @@ class StargazersModelStub: StargazerModelProtocol {
     }
 
 
-    init(withInitialState initialState: StargazerModelState) {
-        self.stateVariable = RxSwift.Variable<StargazerModelState>(initialState)
+    init(withInitialState initialState: StargazersModelState = .fetched(stargazers: [], error: nil)) {
+        self.stateVariable = RxSwift.Variable<StargazersModelState>(initialState)
     }
 
 

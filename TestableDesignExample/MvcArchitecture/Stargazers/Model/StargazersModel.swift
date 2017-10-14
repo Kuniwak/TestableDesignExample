@@ -3,9 +3,9 @@ import RxSwift
 
 
 
-protocol StargazerModelProtocol {
-    var didChange: RxSwift.Observable<StargazerModelState> { get }
-    var currentState: StargazerModelState { get }
+protocol StargazersModelProtocol {
+    var didChange: RxSwift.Observable<StargazersModelState> { get }
+    var currentState: StargazersModelState { get }
 
     func fetchNext()
     func fetchPrevious()
@@ -15,12 +15,12 @@ protocol StargazerModelProtocol {
 
 
 
-enum StargazerModelState {
-    case fetched(stargazers: [GitHubUser], error: StargazerModelError?)
+enum StargazersModelState {
+    case fetched(stargazers: [GitHubUser], error: FailureReason?)
     case fetching(previousStargazers: [GitHubUser])
 
 
-    static func from(pagingModelState: PagingModelState<GitHubUser>) -> StargazerModelState {
+    static func from(pagingModelState: PagingModelState<GitHubUser>) -> StargazersModelState {
         switch pagingModelState {
         case let .fetching(beforeElements: stargazers):
             return .fetching(previousStargazers: stargazers)
@@ -28,15 +28,29 @@ enum StargazerModelState {
         case let .fetched(elements: stargazers, error: error):
             return .fetched(
                 stargazers: stargazers,
-                error: StargazerModelError.from(pagingModelError: error)
+                error: FailureReason.from(pagingModelError: error)
             )
+        }
+    }
+
+
+    enum FailureReason: Error {
+        case apiError(debugInfo: String)
+
+
+        static func from(pagingModelError: PagingModelState<GitHubUser>.ModelError?) -> FailureReason? {
+            guard let pagingModelError = pagingModelError else {
+                return nil
+            }
+
+            return .apiError(debugInfo: "\(pagingModelError)")
         }
     }
 }
 
 
-extension StargazerModelState: Equatable {
-    static func ==(lhs: StargazerModelState, rhs: StargazerModelState) -> Bool {
+extension StargazersModelState: Equatable {
+    static func ==(lhs: StargazersModelState, rhs: StargazersModelState) -> Bool {
         switch (lhs, rhs) {
         case let (.fetched(stargazers: ls, error: le), .fetched(stargazers: rs, error: re)):
             return ls == rs && le == re
@@ -50,22 +64,8 @@ extension StargazerModelState: Equatable {
 
 
 
-enum StargazerModelError: Error {
-    case apiError(debugInfo: String)
-
-
-    static func from(pagingModelError: PagingModelState<GitHubUser>.ModelError?) -> StargazerModelError? {
-        guard let pagingModelError = pagingModelError else {
-            return nil
-        }
-
-        return .apiError(debugInfo: "\(pagingModelError)")
-    }
-}
-
-
-extension StargazerModelError: Equatable {
-    static func ==(lhs: StargazerModelError, rhs: StargazerModelError) -> Bool {
+extension StargazersModelState.FailureReason: Equatable {
+    static func ==(lhs: StargazersModelState.FailureReason, rhs: StargazersModelState.FailureReason) -> Bool {
         switch (lhs, rhs) {
         case (.apiError, .apiError):
             return true
@@ -75,19 +75,19 @@ extension StargazerModelError: Equatable {
 
 
 
-class StargazerModel: StargazerModelProtocol {
+class StargazersModel: StargazersModelProtocol {
     private let pagingModel: AnyPagingModel<GitHubUser>
 
 
-    var didChange: Observable<StargazerModelState> {
+    var didChange: Observable<StargazersModelState> {
         return self.pagingModel
             .didChange
-            .map { StargazerModelState.from(pagingModelState: $0) }
+            .map { StargazersModelState.from(pagingModelState: $0) }
     }
 
 
-    var currentState: StargazerModelState {
-        return StargazerModelState.from(
+    var currentState: StargazersModelState {
+        return StargazersModelState.from(
             pagingModelState: self.pagingModel.currentState
         )
     }
@@ -123,8 +123,8 @@ class StargazerModel: StargazerModelProtocol {
     static func create<PageRepository: PageRepositoryProtocol> (
         requestingElementCountPerPage elementCount: Int,
         fetchingPageVia pageRepository: PageRepository
-    ) -> StargazerModel where PageRepository.Element == GitHubUser {
-        return StargazerModel(
+    ) -> StargazersModel where PageRepository.Element == GitHubUser {
+        return StargazersModel(
             pagingBy: PagingModel(
                 fetchingPageVia: pageRepository,
                 detectingPageEndBy: PageElementCountStrategy(

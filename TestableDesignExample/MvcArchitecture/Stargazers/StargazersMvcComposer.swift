@@ -5,7 +5,7 @@ import UIKit
 class StargazersMvcComposer: UIViewController {
     private var gitHubRepository: GitHubRepository
     private var navigator: NavigatorProtocol
-    private var model: StargazerModelProtocol
+    private var model: StargazersModelProtocol
     private var bag: Bag
 
     private var tableViewDataSource: StargazersTableViewDataSourceProtocol?
@@ -20,7 +20,7 @@ class StargazersMvcComposer: UIViewController {
 
     init(
         for gitHubRepository: GitHubRepository,
-        representing model: StargazerModelProtocol,
+        representing model: StargazersModelProtocol,
         navigatingBy navigator: NavigatorProtocol,
         holding bag: Bag
     ) {
@@ -55,6 +55,9 @@ class StargazersMvcComposer: UIViewController {
 
         self.scrollController = StargazersInfiniteScrollController(
             watching: rootView.tableView,
+            determiningBy: InfiniteScrollThresholdTrigger(
+                basedOn: PerformanceParameter.stargazersInfiniteScrollThreshold
+            ),
             notifying: self.model
         )
 

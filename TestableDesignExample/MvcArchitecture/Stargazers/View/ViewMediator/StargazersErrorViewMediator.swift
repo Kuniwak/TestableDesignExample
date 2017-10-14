@@ -13,14 +13,14 @@ protocol StargazersErrorViewMediatorDelegate: class {
 
 class StargazersErrorViewMediator: StargazersErrorViewMediatorProtocol {
     private let disposeBag = RxSwift.DisposeBag()
-    private let model: StargazerModelProtocol
+    private let model: StargazersModelProtocol
     private let lifter: ModalPresenterProtocol
 
     weak var delegate: StargazersErrorViewMediatorDelegate?
 
 
     init(
-        observing model: StargazerModelProtocol,
+        observing model: StargazersModelProtocol,
         presentingAlertBy lifter: ModalPresenterProtocol
     ) {
         self.model = model
@@ -43,7 +43,7 @@ class StargazersErrorViewMediator: StargazersErrorViewMediatorProtocol {
     }
 
 
-    func present(error: StargazerModelError) {
+    func present(error: StargazersModelState.FailureReason) {
         let alertController = UIAlertController(
             title: "Error",
             message: "\(error)",

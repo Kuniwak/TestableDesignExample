@@ -14,13 +14,13 @@ protocol StargazersProgressViewMediatorDelegate: class {
 class StargazersProgressViewMediator: StargazersProgressViewMediatorProtocol {
     private let progressView: UIProgressView
     private let disposeBag = RxSwift.DisposeBag()
-    private let model: StargazerModelProtocol
+    private let model: StargazersModelProtocol
 
     weak var delegate: StargazersProgressViewMediatorDelegate?
 
 
     init(
-        observing model: StargazerModelProtocol,
+        observing model: StargazersModelProtocol,
         handling progressView: UIProgressView
     ) {
         self.model = model

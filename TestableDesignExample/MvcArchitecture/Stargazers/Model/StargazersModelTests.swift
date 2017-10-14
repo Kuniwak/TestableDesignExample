@@ -8,8 +8,8 @@ import RxBlocking
 
 class StarredRepositoriesModelTests: XCTestCase {
     private struct TestCase {
-        let scenario: () -> StargazerModel
-        let expected: StargazerModelState
+        let scenario: () -> StargazersModel
+        let expected: StargazersModelState
     }
 
 
@@ -23,7 +23,7 @@ class StarredRepositoriesModelTests: XCTestCase {
         let testCases: [UInt: TestCase] = [
             #line: TestCase(
                 scenario: {
-                    return StargazerModel.create(
+                    return StargazersModel.create(
                         requestingElementCountPerPage: 3,
                         fetchingPageVia: self.createPendingRepository()
                     )
@@ -54,7 +54,7 @@ class StarredRepositoriesModelTests: XCTestCase {
                         ])
                     )
 
-                    let model = StargazerModel.create(
+                    let model = StargazersModel.create(
                         requestingElementCountPerPage: 3,
                         fetchingPageVia: repository
                     )
@@ -93,7 +93,7 @@ class StarredRepositoriesModelTests: XCTestCase {
                             firstResult: Promise(error: AnyError(debugInfo: "API call was failed"))
                         )
 
-                        let model = StargazerModel.create(
+                        let model = StargazersModel.create(
                             requestingElementCountPerPage: 3,
                             fetchingPageVia: repository
                         )
@@ -116,7 +116,7 @@ class StarredRepositoriesModelTests: XCTestCase {
                         firstResult: Promise(error: AnyError(debugInfo: "API call was failed"))
                     )
 
-                    let model = StargazerModel.create(
+                    let model = StargazersModel.create(
                         requestingElementCountPerPage: 1,
                         fetchingPageVia: repository
                     )
@@ -149,7 +149,7 @@ class StarredRepositoriesModelTests: XCTestCase {
                         ])
                     )
 
-                    let model = StargazerModel.create(
+                    let model = StargazersModel.create(
                         requestingElementCountPerPage: 1,
                         fetchingPageVia: repository
                     )
@@ -197,7 +197,7 @@ class StarredRepositoriesModelTests: XCTestCase {
 
 
 
-    private func waitUntilFetching(_ model: StargazerModel) {
+    private func waitUntilFetching(_ model: StargazersModel) {
         _ = try! model.didChange
             .filter { state in self.isFetching(state) }
             .take(1)
@@ -207,7 +207,7 @@ class StarredRepositoriesModelTests: XCTestCase {
 
 
 
-    private func waitUntilFetched(_ model: StargazerModel) {
+    private func waitUntilFetched(_ model: StargazersModel) {
         _ = try! model.didChange
             .filter { state in self.isFetched(state) }
             .take(1)
@@ -217,7 +217,7 @@ class StarredRepositoriesModelTests: XCTestCase {
 
 
 
-    private func isFetched(_ state: StargazerModelState) -> Bool {
+    private func isFetched(_ state: StargazersModelState) -> Bool {
         switch state {
         case .fetched:
             return true
@@ -228,7 +228,7 @@ class StarredRepositoriesModelTests: XCTestCase {
 
 
 
-    private func isFetching(_ state: StargazerModelState) -> Bool {
+    private func isFetching(_ state: StargazersModelState) -> Bool {
         switch state {
         case .fetching:
             return true
