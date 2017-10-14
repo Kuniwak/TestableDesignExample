@@ -6,22 +6,25 @@ class StargazersRefreshControllerTests: XCTestCase {
     func testTrigger() {
         let scrollView = self.createScrollView()
         let refreshControl = UIRefreshControl()
-
         scrollView.refreshControl = refreshControl
 
-        waitUntilViewDidLoad(on: self, testing: scrollView) { fulfill in
-            let spy = StargazersModelSpy()
+        waitUntilViewDidLoad(on: self, testing: scrollView) {
+            let refreshControlStub = RxCocoaInjectable.InjectableUIRefreshControl
+                .createStub(of: refreshControl)
+
+            let modelSpy = StargazersModelSpy()
+
             let controller = StargazersRefreshController(
-                watching: refreshControl,
-                notifying: spy
+                watching: refreshControlStub.injectable,
+                notifying: modelSpy
             )
 
-            controller.didHandle = {
-                XCTAssertEqual(spy.callArgs, [.clear, .fetchNext])
-                fulfill()
-            }
+            refreshControlStub.refresh()
 
-            EventSimulator.simulateBeginRefreshing(on: refreshControl)
+            XCTAssertEqual(modelSpy.callArgs, [.clear, .fetchNext])
+
+            // NOTE: Hold reference
+            _ = controller
         }
     }
 
@@ -31,4 +34,3 @@ class StargazersRefreshControllerTests: XCTestCase {
         return views.scrollView
     }
 }
-

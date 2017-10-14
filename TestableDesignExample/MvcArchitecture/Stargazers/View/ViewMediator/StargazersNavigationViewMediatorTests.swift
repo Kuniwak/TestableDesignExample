@@ -6,30 +6,26 @@ class StargazersNavigationViewMediatorTests: XCTestCase {
     func testNavigate() {
         let tableView = UITableView()
 
-        waitUntilViewDidLoad(on: self, testing: tableView) { fulfill in
-            let navigatorSpy = NavigatorSpy()
+        waitUntilViewDidLoad(on: self, testing: tableView) {
+            let tableViewStub = RxCocoaInjectable.InjectableUITableView.createStub(of: tableView)
             let dataSourceStub = StargazersTableViewDataSourceStub(firstResult: [
                 GitHubUserStub.create()
             ])
 
+            let navigatorSpy = NavigatorSpy()
+
             let viewMediator = StargazersNavigationViewMediator(
-                watching: tableView,
+                watching: tableViewStub.injectable,
                 findingVisibleRowBy: dataSourceStub,
                 navigatingBy: navigatorSpy
             )
 
-            viewMediator.didHandle = {
-                XCTAssertEqual(navigatorSpy.callArgs.count, 1)
-                fulfill()
-            }
+            tableViewStub.selectItem(IndexPath(row: 0, section: 0))
 
-            EventSimulator.simulateSelect(
-                on: tableView,
-                at: IndexPath(
-                    row: 0,
-                    section: 0
-                )
-            )
+            XCTAssertEqual(navigatorSpy.callArgs.count, 1)
+
+            // NOTE: Hold reference
+            _ = viewMediator
         }
     }
 }

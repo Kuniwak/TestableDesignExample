@@ -6,26 +6,26 @@ class StargazersInfiniteScrollControllerTests: XCTestCase {
     func testTrigger() {
         let scrollView = self.createScrollView()
 
-        waitUntilViewDidLoad(on: self, testing: scrollView) { fulfill in
-            let spy = StargazersModelSpy()
+        waitUntilViewDidLoad(on: self, testing: scrollView) {
+            let scrollViewStub = RxCocoaInjectable.InjectableUIScrollView
+                .createStub(of: scrollView)
+
+            let modelSpy = StargazersModelSpy()
 
             let controller = StargazersInfiniteScrollController(
-                watching: scrollView,
+                watching: scrollViewStub.injectable,
                 determiningBy: InfiniteScrollTriggerStub(
                     firstResult: true
                 ),
-                notifying: spy
+                notifying: modelSpy
             )
 
-            controller.didHandle = {
-                XCTAssertEqual(spy.callArgs.count, 1)
-                fulfill()
-            }
+            scrollViewStub.scroll()
 
-            EventSimulator.simulateScroll(
-                on: scrollView,
-                to: CGPoint(x: 0, y: 200)
-            )
+            XCTAssertEqual(modelSpy.callArgs.count, 1)
+
+            // NOTE: Hold reference
+            _ = controller
         }
     }
 
@@ -33,26 +33,26 @@ class StargazersInfiniteScrollControllerTests: XCTestCase {
     func testNotTrigger() {
         let scrollView = self.createScrollView()
 
-        waitUntilViewDidLoad(on: self, testing: scrollView) { fulfill in
-            let spy = StargazersModelSpy()
+        waitUntilViewDidLoad(on: self, testing: scrollView) {
+            let scrollViewStub = RxCocoaInjectable.InjectableUIScrollView
+                .createStub(of: scrollView)
+
+            let modelSpy = StargazersModelSpy()
 
             let controller = StargazersInfiniteScrollController(
-                watching: scrollView,
+                watching: scrollViewStub.injectable,
                 determiningBy: InfiniteScrollTriggerStub(
                     firstResult: false
                 ),
-                notifying: spy
+                notifying: modelSpy
             )
 
-            controller.didHandle = {
-                XCTAssertEqual(spy.callArgs.count, 0)
-                fulfill()
-            }
+            scrollViewStub.scroll()
 
-            EventSimulator.simulateScroll(
-                on: scrollView,
-                to: CGPoint(x: 0, y: 1)
-            )
+            XCTAssertEqual(modelSpy.callArgs.count, 0)
+
+            // NOTE: Hold reference
+            _ = controller
         }
     }
 

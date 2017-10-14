@@ -35,6 +35,7 @@ func waitUntilViewDidLoad(
     _ viewDidLoad: @escaping () -> Void
 ) {
     waitUntilViewDidLoad(on: test, at: line, testing: view) { fulfill in
+        viewDidLoad()
         fulfill()
     }
 }
