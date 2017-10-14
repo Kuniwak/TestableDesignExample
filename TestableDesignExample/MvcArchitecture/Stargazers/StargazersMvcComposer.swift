@@ -54,7 +54,7 @@ class StargazersMvcComposer: UIViewController {
         )
 
         self.scrollController = StargazersInfiniteScrollController(
-            watching: rootView.tableView,
+            watching: .makeInjectable(of: rootView.tableView),
             determiningBy: InfiniteScrollThresholdTrigger(
                 basedOn: PerformanceParameter.stargazersInfiniteScrollThreshold
             ),
@@ -62,7 +62,7 @@ class StargazersMvcComposer: UIViewController {
         )
 
         self.navigationViewMediator = StargazersNavigationViewMediator(
-            watching: rootView.tableView,
+            watching: .makeInjectable(of: rootView.tableView),
             findingVisibleRowBy: dataSource,
             navigatingBy: self.navigator
         )
@@ -81,7 +81,7 @@ class StargazersMvcComposer: UIViewController {
         )
 
         self.refreshController = StargazersRefreshController(
-            watching: refreshControl,
+            watching: .makeInjectable(of: refreshControl),
             notifying: self.model
         )
     }

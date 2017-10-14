@@ -9,37 +9,36 @@ protocol StargazersInfiniteScrollControllerProtocol {}
 
 
 class StargazersInfiniteScrollController: StargazersInfiniteScrollControllerProtocol {
-    private let scrollView: UIScrollView
+    private let injectable: RxCocoaInjectable.InjectableUIScrollView
     private let model: StargazersModelProtocol
     private let trigger: InfiniteScrollTriggerProtocol
     private let disposeBag = RxSwift.DisposeBag()
-    internal var didHandle = {}
 
 
     init(
-        watching scrollView: UIScrollView,
+        watching injectable: RxCocoaInjectable.InjectableUIScrollView,
         determiningBy trigger: InfiniteScrollTriggerProtocol,
         notifying model: StargazersModelProtocol
     ) {
-        self.scrollView = scrollView
+        self.injectable = injectable
         self.model = model
         self.trigger = trigger
 
-        self.scrollView.rx
+        self.injectable
             .didScroll
             .asDriver()
             .drive(onNext: { [weak self] _ in
                 guard let this = self else { return }
 
+                let scrollView = this.injectable.scrollView
+
                 if this.trigger.shouldLoadY(
-                    contentOffset:  this.scrollView.contentOffset,
-                    contentSize: this.scrollView.contentSize,
-                    scrollViewSize: this.scrollView.bounds.size
+                    contentOffset:  scrollView.contentOffset,
+                    contentSize: scrollView.contentSize,
+                    scrollViewSize: scrollView.bounds.size
                 ) {
                     this.model.fetchNext()
                 }
-
-                this.didHandle()
             })
             .disposed(by: self.disposeBag)
     }

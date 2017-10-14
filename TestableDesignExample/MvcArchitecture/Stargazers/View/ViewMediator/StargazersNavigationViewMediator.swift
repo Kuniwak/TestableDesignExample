@@ -10,30 +10,27 @@ protocol StargazersNavigationViewMediatorProtocol {}
 
 class StargazersNavigationViewMediator: StargazersNavigationViewMediatorProtocol {
     private let navigator: NavigatorProtocol
-    private let tableView: UITableView
+    private let injectable: RxCocoaInjectable.InjectableUITableView
     private let dataSource: StargazersTableViewDataSourceProtocol
     private let disposeBag = RxSwift.DisposeBag()
-    internal var didHandle = {}
 
 
     init(
-        watching tableView: UITableView,
+        watching injectable: RxCocoaInjectable.InjectableUITableView,
         findingVisibleRowBy dataSource: StargazersTableViewDataSourceProtocol,
         navigatingBy navigator: NavigatorProtocol
     ) {
         self.navigator = navigator
-        self.tableView = tableView
+        self.injectable = injectable
         self.dataSource = dataSource
 
-        tableView.rx
+        self.injectable
             .itemSelected
             .asDriver()
             .drive(onNext: { [weak self] indexPath in
                 guard let this = self else { return }
 
                 this.navigate(by: indexPath)
-
-                this.didHandle()
             })
             .disposed(by: self.disposeBag)
     }
@@ -51,6 +48,6 @@ class StargazersNavigationViewMediator: StargazersNavigationViewMediatorProtocol
 
         self.navigator.navigate(to: stargazerViewController, animated: true)
 
-        self.tableView.deselectRow(at: indexPath, animated: true)
+        self.injectable.tableView.deselectRow(at: indexPath, animated: true)
     }
 }

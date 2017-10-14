@@ -9,29 +9,25 @@ protocol StargazersRefreshControllerProtocol {}
 
 
 class StargazersRefreshController: StargazersRefreshControllerProtocol {
-    private let refreshController: UIRefreshControl
+    private let injectable: RxCocoaInjectable.InjectableUIRefreshControl
     private let model: StargazersModelProtocol
     private let disposeBag = RxSwift.DisposeBag()
-    internal var didHandle = {}
 
 
     init(
-        watching refreshController: UIRefreshControl,
+        watching injectable: RxCocoaInjectable.InjectableUIRefreshControl,
         notifying model: StargazersModelProtocol
     ) {
-        self.refreshController = refreshController
+        self.injectable = injectable
         self.model = model
 
-        self.refreshController.rx
-            .controlEvent(.valueChanged)
+        self.injectable.valueChanged
             .asDriver()
             .drive(onNext: { [weak self] _ in
                 guard let this = self else { return }
 
                 this.model.clear()
                 this.model.fetchNext()
-
-                this.didHandle()
             })
             .disposed(by: self.disposeBag)
     }

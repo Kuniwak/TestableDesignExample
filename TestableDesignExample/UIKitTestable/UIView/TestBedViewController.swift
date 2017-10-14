@@ -3,7 +3,7 @@ import XCTest
 
 
 
-func waitUntilVisible(
+func waitUntilViewDidLoad(
     on test: XCTestCase,
     at line: UInt = #line,
     testing view: UIView,
@@ -28,13 +28,14 @@ func waitUntilVisible(
 }
 
 
-func waitUntilVisible(
+func waitUntilViewDidLoad(
     on test: XCTestCase,
     at line: UInt = #line,
     testing view: UIView,
     _ viewDidLoad: @escaping () -> Void
 ) {
-    waitUntilVisible(on: test, at: line, testing: view) { fulfill in
+    waitUntilViewDidLoad(on: test, at: line, testing: view) { fulfill in
+        viewDidLoad()
         fulfill()
     }
 }

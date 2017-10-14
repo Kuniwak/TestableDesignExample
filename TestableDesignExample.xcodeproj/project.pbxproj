@@ -10,8 +10,10 @@
 		2475E0186789F98C20F6C5C2 /* AnyError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E7E905777169DA3AAA02 /* AnyError.swift */; };
 		2475E04BEA86BF4B81C721C1 /* sample.png in Resources */ = {isa = PBXBuildFile; fileRef = 2475E5B4D098FE6945B3F148 /* sample.png */; };
 		2475E0A999969C00C800FF33 /* GitHubStargazerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E17054E55DC60FBB0869 /* GitHubStargazerTests.swift */; };
+		2475E0B4EC410E09BEBBAF61 /* UITableView+RxCocoaInjectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E16FF7D99831539597BC /* UITableView+RxCocoaInjectable.swift */; };
 		2475E0DEFBA1DD69DC76DED1 /* ReverseNavigatorStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E0F037F9F0B746ED4024 /* ReverseNavigatorStub.swift */; };
 		2475E11646D66F92179D6C8A /* StargazersNavigationViewMediatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475ED90991276AE1EA74B1D /* StargazersNavigationViewMediatorTests.swift */; };
+		2475E127646B6F89DC0F21B1 /* UITableView+RxCocoaInjectableStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475ED0FB5ECA6E9D7FD01C1 /* UITableView+RxCocoaInjectableStub.swift */; };
 		2475E1671F707BB3BDBC8D9E /* PagedElementCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475EF0F98ED6955B0639447 /* PagedElementCollection.swift */; };
 		2475E184C491ECB5D4520C4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2475EDAB59CE5A5E99A03E61 /* Assets.xcassets */; };
 		2475E185582999DF1C38C9CB /* StargazersModelSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E66BA53E2A693A2E8904 /* StargazersModelSpy.swift */; };
@@ -34,6 +36,7 @@
 		2475E31C18082F4F72771E3F /* PagingCursor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E7DF6C438F3C12F13C5A /* PagingCursor.swift */; };
 		2475E35401AF1A0DDB75BCFB /* user.json in Resources */ = {isa = PBXBuildFile; fileRef = 2475E6654583784DB2FAC099 /* user.json */; };
 		2475E3569B9E38B438700E21 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475EBE7B5C344258DA2B9B8 /* R.generated.swift */; };
+		2475E39C2B183BC730BB8DA3 /* UIScrollView+RxCocoaInjectableStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475ED40B9A6D8AD947C03EA /* UIScrollView+RxCocoaInjectableStub.swift */; };
 		2475E3B83DF7E60CAB5CE903 /* StargazersRefreshViewMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E5BE5363F823A04BC55E /* StargazersRefreshViewMediator.swift */; };
 		2475E3B8FE79FBCACB7CB294 /* StargazersNavigationViewMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475EB1E4113B6703D2B9BD0 /* StargazersNavigationViewMediator.swift */; };
 		2475E3C5C1ABB0715F942EDC /* EventSimulator+UIScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E3444C1BA27DA348423B /* EventSimulator+UIScrollView.swift */; };
@@ -79,6 +82,8 @@
 		2475E9CD20CEE8F26CCF1F4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E2DD1B608720BA68982B /* AppDelegate.swift */; };
 		2475EA187C6815D148DB8A4D /* ReverseNavigatorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475EC21DA75888B0FDD4C9F /* ReverseNavigatorSpy.swift */; };
 		2475EA392C14FB9B3E28FADA /* UrlOpener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475EFB7BA388A4179BF1988 /* UrlOpener.swift */; };
+		2475EA399561E9BC38097A94 /* UIScrollView+RxCocoaInjectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E74DC76DBE1DEFAB7D81 /* UIScrollView+RxCocoaInjectable.swift */; };
+		2475EA51C0D94CA184BB5C9E /* UIRefreshControl+RxCocoaInjectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E286E22540B5AD05E6D8 /* UIRefreshControl+RxCocoaInjectable.swift */; };
 		2475EA90B85ECDDC24C29E54 /* PageRepositorySpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E04E146A951A851E9ED0 /* PageRepositorySpy.swift */; };
 		2475EAAB190EE33192369B61 /* FontRegistryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475EA1B023ADAF16CC9FF85 /* FontRegistryTests.swift */; };
 		2475EAC4F0BFB86680185B33 /* UrlOpenerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E4BA9C3118702919AA54 /* UrlOpenerSpy.swift */; };
@@ -91,6 +96,7 @@
 		2475EB8D267184D1BAB7F6E5 /* Bag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E7A8AA7111DAA6B2504A /* Bag.swift */; };
 		2475EBB38F6CA1B500D1154E /* StargazersTableVIewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E998F32731441B1E1C21 /* StargazersTableVIewDataSource.swift */; };
 		2475EBC38C427D41A452E006 /* GitHubStargazer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475EA9AAFF3FDC512301D94 /* GitHubStargazer.swift */; };
+		2475EC09C62C27FF9AD4F6E1 /* UIRefreshControl+RxCocoaInjectableStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E1D758E7CFFD1197C342 /* UIRefreshControl+RxCocoaInjectableStub.swift */; };
 		2475EC486E18656C1908C298 /* TransparentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475EC421B1F380C1E774ED4 /* TransparentViewController.swift */; };
 		2475EC6A531495B33EEFC4B1 /* octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2475EFCEEABBB137955934D6 /* octicons.ttf */; };
 		2475ECAEE1AC11CDD8108E02 /* BagStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E5837E0D2DB6DA54386E /* BagStub.swift */; };
@@ -116,6 +122,7 @@
 		2475EEFB4FD740C3CAF18EF6 /* TestBedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E4C1270E87B3799F15BF /* TestBedViewController.swift */; };
 		2475EF0B5F230503CEDCF81C /* GlobalModalPresenterStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E51655162C1CCBD1D9C6 /* GlobalModalPresenterStub.swift */; };
 		2475EF0E319C2B3CFC48C762 /* UserMvcComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E6CC4A27B8058F8CAE7F /* UserMvcComposer.swift */; };
+		2475EF0EC51399027BD4249F /* RxCocoaInjectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E5CAE28F7961D2A6BBB7 /* RxCocoaInjectable.swift */; };
 		2475EF14A3656A845566C1CF /* PagingModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475ECC6983F9154C7E436F1 /* PagingModelTests.swift */; };
 		2475EF1925B3B41352699A78 /* StargazerRepositoryStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475EFD023DE88AE709BCA17 /* StargazerRepositoryStub.swift */; };
 		2475EF62D7DC1E8FC2476A52 /* AsyncTestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E30AD0FB5158B660EB33 /* AsyncTestHelper.swift */; };
@@ -163,11 +170,14 @@
 		2475E10FA91065EBE65659A6 /* SpyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpyViewController.swift; sourceTree = "<group>"; };
 		2475E15139800FB937012314 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2475E168B20E5C501400CF73 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		2475E16FF7D99831539597BC /* UITableView+RxCocoaInjectable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+RxCocoaInjectable.swift"; sourceTree = "<group>"; };
 		2475E17054E55DC60FBB0869 /* GitHubStargazerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubStargazerTests.swift; sourceTree = "<group>"; };
 		2475E19DF4CF52CED997CA2E /* UserViewMediator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewMediator.swift; sourceTree = "<group>"; };
 		2475E1A8A65F0F1387B5B383 /* StargazersRefreshControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StargazersRefreshControllerTests.swift; sourceTree = "<group>"; };
+		2475E1D758E7CFFD1197C342 /* UIRefreshControl+RxCocoaInjectableStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIRefreshControl+RxCocoaInjectableStub.swift"; sourceTree = "<group>"; };
 		2475E26C51592C82392D2307 /* ModalPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalPresenter.swift; sourceTree = "<group>"; };
 		2475E284B65C8BEA6EBA9C65 /* NavigatorSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigatorSpy.swift; sourceTree = "<group>"; };
+		2475E286E22540B5AD05E6D8 /* UIRefreshControl+RxCocoaInjectable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIRefreshControl+RxCocoaInjectable.swift"; sourceTree = "<group>"; };
 		2475E2881D2B2457DC9309CB /* ScrollViewFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewFactory.swift; sourceTree = "<group>"; };
 		2475E29E97208077AA624407 /* RootViewControllerHolderSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewControllerHolderSpy.swift; sourceTree = "<group>"; };
 		2475E2BF26647D84452771BC /* UserScreenRootView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserScreenRootView.xib; sourceTree = "<group>"; };
@@ -193,6 +203,7 @@
 		2475E590C7DB27E24894A7F5 /* JsonReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonReader.swift; sourceTree = "<group>"; };
 		2475E5B4D098FE6945B3F148 /* sample.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sample.png; sourceTree = "<group>"; };
 		2475E5BE5363F823A04BC55E /* StargazersRefreshViewMediator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StargazersRefreshViewMediator.swift; sourceTree = "<group>"; };
+		2475E5CAE28F7961D2A6BBB7 /* RxCocoaInjectable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxCocoaInjectable.swift; sourceTree = "<group>"; };
 		2475E5F0740D44E701CADA0C /* StargazersTableViewMediator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StargazersTableViewMediator.swift; sourceTree = "<group>"; };
 		2475E62484C74FD0B910C6F5 /* StargazerRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StargazerRepository.swift; sourceTree = "<group>"; };
 		2475E6654583784DB2FAC099 /* user.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = user.json; sourceTree = "<group>"; };
@@ -206,6 +217,7 @@
 		2475E6E239D38735542EF44C /* PageRepositoryStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageRepositoryStub.swift; sourceTree = "<group>"; };
 		2475E6EC7AF39C22DAE7123C /* EventSimulator+UITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EventSimulator+UITableView.swift"; sourceTree = "<group>"; };
 		2475E72ADB9B0178F9AEFF83 /* StargazersRefreshController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StargazersRefreshController.swift; sourceTree = "<group>"; };
+		2475E74DC76DBE1DEFAB7D81 /* UIScrollView+RxCocoaInjectable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+RxCocoaInjectable.swift"; sourceTree = "<group>"; };
 		2475E7A8AA7111DAA6B2504A /* Bag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bag.swift; sourceTree = "<group>"; };
 		2475E7B61D5F345A77960ED3 /* StargazersTableViewDataSourceStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StargazersTableViewDataSourceStub.swift; sourceTree = "<group>"; };
 		2475E7DF6C438F3C12F13C5A /* PagingCursor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagingCursor.swift; sourceTree = "<group>"; };
@@ -253,6 +265,8 @@
 		2475ECC6983F9154C7E436F1 /* PagingModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagingModelTests.swift; sourceTree = "<group>"; };
 		2475ECD1683C52FD98B325A2 /* RemoteImageSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteImageSource.swift; sourceTree = "<group>"; };
 		2475ED0DAFBC67961CB850A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		2475ED0FB5ECA6E9D7FD01C1 /* UITableView+RxCocoaInjectableStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+RxCocoaInjectableStub.swift"; sourceTree = "<group>"; };
+		2475ED40B9A6D8AD947C03EA /* UIScrollView+RxCocoaInjectableStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+RxCocoaInjectableStub.swift"; sourceTree = "<group>"; };
 		2475ED57920DD74087264FC7 /* TestableDesignExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestableDesignExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2475ED639ECF55577329F9D9 /* TestableDesignExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestableDesignExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2475ED90991276AE1EA74B1D /* StargazersNavigationViewMediatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StargazersNavigationViewMediatorTests.swift; sourceTree = "<group>"; };
@@ -402,6 +416,7 @@
 				2475EDAB59CE5A5E99A03E61 /* Assets.xcassets */,
 				2475EE7E92AA265C15A8AB02 /* Info.plist */,
 				2475E33610A7BBD163657C40 /* LaunchScreen.storyboard */,
+				2475ECFA645B3817DB7DA32C /* RxCocoaTestable */,
 			);
 			path = TestableDesignExample;
 			sourceTree = "<group>";
@@ -653,6 +668,20 @@
 				2475EFB7BA388A4179BF1988 /* UrlOpener.swift */,
 			);
 			path = UIApplication;
+			sourceTree = "<group>";
+		};
+		2475ECFA645B3817DB7DA32C /* RxCocoaTestable */ = {
+			isa = PBXGroup;
+			children = (
+				2475E286E22540B5AD05E6D8 /* UIRefreshControl+RxCocoaInjectable.swift */,
+				2475E5CAE28F7961D2A6BBB7 /* RxCocoaInjectable.swift */,
+				2475E74DC76DBE1DEFAB7D81 /* UIScrollView+RxCocoaInjectable.swift */,
+				2475E16FF7D99831539597BC /* UITableView+RxCocoaInjectable.swift */,
+				2475E1D758E7CFFD1197C342 /* UIRefreshControl+RxCocoaInjectableStub.swift */,
+				2475ED40B9A6D8AD947C03EA /* UIScrollView+RxCocoaInjectableStub.swift */,
+				2475ED0FB5ECA6E9D7FD01C1 /* UITableView+RxCocoaInjectableStub.swift */,
+			);
+			path = RxCocoaTestable;
 			sourceTree = "<group>";
 		};
 		2475ED210F997869A67B226E /* Resources */ = {
@@ -1072,6 +1101,10 @@
 				2475EA392C14FB9B3E28FADA /* UrlOpener.swift in Sources */,
 				2475E90D24B02A5C2FDA8D9D /* InfiniteScrollTrigger.swift in Sources */,
 				2475E82A2493936CC781D07D /* StargazersModelState.swift in Sources */,
+				2475EA399561E9BC38097A94 /* UIScrollView+RxCocoaInjectable.swift in Sources */,
+				2475EA51C0D94CA184BB5C9E /* UIRefreshControl+RxCocoaInjectable.swift in Sources */,
+				2475EF0EC51399027BD4249F /* RxCocoaInjectable.swift in Sources */,
+				2475E0B4EC410E09BEBBAF61 /* UITableView+RxCocoaInjectable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1134,6 +1167,9 @@
 				2475E11646D66F92179D6C8A /* StargazersNavigationViewMediatorTests.swift in Sources */,
 				2475ED3A098360D0EE41FBCF /* StargazersTableViewDataSourceStub.swift in Sources */,
 				2475EE3247291D27A2E248FD /* GitHubUserStub.swift in Sources */,
+				2475EC09C62C27FF9AD4F6E1 /* UIRefreshControl+RxCocoaInjectableStub.swift in Sources */,
+				2475E39C2B183BC730BB8DA3 /* UIScrollView+RxCocoaInjectableStub.swift in Sources */,
+				2475E127646B6F89DC0F21B1 /* UITableView+RxCocoaInjectableStub.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
