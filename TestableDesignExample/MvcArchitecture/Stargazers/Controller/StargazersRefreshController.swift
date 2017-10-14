@@ -10,13 +10,13 @@ protocol StargazersRefreshControllerProtocol {}
 
 class StargazersRefreshController: StargazersRefreshControllerProtocol {
     private let refreshController: UIRefreshControl
-    private let model: StargazerModelProtocol
+    private let model: StargazersModelProtocol
     private let disposeBag = RxSwift.DisposeBag()
 
 
     init(
         watching refreshController: UIRefreshControl,
-        notifying model: StargazerModelProtocol
+        notifying model: StargazersModelProtocol
     ) {
         self.refreshController = refreshController
         self.model = model

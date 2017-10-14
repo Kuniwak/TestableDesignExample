@@ -10,16 +10,20 @@ protocol StargazersInfiniteScrollControllerProtocol {}
 
 class StargazersInfiniteScrollController: StargazersInfiniteScrollControllerProtocol {
     private let scrollView: UIScrollView
-    private let model: StargazerModelProtocol
+    private let model: StargazersModelProtocol
+    private let trigger: InfiniteScrollTriggerProtocol
     private let disposeBag = RxSwift.DisposeBag()
+    internal var didHandle = {}
 
 
     init(
         watching scrollView: UIScrollView,
-        notifying model: StargazerModelProtocol
+        determiningBy trigger: InfiniteScrollTriggerProtocol,
+        notifying model: StargazersModelProtocol
     ) {
         self.scrollView = scrollView
         self.model = model
+        self.trigger = trigger
 
         self.scrollView.rx
             .didScroll
@@ -27,17 +31,15 @@ class StargazersInfiniteScrollController: StargazersInfiniteScrollControllerProt
             .drive(onNext: { [weak self] _ in
                 guard let this = self else { return }
 
-                let offsetY = this.scrollView.contentOffset.y
-                let contentHeight = this.scrollView.contentSize.height
-                let visibleHeight = this.scrollView.bounds.height
-
-                let isReachingThreshold = offsetY >= contentHeight
-                    - visibleHeight
-                    - PerformanceParameter.stargazersInfiniteScrollThreshold
-
-                if isReachingThreshold {
+                if this.trigger.shouldLoadY(
+                    contentOffset:  this.scrollView.contentOffset,
+                    contentSize: this.scrollView.contentSize,
+                    scrollViewSize: this.scrollView.bounds.size
+                ) {
                     this.model.fetchNext()
                 }
+
+                this.didHandle()
             })
             .disposed(by: self.disposeBag)
     }

@@ -12,14 +12,14 @@ protocol StargazersTableViewDataSourceProtocol: class {
 class StargazersTableViewDataSource: NSObject {
     fileprivate let token: StargazerCell.RegistrationToken
     fileprivate let tableView: UITableView
-    fileprivate let model: StargazerModelProtocol
+    fileprivate let model: StargazersModelProtocol
 
     fileprivate var stargazers = [GitHubUser]()
     fileprivate let disposeBag = RxSwift.DisposeBag()
 
 
     init(
-        observing model: StargazerModelProtocol,
+        observing model: StargazersModelProtocol,
         handling tableView: UITableView
     ) {
         self.model = model

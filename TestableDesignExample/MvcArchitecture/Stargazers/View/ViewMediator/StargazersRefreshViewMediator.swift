@@ -13,14 +13,14 @@ protocol StargazersRefreshViewMediatorDelegate: class {
 
 class StargazersRefreshViewMediator: StargazersRefreshViewMediatorProtocol {
     private let disposeBag = RxSwift.DisposeBag()
-    private let model: StargazerModelProtocol
+    private let model: StargazersModelProtocol
     private let refreshControl: UIRefreshControl
 
     weak var delegate: StargazersRefreshViewMediatorDelegate?
 
 
     init(
-        observing model: StargazerModelProtocol,
+        observing model: StargazersModelProtocol,
         handling refreshControl: UIRefreshControl
     ) {
         self.model = model

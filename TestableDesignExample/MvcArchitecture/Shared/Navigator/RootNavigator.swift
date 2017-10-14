@@ -33,7 +33,7 @@ class RootNavigator: RootNavigatorProtocol {
         let api = GitHubApiClient(basedOn: GitHubApiEndpointBaseUrl.gitHubCom)
         let bag = Bag(api: api)
 
-        let stargazerModel = StargazerModel.create(
+        let stargazerModel = StargazersModel.create(
             requestingElementCountPerPage: PerformanceParameter.numberOfStargazersPerPage,
             fetchingPageVia: StargazerRepository(
                 for: gitHubRepository,
