@@ -6,7 +6,7 @@ class StargazersNavigationViewMediatorTests: XCTestCase {
     func testNavigate() {
         let tableView = UITableView()
 
-        waitUntilVisible(on: self, testing: tableView) { fulfill in
+        waitUntilViewDidLoad(on: self, testing: tableView) { fulfill in
             let navigatorSpy = NavigatorSpy()
             let dataSourceStub = StargazersTableViewDataSourceStub(firstResult: [
                 GitHubUserStub.create()

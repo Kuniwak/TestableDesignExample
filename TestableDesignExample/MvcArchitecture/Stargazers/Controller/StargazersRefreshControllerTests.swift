@@ -9,7 +9,7 @@ class StargazersRefreshControllerTests: XCTestCase {
 
         scrollView.refreshControl = refreshControl
 
-        waitUntilVisible(on: self, testing: scrollView) { fulfill in
+        waitUntilViewDidLoad(on: self, testing: scrollView) { fulfill in
             let spy = StargazersModelSpy()
             let controller = StargazersRefreshController(
                 watching: refreshControl,

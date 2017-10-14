@@ -6,7 +6,7 @@ class StargazersInfiniteScrollControllerTests: XCTestCase {
     func testTrigger() {
         let scrollView = self.createScrollView()
 
-        waitUntilVisible(on: self, testing: scrollView) { fulfill in
+        waitUntilViewDidLoad(on: self, testing: scrollView) { fulfill in
             let spy = StargazersModelSpy()
 
             let controller = StargazersInfiniteScrollController(
@@ -33,7 +33,7 @@ class StargazersInfiniteScrollControllerTests: XCTestCase {
     func testNotTrigger() {
         let scrollView = self.createScrollView()
 
-        waitUntilVisible(on: self, testing: scrollView) { fulfill in
+        waitUntilViewDidLoad(on: self, testing: scrollView) { fulfill in
             let spy = StargazersModelSpy()
 
             let controller = StargazersInfiniteScrollController(
