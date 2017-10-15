@@ -4,7 +4,7 @@ import PromiseKit
 
 
 extension Bag {
-    static func create(
+    static func createStub(
         api: GitHubApiClientProtocol = GitHubApiClientStub.anyPending
     ) -> Bag {
         return Bag(api: api)

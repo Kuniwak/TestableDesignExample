@@ -34,7 +34,7 @@ class StarredRepositoriesModelTests: XCTestCase {
 
             #line: TestCase(
                 scenario: {
-                    let repository = StargazerRepositoryStub(
+                    let repository = StargazersRepositoryStub(
                         firstResult: Promise(value: [
                             GitHubUser(
                                 id: GitHubUser.Id(text: "1"),
@@ -89,7 +89,7 @@ class StarredRepositoriesModelTests: XCTestCase {
             #line: {
                 return TestCase(
                     scenario: {
-                        let repository = StargazerRepositoryStub(
+                        let repository = StargazersRepositoryStub(
                             firstResult: Promise(error: AnyError(debugInfo: "API call was failed"))
                         )
 
@@ -112,7 +112,7 @@ class StarredRepositoriesModelTests: XCTestCase {
 
             #line: TestCase(
                 scenario: {
-                    let repository = StargazerRepositoryStub(
+                    let repository = StargazersRepositoryStub(
                         firstResult: Promise(error: AnyError(debugInfo: "API call was failed"))
                     )
 
@@ -139,7 +139,7 @@ class StarredRepositoriesModelTests: XCTestCase {
 
             #line: TestCase(
                 scenario: {
-                    let repository = StargazerRepositoryStub(
+                    let repository = StargazersRepositoryStub(
                         firstResult: Promise(value: [
                             GitHubUser(
                                 id: GitHubUser.Id(text: "1234"),
@@ -238,8 +238,8 @@ class StarredRepositoriesModelTests: XCTestCase {
     }
 
 
-    private func createPendingRepository() -> StargazerRepositoryStub {
-        return StargazerRepositoryStub(
+    private func createPendingRepository() -> StargazersRepositoryStub {
+        return StargazersRepositoryStub(
             firstResult: Promise<[GitHubUser]>.pending().promise
         )
     }

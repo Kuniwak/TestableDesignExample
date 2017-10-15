@@ -15,7 +15,7 @@ class PagingModelTests: XCTestCase {
         let expected = PagingModelState.fetched(elements: [Element](), error: nil)
 
         XCTAssert(
-            Diffable.from(any: actual) =~ Diffable.from(any: expected),
+            expected =~ actual,
             diff(between: expected, and: actual)
         )
     }
@@ -36,7 +36,7 @@ class PagingModelTests: XCTestCase {
         ], error: nil)
 
         XCTAssert(
-            Diffable.from(any: actual) =~ Diffable.from(any: expected),
+            expected =~ actual,
             diff(between: expected, and: actual)
         )
     }
@@ -57,7 +57,7 @@ class PagingModelTests: XCTestCase {
         ], error: nil)
 
         XCTAssert(
-            Diffable.from(any: actual) =~ Diffable.from(any: expected),
+            expected =~ actual,
             diff(between: expected, and: actual)
         )
     }
@@ -82,7 +82,7 @@ class PagingModelTests: XCTestCase {
         ], error: nil)
 
         XCTAssert(
-            Diffable.from(any: actual) =~ Diffable.from(any: expected),
+            expected =~ actual,
             diff(between: expected, and: actual)
         )
     }
@@ -106,7 +106,7 @@ class PagingModelTests: XCTestCase {
         ], error: nil)
 
         XCTAssert(
-            Diffable.from(any: actual) =~ Diffable.from(any: expected),
+            expected =~ actual,
             diff(between: expected, and: actual)
         )
     }
@@ -134,7 +134,7 @@ class PagingModelTests: XCTestCase {
         ], error: nil)
 
         XCTAssert(
-            Diffable.from(any: actual) =~ Diffable.from(any: expected),
+            expected =~ actual,
             diff(between: expected, and: actual)
         )
     }
@@ -158,7 +158,7 @@ class PagingModelTests: XCTestCase {
         ], error: nil)
 
         XCTAssert(
-            Diffable.from(any: actual) =~ Diffable.from(any: expected),
+            expected =~ actual,
             diff(between: expected, and: actual)
         )
     }

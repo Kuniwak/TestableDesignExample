@@ -14,7 +14,8 @@ class RemoteImageSource {
     }
 
     var currentState: State {
-        return self.stateVariable.value
+        get { return self.stateVariable.value }
+        set { self.stateVariable.value = newValue }
     }
 
 
@@ -27,17 +28,17 @@ class RemoteImageSource {
         let task = URLSession.shared.dataTask(with: url, completionHandler: { data, response, error in
             DispatchQueue.main.async {
                 guard error == nil else {
-                    self.transitState(to: .failure(reason: .networkError(debugInfo: "\(error.debugDescription)")))
+                    self.currentState = .failure(reason: .networkError(debugInfo: "\(error.debugDescription)"))
                     return
                 }
 
                 guard let data = data else {
-                    self.transitState(to: .failure(reason: .noData))
+                    self.currentState = .failure(reason: .noData)
                     return
                 }
 
                 guard let image = UIImage(data: data) else {
-                    self.transitState(to: .failure(reason: .brokenImage))
+                    self.currentState = .failure(reason: .brokenImage)
                     return
                 }
 
@@ -45,11 +46,6 @@ class RemoteImageSource {
             }
         })
         task.resume()
-    }
-
-
-    private func transitState(to nextState: State) {
-        self.stateVariable.value = nextState
     }
 
 
