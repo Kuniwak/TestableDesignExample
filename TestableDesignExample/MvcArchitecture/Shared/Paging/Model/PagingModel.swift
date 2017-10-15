@@ -78,25 +78,19 @@ enum PagingModelState<Element> {
 class PagingModel<T: Hashable>: PagingModelProtocol {
     typealias Element = T
 
-
-    var didChange: Observable<PagingModelState<Element>> {
-        return self.stateVariable.asObservable()
-    }
-
-
-    private let stateVariable: RxSwift.Variable<PagingModelState<Element>>
+    private let stateMachine: StateMachine<PagingModelState<Element>>
     private let pageRepository: AnyPageRepository<Element>
     private let pageEndStrategy: AnyPageEndDetectionStrategy<Element>
     private let cursor: PagingCursorProtocol
 
 
-    fileprivate(set) var currentState: PagingModelState<Element> {
-        get {
-            return self.stateVariable.value
-        }
-        set {
-            self.stateVariable.value = newValue
-        }
+    var didChange: Observable<PagingModelState<Element>> {
+        return self.stateMachine.didChange
+    }
+
+
+    var currentState: PagingModelState<Element> {
+        return self.stateMachine.currentState
     }
 
 
@@ -111,7 +105,7 @@ class PagingModel<T: Hashable>: PagingModelProtocol {
         PageRepository.Element == Element,
         PageEndStrategy.Element == Element
     {
-        self.stateVariable = RxSwift.Variable<PagingModelState<Element>>(.fetched(
+        self.stateMachine = StateMachine<PagingModelState<Element>>(startingWith: .fetched(
             elements: [],
             error: nil
         ))
@@ -139,7 +133,10 @@ class PagingModel<T: Hashable>: PagingModelProtocol {
 
         case .fetched:
             self.cursor.reset()
-            self.currentState = .fetched(elements: [], error: nil)
+            self.stateMachine.transit(to: .fetched(
+                elements: [],
+                error: nil
+            ))
         }
     }
 
@@ -150,7 +147,10 @@ class PagingModel<T: Hashable>: PagingModelProtocol {
             return
 
         case let .fetched(elements: storedCollection, error: _):
-            self.currentState = .fetched(elements: storedCollection, error: nil)
+            self.stateMachine.transit(to: .fetched(
+                elements: storedCollection,
+                error: nil
+            ))
         }
     }
 
@@ -161,7 +161,9 @@ class PagingModel<T: Hashable>: PagingModelProtocol {
             return
 
         case let .fetched(elements: storedElements, error: _):
-            self.currentState = .fetching(beforeElements: storedElements)
+            self.stateMachine.transit(to: .fetching(
+                beforeElements: storedElements
+            ))
 
             let pageNumber = self.cursor.getPageNumber(of: direction)
 
@@ -180,19 +182,19 @@ class PagingModel<T: Hashable>: PagingModelProtocol {
                         isPageEnd: isPageEnd
                     )
 
-                    self.currentState = .fetched(
+                    self.stateMachine.transit(to: .fetched(
                         elements: PagedElementCollection.append(
                             storedElements,
                             and: fetchedElements
                         ),
                         error: nil
-                    )
+                    ))
                 }
                 .catch { error in
-                    self.currentState = .fetched(
+                    self.stateMachine.transit(to: .fetched(
                         elements: storedElements,
                         error: .unspecified(debugInfo: "\(error)")
-                    )
+                    ))
                 }
         }
     }

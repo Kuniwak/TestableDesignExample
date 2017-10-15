@@ -35,7 +35,7 @@ class RootNavigator: RootNavigatorProtocol {
 
         let stargazerModel = StargazersModel.create(
             requestingElementCountPerPage: PerformanceParameter.numberOfStargazersPerPage,
-            fetchingPageVia: StargazerRepository(
+            fetchingPageVia: StargazersRepository(
                 for: gitHubRepository,
                 perPage: PerformanceParameter.numberOfStargazersPerPage,
                 fetchingVia: api

@@ -20,7 +20,7 @@ class StargazersMvcComposerTests: XCTestCase {
                 )
             ),
             navigatingBy: testNavigator,
-            holding: Bag.create()
+            holding: Bag.createStub()
         )
 
         testNavigator.navigate(to: viewController, animated: false)

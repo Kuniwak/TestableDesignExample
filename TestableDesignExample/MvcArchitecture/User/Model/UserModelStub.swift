@@ -4,26 +4,29 @@ import RxSwift
 
 
 class UserModelStub: UserModelProtocol {
-    private let stateVariable: RxSwift.Variable<UserModelState>
+    private let stateMachine: StateMachine<UserModelState>
 
 
     init(withInitialState initialState: UserModelState) {
-        self.stateVariable = RxSwift.Variable<UserModelState>(initialState)
+        self.stateMachine = StateMachine<UserModelState>(startingWith: initialState)
     }
 
 
     var didChange: Observable<UserModelState> {
-        return self.stateVariable.asObservable()
+        return self.stateMachine.didChange
     }
 
 
     var currentState: UserModelState {
         get {
-            return self.stateVariable.value
+            return self.stateMachine.currentState
         }
 
         set {
-            self.stateVariable.value = newValue
+            self.stateMachine.transit(to: newValue)
         }
     }
+
+
+    func fetch() {}
 }

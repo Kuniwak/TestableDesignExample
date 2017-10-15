@@ -3,7 +3,7 @@ import PromiseKit
 
 
 
-class StargazerRepositoryStub: PageRepositoryProtocol {
+class StargazersRepositoryStub: PageRepositoryProtocol {
     typealias Element = GitHubUser
     var nextResult: Promise<[GitHubUser]>
 

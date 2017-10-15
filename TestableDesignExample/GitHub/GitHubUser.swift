@@ -1,5 +1,4 @@
 import Foundation
-import Unbox
 
 
 
@@ -42,16 +41,5 @@ extension GitHubUser.Id: Hashable {
 
     public static func ==(lhs: GitHubUser.Id, rhs: GitHubUser.Id) -> Bool {
         return lhs.hashValue == rhs.hashValue
-    }
-
-}
-
-
-
-extension GitHubUser: Unboxable {
-    init(unboxer: Unboxer) throws {
-        self.id = try GitHubUser.Id(text: unboxer.unbox(key: "id"))
-        self.name = try GitHubUser.Name(text: unboxer.unbox(key: "login"))
-        self.avatar = try unboxer.unbox(key: "avatar_url")
     }
 }

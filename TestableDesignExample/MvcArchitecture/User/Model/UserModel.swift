@@ -6,6 +6,8 @@ import Result
 protocol UserModelProtocol: class {
     var didChange: RxSwift.Observable<UserModelState> { get }
     var currentState: UserModelState { get }
+
+    func fetch()
 }
 
 
@@ -23,27 +25,51 @@ enum UserModelState {
 
 
 class UserModel: UserModelProtocol {
-    private let stateVariable: RxSwift.Variable<UserModelState>
+    private let id: GitHubUser.Id
+    private let stateMachine: StateMachine<UserModelState>
+    private let repository: UserRepositoryProtocol
 
 
     var didChange: RxSwift.Observable<UserModelState> {
-        return self.stateVariable.asObservable()
+        return self.stateMachine.didChange
     }
 
 
     var currentState: UserModelState {
-        get {
-            return self.stateVariable.value
-        }
-
-        set {
-            self.stateVariable.value = newValue
-        }
+        return self.stateMachine.currentState
     }
 
 
-    init(withInitialState initialState: UserModelState) {
-        self.stateVariable = RxSwift.Variable<UserModelState>(initialState)
+    init(
+        for id: GitHubUser.Id,
+        withInitialState initialState: UserModelState,
+        fetchingVia repository: UserRepositoryProtocol
+    ) {
+        self.id = id
+        self.stateMachine = StateMachine<UserModelState>(startingWith: initialState)
+        self.repository = repository
+    }
+
+
+    func fetch() {
+        switch self.currentState {
+        case .fetching:
+            return
+
+        case .fetched:
+            self.stateMachine.transit(to: .fetching)
+
+            self.repository.get(by: self.id)
+                .then { user in
+                    self.stateMachine.transit(to: .fetched(
+                        result: .success(user)
+                    ))
+                }
+                .catch { error in
+                    self.stateMachine.transit(to: .fetched(
+                        result: .failure(.unspecified(debugInfo: "\(error)"))
+                    ))
+                }
+        }
     }
 }
-

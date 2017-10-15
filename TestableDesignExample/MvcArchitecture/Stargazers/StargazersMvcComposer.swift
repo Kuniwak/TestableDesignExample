@@ -64,7 +64,8 @@ class StargazersMvcComposer: UIViewController {
         self.navigationViewMediator = StargazersNavigationViewMediator(
             watching: .makeInjectable(of: rootView.tableView),
             findingVisibleRowBy: dataSource,
-            navigatingBy: self.navigator
+            navigatingBy: self.navigator,
+            holding: self.bag
         )
 
         self.errorViewMediator = StargazersErrorViewMediator(

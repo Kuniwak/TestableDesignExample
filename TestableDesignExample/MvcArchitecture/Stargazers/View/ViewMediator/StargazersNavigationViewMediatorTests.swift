@@ -17,7 +17,8 @@ class StargazersNavigationViewMediatorTests: XCTestCase {
             let viewMediator = StargazersNavigationViewMediator(
                 watching: tableViewStub.injectable,
                 findingVisibleRowBy: dataSourceStub,
-                navigatingBy: navigatorSpy
+                navigatingBy: navigatorSpy,
+                holding: Bag.createStub()
             )
 
             tableViewStub.selectItem(IndexPath(row: 0, section: 0))

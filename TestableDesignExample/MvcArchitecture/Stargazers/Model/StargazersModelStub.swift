@@ -4,27 +4,27 @@ import RxSwift
 
 
 class StargazersModelStub: StargazersModelProtocol {
-    private let stateVariable: RxSwift.Variable<StargazersModelState>
+    private let stateMachine: StateMachine<StargazersModelState>
 
 
     var didChange: Observable<StargazersModelState> {
-        return self.stateVariable.asObservable()
+        return self.stateMachine.didChange
     }
 
 
     var currentState: StargazersModelState {
         get {
-            return self.stateVariable.value
+            return self.stateMachine.currentState
         }
 
         set {
-            self.stateVariable.value = newValue
+            self.stateMachine.transit(to: newValue)
         }
     }
 
 
     init(withInitialState initialState: StargazersModelState = .fetched(stargazers: [], error: nil)) {
-        self.stateVariable = RxSwift.Variable<StargazersModelState>(initialState)
+        self.stateMachine = StateMachine<StargazersModelState>(startingWith: initialState)
     }
 
 
