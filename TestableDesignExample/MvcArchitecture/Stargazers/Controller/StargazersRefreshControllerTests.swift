@@ -1,36 +1,25 @@
 import XCTest
+import RxCocoa
 @testable import TestableDesignExample
 
 
 class StargazersRefreshControllerTests: XCTestCase {
     func testTrigger() {
-        let scrollView = self.createScrollView()
-        let refreshControl = UIRefreshControl()
-        scrollView.refreshControl = refreshControl
+        let relay = RxCocoa.PublishRelay<Void>()
 
-        waitUntilViewDidLoad(on: self, testing: scrollView) {
-            let refreshControlStub = RxCocoaInjectable.InjectableUIRefreshControl
-                .createStub(of: refreshControl)
+        let modelSpy = StargazersModelSpy()
 
-            let modelSpy = StargazersModelSpy()
+        let controller = StargazersRefreshController(
+            watching: relay.asSignal(),
+            notifying: modelSpy
+        )
 
-            let controller = StargazersRefreshController(
-                watching: refreshControlStub.injectable,
-                notifying: modelSpy
-            )
+        // Simulate refresh
+        relay.accept(())
 
-            refreshControlStub.refresh()
+        XCTAssertEqual(modelSpy.callArgs, [.clear, .fetchNext])
 
-            XCTAssertEqual(modelSpy.callArgs, [.clear, .fetchNext])
-
-            // NOTE: Hold reference
-            _ = controller
-        }
-    }
-
-
-    private func createScrollView() -> UIScrollView {
-        let views = UIScrollView.create()
-        return views.scrollView
+        // NOTE: Hold reference
+        _ = controller
     }
 }

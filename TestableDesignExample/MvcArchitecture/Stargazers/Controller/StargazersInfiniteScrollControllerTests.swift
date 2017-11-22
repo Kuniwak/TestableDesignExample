@@ -1,26 +1,27 @@
 import XCTest
+import RxCocoa
 @testable import TestableDesignExample
 
 
 class StargazersInfiniteScrollControllerTests: XCTestCase {
     func testTrigger() {
-        let scrollView = self.createScrollView()
+        let scrollView = UIScrollView()
 
         waitUntilViewDidLoad(on: self, testing: scrollView) {
-            let scrollViewStub = RxCocoaInjectable.InjectableUIScrollView
-                .createStub(of: scrollView)
-
+            let relay = RxCocoa.PublishRelay<Void>()
             let modelSpy = StargazersModelSpy()
 
             let controller = StargazersInfiniteScrollController(
-                watching: scrollViewStub.injectable,
+                watching: relay.asSignal(),
+                handling: scrollView,
                 determiningBy: InfiniteScrollTriggerStub(
                     firstResult: true
                 ),
                 notifying: modelSpy
             )
 
-            scrollViewStub.scroll()
+            // Simulate scrolling
+            relay.accept(())
 
             XCTAssertEqual(modelSpy.callArgs.count, 1)
 
@@ -31,44 +32,28 @@ class StargazersInfiniteScrollControllerTests: XCTestCase {
 
 
     func testNotTrigger() {
-        let scrollView = self.createScrollView()
+        let scrollView = UIScrollView()
 
         waitUntilViewDidLoad(on: self, testing: scrollView) {
-            let scrollViewStub = RxCocoaInjectable.InjectableUIScrollView
-                .createStub(of: scrollView)
-
+            let relay = PublishRelay<Void>()
             let modelSpy = StargazersModelSpy()
 
             let controller = StargazersInfiniteScrollController(
-                watching: scrollViewStub.injectable,
+                watching: relay.asSignal(),
+                handling: scrollView,
                 determiningBy: InfiniteScrollTriggerStub(
                     firstResult: false
                 ),
                 notifying: modelSpy
             )
 
-            scrollViewStub.scroll()
+            // Simulate scrolling
+            relay.accept(())
 
             XCTAssertEqual(modelSpy.callArgs.count, 0)
 
             // NOTE: Hold reference
             _ = controller
         }
-    }
-
-
-    private func createScrollView() -> UIScrollView {
-        let screenWidth: CGFloat = 100
-        let screenHeight = PerformanceParameter.stargazersInfiniteScrollThreshold
-
-        let views = UIScrollView.create(
-            sizeOf: (
-                scrollView: CGSize(width: screenWidth, height: screenHeight),
-                contentView: CGSize(width: screenWidth, height: screenHeight * 2)
-            ),
-            scrolledAt: .zero
-        )
-
-        return views.scrollView
     }
 }

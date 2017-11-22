@@ -1,4 +1,6 @@
 import UIKit
+import RxSwift
+import RxCocoa
 
 
 
@@ -54,7 +56,8 @@ class StargazersMvcComposer: UIViewController {
         )
 
         self.scrollController = StargazersInfiniteScrollController(
-            watching: .makeInjectable(of: rootView.tableView),
+            watching: rootView.tableView.rx.didScroll.asSignal(),
+            handling: rootView.tableView,
             determiningBy: InfiniteScrollThresholdTrigger(
                 basedOn: PerformanceParameter.stargazersInfiniteScrollThreshold
             ),
@@ -62,7 +65,8 @@ class StargazersMvcComposer: UIViewController {
         )
 
         self.navigationViewBinding = StargazersNavigationViewBinding(
-            watching: .makeInjectable(of: rootView.tableView),
+            watching: rootView.tableView.rx.itemSelected.asSignal(),
+            handling: rootView.tableView,
             findingVisibleRowBy: dataSource,
             navigatingBy: self.navigator,
             holding: self.bag
@@ -82,7 +86,7 @@ class StargazersMvcComposer: UIViewController {
         )
 
         self.refreshController = StargazersRefreshController(
-            watching: .makeInjectable(of: refreshControl),
+            watching: refreshControl.rx.controlEvent(.valueChanged).asSignal(),
             notifying: self.model
         )
     }
