@@ -1,5 +1,6 @@
 import UIKit
 import RxSwift
+import RxCocoa
 
 
 
@@ -29,7 +30,7 @@ class StargazersTableViewDataSource: NSObject {
         super.init()
 
         model.didChange
-            .subscribe(onNext: { [weak self] state in
+            .drive(onNext: { [weak self] state in
                 guard let this = self else { return }
 
                 switch state {

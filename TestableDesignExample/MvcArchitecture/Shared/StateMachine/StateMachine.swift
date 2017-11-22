@@ -1,27 +1,28 @@
 import RxSwift
+import RxCocoa
 
 
 
 class StateMachine<State> {
-    private let variable: RxSwift.Variable<State>
+    private let relay: RxCocoa.BehaviorRelay<State>
 
 
     init(startingWith initialState: State) {
-        self.variable = RxSwift.Variable<State>(initialState)
+        self.relay = RxCocoa.BehaviorRelay<State>(value: initialState)
     }
 
 
     var currentState: State {
-        return self.variable.value
+        return self.relay.value
     }
 
 
-    var didChange: RxSwift.Observable<State> {
-        return self.variable.asObservable()
+    var didChange: RxCocoa.Driver<State> {
+        return self.relay.asDriver()
     }
 
 
     func transit(to nextState: State) {
-        self.variable.value = nextState
+        self.relay.accept(nextState)
     }
 }

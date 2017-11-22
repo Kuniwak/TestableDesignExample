@@ -200,6 +200,7 @@ class StarredRepositoriesModelTests: XCTestCase {
     private func waitUntilFetching(_ model: StargazersModel) {
         _ = try! model.didChange
             .filter { state in self.isFetching(state) }
+            .asObservable()
             .take(1)
             .toBlocking()
             .last()
@@ -209,6 +210,7 @@ class StarredRepositoriesModelTests: XCTestCase {
 
     private func waitUntilFetched(_ model: StargazersModel) {
         _ = try! model.didChange
+            .asObservable()
             .filter { state in self.isFetched(state) }
             .take(1)
             .toBlocking()

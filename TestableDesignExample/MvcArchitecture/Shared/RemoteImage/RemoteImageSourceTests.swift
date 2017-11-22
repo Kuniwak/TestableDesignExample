@@ -67,6 +67,7 @@ class RemoteImageSourceTests: XCTestCase {
 
     private func waitWhilePending(_ source: RemoteImageSource) {
         _ = try! source.didChange
+            .asObservable()
             .filter { state in
                 switch state {
                 case .pending:

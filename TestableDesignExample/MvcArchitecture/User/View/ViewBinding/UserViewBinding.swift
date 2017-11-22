@@ -31,7 +31,7 @@ class UserViewBinding: UserViewBindingProtocol {
         self.imageSource = RemoteImageSource(willUpdate: views.avatarImageView)
 
         self.model.didChange
-            .subscribe(onNext: { [weak self] state in
+            .drive(onNext: { [weak self] state in
                 guard let this = self else { return }
 
                 switch state {
@@ -58,8 +58,7 @@ class UserViewBinding: UserViewBindingProtocol {
 
         self.imageSource
             .didChange
-            .observeOn(RxSwift.MainScheduler.instance)
-            .subscribe(onNext: { [weak self] state in
+            .drive(onNext: { [weak self] state in
                 guard let views = self?.views else { return }
 
                 switch state {

@@ -1,5 +1,6 @@
 import UIKit
 import RxSwift
+import RxCocoa
 
 
 protocol StargazersErrorViewBindingProtocol {}
@@ -20,7 +21,7 @@ class StargazersErrorViewBinding: StargazersErrorViewBindingProtocol {
 
         self.model
             .didChange
-            .subscribe(onNext: { [weak self] state in
+            .drive(onNext: { [weak self] state in
                 guard let this = self else { return }
 
                 switch state {

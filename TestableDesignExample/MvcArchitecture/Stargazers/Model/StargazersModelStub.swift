@@ -1,4 +1,5 @@
 import RxSwift
+import RxCocoa
 @testable import TestableDesignExample
 
 
@@ -7,7 +8,7 @@ class StargazersModelStub: StargazersModelProtocol {
     private let stateMachine: StateMachine<StargazersModelState>
 
 
-    var didChange: Observable<StargazersModelState> {
+    var didChange: RxCocoa.Driver<StargazersModelState> {
         return self.stateMachine.didChange
     }
 
