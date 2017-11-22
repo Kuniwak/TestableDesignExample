@@ -26,8 +26,8 @@ class StargazersInfiniteScrollController: StargazersInfiniteScrollControllerProt
 
         self.injectable
             .didScroll
-            .asDriver()
-            .drive(onNext: { [weak self] _ in
+            .asSignal()
+            .emit(onNext: { [weak self] _ in
                 guard let this = self else { return }
 
                 let scrollView = this.injectable.scrollView

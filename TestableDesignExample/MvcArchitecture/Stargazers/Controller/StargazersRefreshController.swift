@@ -22,8 +22,8 @@ class StargazersRefreshController: StargazersRefreshControllerProtocol {
         self.model = model
 
         self.injectable.valueChanged
-            .asDriver()
-            .drive(onNext: { [weak self] _ in
+            .asSignal()
+            .emit(onNext: { [weak self] _ in
                 guard let this = self else { return }
 
                 this.model.clear()
