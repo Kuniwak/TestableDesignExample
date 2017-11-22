@@ -1,4 +1,5 @@
 import XCTest
+import RxCocoa
 @testable import TestableDesignExample
 
 
@@ -7,7 +8,7 @@ class StargazersNavigationViewBindingTests: XCTestCase {
         let tableView = UITableView()
 
         waitUntilViewDidLoad(on: self, testing: tableView) {
-            let tableViewStub = RxCocoaInjectable.InjectableUITableView.createStub(of: tableView)
+            let relay = RxCocoa.PublishRelay<IndexPath>()
             let dataSourceStub = StargazersTableViewDataSourceStub(firstResult: [
                 GitHubUserStub.create()
             ])
@@ -15,13 +16,15 @@ class StargazersNavigationViewBindingTests: XCTestCase {
             let navigatorSpy = NavigatorSpy()
 
             let viewBinding = StargazersNavigationViewBinding(
-                watching: tableViewStub.injectable,
+                watching: relay.asSignal(),
+                handling: tableView,
                 findingVisibleRowBy: dataSourceStub,
                 navigatingBy: navigatorSpy,
                 holding: Bag.createStub()
             )
-
-            tableViewStub.selectItem(IndexPath(row: 0, section: 0))
+            
+            // Simulate selecting
+            relay.accept(IndexPath(row: 0, section: 0))
 
             XCTAssertEqual(navigatorSpy.callArgs.count, 1)
 

@@ -9,28 +9,30 @@ protocol StargazersNavigationViewBindingProtocol {}
 
 
 class StargazersNavigationViewBinding: StargazersNavigationViewBindingProtocol {
-    private let navigator: NavigatorProtocol
-    private let injectable: RxCocoaInjectable.InjectableUITableView
+    private let tableViewItemSelected: RxCocoa.Signal<IndexPath>
+    private let tableView: UITableView
     private let dataSource: StargazersTableViewDataSourceProtocol
+    private let navigator: NavigatorProtocol
     private let bag: Bag
     private let disposeBag = RxSwift.DisposeBag()
 
 
     init(
-        watching injectable: RxCocoaInjectable.InjectableUITableView,
+        watching tableViewItemSelected: RxCocoa.Signal<IndexPath>,
+        handling tableView: UITableView,
         findingVisibleRowBy dataSource: StargazersTableViewDataSourceProtocol,
         navigatingBy navigator: NavigatorProtocol,
         holding bag: Bag
     ) {
-        self.navigator = navigator
-        self.injectable = injectable
+        self.tableViewItemSelected = tableViewItemSelected
+        self.tableView = tableView
         self.dataSource = dataSource
+        self.navigator = navigator
         self.bag = bag
 
-        self.injectable
-            .itemSelected
-            .asDriver()
-            .drive(onNext: { [weak self] indexPath in
+        self
+            .tableViewItemSelected
+            .emit(onNext: { [weak self] indexPath in
                 guard let this = self else { return }
 
                 this.navigate(by: indexPath)
@@ -55,6 +57,6 @@ class StargazersNavigationViewBinding: StargazersNavigationViewBindingProtocol {
 
         self.navigator.navigate(to: stargazerViewController, animated: true)
 
-        self.injectable.tableView.deselectRow(at: indexPath, animated: true)
+        self.tableView.deselectRow(at: indexPath, animated: true)
     }
 }

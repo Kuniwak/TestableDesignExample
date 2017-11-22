@@ -1,4 +1,5 @@
 import RxSwift
+import RxCocoa
 @testable import TestableDesignExample
 
 
@@ -12,7 +13,7 @@ class UserModelStub: UserModelProtocol {
     }
 
 
-    var didChange: Observable<UserModelState> {
+    var didChange: RxCocoa.Driver<UserModelState> {
         return self.stateMachine.didChange
     }
 

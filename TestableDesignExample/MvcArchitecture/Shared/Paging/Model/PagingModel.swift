@@ -1,4 +1,5 @@
 import RxSwift
+import RxCocoa
 
 
 
@@ -45,7 +46,7 @@ protocol PagingModelProtocol {
     associatedtype Element: Hashable
 
     var currentState: PagingModelState<Element> { get }
-    var didChange: RxSwift.Observable<PagingModelState<Element>> { get }
+    var didChange: RxCocoa.Driver<PagingModelState<Element>> { get }
 
     func fetchNext()
     func fetchPrevious()
@@ -84,7 +85,7 @@ class PagingModel<T: Hashable>: PagingModelProtocol {
     private let cursor: PagingCursorProtocol
 
 
-    var didChange: Observable<PagingModelState<Element>> {
+    var didChange: RxCocoa.Driver<PagingModelState<Element>> {
         return self.stateMachine.didChange
     }
 
@@ -205,7 +206,7 @@ class PagingModel<T: Hashable>: PagingModelProtocol {
 class AnyPagingModel<T: Hashable>: PagingModelProtocol {
     typealias Element = T
     private let _currentState: () -> PagingModelState<Element>
-    private let _didChange: () -> RxSwift.Observable<PagingModelState<Element>>
+    private let _didChange: () -> RxCocoa.Driver<PagingModelState<Element>>
     private let _fetchNext: () -> Void
     private let _fetchPrevious: () -> Void
     private let _clear: () -> Void
@@ -229,7 +230,7 @@ class AnyPagingModel<T: Hashable>: PagingModelProtocol {
     }
 
 
-    var didChange: RxSwift.Observable<PagingModelState<Element>> {
+    var didChange: RxCocoa.Driver<PagingModelState<Element>> {
         return self._didChange()
     }
 

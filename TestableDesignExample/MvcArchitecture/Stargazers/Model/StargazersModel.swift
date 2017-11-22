@@ -1,10 +1,11 @@
 import Result
 import RxSwift
+import RxCocoa
 
 
 
 protocol StargazersModelProtocol {
-    var didChange: RxSwift.Observable<StargazersModelState> { get }
+    var didChange: RxCocoa.Driver<StargazersModelState> { get }
     var currentState: StargazersModelState { get }
 
     func fetchNext()
@@ -19,7 +20,7 @@ class StargazersModel: StargazersModelProtocol {
     private let pagingModel: AnyPagingModel<GitHubUser>
 
 
-    var didChange: Observable<StargazersModelState> {
+    var didChange: RxCocoa.Driver<StargazersModelState> {
         return self.pagingModel
             .didChange
             .map { StargazersModelState.from(pagingModelState: $0) }

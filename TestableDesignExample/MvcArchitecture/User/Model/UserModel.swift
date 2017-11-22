@@ -1,10 +1,11 @@
 import RxSwift
+import RxCocoa
 import Result
 
 
 
 protocol UserModelProtocol: class {
-    var didChange: RxSwift.Observable<UserModelState> { get }
+    var didChange: RxCocoa.Driver<UserModelState> { get }
     var currentState: UserModelState { get }
 
     func fetch()
@@ -30,7 +31,7 @@ class UserModel: UserModelProtocol {
     private let repository: UserRepositoryProtocol
 
 
-    var didChange: RxSwift.Observable<UserModelState> {
+    var didChange: RxCocoa.Driver<UserModelState> {
         return self.stateMachine.didChange
     }
 

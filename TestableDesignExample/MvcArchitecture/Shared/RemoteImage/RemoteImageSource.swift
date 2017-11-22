@@ -1,21 +1,22 @@
 import UIKit
 import Dispatch
 import RxSwift
+import RxCocoa
 
 
 
 class RemoteImageSource {
-    private let stateVariable = Variable<State>(.pending)
+    private let stateVariable = RxCocoa.BehaviorRelay<State>(value: .pending)
     private let imageView: UIImageView
 
 
-    var didChange: Observable<State> {
-        return self.stateVariable.asObservable()
+    var didChange: RxCocoa.Driver<State> {
+        return self.stateVariable.asDriver()
     }
 
     var currentState: State {
         get { return self.stateVariable.value }
-        set { self.stateVariable.value = newValue }
+        set { self.stateVariable.accept(newValue) }
     }
 
 
@@ -51,7 +52,7 @@ class RemoteImageSource {
 
     func set(image: UIImage?) {
         self.imageView.image = image
-        self.stateVariable.value = .success(image: image)
+        self.stateVariable.accept(.success(image: image))
     }
 
 

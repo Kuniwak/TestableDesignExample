@@ -1,4 +1,6 @@
 import XCTest
+import RxSwift
+import RxCocoa
 import RxBlocking
 import MirrorDiffKit
 import PromiseKit
@@ -194,6 +196,7 @@ class PagingModelTests: XCTestCase {
     private func waitUntilFetched(_ pagingModel: PagingModel<Element>) {
         _ = try! pagingModel
             .didChange
+            .asObservable()
             .filter { state in
                 switch state {
                 case .fetching:

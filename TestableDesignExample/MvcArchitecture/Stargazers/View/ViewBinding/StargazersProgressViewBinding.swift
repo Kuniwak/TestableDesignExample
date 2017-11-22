@@ -1,5 +1,6 @@
 import UIKit
 import RxSwift
+import RxCocoa
 
 
 protocol StargazersProgressViewBindingProtocol {}
@@ -20,7 +21,7 @@ class StargazersProgressViewBinding: StargazersProgressViewBindingProtocol {
 
         self.model
             .didChange
-            .subscribe(onNext: { [weak self] state in
+            .drive(onNext: { [weak self] state in
                 guard let this = self else { return }
 
                 switch state {
