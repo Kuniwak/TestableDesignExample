@@ -3,11 +3,11 @@ import RxSwift
 
 
 
-protocol UserViewMediatorProtocol {}
+protocol UserViewBindingProtocol {}
 
 
 
-class UserViewMediator: UserViewMediatorProtocol {
+class UserViewBinding: UserViewBindingProtocol {
     private let disposeBag = RxSwift.DisposeBag()
     private let model: UserModelProtocol
     private let imageSource: RemoteImageSource

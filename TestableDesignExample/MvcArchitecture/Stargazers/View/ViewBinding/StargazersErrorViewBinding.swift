@@ -2,21 +2,13 @@ import UIKit
 import RxSwift
 
 
-protocol StargazersErrorViewMediatorProtocol {
-    weak var delegate: StargazersErrorViewMediatorDelegate? { get set }
-}
+protocol StargazersErrorViewBindingProtocol {}
 
 
-protocol StargazersErrorViewMediatorDelegate: class {
-}
-
-
-class StargazersErrorViewMediator: StargazersErrorViewMediatorProtocol {
+class StargazersErrorViewBinding: StargazersErrorViewBindingProtocol {
     private let disposeBag = RxSwift.DisposeBag()
     private let model: StargazersModelProtocol
     private let lifter: ModalPresenterProtocol
-
-    weak var delegate: StargazersErrorViewMediatorDelegate?
 
 
     init(

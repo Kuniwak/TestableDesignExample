@@ -9,13 +9,13 @@ class StargazersMvcComposer: UIViewController {
     private var bag: Bag
 
     private var tableViewDataSource: StargazersTableViewDataSourceProtocol?
-    private var navigationViewMediator: StargazersNavigationViewMediatorProtocol?
-    private var errorViewMediator: StargazersErrorViewMediatorProtocol?
-    private var progressViewMediator: StargazersProgressViewMediatorProtocol?
-    private var refreshControlViewMediator: StargazersRefreshViewMediatorProtocol?
+    private var navigationViewBinding: StargazersNavigationViewBindingProtocol?
+    private var errorViewBinding: StargazersErrorViewBindingProtocol?
+    private var progressViewBinding: StargazersProgressViewBindingProtocol?
+    private var refreshControlViewBinding: StargazersRefreshViewBindingProtocol?
     private var refreshController: StargazersRefreshControllerProtocol?
     private var scrollController: StargazersInfiniteScrollControllerProtocol?
-    private var tableViewMediator: StargazersTableViewMediatorProtocol?
+    private var tableViewBinding: StargazersTableViewInitializerProtocol?
 
 
     init(
@@ -49,7 +49,7 @@ class StargazersMvcComposer: UIViewController {
         self.tableViewDataSource = dataSource
         rootView.tableView.dataSource = dataSource
 
-        self.tableViewMediator = StargazersTableViewMediator(
+        self.tableViewBinding = StargazersTableViewInitializer(
             handling: rootView.tableView
         )
 
@@ -61,14 +61,14 @@ class StargazersMvcComposer: UIViewController {
             notifying: self.model
         )
 
-        self.navigationViewMediator = StargazersNavigationViewMediator(
+        self.navigationViewBinding = StargazersNavigationViewBinding(
             watching: .makeInjectable(of: rootView.tableView),
             findingVisibleRowBy: dataSource,
             navigatingBy: self.navigator,
             holding: self.bag
         )
 
-        self.errorViewMediator = StargazersErrorViewMediator(
+        self.errorViewBinding = StargazersErrorViewBinding(
             observing: self.model,
             presentingAlertBy: ModalPresenter(wherePresentOn: self)
         )
@@ -76,7 +76,7 @@ class StargazersMvcComposer: UIViewController {
         let refreshControl = UIRefreshControl()
         rootView.tableView.refreshControl = refreshControl
 
-        self.refreshControlViewMediator = StargazersRefreshViewMediator(
+        self.refreshControlViewBinding = StargazersRefreshViewBinding(
             observing: self.model,
             handling: refreshControl
         )

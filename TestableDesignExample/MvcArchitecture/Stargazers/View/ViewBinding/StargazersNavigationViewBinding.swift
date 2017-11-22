@@ -4,11 +4,11 @@ import RxCocoa
 
 
 
-protocol StargazersNavigationViewMediatorProtocol {}
+protocol StargazersNavigationViewBindingProtocol {}
 
 
 
-class StargazersNavigationViewMediator: StargazersNavigationViewMediatorProtocol {
+class StargazersNavigationViewBinding: StargazersNavigationViewBindingProtocol {
     private let navigator: NavigatorProtocol
     private let injectable: RxCocoaInjectable.InjectableUITableView
     private let dataSource: StargazersTableViewDataSourceProtocol

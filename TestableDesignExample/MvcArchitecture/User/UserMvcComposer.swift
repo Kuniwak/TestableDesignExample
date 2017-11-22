@@ -10,7 +10,7 @@ protocol UserMvcComposerProtocol {}
 class UserMvcComposer: UIViewController, UserMvcComposerProtocol {
     private let model: UserModelProtocol
 
-    private var viewMediator: UserViewMediatorProtocol?
+    private var viewBinding: UserViewBindingProtocol?
     private let disposeBag = RxSwift.DisposeBag()
 
 
@@ -30,7 +30,7 @@ class UserMvcComposer: UIViewController, UserMvcComposerProtocol {
         let rootView = UserScreenRootView()
         self.view = rootView
 
-        self.viewMediator = UserViewMediator(
+        self.viewBinding = UserViewBinding(
             observing: self.model,
             handling: (
                 avatarImageView: rootView.imageView,

@@ -16,7 +16,7 @@
    version="1.1"
    inkscape:version="0.91 r13725"
    sodipodi:docname="ClassDiagram.svg"
-   inkscape:export-filename="/Users/yuki.kokubun/Development/TestableDesignExample/Documentation/Images/ClassDiagram_en.png"
+   inkscape:export-filename="/Users/yuki.kokubun/Development/TestableDesignExample/Documentation/Images/ClassDiagram_ja.png"
    inkscape:export-xdpi="90"
    inkscape:export-ydpi="90">
   <defs
@@ -510,7 +510,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.7"
-     inkscape:cx="500.29788"
+     inkscape:cx="278.15502"
      inkscape:cy="543.97522"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -520,10 +520,10 @@
      inkscape:snap-intersection-paths="true"
      inkscape:object-nodes="true"
      inkscape:snap-smooth-nodes="true"
-     inkscape:window-width="1920"
+     inkscape:window-width="1916"
      inkscape:window-height="1155"
-     inkscape:window-x="1080"
-     inkscape:window-y="1081"
+     inkscape:window-x="4"
+     inkscape:window-y="1"
      inkscape:window-maximized="1"
      units="px">
     <inkscape:grid
@@ -820,7 +820,7 @@
          y="835.21918"
          x="818.97327"
          id="tspan8769"
-         sodipodi:role="line">FooViewMediator</tspan></text>
+         sodipodi:role="line">FooViewBinding</tspan></text>
     <rect
        transform="translate(440,695.7143)"
        clip-path="url(#clipPath4194)"
@@ -948,7 +948,7 @@
      inkscape:groupmode="layer"
      id="layer2"
      inkscape:label="Caption En"
-     style="display:inline">
+     style="display:none">
     <text
        transform="translate(0,-52.362161)"
        sodipodi:linespacing="125%"
@@ -1038,7 +1038,7 @@
      inkscape:groupmode="layer"
      id="layer3"
      inkscape:label="Caption Ja"
-     style="display:none">
+     style="display:inline">
     <text
        inkscape:export-ydpi="97.830002"
        inkscape:export-xdpi="97.830002"

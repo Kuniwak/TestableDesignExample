@@ -2,7 +2,7 @@ import XCTest
 @testable import TestableDesignExample
 
 
-class StargazersNavigationViewMediatorTests: XCTestCase {
+class StargazersNavigationViewBindingTests: XCTestCase {
     func testNavigate() {
         let tableView = UITableView()
 
@@ -14,7 +14,7 @@ class StargazersNavigationViewMediatorTests: XCTestCase {
 
             let navigatorSpy = NavigatorSpy()
 
-            let viewMediator = StargazersNavigationViewMediator(
+            let viewBinding = StargazersNavigationViewBinding(
                 watching: tableViewStub.injectable,
                 findingVisibleRowBy: dataSourceStub,
                 navigatingBy: navigatorSpy,
@@ -26,7 +26,7 @@ class StargazersNavigationViewMediatorTests: XCTestCase {
             XCTAssertEqual(navigatorSpy.callArgs.count, 1)
 
             // NOTE: Hold reference
-            _ = viewMediator
+            _ = viewBinding
         }
     }
 }

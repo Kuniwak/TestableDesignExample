@@ -2,21 +2,13 @@ import UIKit
 import RxSwift
 
 
-protocol StargazersProgressViewMediatorProtocol {
-    weak var delegate: StargazersProgressViewMediatorDelegate? { get set }
-}
+protocol StargazersProgressViewBindingProtocol {}
 
 
-protocol StargazersProgressViewMediatorDelegate: class {
-}
-
-
-class StargazersProgressViewMediator: StargazersProgressViewMediatorProtocol {
+class StargazersProgressViewBinding: StargazersProgressViewBindingProtocol {
     private let progressView: UIProgressView
     private let disposeBag = RxSwift.DisposeBag()
     private let model: StargazersModelProtocol
-
-    weak var delegate: StargazersProgressViewMediatorDelegate?
 
 
     init(

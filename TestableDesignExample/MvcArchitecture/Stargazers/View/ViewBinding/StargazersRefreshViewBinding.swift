@@ -2,21 +2,13 @@ import UIKit
 import RxSwift
 
 
-protocol StargazersRefreshViewMediatorProtocol {
-    weak var delegate: StargazersRefreshViewMediatorDelegate? { get set }
-}
+protocol StargazersRefreshViewBindingProtocol {}
 
 
-protocol StargazersRefreshViewMediatorDelegate: class {
-}
-
-
-class StargazersRefreshViewMediator: StargazersRefreshViewMediatorProtocol {
+class StargazersRefreshViewBinding: StargazersRefreshViewBindingProtocol {
     private let disposeBag = RxSwift.DisposeBag()
     private let model: StargazersModelProtocol
     private let refreshControl: UIRefreshControl
-
-    weak var delegate: StargazersRefreshViewMediatorDelegate?
 
 
     init(

@@ -34,14 +34,14 @@ iOS のためのテスト容易設計サンプル
 このプロジェクトでは、1つの `UIViewController` に対し、1つの Xib ファイルが対応するようにしてあります。
 また、すべての `UIViewController` の子クラスの初期化関数は Model を引数にとります。
 
-また、`UIViewController#loadView()` のタイミングで、ViewMediator と Controller が作成され、与えられた Model と接続されます。
+また、`UIViewController#loadView()` のタイミングで、ViewBinding と Controller が作成され、与えられた Model と接続されます。
 
 具体的なコードは以下の通りです:
 
 ```swift
 class FooViewController: UIViewController {
     private var model: FooModelContract
-    private var viewMediator: FooViewMediatorContract?
+    private var viewBinding: FooViewBindingContract?
     private var controller: FooControllerContract?
 
     init(model: FooModelContract) {
@@ -54,7 +54,7 @@ class FooViewController: UIViewController {
         return nil
     }
 
-    // Model と ViewMediator, Controller を結合する。
+    // Model と ViewBinding, Controller を結合する。
     override func loadView() {
         let rootView = FooRootView()
         self.view = rootView
@@ -65,14 +65,14 @@ class FooViewController: UIViewController {
         )
         self.controller = controller
 
-        self.viewMediator = FooViewMediator(
+        self.viewBinding = FooViewBinding(
             observing: self.model,
             handling: (
                 bar: rootView.barView,
                 baz: rootView.bazView
             )
         )
-        self.viewMediator.delegate = controller
+        self.viewBinding.delegate = controller
     }
 }
 ```
@@ -142,9 +142,9 @@ enum FooModelState {
 
 ```swift
 // FooModel の状態変化に応じて表示を切り替えるクラス。
-// Mediator とは、仲介者を意味していて、複数の UIView を
+// Binding とは、仲介者を意味していて、複数の UIView を
 // 操作する責務をもっています。
-class FooViewMediator: FooViewMediatorContract {
+class FooViewBinding: FooViewBindingContract {
     typealias Views = (bar: BarView, baz: BuzzView)
     private let views: Views
     private let model: FooModelContract

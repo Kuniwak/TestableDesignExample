@@ -33,14 +33,14 @@ So, learning this implementation is still worth the candle if you choose other a
 In our approach, we create a Xib file per `UIViewController`.
 And all `UIViewControllers` have a initializer that require models.
 
-And we should create ViewMediators and Controllers and connect them to the given Model when `UIViewController#loadView()` is called.
+And we should create ViewBindings and Controllers and connect them to the given Model when `UIViewController#loadView()` is called.
 
 Concrete implementation is below:
 
 ```swift
 class FooViewController: UIViewController {
     private var model: FooModelContract
-    private var viewMediator: FooViewMediatorContract?
+    private var viewBinding: FooViewBindingContract?
     private var controller: FooControllerContract?
 
     init(model: FooModelContract) {
@@ -53,7 +53,7 @@ class FooViewController: UIViewController {
         return nil
     }
 
-    // Connect Model and ViewMediator, Controller.
+    // Connect Model and ViewBinding, Controller.
     override func loadView() {
         let rootView = FooRootView()
         self.view = rootView
@@ -64,14 +64,14 @@ class FooViewController: UIViewController {
         )
         self.controller = controller
 
-        self.viewMediator = FooViewMediator(
+        self.viewBinding = FooViewBinding(
             observing: self.model,
             handling: (
                 bar: rootView.barView,
                 baz: rootView.bazView
             )
         )
-        self.viewMediator.delegate = controller
+        self.viewBinding.delegate = controller
     }
 }
 ```
@@ -140,7 +140,7 @@ enum FooModelState {
 ```
 
 ```swift
-class FooViewMediator: FooViewMediatorContract {
+class FooViewBinding: FooViewBindingContract {
     typealias Views = (bar: BarView, baz: BuzzView)
     private let views: Views
     private let model: FooModelContract
