@@ -40,11 +40,11 @@ iOS のためのテスト容易設計サンプル
 
 ```swift
 class FooViewController: UIViewController {
-    private var model: FooModelContract
-    private var viewBinding: FooViewBindingContract?
-    private var controller: FooControllerContract?
+    private var model: FooModelProtocol
+    private var viewBinding: FooViewBindingProtocol?
+    private var controller: FooControllerProtocol?
 
-    init(model: FooModelContract) {
+    init(model: FooModelProtocol) {
         self.model = model
         super.init(nibName: nil, bundle: nil)
     }
@@ -81,8 +81,8 @@ class FooViewController: UIViewController {
 // FooModel は、FooModelState を状態としたステートマシンです。
 // API 呼び出しの成功や失敗によって状態遷移が起きると、
 // `didChange` という Observable を通して外部へ通知します。
-class FooModel: FooModelContract {
-    private let repository: FooRepositoryContract
+class FooModel: FooModelProtocol {
+    private let repository: FooRepositoryProtocol
     private let stateVariable: RxSwift.Variable<FooModelState>
 
     /// FooModel の内部状態に変化があったら通知される Observable。
@@ -98,7 +98,7 @@ class FooModel: FooModelContract {
 
     init(
         startingWith initialState: FooModelState,
-        fetchingVia repository: FooRepositoryContract
+        fetchingVia repository: FooRepositoryProtocol
     ) {
         self.stateVariable = RxSwift.Variable<FooModelState>(initialState)
         self.repository = repository
@@ -144,13 +144,13 @@ enum FooModelState {
 // FooModel の状態変化に応じて表示を切り替えるクラス。
 // Binding とは、仲介者を意味していて、複数の UIView を
 // 操作する責務をもっています。
-class FooViewBinding: FooViewBindingContract {
+class FooViewBinding: FooViewBindingProtocol {
     typealias Views = (bar: BarView, baz: BuzzView)
     private let views: Views
-    private let model: FooModelContract
+    private let model: FooModelProtocol
     private let disposeBag = RxSwift.DisposeBag()
 
-    init(observing model: FooModelContract, handling views: Views) {
+    init(observing model: FooModelProtocol, handling views: Views) {
         self.model = model
         self.views = views
 
@@ -175,14 +175,14 @@ class FooViewBinding: FooViewBindingContract {
 
 ```swift
 // BarView からの UI イベントを、FooModel への入力へと変換します。
-class FooController: FooControllerContract {
-    private let model: FooModelContract
+class FooController: FooControllerProtocol {
+    private let model: FooModelProtocol
     private let view: BarView
     private let disposeBag = RxSwift.DisposeBag()
 
     init(
         observing view: BarView,
-        willNotifyTo model: FooModelContract
+        willNotifyTo model: FooModelProtocol
     ) {
         self.model = model
 
@@ -207,12 +207,12 @@ UIViewController 間の接続方法
 
 ```swift
 class FooViewController: UIViewController {
-    private let navigator: NavigatorContract
-    private let sharedModel: FooBarModelContract
+    private let navigator: NavigatorProtocol
+    private let sharedModel: FooBarModelProtocol
 
     init(
-        representing sharedModel: FooBarModelContract,
-        navigatingBy navigator: NavigatorContract
+        representing sharedModel: FooBarModelProtocol,
+        navigatingBy navigator: NavigatorProtocol
     ) {
         self.sharedModel = sharedModel
         self.navigator = navigator
@@ -245,7 +245,7 @@ class FooViewController: UIViewController {
 /**
  `UINavigationController#pushViewController(_:UIViewController, animated:Bool)` のラッパークラス。
  */
-protocol NavigatorContract {
+protocol NavigatorProtocol {
     /**
      UIViewController を保持している UINavigationController へ push する。
      */
@@ -254,7 +254,7 @@ protocol NavigatorContract {
 
 
 
-class Navigator: NavigatorContract {
+class Navigator: NavigatorProtocol {
     private let navigationController: UINavigationController
 
 
@@ -323,13 +323,13 @@ XCTAssertEqual(UserDefaults.standard.integer(forKey: "foo"), 10)
 ```swift
 // よい設計
 class UserDefaultsCalculator {
-    private let readableRepository: ReadableRepositoryContract
-    private let writableRepository: WritableRepositoryContract
+    private let readableRepository: ReadableRepositoryProtocol
+    private let writableRepository: WritableRepositoryProtocol
 
 
     init(
-        reading readableRepository: ReadableRepositoryContract,
-        writing writableRepository: WritableRepositoryContract
+        reading readableRepository: ReadableRepositoryProtocol,
+        writing writableRepository: WritableRepositoryProtocol
     ) {
         self.readableRepository = readableRepository
         self.writableRepository = writableRepository
@@ -347,12 +347,12 @@ class UserDefaultsCalculator {
 }
 
 
-protocol ReadableRepositoryContract {
+protocol ReadableRepositoryProtocol {
     func read() -> Int
 }
 
 
-class ReadableRepository: ReadableRepositoryContract {
+class ReadableRepository: ReadableRepositoryProtocol {
     private let userDefaults: UserDefaults
 
 
@@ -367,12 +367,12 @@ class ReadableRepository: ReadableRepositoryContract {
 }
 
 
-protocol WritableRepositoryContract {
+protocol WritableRepositoryProtocol {
     func write(_ value: Int)
 }
 
 
-class WritableRepository: WritableRepositoryContract {
+class WritableRepository: WritableRepositoryProtocol {
     private let userDefaults: UserDefaults
 
 
@@ -419,7 +419,7 @@ XCTAssertEqual(spy.callArgs.last!, 10)
 ```swift
 // 代替物の定義
 
-class ReadableRepositoryStub: ReadableRepositoryContract {
+class ReadableRepositoryStub: ReadableRepositoryProtocol {
     var nextValue: Int
 
     init(firstValue: Int) {
@@ -432,7 +432,7 @@ class ReadableRepositoryStub: ReadableRepositoryContract {
 }
 
 
-class WritableRepositorySpy: WritableRepositoryContract {
+class WritableRepositorySpy: WritableRepositoryProtocol {
     private(set) var callArgs = [Int]()
 
     func write(_ value: Int) {
