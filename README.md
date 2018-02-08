@@ -502,11 +502,11 @@ class MyCell: UITableViewCell {
 
 Taken together, we should follow the Test Pyramid:
 
-![Ideal test volume is extlemly few UI tests and few integration tests and much unit tests and much type checkings.](https://raw.githubusercontent.com/Kuniwak/TestableDesignExample/master/Documentation/Images/TestingPyramid_en.png)
+![Ideal test volume is extremely few UI tests and few integration tests and much unit tests and much type checkings.](https://raw.githubusercontent.com/Kuniwak/TestableDesignExample/master/Documentation/Images/TestingPyramid_en.png)
 
 
 
 References
 ----------
 
-1. XUnit Test Patterns: http://xunitpatterns.com/index.html
+1. xUnit Test Patterns: http://xunitpatterns.com/index.html
