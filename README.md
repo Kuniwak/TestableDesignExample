@@ -39,11 +39,11 @@ Concrete implementation is below:
 
 ```swift
 class FooViewController: UIViewController {
-    private var model: FooModelContract
-    private var viewBinding: FooViewBindingContract?
-    private var controller: FooControllerContract?
+    private var model: FooModelProtocol
+    private var viewBinding: FooViewBindingProtocol?
+    private var controller: FooControllerProtocol?
 
-    init(model: FooModelContract) {
+    init(model: FooModelProtocol) {
         self.model = model
         super.init(nibName: nil, bundle: nil)
     }
@@ -80,8 +80,8 @@ class FooViewController: UIViewController {
 // FooModel is a state-machine that can transit to FooModelState.
 // Notify change events to others via an observable `didChange` when
 // API was successfully done or failed.
-class FooModel: FooModelContract {
-    private let repository: FooRepositoryContract
+class FooModel: FooModelProtocol {
+    private let repository: FooRepositoryProtocol
     private let stateVariable: RxSwift.Variable<FooModelState>
 
     /// An Observable that will notify events when the internal state is changed.
@@ -97,7 +97,7 @@ class FooModel: FooModelContract {
 
     init(
         startingWith initialState: FooModelState,
-        fetchingVia repository: FooRepositoryContract
+        fetchingVia repository: FooRepositoryProtocol
     ) {
         self.stateVariable = RxSwift.Variable<FooModelState>(initialState)
         self.repository = repository
@@ -140,13 +140,13 @@ enum FooModelState {
 ```
 
 ```swift
-class FooViewBinding: FooViewBindingContract {
+class FooViewBinding: FooViewBindingProtocol {
     typealias Views = (bar: BarView, baz: BuzzView)
     private let views: Views
-    private let model: FooModelContract
+    private let model: FooModelProtocol
     private let disposeBag = RxSwift.DisposeBag()
 
-    init(observing model: FooModelContract, handling views: Views) {
+    init(observing model: FooModelProtocol, handling views: Views) {
         self.model = model
         self.views = views
 
@@ -170,14 +170,14 @@ class FooViewBinding: FooViewBindingContract {
 ```
 
 ```swift
-class FooController: FooControllerContract {
-    private let model: FooModelContract
+class FooController: FooControllerProtocol {
+    private let model: FooModelProtocol
     private let view: BarView
     private let disposeBag = RxSwift.DisposeBag()
 
     init(
         observing view: BarView,
-        willNotifyTo model: FooModelContract
+        willNotifyTo model: FooModelProtocol
     ) {
         self.model = model
 
@@ -203,12 +203,12 @@ In this project, use Navigator class for connecting betweren 2 `UIViewController
 
 ```swift
 class FooViewController: UIViewController {
-    private let navigator: NavigatorContract
-    private let sharedModel: FooBarModelContract
+    private let navigator: NavigatorProtocol
+    private let sharedModel: FooBarModelProtocol
 
     init(
-        representing sharedModel: FooBarModelContract,
-        navigatingBy navigator: NavigatorContract
+        representing sharedModel: FooBarModelProtocol,
+        navigatingBy navigator: NavigatorProtocol
     ) {
         self.sharedModel = sharedModel
         self.navigator = navigator
@@ -243,7 +243,7 @@ And also you can use `UIStoryboardSegue`, but using the `Navigator` class have t
 /**
  A protocol for wrapper class of `UINavigationController#pushViewController(_:UIViewController, animated:Bool)`.
  */
-protocol NavigatorContract {
+protocol NavigatorProtocol {
     /**
      Push the specified UIViewController to the held UINavigationController.
      */
@@ -252,7 +252,7 @@ protocol NavigatorContract {
 
 
 
-class Navigator: NavigatorContract {
+class Navigator: NavigatorProtocol {
     private let navigationController: UINavigationController
 
 
@@ -320,13 +320,13 @@ XCTAssertEqual(UserDefaults.standard.integer(forKey: "foo"), 10)
 ```swift
 // GOOD DESIGN
 class UserDefaultsCalculator {
-    private let readableRepository: ReadableRepositoryContract
-    private let writableRepository: WritableRepositoryContract
+    private let readableRepository: ReadableRepositoryProtocol
+    private let writableRepository: WritableRepositoryProtocol
 
 
     init(
-        reading readableRepository: ReadableRepositoryContract,
-        writing writableRepository: WritableRepositoryContract
+        reading readableRepository: ReadableRepositoryProtocol,
+        writing writableRepository: WritableRepositoryProtocol
     ) {
         self.readableRepository = readableRepository
         self.writableRepository = writableRepository
@@ -344,12 +344,12 @@ class UserDefaultsCalculator {
 }
 
 
-protocol ReadableRepositoryContract {
+protocol ReadableRepositoryProtocol {
     func read() -> Int
 }
 
 
-class ReadableRepository: ReadableRepositoryContract {
+class ReadableRepository: ReadableRepositoryProtocol {
     private let userDefaults: UserDefaults
 
 
@@ -364,12 +364,12 @@ class ReadableRepository: ReadableRepositoryContract {
 }
 
 
-protocol WritableRepositoryContract {
+protocol WritableRepositoryProtocol {
     func write(_ value: Int)
 }
 
 
-class WritableRepository: WritableRepositoryContract {
+class WritableRepository: WritableRepositoryProtocol {
     private let userDefaults: UserDefaults
 
 
@@ -417,7 +417,7 @@ XCTAssertEqual(spy.callArgs.last!, 10)
 ```swift
 // TestDoubles definitions
 
-class ReadableRepositoryStub: ReadableRepositoryContract {
+class ReadableRepositoryStub: ReadableRepositoryProtocol {
     var nextValue: Int
 
     init(firstValue: Int) {
@@ -430,7 +430,7 @@ class ReadableRepositoryStub: ReadableRepositoryContract {
 }
 
 
-class WritableRepositorySpy: WritableRepositoryContract {
+class WritableRepositorySpy: WritableRepositoryProtocol {
     private(set) var callArgs = [Int]()
 
     func write(_ value: Int) {
