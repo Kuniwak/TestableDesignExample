@@ -1,6 +1,6 @@
 github "JohnSundell/Unbox" "2.5.0"
 github "Kuniwak/MirrorDiffKit" "2.0.0"
-github "ReactiveX/RxSwift" "f043778214c8f182018ccdfbf7f440edbe0aecc8"
+github "ReactiveX/RxSwift" "53cd723d40d05177e790c8c34c36cec7092a6106"
 github "antitypical/Result" "3.2.4"
 github "mac-cain13/R.swift.Library" "v4.0.0"
-github "mxcl/PromiseKit" "4.5.0"
+github "mxcl/PromiseKit" "4.5.2"
