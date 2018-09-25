@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Carthage/Checkouts/MirrorDiffKit" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Carthage/Checkouts/PromiseKit" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Carthage/Checkouts/PromiseKit/Extensions/AVFoundation" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Carthage/Checkouts/PromiseKit/Extensions/Accounts" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Carthage/Checkouts/PromiseKit/Extensions/AddressBook" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Carthage/Checkouts/PromiseKit/Extensions/Alamofire" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Carthage/Checkouts/PromiseKit/Extensions/AssetsLibrary" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Carthage/Checkouts/PromiseKit/Extensions/Bolts" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Carthage/Checkouts/PromiseKit/Extensions/CloudKit" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Carthage/Checkouts/PromiseKit/Extensions/CoreBluetooth" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Carthage/Checkouts/PromiseKit/Extensions/CoreLocation" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Carthage/Checkouts/PromiseKit/Extensions/EventKit" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Carthage/Checkouts/PromiseKit/Extensions/Foundation" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Carthage/Checkouts/PromiseKit/Extensions/MapKit" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Carthage/Checkouts/PromiseKit/Extensions/MessagesUI" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Carthage/Checkouts/PromiseKit/Extensions/OMGHTTPURLRQ" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Carthage/Checkouts/PromiseKit/Extensions/Photos" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Carthage/Checkouts/PromiseKit/Extensions/QuartzCore" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Carthage/Checkouts/PromiseKit/Extensions/Social" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Carthage/Checkouts/PromiseKit/Extensions/StoreKit" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Carthage/Checkouts/PromiseKit/Extensions/SystemConfiguration" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Carthage/Checkouts/PromiseKit/Extensions/UIKit" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Carthage/Checkouts/PromiseKit/Extensions/WatchConnectivity" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Carthage/Checkouts/R.swift.Library" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Carthage/Checkouts/Result" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Carthage/Checkouts/RxSwift" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Carthage/Checkouts/Unbox" vcs="Git" />
+  </component>
+</project>
