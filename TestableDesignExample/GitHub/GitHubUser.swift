@@ -21,8 +21,8 @@ struct GitHubUser {
 
 
 extension GitHubUser: Hashable {
-    var hashValue: Int {
-        return self.id.hashValue
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(self.id.hashValue)
     }
 
 
@@ -34,8 +34,8 @@ extension GitHubUser: Hashable {
 
 
 extension GitHubUser.Id: Hashable {
-    var hashValue: Int {
-        return self.text.hashValue
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(self.text.hashValue)
     }
 
 

@@ -32,7 +32,7 @@ struct StargazersRepository: PageRepositoryProtocol {
                     ("per_page", "\(self.numberOfStargazersPerPage)"),
                 ]
             )
-            .then { data -> [GitHubStargazer] in
+            .map { data -> [GitHubStargazer] in
                 let users: [GitHubStargazerResponse] = try unbox(data: data)
                 return users.map { $0.user }
             }

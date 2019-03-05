@@ -15,6 +15,8 @@
     <mapping directory="$PROJECT_DIR$/Carthage/Checkouts/PromiseKit/Extensions/CoreLocation" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Carthage/Checkouts/PromiseKit/Extensions/EventKit" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Carthage/Checkouts/PromiseKit/Extensions/Foundation" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Carthage/Checkouts/PromiseKit/Extensions/HealthKit" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Carthage/Checkouts/PromiseKit/Extensions/HomeKit" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Carthage/Checkouts/PromiseKit/Extensions/MapKit" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Carthage/Checkouts/PromiseKit/Extensions/MessagesUI" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Carthage/Checkouts/PromiseKit/Extensions/OMGHTTPURLRQ" vcs="Git" />

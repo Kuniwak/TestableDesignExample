@@ -3,12 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		2475E0186789F98C20F6C5C2 /* AnyError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E7E905777169DA3AAA02 /* AnyError.swift */; };
 		2475E04BEA86BF4B81C721C1 /* sample.png in Resources */ = {isa = PBXBuildFile; fileRef = 2475E5B4D098FE6945B3F148 /* sample.png */; };
+		2475E06A09110F3226C76395 /* AsyncTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475EA68E4FECF3972706A5F /* AsyncTests.swift */; };
 		2475E0DEFBA1DD69DC76DED1 /* ReverseNavigatorStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E0F037F9F0B746ED4024 /* ReverseNavigatorStub.swift */; };
 		2475E11646D66F92179D6C8A /* StargazersNavigationViewBindingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475ED90991276AE1EA74B1D /* StargazersNavigationViewBindingTests.swift */; };
 		2475E1671F707BB3BDBC8D9E /* PagedElementCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475EF0F98ED6955B0639447 /* PagedElementCollection.swift */; };
@@ -34,9 +35,9 @@
 		2475E304113D0E8BC9173F20 /* PageEndDetectionStrategyStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475EFABBE5984119A4C5898 /* PageEndDetectionStrategyStub.swift */; };
 		2475E31C18082F4F72771E3F /* PagingCursor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E7DF6C438F3C12F13C5A /* PagingCursor.swift */; };
 		2475E35401AF1A0DDB75BCFB /* user.json in Resources */ = {isa = PBXBuildFile; fileRef = 2475E6654583784DB2FAC099 /* user.json */; };
-		2475E3569B9E38B438700E21 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475EBE7B5C344258DA2B9B8 /* R.generated.swift */; };
 		2475E3B83DF7E60CAB5CE903 /* StargazersRefreshViewBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E5BE5363F823A04BC55E /* StargazersRefreshViewBinding.swift */; };
 		2475E3B8FE79FBCACB7CB294 /* StargazersNavigationViewBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475EB1E4113B6703D2B9BD0 /* StargazersNavigationViewBinding.swift */; };
+		2475E3BDDC9A37064FA28CC6 /* Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475ED93E3206BD64121341F /* Async.swift */; };
 		2475E3C5C1ABB0715F942EDC /* EventSimulator+UIScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E3444C1BA27DA348423B /* EventSimulator+UIScrollView.swift */; };
 		2475E3E1203B552B5CF44718 /* ColorCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E2C5369BE1C2A594873E /* ColorCatalog.swift */; };
 		2475E423E64E77274E37BBF2 /* StargazersInfiniteScrollControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E4A20AF63001833F7647 /* StargazersInfiniteScrollControllerTests.swift */; };
@@ -148,6 +149,7 @@
 		62A161681E74164A003D28DC /* Rswift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62A161471E73BCD4003D28DC /* Rswift.framework */; };
 		62A1616C1E741761003D28DC /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62A1616B1E741761003D28DC /* Result.framework */; };
 		62A161741E744812003D28DC /* StargazersMvcComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A161731E744812003D28DC /* StargazersMvcComposer.swift */; };
+		62B9D3B8222EA95800045E65 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62B9D3B7222EA95800045E65 /* R.generated.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -261,6 +263,7 @@
 		2475EA1E8734537D888DE184 /* StargazersScreenRootView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StargazersScreenRootView.swift; sourceTree = "<group>"; };
 		2475EA53D827463354DB65F8 /* PageRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageRepository.swift; sourceTree = "<group>"; };
 		2475EA60787A5FB45051B288 /* ReverseNavigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReverseNavigator.swift; sourceTree = "<group>"; };
+		2475EA68E4FECF3972706A5F /* AsyncTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncTests.swift; sourceTree = "<group>"; };
 		2475EA9AAFF3FDC512301D94 /* GitHubStargazer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubStargazer.swift; sourceTree = "<group>"; };
 		2475EAAA03A6CC33D5660297 /* GitHubApiClientStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubApiClientStub.swift; sourceTree = "<group>"; };
 		2475EB110AAC6A1C66853529 /* ExampleAccountFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleAccountFactory.swift; sourceTree = "<group>"; };
@@ -271,7 +274,6 @@
 		2475EB6B0F7A5FD41CBBED1D /* UserRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		2475EBAD39EB17C436158BD2 /* TitleHolder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleHolder.swift; sourceTree = "<group>"; };
 		2475EBD6C8DCC2F5B14B1767 /* TestNavigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestNavigator.swift; sourceTree = "<group>"; };
-		2475EBE7B5C344258DA2B9B8 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		2475EBF65AE582DF6BE0C031 /* StargazersModelStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StargazersModelStub.swift; sourceTree = "<group>"; };
 		2475EC21DA75888B0FDD4C9F /* ReverseNavigatorSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReverseNavigatorSpy.swift; sourceTree = "<group>"; };
 		2475EC3A6667F8553C23CB2C /* GitHubApiEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubApiEndpoint.swift; sourceTree = "<group>"; };
@@ -288,6 +290,7 @@
 		2475ED6AED412B75BD352F7A /* Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		2475ED708C245A3863B99E1A /* ExampleAccount.validateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleAccount.validateTests.swift; sourceTree = "<group>"; };
 		2475ED90991276AE1EA74B1D /* StargazersNavigationViewBindingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StargazersNavigationViewBindingTests.swift; sourceTree = "<group>"; };
+		2475ED93E3206BD64121341F /* Async.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Async.swift; sourceTree = "<group>"; };
 		2475EDAB59CE5A5E99A03E61 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2475EDBE2B453DCB2012F476 /* ExampleValidationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleValidationModel.swift; sourceTree = "<group>"; };
 		2475EDEF357B21E401A94659 /* UserMvcComposerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserMvcComposerTests.swift; sourceTree = "<group>"; };
@@ -322,6 +325,7 @@
 		62A161691E74165E003D28DC /* KeychainAccess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KeychainAccess.framework; path = Carthage/Build/iOS/KeychainAccess.framework; sourceTree = "<group>"; };
 		62A1616B1E741761003D28DC /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		62A161731E744812003D28DC /* StargazersMvcComposer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StargazersMvcComposer.swift; sourceTree = "<group>"; };
+		62B9D3B7222EA95800045E65 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -523,6 +527,8 @@
 				2475EDBE2B453DCB2012F476 /* ExampleValidationModel.swift */,
 				2475E34C2FD996FBF2799CFD /* ExampleValidationModelTests.swift */,
 				2475EB110AAC6A1C66853529 /* ExampleAccountFactory.swift */,
+				2475ED93E3206BD64121341F /* Async.swift */,
+				2475EA68E4FECF3972706A5F /* AsyncTests.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -668,7 +674,7 @@
 		2475EA15DFBD6DF9C26116F6 /* R.swift */ = {
 			isa = PBXGroup;
 			children = (
-				2475EBE7B5C344258DA2B9B8 /* R.generated.swift */,
+				62B9D3B7222EA95800045E65 /* R.generated.swift */,
 				2475E075557EBD6285CD11F6 /* R.generatedTests.swift */,
 			);
 			path = R.swift;
@@ -992,7 +998,7 @@
 		2475E53F7AA653832B1EFE63 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = Kuniwak;
 				TargetAttributes = {
 					2475EE0376871EE7203E0C05 = {
@@ -1001,11 +1007,12 @@
 				};
 			};
 			buildConfigurationList = 2475E125D452A919E93092F4 /* Build configuration list for PBXProject "TestableDesignExample" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 2475E6024DA77F14399A3109;
 			productRefGroup = 2475E681FAAFE01165145F3E /* Products */;
@@ -1068,10 +1075,16 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
 			);
 			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Rswift.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Unbox.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/PromiseKit.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Result.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxSwift.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxCocoa.framwrork",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
 		62A1614A1E73BDC0003D28DC /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1079,12 +1092,14 @@
 			files = (
 			);
 			inputPaths = (
+				"$(TEMP_DIR)/rswift-lastrun",
 			);
 			outputPaths = (
+				"$(SRCROOT)/TestableDesignExample/Resources/R.swift/R.generated.swift",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"$SRCROOT/libexec/rswift\" \"$SRCROOT/TestableDesignExample/Resources/R.swift/\"\n";
+			shellScript = "\"$SRCROOT/libexec/rswift\" generate \"$SRCROOT/TestableDesignExample/Resources/R.swift/R.generated.swift\"\n";
 		};
 		62A1614F1E73C1D2003D28DC /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1108,12 +1123,14 @@
 			files = (
 			);
 			inputPaths = (
+				"$(TEMP_DIR)/rswift-lastrun",
 			);
 			outputPaths = (
+				"$(SRCROOT)/TestableDesignExampleTests/Resources/R.generated.swift",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"$SRCROOT/libexec/rswift\" \"$SRCROOT/TestableDesignExampleTests/Resources/\"\n";
+			shellScript = "\"$SRCROOT/libexec/rswift\" generate \"$SRCROOT/TestableDesignExampleTests/Resources/R.generated.swift\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1159,6 +1176,7 @@
 				2475E646D2F3376D3871D5D4 /* PagingModel.swift in Sources */,
 				2475E979DDCB6C662BEC3BEB /* UserViewBinding.swift in Sources */,
 				2475E2F612DCE36A68D38B6F /* PerformanceParameter.swift in Sources */,
+				62B9D3B8222EA95800045E65 /* R.generated.swift in Sources */,
 				2475EB8D267184D1BAB7F6E5 /* Bag.swift in Sources */,
 				2475E23C9236380DAFE3DD39 /* RootNavigator.swift in Sources */,
 				2475E9CD20CEE8F26CCF1F4A /* AppDelegate.swift in Sources */,
@@ -1167,7 +1185,6 @@
 				2475E57C529E16473210B935 /* VisualDecorator.swift in Sources */,
 				2475E77D353AD24284CB69B5 /* FilledLayout.swift in Sources */,
 				2475E4DBF32E5115CCA4C048 /* FontRegistry.swift in Sources */,
-				2475E3569B9E38B438700E21 /* R.generated.swift in Sources */,
 				2475E51BDCC25602AC87BA35 /* Navigator.swift in Sources */,
 				2475E4DA499334A03DB24CDD /* ModalPresenter.swift in Sources */,
 				2475E78C358EC82BFE7373F7 /* ReverseNavigator.swift in Sources */,
@@ -1192,6 +1209,7 @@
 				2475EE5A316B4958545E6AB1 /* ExampleValidationScreenRootView.swift in Sources */,
 				2475ED25C1FFB5A6D29BFFAB /* ExampleValidationViewBinding.swift in Sources */,
 				2475EE8E54F8F840A42D69AD /* Color.swift in Sources */,
+				2475E3BDDC9A37064FA28CC6 /* Async.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1258,6 +1276,7 @@
 				2475EA0AECE4C6B9103E938F /* ExampleAccount.validateTests.swift in Sources */,
 				2475ED5502E5DBF809FC8124 /* ExampleValidationModelTests.swift in Sources */,
 				2475E9F0EFB736C7502B6861 /* ExampleAccountFactory.swift in Sources */,
+				2475E06A09110F3226C76395 /* AsyncTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1302,6 +1321,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -1309,6 +1329,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -1354,7 +1375,11 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = TestableDesignExampleTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kuniwak.TestableDesignExampleTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1372,7 +1397,10 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = TestableDesignExample/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kuniwak.IosTestableDesignExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1383,7 +1411,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = TestableDesignExampleUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kuniwak.TestableDesignExampleUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1400,7 +1432,11 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = TestableDesignExampleTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kuniwak.TestableDesignExampleTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1418,7 +1454,10 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = TestableDesignExample/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kuniwak.IosTestableDesignExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1438,6 +1477,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -1445,6 +1485,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -1468,7 +1509,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 4.0;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1478,7 +1520,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = TestableDesignExampleUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kuniwak.TestableDesignExampleUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

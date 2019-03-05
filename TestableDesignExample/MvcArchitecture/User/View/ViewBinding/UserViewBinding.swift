@@ -33,7 +33,6 @@ class UserViewBinding: UserViewBindingProtocol {
         self.model.didChange
             .drive(onNext: { [weak self] state in
                 guard let this = self else { return }
-
                 switch state {
                 case .fetching:
                     this.views.titleHolder.setTitle(text: "Loading...")

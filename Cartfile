@@ -1,6 +1,6 @@
-github "mac-cain13/R.swift.Library" ~> 4.0.0
-github "ReactiveX/RxSwift" "master"
-github "Kuniwak/MirrorDiffKit" ~> 2.0.0
-github "JohnSundell/Unbox" ~> 2.5.0
-github "mxcl/PromiseKit" ~> 4.3.2
-github "antitypical/Result" ~> 3.2.4
+github "mac-cain13/R.swift.Library"
+github "ReactiveX/RxSwift"
+github "Kuniwak/MirrorDiffKit"
+github "JohnSundell/Unbox"
+github "mxcl/PromiseKit"
+github "antitypical/Result"

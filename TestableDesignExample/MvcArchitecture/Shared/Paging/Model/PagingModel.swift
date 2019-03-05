@@ -170,7 +170,7 @@ class PagingModel<T: Hashable>: PagingModelProtocol {
 
             self.pageRepository
                 .fetch(pageOf: pageNumber)
-                .then { (fetchedElements: [Element]) -> Void in
+                .done { (fetchedElements: [Element]) -> Void in
                     let isPageEnd = self.pageEndStrategy.isPageEnd(
                         fetching: pageNumber,
                         to: direction,

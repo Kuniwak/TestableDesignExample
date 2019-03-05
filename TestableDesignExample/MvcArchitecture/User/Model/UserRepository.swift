@@ -25,7 +25,7 @@ class UserApiRepository: UserRepositoryProtocol {
                 headers: [:],
                 parameters: []
             )
-            .then { data -> GitHubUser in
+            .map { data -> GitHubUser in
                 let response: GitHubUserResponse = try unbox(data: data)
                 return response.user
             }
