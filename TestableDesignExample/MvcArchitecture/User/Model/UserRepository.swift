@@ -1,5 +1,4 @@
 import PromiseKit
-import Unbox
 
 
 
@@ -19,30 +18,47 @@ class UserApiRepository: UserRepositoryProtocol {
 
 
     func get(by id: GitHubUser.Id) -> Promise<GitHubUser> {
-        return self.api
+        self.api
             .fetch(
-                endpoint: GitHubApiEndpoint(path: "/user/" + id.text),
+                endpoint: GitHubApiEndpoint(path: "/user/" + String(id.integer)),
                 headers: [:],
                 parameters: []
             )
-            .then { data -> GitHubUser in
-                let response: GitHubUserResponse = try unbox(data: data)
-                return response.user
+            .then { data throws -> Promise<GitHubUser> in
+                let response = try JSONDecoder().decode(GitHubUserResponse.self, from: data)
+                return .value(response.user)
             }
     }
 }
 
 
 
-private class GitHubUserResponse: Unboxable {
+private class GitHubUserResponse: Codable {
     let user: GitHubUser
 
 
-    required init(unboxer: Unboxer) throws {
+    private enum CodingKeys: String, CodingKey {
+        case id
+        case login
+        case avatarUrl = "avatar_url"
+    }
+
+
+
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
         self.user = try GitHubUser(
-            id: GitHubUser.Id(text: unboxer.unbox(key: "id")),
-            name: GitHubUser.Name(text: unboxer.unbox(key: "login")),
-            avatar: unboxer.unbox(key: "avatar_url")
+            id: GitHubUser.Id(integer: container.decode(Int.self, forKey: .id)),
+            name: GitHubUser.Name(text: container.decode(String.self, forKey: .login)),
+            avatar: container.decode(URL.self, forKey: .avatarUrl)
         )
+    }
+
+
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(self.user.id.integer, forKey: .id)
+        try container.encode(self.user.name.text, forKey: .login)
+        try container.encode(self.user.avatar, forKey: .avatarUrl)
     }
 }

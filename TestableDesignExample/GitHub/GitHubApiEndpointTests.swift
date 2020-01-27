@@ -10,7 +10,7 @@ class GitHubApiEndpointTests: XCTestCase {
 
 
     static var allTests: [(String, (GitHubApiEndpointTests) -> () throws -> Void)] {
-        return [
+        [
             ("testEndpointBaseIsNotNil", self.testEndpointBaseIsNotNil),
         ]
     }

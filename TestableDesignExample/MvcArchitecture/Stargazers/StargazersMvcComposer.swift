@@ -35,9 +35,7 @@ class StargazersMvcComposer: UIViewController {
     }
 
 
-    required init?(coder aDecoder: NSCoder) {
-        return nil
-    }
+    required init?(coder aDecoder: NSCoder) { nil }
 
 
     override func loadView() {

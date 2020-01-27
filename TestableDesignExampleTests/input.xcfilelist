@@ -1,0 +1,3 @@
+$(SRCROOT)/Carthage/Build/iOS/RxTest.framework
+$(SRCROOT)/Carthage/Build/iOS/RxBlocking.framework
+$(SRCROOT)/Carthage/Build/iOS/MirrorDiffKit.framework

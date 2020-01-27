@@ -1,4 +1,3 @@
-import Result
 import RxSwift
 import RxCocoa
 

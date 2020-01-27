@@ -1,24 +1,12 @@
 [submodule "Carthage/Checkouts/R.swift.Library"]
 	path = Carthage/Checkouts/R.swift.Library
 	url = https://github.com/mac-cain13/R.swift.Library.git
-[submodule "Carthage/Checkouts/XLPagerTabStrip"]
-	path = Carthage/Checkouts/XLPagerTabStrip
-	url = https://github.com/xmartlabs/XLPagerTabStrip.git
 [submodule "Carthage/Checkouts/RxSwift"]
 	path = Carthage/Checkouts/RxSwift
 	url = https://github.com/ReactiveX/RxSwift.git
 [submodule "Carthage/Checkouts/MirrorDiffKit"]
 	path = Carthage/Checkouts/MirrorDiffKit
 	url = https://github.com/Kuniwak/MirrorDiffKit.git
-[submodule "Carthage/Checkouts/Unbox"]
-	path = Carthage/Checkouts/Unbox
-	url = https://github.com/JohnSundell/Unbox.git
 [submodule "Carthage/Checkouts/PromiseKit"]
 	path = Carthage/Checkouts/PromiseKit
 	url = https://github.com/mxcl/PromiseKit.git
-[submodule "Carthage/Checkouts/KeychainAccess"]
-	path = Carthage/Checkouts/KeychainAccess
-	url = https://github.com/kishikawakatsumi/KeychainAccess.git
-[submodule "Carthage/Checkouts/Result"]
-	path = Carthage/Checkouts/Result
-	url = https://github.com/antitypical/Result.git

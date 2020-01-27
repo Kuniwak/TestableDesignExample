@@ -5,11 +5,11 @@ import Foundation
 
 enum GitHubUserStub {
     static func create(
-        id: GitHubUser.Id = .init(text: "any id"),
+        id: GitHubUser.Id = .init(integer: -1),
         name: GitHubUser.Name = .init(text: "any user"),
         avatar: URL = URL(string: "http://example.com/any-avatar.png")!
     ) -> GitHubUser {
-        return GitHubUser(
+        GitHubUser(
             id: id,
             name: name,
             avatar: avatar

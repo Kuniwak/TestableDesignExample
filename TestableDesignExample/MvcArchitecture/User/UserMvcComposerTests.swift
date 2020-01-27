@@ -7,7 +7,7 @@ class UserMvcComposerTests: XCTestCase {
         let testNavigator = TestNavigator(line: #line)
 
         let user = GitHubUser(
-            id: GitHubUser.Id(text: "1"),
+            id: GitHubUser.Id(integer: 1),
             name: GitHubUser.Name(text: "octocat"),
             avatar: URL(string: "https://avatars3.githubusercontent.com/u/583231?v=3&s=400")!
         )

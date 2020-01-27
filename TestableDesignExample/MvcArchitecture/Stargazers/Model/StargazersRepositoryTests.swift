@@ -8,7 +8,7 @@ class StargazersApiRepositoryTests: XCTestCase {
     func testFetch() {
         async(test: self, line: #line) {
             let response = JsonReader.array(from: R.file.reposStargazersJson.path()!)
-            let apiStub = GitHubApiClientStub(firstResult: Promise(value: response))
+            let apiStub = GitHubApiClientStub(firstResult: .value(response))
 
             let repository = StargazersRepository(
                 for: GitHubRepository(
@@ -21,10 +21,10 @@ class StargazersApiRepositoryTests: XCTestCase {
 
             return repository
                 .fetch(pageOf: 1)
-                .then { stargazers -> Void in
+                .done { stargazers in
                     let expected = [
                         GitHubUser(
-                            id: GitHubUser.Id(text: "1"),
+                            id: GitHubUser.Id(integer: 1),
                             name: GitHubUser.Name(text: "octocat"),
                             avatar: URL(string: "https://github.com/images/error/octocat_happy.gif")!
                         ),
