@@ -1,6 +1,5 @@
 import RxSwift
 import RxCocoa
-import Result
 
 
 
@@ -61,7 +60,7 @@ class UserModel: UserModelProtocol {
             self.stateMachine.transit(to: .fetching)
 
             self.repository.get(by: self.id)
-                .then { user in
+                .done { user in
                     self.stateMachine.transit(to: .fetched(
                         result: .success(user)
                     ))

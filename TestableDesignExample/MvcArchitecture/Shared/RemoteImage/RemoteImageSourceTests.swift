@@ -9,8 +9,7 @@ import RxBlocking
 class RemoteImageSourceTests: XCTestCase {
     func testFetch() {
         let imageView = UIImageView()
-        let sampleImageUrl = URL(string:
-            "https://placeholdit.imgix.net/~text?txtsize=33&txt=Img&w=100&h=100")!
+        let sampleImageUrl = URL(string: "https://via.placeholder.com/100")!
 
         let source = RemoteImageSource(willUpdate: imageView)
         source.fetch(from: sampleImageUrl)

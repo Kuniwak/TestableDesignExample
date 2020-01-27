@@ -1,5 +1,4 @@
 import UIKit
-import enum Result.Result
 import PromiseKit
 
 

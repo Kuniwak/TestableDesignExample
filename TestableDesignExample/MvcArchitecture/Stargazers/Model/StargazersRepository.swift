@@ -1,5 +1,5 @@
+import Foundation
 import PromiseKit
-import Unbox
 
 
 
@@ -23,7 +23,6 @@ struct StargazersRepository: PageRepositoryProtocol {
 
     func fetch(pageOf pageNumber: Int) -> Promise<[GitHubStargazer]> {
         let path = "/repos/\(self.gitHubRepository.owner.text)/\(self.gitHubRepository.name.text)/stargazers"
-
         return api.fetch(
                 endpoint: GitHubApiEndpoint(path: path),
                 headers: [:],
@@ -32,24 +31,40 @@ struct StargazersRepository: PageRepositoryProtocol {
                     ("per_page", "\(self.numberOfStargazersPerPage)"),
                 ]
             )
-            .then { data -> [GitHubStargazer] in
-                let users: [GitHubStargazerResponse] = try unbox(data: data)
-                return users.map { $0.user }
+            .then { data throws -> Promise<[GitHubStargazer]> in
+                let users = try JSONDecoder().decode([GitHubStargazerResponse].self, from: data)
+                return .value(users.map { $0.user })
             }
     }
 }
 
 
 
-private class GitHubStargazerResponse: Unboxable {
+private class GitHubStargazerResponse: Codable {
     let user: GitHubStargazer
 
 
-    required init(unboxer: Unboxer) throws {
+    private enum CodingKeys: String, CodingKey {
+        case id
+        case login
+        case avatarUrl = "avatar_url"
+    }
+
+
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
         self.user = try GitHubUser(
-            id: GitHubUser.Id(text: unboxer.unbox(key: "id")),
-            name: GitHubUser.Name(text: unboxer.unbox(key: "login")),
-            avatar: unboxer.unbox(key: "avatar_url")
+            id: GitHubUser.Id(integer: container.decode(Int.self, forKey: .id)),
+            name: GitHubUser.Name(text: container.decode(String.self, forKey: .login)),
+            avatar: container.decode(URL.self, forKey: .avatarUrl)
         )
+    }
+
+
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(self.user.id.integer, forKey: .id)
+        try container.encode(self.user.name.text, forKey: .login)
+        try container.encode(self.user.avatar, forKey: .avatarUrl)
     }
 }

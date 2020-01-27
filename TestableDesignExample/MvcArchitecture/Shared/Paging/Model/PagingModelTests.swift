@@ -7,15 +7,14 @@ import PromiseKit
 @testable import TestableDesignExample
 
 
+
 class PagingModelTests: XCTestCase {
     func testInitialState() {
         let pagingModel = self.createPagingModel(
             fetchingPageVia: self.createPageRepositoryStub()
         )
-
         let actual = pagingModel.currentState
         let expected = PagingModelState.fetched(elements: [Element](), error: nil)
-
         XCTAssert(
             expected =~ actual,
             diff(between: expected, and: actual)
@@ -28,15 +27,12 @@ class PagingModelTests: XCTestCase {
             fetchingPageVia: self.createPageRepositoryStub(),
             whereCursorMovingOn: 1..<Int.max
         )
-
         pagingModel.fetchNext()
         self.waitUntilFetched(pagingModel)
-
         let actual = pagingModel.currentState
         let expected = PagingModelState.fetched(elements: [
             Element(pageNumber: 1),
         ], error: nil)
-
         XCTAssert(
             expected =~ actual,
             diff(between: expected, and: actual)
@@ -49,15 +45,12 @@ class PagingModelTests: XCTestCase {
             fetchingPageVia: self.createPageRepositoryStub(),
             whereCursorMovingOn: 1..<Int.max
         )
-
         pagingModel.fetchPrevious()
         self.waitUntilFetched(pagingModel)
-
         let actual = pagingModel.currentState
         let expected = PagingModelState.fetched(elements: [
             Element(pageNumber: 1),
         ], error: nil)
-
         XCTAssert(
             expected =~ actual,
             diff(between: expected, and: actual)
@@ -70,19 +63,15 @@ class PagingModelTests: XCTestCase {
             fetchingPageVia: self.createPageRepositoryStub(),
             whereCursorMovingOn: 1..<Int.max
         )
-
         pagingModel.fetchNext()
         self.waitUntilFetched(pagingModel)
-
         pagingModel.fetchNext()
         self.waitUntilFetched(pagingModel)
-
         let actual = pagingModel.currentState
         let expected = PagingModelState.fetched(elements: [
             Element(pageNumber: 1),
             Element(pageNumber: 2),
         ], error: nil)
-
         XCTAssert(
             expected =~ actual,
             diff(between: expected, and: actual)
@@ -95,18 +84,14 @@ class PagingModelTests: XCTestCase {
             fetchingPageVia: self.createPageRepositoryStub(),
             whereCursorMovingOn: 1..<1
         )
-
         pagingModel.fetchNext()
         self.waitUntilFetched(pagingModel)
-
         pagingModel.fetchNext()
         self.waitUntilFetched(pagingModel)
-
         let actual = pagingModel.currentState
         let expected = PagingModelState.fetched(elements: [
             Element(pageNumber: 1),
         ], error: nil)
-
         XCTAssert(
             expected =~ actual,
             diff(between: expected, and: actual)
@@ -119,22 +104,17 @@ class PagingModelTests: XCTestCase {
             fetchingPageVia: self.createPageRepositoryStub(),
             whereCursorMovingOn: 1..<2
         )
-
         pagingModel.fetchNext()
         self.waitUntilFetched(pagingModel)
-
         pagingModel.fetchNext()
         self.waitUntilFetched(pagingModel)
-
         pagingModel.fetchNext()
         self.waitUntilFetched(pagingModel)
-
         let actual = pagingModel.currentState
         let expected = PagingModelState.fetched(elements: [
             Element(pageNumber: 1),
             Element(pageNumber: 2),
         ], error: nil)
-
         XCTAssert(
             expected =~ actual,
             diff(between: expected, and: actual)
@@ -147,18 +127,14 @@ class PagingModelTests: XCTestCase {
             fetchingPageVia: self.createPageRepositoryStub(),
             whereCursorMovingOn: 1..<Int.max
         )
-
         pagingModel.fetchPrevious()
         self.waitUntilFetched(pagingModel)
-
         pagingModel.fetchPrevious()
         self.waitUntilFetched(pagingModel)
-
         let actual = pagingModel.currentState
         let expected = PagingModelState.fetched(elements: [
             Element(pageNumber: 1),
         ], error: nil)
-
         XCTAssert(
             expected =~ actual,
             diff(between: expected, and: actual)
@@ -184,11 +160,7 @@ class PagingModelTests: XCTestCase {
 
     private func createPageRepositoryStub() -> PageRepositoryStub<Element> {
         return PageRepositoryStub(
-            willReturn: { pageNumber in
-                return Promise(value: [
-                    Element(pageNumber: pageNumber),
-                ])
-            }
+            willReturn: { pageNumber in .value([Element(pageNumber: pageNumber)]) }
         )
     }
 
@@ -211,17 +183,18 @@ class PagingModelTests: XCTestCase {
     }
 
 
+
     private struct Element: Hashable {
         let pageNumber: Int
 
 
-        var hashValue: Int {
-            return self.pageNumber
+        func hash(into hasher: inout Hasher) {
+            hasher.combine(self.pageNumber)
         }
 
 
         public static func ==(lhs: Element, rhs: Element) -> Bool {
-            return lhs.pageNumber == rhs.pageNumber
+            lhs.pageNumber == rhs.pageNumber
         }
     }
 }

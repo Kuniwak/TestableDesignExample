@@ -170,7 +170,7 @@ class PagingModel<T: Hashable>: PagingModelProtocol {
 
             self.pageRepository
                 .fetch(pageOf: pageNumber)
-                .then { (fetchedElements: [Element]) -> Void in
+                .done { (fetchedElements: [Element]) -> Void in
                     let isPageEnd = self.pageEndStrategy.isPageEnd(
                         fetching: pageNumber,
                         to: direction,
@@ -225,14 +225,10 @@ class AnyPagingModel<T: Hashable>: PagingModelProtocol {
     }
 
 
-    var currentState: PagingModelState<Element> {
-        return self._currentState()
-    }
+    var currentState: PagingModelState<Element> { self._currentState() }
 
 
-    var didChange: RxCocoa.Driver<PagingModelState<Element>> {
-        return self._didChange()
-    }
+    var didChange: RxCocoa.Driver<PagingModelState<Element>> { self._didChange() }
 
 
     func fetchNext() {

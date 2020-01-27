@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -124,15 +124,14 @@
 		2475EF62D7DC1E8FC2476A52 /* AsyncTestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E30AD0FB5158B660EB33 /* AsyncTestHelper.swift */; };
 		2475EF784651E52247E3C648 /* GitHubRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E9C17E4BBC136112F1C3 /* GitHubRepository.swift */; };
 		2475EFE934412F4F12A7A9DF /* StargazersScreenRootView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2475E6D543F2FBEC69C94833 /* StargazersScreenRootView.xib */; };
+		624AA58123DEA9040066D693 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 624AA58023DEA9040066D693 /* RxRelay.framework */; };
 		629BBC831F90E262000BB6DA /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 629BBC821F90E262000BB6DA /* RxCocoa.framework */; };
 		62A1614D1E73C1CC003D28DC /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62A1614B1E73C1CC003D28DC /* RxBlocking.framework */; };
 		62A1614E1E73C1CC003D28DC /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62A1614C1E73C1CC003D28DC /* RxTest.framework */; };
 		62A161511E73C259003D28DC /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62A161501E73C259003D28DC /* RxSwift.framework */; };
 		62A161571E73C923003D28DC /* MirrorDiffKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62A161561E73C923003D28DC /* MirrorDiffKit.framework */; };
 		62A161611E73E1CE003D28DC /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62A1615F1E73E1CE003D28DC /* PromiseKit.framework */; };
-		62A161621E73E1CE003D28DC /* Unbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62A161601E73E1CE003D28DC /* Unbox.framework */; };
 		62A161681E74164A003D28DC /* Rswift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62A161471E73BCD4003D28DC /* Rswift.framework */; };
-		62A1616C1E741761003D28DC /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62A1616B1E741761003D28DC /* Result.framework */; };
 		62A161741E744812003D28DC /* StargazersMvcComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A161731E744812003D28DC /* StargazersMvcComposer.swift */; };
 /* End PBXBuildFile section */
 
@@ -277,22 +276,16 @@
 		2475EFCEEABBB137955934D6 /* octicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file.ttf; path = octicons.ttf; sourceTree = "<group>"; };
 		2475EFD023DE88AE709BCA17 /* StargazersRepositoryStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StargazersRepositoryStub.swift; sourceTree = "<group>"; };
 		2475EFFC22EBEE4556F83A10 /* StargazersModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StargazersModel.swift; sourceTree = "<group>"; };
+		624AA58023DEA9040066D693 /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
 		629BBC821F90E262000BB6DA /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		62A161471E73BCD4003D28DC /* Rswift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Rswift.framework; path = Carthage/Build/iOS/Rswift.framework; sourceTree = "<group>"; };
 		62A1614B1E73C1CC003D28DC /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
 		62A1614C1E73C1CC003D28DC /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
 		62A161501E73C259003D28DC /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
-		62A161521E73C272003D28DC /* XLPagerTabStrip.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = XLPagerTabStrip.framework.dSYM; path = Carthage/Build/iOS/XLPagerTabStrip.framework.dSYM; sourceTree = "<group>"; };
-		62A161541E73C8FE003D28DC /* XLPagerTabStrip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XLPagerTabStrip.framework; path = Carthage/Build/iOS/XLPagerTabStrip.framework; sourceTree = "<group>"; };
 		62A161561E73C923003D28DC /* MirrorDiffKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MirrorDiffKit.framework; path = Carthage/Build/iOS/MirrorDiffKit.framework; sourceTree = "<group>"; };
 		62A1615B1E73E1B9003D28DC /* PromiseKit.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = PromiseKit.framework.dSYM; path = Carthage/Build/iOS/PromiseKit.framework.dSYM; sourceTree = "<group>"; };
-		62A1615C1E73E1B9003D28DC /* Unbox.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Unbox.framework.dSYM; path = Carthage/Build/iOS/Unbox.framework.dSYM; sourceTree = "<group>"; };
 		62A1615F1E73E1CE003D28DC /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromiseKit.framework; path = Carthage/Build/iOS/PromiseKit.framework; sourceTree = "<group>"; };
-		62A161601E73E1CE003D28DC /* Unbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Unbox.framework; path = Carthage/Build/iOS/Unbox.framework; sourceTree = "<group>"; };
 		62A161641E74129A003D28DC /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		62A161661E741634003D28DC /* KeychainAccess.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = KeychainAccess.framework.dSYM; path = Carthage/Build/iOS/KeychainAccess.framework.dSYM; sourceTree = "<group>"; };
-		62A161691E74165E003D28DC /* KeychainAccess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KeychainAccess.framework; path = Carthage/Build/iOS/KeychainAccess.framework; sourceTree = "<group>"; };
-		62A1616B1E741761003D28DC /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		62A161731E744812003D28DC /* StargazersMvcComposer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StargazersMvcComposer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -302,11 +295,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				629BBC831F90E262000BB6DA /* RxCocoa.framework in Frameworks */,
-				62A1616C1E741761003D28DC /* Result.framework in Frameworks */,
 				62A161681E74164A003D28DC /* Rswift.framework in Frameworks */,
 				62A161611E73E1CE003D28DC /* PromiseKit.framework in Frameworks */,
-				62A161621E73E1CE003D28DC /* Unbox.framework in Frameworks */,
 				62A161511E73C259003D28DC /* RxSwift.framework in Frameworks */,
+				624AA58123DEA9040066D693 /* RxRelay.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -807,18 +799,12 @@
 		62A161461E73BCD4003D28DC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				624AA58023DEA9040066D693 /* RxRelay.framework */,
 				629BBC821F90E262000BB6DA /* RxCocoa.framework */,
-				62A1616B1E741761003D28DC /* Result.framework */,
-				62A161691E74165E003D28DC /* KeychainAccess.framework */,
-				62A161661E741634003D28DC /* KeychainAccess.framework.dSYM */,
 				62A161641E74129A003D28DC /* Security.framework */,
 				62A1615F1E73E1CE003D28DC /* PromiseKit.framework */,
-				62A161601E73E1CE003D28DC /* Unbox.framework */,
 				62A1615B1E73E1B9003D28DC /* PromiseKit.framework.dSYM */,
-				62A1615C1E73E1B9003D28DC /* Unbox.framework.dSYM */,
 				62A161561E73C923003D28DC /* MirrorDiffKit.framework */,
-				62A161541E73C8FE003D28DC /* XLPagerTabStrip.framework */,
-				62A161521E73C272003D28DC /* XLPagerTabStrip.framework.dSYM */,
 				62A161501E73C259003D28DC /* RxSwift.framework */,
 				62A1614B1E73C1CC003D28DC /* RxBlocking.framework */,
 				62A1614C1E73C1CC003D28DC /* RxTest.framework */,
@@ -843,7 +829,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2475E16C50E63B0E2DE88092 /* Build configuration list for PBXNativeTarget "TestableDesignExampleTests" */;
 			buildPhases = (
-				62A161631E7408A4003D28DC /* ShellScript */,
+				62A161631E7408A4003D28DC /* Run R.swift */,
 				2475E4A0A6547D8CB0D6FC25 /* Sources */,
 				2475E64DAD11CBB0BA0D46A3 /* Frameworks */,
 				2475EF593B11C9178F25371E /* Resources */,
@@ -881,11 +867,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2475E8BF3640622A9CBA90DF /* Build configuration list for PBXNativeTarget "TestableDesignExample" */;
 			buildPhases = (
-				62A1614A1E73BDC0003D28DC /* ShellScript */,
+				62A1614A1E73BDC0003D28DC /* Run R.swift */,
 				2475E3C4099342668824F94A /* Sources */,
 				2475E453DC8D6CC645172E24 /* Frameworks */,
 				2475E69BA6DA525240196C0B /* Resources */,
-				62A161491E73BD22003D28DC /* ShellScript */,
+				62A161491E73BD22003D28DC /* Run cartahge copy-frameworks */,
 			);
 			buildRules = (
 			);
@@ -902,7 +888,7 @@
 		2475E53F7AA653832B1EFE63 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = Kuniwak;
 				TargetAttributes = {
 					2475EE0376871EE7203E0C05 = {
@@ -915,7 +901,9 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
+				Base,
 			);
 			mainGroup = 2475E6024DA77F14399A3109;
 			productRefGroup = 2475E681FAAFE01165145F3E /* Products */;
@@ -963,66 +951,79 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		62A161491E73BD22003D28DC /* ShellScript */ = {
+		62A161491E73BD22003D28DC /* Run cartahge copy-frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputFileListPaths = (
+				"$(SRCROOT)/TestableDesignExample/input.xcfilelist",
+			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Rswift.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Unbox.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/PromiseKit.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
+			);
+			name = "Run cartahge copy-frameworks";
+			outputFileListPaths = (
+				"$(SRCROOT)/TestableDesignExample/output.xcfilelist",
 			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
-		62A1614A1E73BDC0003D28DC /* ShellScript */ = {
+		62A1614A1E73BDC0003D28DC /* Run R.swift */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
 			);
+			name = "Run R.swift";
 			outputPaths = (
+				$SRCROOT/TestableDesignExample/Resources/R.swift/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"$SRCROOT/libexec/rswift\" \"$SRCROOT/TestableDesignExample/Resources/R.swift/\"";
+			shellScript = "\"$SRCROOT/libexec/rswift/rswift\" generate \"$SRCROOT/TestableDesignExample/Resources/R.swift/R.generated.swift\"\n";
 		};
 		62A1614F1E73C1D2003D28DC /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputFileListPaths = (
+				"$(SRCROOT)/TestableDesignExampleTests/input.xcfilelist",
+			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/RxTest.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxBlocking.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/MirrorDiffKit.framework",
 			);
+			outputFileListPaths = (
+				"$(SRCROOT)/TestableDesignExampleTests/output.xcfilelist",
+			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
-		62A161631E7408A4003D28DC /* ShellScript */ = {
+		62A161631E7408A4003D28DC /* Run R.swift */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
 			);
+			name = "Run R.swift";
 			outputPaths = (
+				$SRCROOT/TestableDesignExampleTests/Resources/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"$SRCROOT/libexec/rswift\" \"$SRCROOT/TestableDesignExampleTests/Resources/\"";
+			shellScript = "\"$SRCROOT/libexec/rswift/rswift\" generate  \"$SRCROOT/TestableDesignExampleTests/Resources/R.generated.swift\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1189,6 +1190,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -1198,6 +1200,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -1205,6 +1208,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -1237,7 +1241,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -1250,10 +1254,14 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = TestableDesignExampleTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kuniwak.TestableDesignExampleTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = "$(inherited)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
 			name = Release;
@@ -1268,10 +1276,13 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = TestableDesignExample/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kuniwak.IosTestableDesignExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = "$(inherited)";
 			};
 			name = Debug;
 		};
@@ -1279,10 +1290,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = TestableDesignExampleUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kuniwak.TestableDesignExampleUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = "$(inherited)";
 				TEST_TARGET_NAME = TestableDesignExample;
 			};
 			name = Debug;
@@ -1296,10 +1311,14 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = TestableDesignExampleTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kuniwak.TestableDesignExampleTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = "$(inherited)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
 			name = Debug;
@@ -1314,10 +1333,13 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = TestableDesignExample/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kuniwak.IosTestableDesignExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = "$(inherited)";
 			};
 			name = Release;
 		};
@@ -1325,6 +1347,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -1334,6 +1357,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -1341,6 +1365,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -1364,8 +1389,9 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.0;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -1374,10 +1400,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = TestableDesignExampleUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kuniwak.TestableDesignExampleUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = "$(inherited)";
 				TEST_TARGET_NAME = TestableDesignExample;
 			};
 			name = Release;

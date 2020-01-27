@@ -35,19 +35,19 @@ class StarredRepositoriesModelTests: XCTestCase {
             #line: TestCase(
                 scenario: {
                     let repository = StargazersRepositoryStub(
-                        firstResult: Promise(value: [
+                        firstResult: .value([
                             GitHubUser(
-                                id: GitHubUser.Id(text: "1"),
+                                id: GitHubUser.Id(integer: 1),
                                 name: GitHubUser.Name(text: "stargazer-1"),
                                 avatar: URL(string: "http://example.com/avatar-1.png")!
                             ),
                             GitHubUser(
-                                id: GitHubUser.Id(text: "2"),
+                                id: GitHubUser.Id(integer: 2),
                                 name: GitHubUser.Name(text: "stargazer-2"),
                                 avatar: URL(string: "http://example.com/avatar-2.png")!
                             ),
                             GitHubUser(
-                                id: GitHubUser.Id(text: "3"),
+                                id: GitHubUser.Id(integer: 3),
                                 name: GitHubUser.Name(text: "stargazer-3"),
                                 avatar: URL(string: "http://example.com/avatar-3.png")!
                             ),
@@ -66,17 +66,17 @@ class StarredRepositoriesModelTests: XCTestCase {
                 expected: .fetched(
                     stargazers: [
                         GitHubUser(
-                            id: GitHubUser.Id(text: "1"),
+                            id: GitHubUser.Id(integer: 1),
                             name: GitHubUser.Name(text: "stargazer-1"),
                             avatar: URL(string: "http://example.com/avatar-1.png")!
                         ),
                         GitHubUser(
-                            id: GitHubUser.Id(text: "2"),
+                            id: GitHubUser.Id(integer: 2),
                             name: GitHubUser.Name(text: "stargazer-2"),
                             avatar: URL(string: "http://example.com/avatar-2.png")!
                         ),
                         GitHubUser(
-                            id: GitHubUser.Id(text: "3"),
+                            id: GitHubUser.Id(integer: 3),
                             name: GitHubUser.Name(text: "stargazer-3"),
                             avatar: URL(string: "http://example.com/avatar-3.png")!
                         ),
@@ -123,7 +123,7 @@ class StarredRepositoriesModelTests: XCTestCase {
                     model.fetchNext()
                     self.waitUntilFetched(model)
 
-                    repository.nextResult = Promise(value: [GitHubUser]())
+                    repository.nextResult = .value([GitHubUser]())
 
                     model.fetchNext()
                     self.waitUntilFetched(model)
@@ -140,9 +140,9 @@ class StarredRepositoriesModelTests: XCTestCase {
             #line: TestCase(
                 scenario: {
                     let repository = StargazersRepositoryStub(
-                        firstResult: Promise(value: [
+                        firstResult: .value([
                             GitHubUser(
-                                id: GitHubUser.Id(text: "1234"),
+                                id: GitHubUser.Id(integer: 1234),
                                 name: GitHubUser.Name(text: "user-new"),
                                 avatar: URL(string: "http://example.com/user-new.png")!
                             ),
@@ -156,9 +156,9 @@ class StarredRepositoriesModelTests: XCTestCase {
                     model.fetchNext()
                     self.waitUntilFetched(model)
 
-                    repository.nextResult = Promise(value: [
+                    repository.nextResult = .value([
                         GitHubUser(
-                            id: GitHubUser.Id(text: "1234"),
+                            id: GitHubUser.Id(integer: 1234),
                             name: GitHubUser.Name(text: "user-new"),
                             avatar: URL(string: "http://example.com/user-new.png")!
                         )
@@ -173,7 +173,7 @@ class StarredRepositoriesModelTests: XCTestCase {
                 expected: .fetched(
                     stargazers: [
                         GitHubUser(
-                            id: GitHubUser.Id(text: "1234"),
+                            id: GitHubUser.Id(integer: 1234),
                             name: GitHubUser.Name(text: "user-new"),
                             avatar: URL(string: "http://example.com/user-new.png")!
                         ),

@@ -7,7 +7,7 @@ func async(test: XCTestCase, timeout: TimeInterval = 1.0, line: UInt = #line, _ 
     let expectation = test.expectation(description: "Promise is not fulfilled.")
 
     block()
-        .then { _ in
+        .done { _ in
             expectation.fulfill()
         }
         .catch { error in

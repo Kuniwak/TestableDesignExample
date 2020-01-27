@@ -13,33 +13,17 @@ struct GitHubUser {
     }
 
 
-    struct Id {
-        let text: String
+    struct Id: Hashable {
+        let integer: Int
     }
 }
 
 
 
 extension GitHubUser: Hashable {
-    var hashValue: Int {
-        return self.id.hashValue
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(self.id)
     }
 
-
-    static func ==(lhs: GitHubUser, rhs: GitHubUser) -> Bool {
-        return lhs.id == rhs.id
-    }
-}
-
-
-
-extension GitHubUser.Id: Hashable {
-    var hashValue: Int {
-        return self.text.hashValue
-    }
-
-
-    public static func ==(lhs: GitHubUser.Id, rhs: GitHubUser.Id) -> Bool {
-        return lhs.hashValue == rhs.hashValue
-    }
+    static func ==(lhs: GitHubUser, rhs: GitHubUser) -> Bool { lhs.id == rhs.id }
 }
